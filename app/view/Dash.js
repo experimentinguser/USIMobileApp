@@ -22,18 +22,24 @@ Ext.define("USIMobile.view.Dash", {
 						items: [
 							{
 								xtype: 'button',
-								text: 'Item 1',
+								id: 'usinews_dash_button',
+								baseCls: 'dash_button usi_news_dash_button',
 								width: '33.3%',
+								html: '<div class="label_container"><div class="label">USI News</div></div>',
 							},
 							{
 								xtype: 'button',
-								text: 'Item 2',
+								id: 'listacorsi_dash_button',
+								baseCls: 'dash_button lista_corsi_dash_button',
 								width: '33.3%',
+								html: '<div class="label_container"><div class="label">Lista Corsi</div></div>',
 							},
 							{
 								xtype: 'button',
-								text: 'Item 3',
+								id: 'orario_dash_button',
+								baseCls: 'dash_button orario_dash_button',
 								width: '33.3%',
+								html: '<div class="label_container"><div class="label">Orario</div></div>',
 							},
 						]
 					},
@@ -45,18 +51,24 @@ Ext.define("USIMobile.view.Dash", {
 						items: [
 							{
 								xtype: 'button',
-								text: 'Item 4',
+								id: 'cercapersone_dash_button',
+								baseCls: 'dash_button cerca_persone_dash_button',
 								width: '33.3%',
+								html: '<div class="label_container"><div class="label">Cerca Persone</div></div>',
 							},
 							{
 								xtype: 'button',
-								text: 'Item 5',
+								id: 'menumensa_dash_button',
+								baseCls: 'dash_button menu_mensa_dash_button',
 								width: '33.3%',
+								html: '<div class="label_container"><div class="label">Menu Mensa</div></div>',
 							},
 							{
 								xtype: 'button',
-								text: 'Item 6',
+								id: 'usisport_dash_button',
+								baseCls: 'dash_button usi_sport_dash_button',
 								width: '33.3%',
+								html: '<div class="label_container"><div class="label">USI Sport</div></div>',
 							},
 						]
 					},
@@ -68,18 +80,24 @@ Ext.define("USIMobile.view.Dash", {
 						items: [
 							{
 								xtype: 'button',
-								text: 'Item 7',
+								id: 'offertelavoro_dash_button',
+								baseCls: 'dash_button offerte_lavoro_dash_button',
 								width: '33.3%',
+								html: '<div class="label_container"><div class="label">Offerte Lavoro</div></div>',
 							},
 							{
 								xtype: 'button',
-								text: 'Item 8',
+								id: 'empty_a',
+								baseCls: 'dash_button item_dash_button',
 								width: '33.3%',
+								html: '<div class="label_container"><div class="label">Empty Slot</div></div>',
 							},
 							{
 								xtype: 'button',
-								text: 'Item 9',
+								id: 'empty_b',
+								baseCls: 'dash_button item_dash_button',
 								width: '33.3%',
+								html: '<div class="label_container"><div class="label">Empty Slot</div></div>',
 							},
 						]
 					},

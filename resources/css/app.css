@@ -9694,3 +9694,37 @@ input[type="search"]::-webkit-search-cancel-button {
     -webkit-transform: rotate(330deg);
   }
 }
+
+.dash_button {
+	background-image: url('../icons/item.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+}
+
+.dash_button .label_container {
+	width: 100%;
+	height: 100%;
+	position:absolute;
+	left: 50%;
+	margin-left: -60px;
+	margin-top: 50%;
+}
+
+.label_container .label {
+	position:absolute;
+	margin-top: 50px;
+	font-weight: normal;
+	text-align:center;
+	color: green;
+	width: 120px;
+}
+
+.usi_news_dash_button { }
+.lista_corsi_dash_button { }
+.orario_dash_button { }
+.cerca_persone_dash_button { }
+.menu_mensa_dash_button { }
+.usi_sport_dash_button { }
+.offerte_lavoro_dash_button { }
+

@@ -29,6 +29,7 @@ Ext.application({
 		"USIMobile.controller.Init", 
 		"USIMobile.controller.UsageAgreement", 
 		"USIMobile.controller.AaiAccount", 
+		"USIMobile.controller.Dash", 
 	],
 
     icon: {
