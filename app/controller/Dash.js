@@ -43,7 +43,21 @@ Ext.define('USIMobile.controller.Dash', {
 	},
 
 	showMenuMensa: function(btn, e, eOpts){
-		console.log('show menu mensa');
+		var url = "http://www.usi.ch/en/usi-menu_mensa-12417.pdf";
+		var params = {
+			fileName: 'usi_menu_mensa.pdf',
+			overwrite: true
+		};
+		var successFunc = function(result) {
+			if(result.progress == 100 && result.status == 1) {
+				USIMobile.app.openFile('file:///sdcard/download/usi_menu_mensa.pdf', 'application/pdf');
+			}
+			console.log(JSON.stringify(result));
+		};
+		var failFunc = function() {
+			Ext.Msg.alert('File Downloading', 'Failed to download the file: '+url);
+		};
+		window.plugins.downloader.downloadFile(url, params, successFunc, failFunc);
 	},
 
 	showUsiSport: function(btn, e, eOpts){

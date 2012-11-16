@@ -73,5 +73,18 @@ Ext.application({
                 }
             }
         );
-    }
+    },
+
+	openFile: function(path, mimetype){
+		window.plugins.webintent.startActivity(
+			{
+				action: WebIntent.ACTION_VIEW,
+				type: mimetype,
+				url: path,
+			},
+			function () {},
+			function () {
+				Ext.Msg.alert('File Error', 'Failed to open:'+path+' via Android Intent');
+			});
+	}
 });
