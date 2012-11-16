@@ -1,3 +1,10 @@
+//<debug>
+Ext.Loader.setPath({
+    'Ext': 'touch/src',
+    'USIMobile': 'app'
+});
+//</debug>
+
 Ext.application({
     name: 'USIMobile',
 
