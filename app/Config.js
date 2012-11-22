@@ -8,6 +8,8 @@ Ext.define('USIMobile.Config', {
 	},
 
 	config : {
-		homeOrgsUrl : 'https://usimobile-dev.elearninglab.org/rest/aai/get_idps',
+		homeOrgsUrl: 'https://usimobile-dev.elearninglab.org/rest/aai/get_idps',
+		//paths
+		fileCacheDir: 'USIMobile',
 	}
 });

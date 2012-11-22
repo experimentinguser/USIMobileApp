@@ -1,10 +1,10 @@
 function Downloader() {}
 
-Downloader.prototype.downloadFile = function(fileUrl, params, win, fail) {
-	
+Downloader.prototype.downloadFile = function(fileUrl, params, win, fail, fileName, dir) {
 	//Make params hash optional.
 	if (!fail) win = params;
-	cordova.exec(win, fail, "Downloader", "downloadFile", [fileUrl, params]);
+	var overwrite=1;
+	cordova.exec(win, fail, "Downloader", "downloadFile", [fileUrl, params, fileName, dir, overwrite]);
 };
 
 /**
