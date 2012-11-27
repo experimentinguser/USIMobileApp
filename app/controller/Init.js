@@ -4,12 +4,16 @@ Ext.define('USIMobile.controller.Init', {
 	config: {
 		models: [
 			'USIMobile.model.Settings',
+			'USIMobile.model.ShortNews',
+			'USIMobile.model.DetailedNews',
 		],
 
 		stores: [
 			'USIMobile.store.Settings',
 			'USIMobile.store.AaiAccount',
+			'USIMobile.store.ShortNews',
 		],
+
 		refs: {
 			
 		},
@@ -41,5 +45,15 @@ Ext.define('USIMobile.controller.Init', {
 		var aai_account_store = Ext.create('USIMobile.store.AaiAccount'); 
 		aai_account_store.load();
 		USIMobile.Session.setAaiAccountStore(aai_account_store);
+
+		// create the Short News account store
+		var short_news_account_store = Ext.create('USIMobile.store.ShortNews'); 
+		short_news_account_store.load();
+		USIMobile.Session.setShortNewsStore(short_news_account_store);
+
+		// create the Detailed News account store
+		var detailed_news_account_store = Ext.create('USIMobile.store.DetailedNews'); 
+		detailed_news_account_store.load();
+		USIMobile.Session.setDetailedNewsStore(detailed_news_account_store);
 	}
 });

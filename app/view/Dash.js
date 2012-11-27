@@ -3,7 +3,6 @@ Ext.define("USIMobile.view.Dash", {
 	xtype: 'dash',
 
 	views:[
-		'USIMobile.view.MenuMensa',
 	],
 
 	config: {
@@ -22,8 +21,8 @@ Ext.define("USIMobile.view.Dash", {
 						items: [
 							{
 								xtype: 'button',
-								id: 'usinews_dash_button',
-								baseCls: 'dash_button usi_news_dash_button',
+								id: 'shortnews_dash_button',
+								baseCls: 'dash_button short_news_dash_button',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">USI News</div></div>',
 							},

@@ -11,6 +11,8 @@ Ext.define('USIMobile.Session', {
 		course: null,
 		settingsStore: null,
 		aaiAccountStore: null,
+		shortNewsStore: null,
+		detailedNewsStore: null,
 	}
 	
 });

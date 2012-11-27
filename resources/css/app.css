@@ -11165,7 +11165,7 @@ input[type="search"]::-webkit-search-cancel-button {
 	width: 120px;
 }
 
-.usi_news_dash_button { }
+.short_news_dash_button { }
 .lista_corsi_dash_button { }
 .orario_dash_button { }
 .cerca_persone_dash_button { }
@@ -11173,3 +11173,19 @@ input[type="search"]::-webkit-search-cancel-button {
 .usi_sport_dash_button { }
 .offerte_lavoro_dash_button { }
 
+.short_news_publish_date{
+	color: gray;
+	text-align: right;
+	font-size: small;
+}
+
+.detailed_news_title,
+.detailed_news_body,
+.detailed_detailed_url,
+.detailed_news_publish_start_date {
+	background-color: white;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.detailed_news_title{ }

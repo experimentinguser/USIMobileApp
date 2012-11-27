@@ -14,6 +14,7 @@ Ext.application({
 		'Ext.Img',
 		'USIMobile.Config',
 		'USIMobile.Session',
+		'USIMobile.WebService',
 		'USIMobile.store.HomeOrgs',
     ],
 
@@ -26,8 +27,8 @@ Ext.application({
 		'USIMobile.view.UsageAgreement',
 		'USIMobile.view.AaiAccount',
 		'USIMobile.view.Main',
-		'USIMobile.view.MenuMensa',
-		'USIMobile.view.News',
+		'USIMobile.view.ShortNews',
+		'USIMobile.view.DetailedNews',
 		'USIMobile.view.Foo',
 		'USIMobile.view.Dash',
 	],
@@ -36,6 +37,8 @@ Ext.application({
 		"USIMobile.controller.Init", 
 		"USIMobile.controller.UsageAgreement", 
 		"USIMobile.controller.AaiAccount", 
+		"USIMobile.controller.StoreFeed",
+		"USIMobile.controller.News", 
 		"USIMobile.controller.Dash", 
 	],
 
@@ -81,6 +84,19 @@ Ext.application({
             }
         );
     },
+	
+	openURL: function(urladdr){
+		console.log(urladdr);
+		window.plugins.webintent.startActivity(
+			{
+				action: WebIntent.ACTION_VIEW,
+				url: urladdr,
+  			}, 
+			function () {}, 
+			function () {
+				Ext.Msg.alert('URL Error', 'Failed to open:'+path+' via Android Intent');
+  			});
+	},
 
 	openFile: function(path, mime){
 		var protocol = 'file:///';
