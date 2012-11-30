@@ -42,10 +42,8 @@ Ext.define('USIMobile.controller.Dash', {
 	},
 
 	showMenuMensa: function(btn, e, eOpts){
-		var url = 'http://www.usi.ch/en/usi-menu_mensa-12417.pdf';
-		var filename = 'usi_menu_mensa.pdf';
-		var mime = 'application/pdf';
-		USIMobile.app.getFile(url, filename, mime);	
+		var data = USIMobile.Session.getMenuMensaStore().first().getData();
+		USIMobile.app.getFile(data.url, data.filename, data.mime);	
 	},
 
 	showUsiSport: function(btn, e, eOpts){

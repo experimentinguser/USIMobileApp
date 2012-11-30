@@ -3,13 +3,13 @@ Ext.define('USIMobile.controller.Init', {
 	
 	config: {
 		models: [
-			'USIMobile.model.Settings',
 			'USIMobile.model.ShortNews',
 			'USIMobile.model.DetailedNews',
 		],
 
 		stores: [
 			'USIMobile.store.Settings',
+			'USIMobile.store.MenuMensa',
 			'USIMobile.store.AaiAccount',
 			'USIMobile.store.ShortNews',
 		],
@@ -45,6 +45,11 @@ Ext.define('USIMobile.controller.Init', {
 		var aai_account_store = Ext.create('USIMobile.store.AaiAccount'); 
 		aai_account_store.load();
 		USIMobile.Session.setAaiAccountStore(aai_account_store);
+
+		// create the menumensa store
+		var menumensa_account_store = Ext.create('USIMobile.store.MenuMensa'); 
+		menumensa_account_store.load();
+		USIMobile.Session.setMenuMensaStore(menumensa_account_store);
 
 		// create the Short News account store
 		var short_news_account_store = Ext.create('USIMobile.store.ShortNews'); 

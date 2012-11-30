@@ -56,6 +56,24 @@ Ext.define('USIMobile.WebService', {
 	//***************************** 
 	// Web Service Request Wrappers
 	//***************************** 
+	getUpdates: function() {
+		var url = USIMobile.Config.getUpdatesUrl();
+		// set parameters
+		var params = new Object();
+		// request
+		var updates_store = this.request(url, params, 'USIMobile.model.Updates');
+		return updates_store;
+	},
+
+	getMenuMensa: function() {
+		var url = USIMobile.Config.getMenuMensaUrl();
+		// set parameters
+		var params = new Object();
+		// request
+		var menumensa_store = this.request(url, params, 'USIMobile.model.MenuMensa');
+		return menumensa_store;
+	},
+
 	getShortNews: function() {
 		var url = USIMobile.Config.getShortNewsUrl();
 		// set parameters

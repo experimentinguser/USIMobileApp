@@ -9,11 +9,56 @@ Ext.define('USIMobile.controller.StoreFeed', {
     },
     
     init: function() {
-		USIMobile.Session.getShortNewsStore().on('write', this.updateDetailedNewsStore(), this, {single: true});
-		this.updateShortNews();
+		// get update checks
+		var updates = USIMobile.WebService.getUpdates();
+		updates.on('load', function(store){ this.updateLocalStores(store); }, this, {single: true});
 	},
 
-	updateShortNews: function(){
+	updateLocalStores: function(timestamps_store) {
+		// menumensa store check
+		// fill in data if menumensa is empty
+		if(USIMobile.Session.getMenuMensaStore().getCount() == 0) {
+			var menumensa = USIMobile.WebService.getMenuMensa();
+			menumensa.on('load', function(store) {
+				USIMobile.Session.getMenuMensaStore().add(store.first());
+				USIMobile.Session.getMenuMensaStore().sync();
+			}, this, {single: true});
+		} else if(timestamps_store.first().get('menumensa') != USIMobile.Session.getMenuMensaStore().first().get('timemodify')) { // update if timemodify differs
+			this.updateMenuMensaStore();
+		}
+		// proceed with the USI News
+		USIMobile.Session.getShortNewsStore().on('write', this.updateDetailedNewsStore(), this, {single: true});
+		this.updateShortNewsStore();
+	},
+
+	updateMenuMensaStore: function() {
+		USIMobile.WebService.getMenuMensa().on('load',
+			function(store, records, success) {
+				// check if there are any exceptions 
+				// check for errors here
+				if(this.getProxy().getReader().rawData.error == null){
+					// remove old entries
+					USIMobile.Session.getMenuMensaStore().removeAll();
+					USIMobile.Session.getMenuMensaStore().getProxy().clear();
+
+					// insert the new entry
+					USIMobile.Session.getMenuMensaStore().add(store.first());
+					
+					// store data
+					USIMobile.Session.getMenuMensaStore().sync();
+				} else {
+					Ext.Msg.alert(
+						this.getProxy().getReader().rawData.title,
+						this.getProxy().getReader().rawData.message + '; Code: ' + this.getProxy().getReader().rawData.code
+					);
+				}
+			},
+			'',
+			{single: true}
+		);
+	},
+
+	updateShortNewsStore: function() {
 		USIMobile.WebService.getShortNews().on('load',
 			function(store, records, success) {
 				// check if there are any exceptions 
