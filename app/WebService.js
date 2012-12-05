@@ -92,4 +92,13 @@ Ext.define('USIMobile.WebService', {
 		var detailed_news_store = this.request(url, params, 'USIMobile.model.DetailedNews');
 		return detailed_news_store;
 	},
+
+	getTeachingTimetables: function() {
+		var url = USIMobile.Config.getTeachingTimetablesUrl();
+		// set parameters
+		var params = new Object();
+		// request
+		var teaching_timetables_store = this.request(url, params, 'USIMobile.model.TeachingTimetable');
+		return teaching_timetables_store;
+	},
 });

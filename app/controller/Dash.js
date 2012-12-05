@@ -7,8 +7,8 @@ Ext.define('USIMobile.controller.Dash', {
 
 	config: {
 		refs: {
+			dash: '#dash',
 			listaCorsiButton: 'button#listacorsi_dash_button',
-			orarioButton: 'button#orario_dash_button',
 			cercaPersoneButton: 'button#cercapersone_dash_button',
 			menuMensaButton: 'button#menumensa_dash_button',
 			usiSportButton: 'button#usisport_dash_button',
@@ -17,7 +17,6 @@ Ext.define('USIMobile.controller.Dash', {
 
 		control: {
 			listaCorsiButton: { tap: 'showListaCorsi' },
-			orarioButton: { tap: 'showOrario' },
 			cercaPersoneButton: { tap: 'showCercaPersone' },
 			menuMensaButton: { tap: 'showMenuMensa' },
 			usiSportButton: { tap: 'showUsiSport' },
@@ -31,10 +30,6 @@ Ext.define('USIMobile.controller.Dash', {
 
 	showListaCorsi: function(btn, e, eOpts){
 		console.log('show lista corsi');
-	},
-
-	showOrario: function(btn, e, eOpts){
-		console.log('show orario');
 	},
 
 	showCercaPersone: function(btn, e, eOpts){

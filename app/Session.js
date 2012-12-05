@@ -10,10 +10,12 @@ Ext.define('USIMobile.Session', {
 		username: '',
 		course: null,
 		settingsStore: null,
-		menuMensaStore: null,
 		aaiAccountStore: null,
+		updatesStore: null,
+		menuMensaStore: null,
 		shortNewsStore: null,
 		detailedNewsStore: null,
+		teachingTimetablesStore: null,
 	}
 	
 });

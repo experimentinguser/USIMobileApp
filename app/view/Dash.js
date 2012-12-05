@@ -35,10 +35,10 @@ Ext.define("USIMobile.view.Dash", {
 							},
 							{
 								xtype: 'button',
-								id: 'orario_dash_button',
-								baseCls: 'dash_button orario_dash_button',
+								id: 'teachingcalendar_dash_button',
+								baseCls: 'dash_button teachingcalendar_dash_button',
 								width: '33.3%',
-								html: '<div class="label_container"><div class="label">Orario</div></div>',
+								html: '<div class="label_container"><div class="label">Calendario</div></div>',
 							},
 						]
 					},

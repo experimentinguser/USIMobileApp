@@ -5,6 +5,7 @@ Ext.define('USIMobile.model.Updates', {
 		identifier: 'uuid',
 		fields: [ 
 			{name: 'menumensa', type: 'string'},
+			{name: 'teachingtimetables', type: 'string'},
 		]
 	}
 });

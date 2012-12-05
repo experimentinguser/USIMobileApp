@@ -2,12 +2,11 @@ Ext.define('USIMobile.store.ShortNews', {
 	extend: 'Ext.data.Store',
 
 	requires: [
-		'Ext.data.proxy.LocalStorage'
-	],
-
-	models: [
+		'Ext.data.proxy.LocalStorage',
 		'USIMobile.model.ShortNews',
 	],
+
+	models: [ ],
 
 	config: {
 		storeId: 'shortnews_store',

@@ -7,15 +7,15 @@ Ext.define('USIMobile.controller.News', {
 
 	config: {
 		refs: {
-		   dash: '#dash',
-		   shortNews: '#shortnews',
-		   detailedNews: '#detailednews',
-		   shortNewsButton: 'button#shortnews_dash_button',
+			dash: '#dash',
+			shortNews: '#shortnews',
+			detailedNews: '#detailednews',
+			shortNewsButton: 'button#shortnews_dash_button',
 		},
 
 		control: {
-		   shortNewsButton: { tap: 'showShortNews' },
-		   shortNews: { itemtap: 'showDetailedNews' },
+			shortNewsButton: { tap: 'showShortNews' },
+			shortNews: { itemtap: 'showDetailedNews' },
 		}
 	},
 	

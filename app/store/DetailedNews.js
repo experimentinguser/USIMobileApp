@@ -3,9 +3,6 @@ Ext.define('USIMobile.store.DetailedNews', {
 
 	requires: [
 		'Ext.data.proxy.LocalStorage',
-	],
-
-	models: [
 		'USIMobile.model.DetailedNews',
 	],
 
