@@ -16,8 +16,8 @@ Ext.define('USIMobile.Config', {
 
 	config : {
 		// url
-		//kurogoRestUrl: 'https://usimobile-dev.elearninglab.org/rest/',
-		kurogoRestUrl: 'http://localhost/kurogo/www/rest/',
+		kurogoRestUrl: 'https://usimobile-dev.elearninglab.org/rest/',
+		//kurogoRestUrl: 'http://localhost/kurogo/www/rest/',
 		updatesUrl: 'updates/check',
 		menuMensaUrl: 'mensa/get_menu',
 		shortNewsUrl: 'usinews/get_list',

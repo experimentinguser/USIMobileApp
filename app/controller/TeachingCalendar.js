@@ -108,7 +108,7 @@ Ext.define('USIMobile.controller.TeachingCalendar', {
 
 	selectTimetable: function(view, index, target, record) {
 		// record the faculty choice
-		USIMobile.app.getFile(record.get('url'), record.get('filename'), record.get('filename'));	
+		USIMobile.app.getFile(record.get('url'), record.get('filename'), record.get('mime'));	
 	},
 
 });
