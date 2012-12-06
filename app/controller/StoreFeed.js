@@ -49,7 +49,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 			this.updateTeachingTimetablesStore();
 		}
 
-		
+		this.updateShortNewsStore();
 		this.syncUpdatesStore(server_updates_store);
 	},
 
@@ -83,12 +83,12 @@ Ext.define('USIMobile.controller.StoreFeed', {
 			function(store, records, success) {
 				// check if there are any exceptions 
 				// check for errors here
-				if(this.getProxy().getReader().rawData.error == null){
+				if(store.getProxy().getReader().rawData.error == null){
 					// remove old entries
 					USIMobile.Session.getShortNewsStore().removeAll();
 					USIMobile.Session.getShortNewsStore().getProxy().clear();
 
-					this.each(function(news_entry) {
+					store.each(function(news_entry) {
 						// format date
 						string_date = news_entry.get('publish_start_date');
 						timestamp = Ext.Date.parse(string_date, "Y-m-d")
@@ -97,16 +97,19 @@ Ext.define('USIMobile.controller.StoreFeed', {
 						news_entry.setDirty();
 						USIMobile.Session.getShortNewsStore().add(news_entry);
 					});
+
+					// update the detailed news store
+					USIMobile.Session.getShortNewsStore().on('write', this.updateDetailedNewsStore, this, {single: true});
 					// store data
 					USIMobile.Session.getShortNewsStore().sync();
 				} else {
 					Ext.Msg.alert(
-						this.getProxy().getReader().rawData.title,
-						this.getProxy().getReader().rawData.message + '; Code: ' + this.getProxy().getReader().rawData.code
+						store.getProxy().getReader().rawData.title,
+						store.getProxy().getReader().rawData.message + '; Code: ' + store.getProxy().getReader().rawData.code
 					);
 				}
 			},
-			'',
+			this,
 			{single: true}
 		);
 	},

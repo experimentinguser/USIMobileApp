@@ -1,10 +1,10 @@
-Ext.define("USIMobile.view.TeachingCalendar", {
+Ext.define("USIMobile.view.Calendar", {
 	extend: 'Ext.dataview.List',
-	xtype: 'teachingcalendar',
+	xtype: 'calendar',
 
 	config: {
-		id: 'teachingcalendar',
-		title: 'Teaching Calendar', 
+		id: 'calendar',
+		title: 'Calendar', 
 		emptyText: 'No info available.',
 		itemTpl: '{title}',
 		data: [

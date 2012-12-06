@@ -11166,12 +11166,12 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .short_news_dash_button { }
-.lista_corsi_dash_button { }
-.timetables_dash_button { }
-.cerca_persone_dash_button { }
-.menu_mensa_dash_button { }
-.usi_sport_dash_button { }
-.offerte_lavoro_dash_button { }
+.courses_dash_button { }
+.calendar_dash_button { }
+.people_dash_button { }
+.mensa_dash_button { }
+.sport_dash_button { }
+.jobs_dash_button { }
 
 .short_news_publish_date{
 	color: gray;

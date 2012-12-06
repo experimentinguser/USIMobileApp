@@ -10,11 +10,11 @@ Ext.define('USIMobile.controller.News', {
 			dash: '#dash',
 			shortNews: '#shortnews',
 			detailedNews: '#detailednews',
-			shortNewsButton: 'button#shortnews_dash_button',
+			newsButton: 'button#news_dash_button',
 		},
 
 		control: {
-			shortNewsButton: { tap: 'showShortNews' },
+			newsButton: { tap: 'showShortNews' },
 			shortNews: { itemtap: 'showDetailedNews' },
 		}
 	},

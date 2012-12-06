@@ -11,6 +11,7 @@ Ext.define("USIMobile.view.Dash", {
 		items: [	
 			{
 				xtype: 'container',
+				title: 'USI',
 				layout: 'vbox',
 				items:[
 					{
@@ -21,24 +22,24 @@ Ext.define("USIMobile.view.Dash", {
 						items: [
 							{
 								xtype: 'button',
-								id: 'shortnews_dash_button',
-								baseCls: 'dash_button short_news_dash_button',
+								id: 'courses_dash_button',
+								baseCls: 'dash_button courses_dash_button',
 								width: '33.3%',
-								html: '<div class="label_container"><div class="label">USI News</div></div>',
+								html: '<div class="label_container"><div class="label">Courses</div></div>',
 							},
 							{
 								xtype: 'button',
-								id: 'listacorsi_dash_button',
-								baseCls: 'dash_button lista_corsi_dash_button',
+								id: 'calendar_dash_button',
+								baseCls: 'dash_button calendar_dash_button',
 								width: '33.3%',
-								html: '<div class="label_container"><div class="label">Lista Corsi</div></div>',
+								html: '<div class="label_container"><div class="label">Calendar</div></div>',
 							},
 							{
 								xtype: 'button',
-								id: 'teachingcalendar_dash_button',
-								baseCls: 'dash_button teachingcalendar_dash_button',
+								id: 'empty_b',
+								baseCls: 'dash_button item_dash_button',
 								width: '33.3%',
-								html: '<div class="label_container"><div class="label">Calendario</div></div>',
+								html: '<div class="label_container"><div class="label">Agenda</div></div>',
 							},
 						]
 					},
@@ -50,25 +51,26 @@ Ext.define("USIMobile.view.Dash", {
 						items: [
 							{
 								xtype: 'button',
-								id: 'cercapersone_dash_button',
-								baseCls: 'dash_button cerca_persone_dash_button',
+								id: 'library_dash_button',
+								baseCls: 'dash_button item_dash_button',
 								width: '33.3%',
-								html: '<div class="label_container"><div class="label">Cerca Persone</div></div>',
+								html: '<div class="label_container"><div class="label">Library</div></div>',
 							},
 							{
 								xtype: 'button',
-								id: 'menumensa_dash_button',
-								baseCls: 'dash_button menu_mensa_dash_button',
+								id: 'people_dash_button',
+								baseCls: 'dash_button people_dash_button',
 								width: '33.3%',
-								html: '<div class="label_container"><div class="label">Menu Mensa</div></div>',
+								html: '<div class="label_container"><div class="label">People</div></div>',
 							},
 							{
 								xtype: 'button',
-								id: 'usisport_dash_button',
-								baseCls: 'dash_button usi_sport_dash_button',
+								id: 'news_dash_button',
+								baseCls: 'dash_button news_dash_button',
 								width: '33.3%',
-								html: '<div class="label_container"><div class="label">USI Sport</div></div>',
+								html: '<div class="label_container"><div class="label">News</div></div>',
 							},
+							
 						]
 					},
 					{
@@ -79,25 +81,26 @@ Ext.define("USIMobile.view.Dash", {
 						items: [
 							{
 								xtype: 'button',
-								id: 'offertelavoro_dash_button',
-								baseCls: 'dash_button offerte_lavoro_dash_button',
+								id: 'mensa_dash_button',
+								baseCls: 'dash_button mensa_dash_button',
 								width: '33.3%',
-								html: '<div class="label_container"><div class="label">Offerte Lavoro</div></div>',
+								html: '<div class="label_container"><div class="label">Mensa</div></div>',
 							},
 							{
 								xtype: 'button',
-								id: 'empty_a',
-								baseCls: 'dash_button item_dash_button',
+								id: 'sport_dash_button',
+								baseCls: 'dash_button sport_dash_button',
 								width: '33.3%',
-								html: '<div class="label_container"><div class="label">Empty Slot</div></div>',
+								html: '<div class="label_container"><div class="label">Sport</div></div>',
 							},
 							{
 								xtype: 'button',
-								id: 'empty_b',
-								baseCls: 'dash_button item_dash_button',
+								id: 'jobs_dash_button',
+								baseCls: 'dash_button jobs_dash_button',
 								width: '33.3%',
-								html: '<div class="label_container"><div class="label">Empty Slot</div></div>',
+								html: '<div class="label_container"><div class="label">Job Opp.</div></div>',
 							},
+	
 						]
 					},
 				]

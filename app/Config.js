@@ -26,5 +26,6 @@ Ext.define('USIMobile.Config', {
 		homeOrgsUrl: 'aai/get_idps',
 		// local paths
 		fileCacheDir: 'USIMobile',
+		verbose: true,
 	}
 });

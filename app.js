@@ -32,7 +32,7 @@ Ext.application({
 		'USIMobile.view.Main',
 		'USIMobile.view.ShortNews',
 		'USIMobile.view.DetailedNews',
-		'USIMobile.view.TeachingCalendar',
+		'USIMobile.view.Calendar',
 		'USIMobile.view.Faculties',
 		'USIMobile.view.Levels',
 		'USIMobile.view.Timetables',
@@ -47,7 +47,7 @@ Ext.application({
 		"USIMobile.controller.AaiAccount", 
 		"USIMobile.controller.StoreFeed",
 		"USIMobile.controller.News", 
-		"USIMobile.controller.TeachingCalendar",
+		"USIMobile.controller.Calendar",
 		"USIMobile.controller.Dash", 
 	],
 
@@ -95,7 +95,10 @@ Ext.application({
     },
 	
 	openURL: function(urladdr){
-		console.log(urladdr);
+
+		if(USIMobile.Config.getVerbose()) {
+			console.log('===> Opening URL: '+urladdr);
+		}
 		window.plugins.webintent.startActivity(
 			{
 				action: WebIntent.ACTION_VIEW,
@@ -148,7 +151,9 @@ Ext.application({
 				USIMobile.app.openFile(filePath, mime);
 			}
 
-			console.log(JSON.stringify(result));
+			if(USIMobile.Config.getVerbose()) {
+				console.log(JSON.stringify(result));
+			}
 		};
 
 		// fail function

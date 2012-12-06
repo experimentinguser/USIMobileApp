@@ -1,4 +1,4 @@
-Ext.define('USIMobile.controller.TeachingCalendar', {
+Ext.define('USIMobile.controller.Calendar', {
 	extend: 'Ext.app.Controller',
 
 	requires: [
@@ -7,8 +7,8 @@ Ext.define('USIMobile.controller.TeachingCalendar', {
 	config: {
 		refs: {
 			dash: '#dash',
-			teachingCalendarButton: 'button#teachingcalendar_dash_button',
-			teachingCalendar: '#teachingcalendar',
+			calendarButton: 'button#calendar_dash_button',
+			calendar: '#calendar',
 			faculties: '#faculties',
 			levels: '#levels',
 			timetables: '#timetables',
@@ -16,8 +16,8 @@ Ext.define('USIMobile.controller.TeachingCalendar', {
 		},
 
 		control: {
-			teachingCalendarButton: { tap: 'showTeachingCalendar' },
-			teachingCalendar: { itemtap: 'selectCalendar' },
+			calendarButton: { tap: 'showCalendar' },
+			calendar: { itemtap: 'selectCalendar' },
 			faculties: { itemtap: 'selectFaculty' },
 			levels: { itemtap: 'selectLevel' },
 			timetables: { itemtap: 'selectTimetable' },
@@ -29,13 +29,13 @@ Ext.define('USIMobile.controller.TeachingCalendar', {
 		this.filter = { calendar: null, faculty: null, level: null };
 	},
 
-	showTeachingCalendar: function(btn, e, eOpts){
+	showCalendar: function(btn, e, eOpts){
 		// display news
-		if(typeof this.getTeachingCalendar() == 'object') {
-			this.getDash().push(this.getTeachingCalendar());
+		if(typeof this.getCalendar() == 'object') {
+			this.getDash().push(this.getCalendar());
 		} else {
 			this.getDash().push({
-				xtype: 'teachingcalendar',	
+				xtype: 'calendar',	
 			});
 		}
 	},
@@ -108,7 +108,11 @@ Ext.define('USIMobile.controller.TeachingCalendar', {
 
 	selectTimetable: function(view, index, target, record) {
 		// record the faculty choice
-		USIMobile.app.getFile(record.get('url'), record.get('filename'), record.get('mime'));	
+		if(record.get('mime') == 'website') {
+			USIMobile.app.openURL(record.get('url'));	
+		} else {
+			USIMobile.app.getFile(record.get('url'), record.get('filename'), record.get('mime'));	
+		}
 	},
 
 });

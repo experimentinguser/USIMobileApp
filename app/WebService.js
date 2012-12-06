@@ -30,7 +30,7 @@ Ext.define('USIMobile.WebService', {
 						pageParam: false,
 						startParam: false,
 						limitParam: false,
-						noCache: false,
+						noCache: true,
 						reader: {
 								type: 'json',
 								rootProperty: 'response',
