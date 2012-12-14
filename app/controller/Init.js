@@ -8,10 +8,11 @@ Ext.define('USIMobile.controller.Init', {
 			'USIMobile.store.Settings',
 			'USIMobile.store.AaiAccount',
 			'USIMobile.store.Updates',
-			'USIMobile.store.MenuMensa',
+			'USIMobile.store.Courses',
+			'USIMobile.store.TeachingTimetables',
 			'USIMobile.store.ShortNews',
 			'USIMobile.store.DetailedNews',
-			'USIMobile.store.TeachingTimetables',
+			'USIMobile.store.MenuMensa',
 		],
 
 		refs: {
@@ -52,11 +53,15 @@ Ext.define('USIMobile.controller.Init', {
 		updates_store.load();
 		USIMobile.Session.setUpdatesStore(updates_store);
 
+		// create the Short News store
+		var courses_store = Ext.create('USIMobile.store.Courses'); 
+		courses_store.load();
+		USIMobile.Session.setCoursesStore(courses_store);
 
-		// create the menumensa store
-		var menumensa_store = Ext.create('USIMobile.store.MenuMensa'); 
-		menumensa_store.load();
-		USIMobile.Session.setMenuMensaStore(menumensa_store);
+		// create the Teaching Timetables store
+		var teaching_timetables_store = Ext.create('USIMobile.store.TeachingTimetables'); 
+		teaching_timetables_store.load();
+		USIMobile.Session.setTeachingTimetablesStore(teaching_timetables_store);
 
 		// create the Short News store
 		var short_news_store = Ext.create('USIMobile.store.ShortNews'); 
@@ -68,11 +73,10 @@ Ext.define('USIMobile.controller.Init', {
 		detailed_news_store.load();
 		USIMobile.Session.setDetailedNewsStore(detailed_news_store);
 
-		// create the Teaching Timetables store
-		var teaching_timetables_store = Ext.create('USIMobile.store.TeachingTimetables'); 
-		teaching_timetables_store.load();
-		USIMobile.Session.setTeachingTimetablesStore(teaching_timetables_store);
-
+		// create the menumensa store
+		var menumensa_store = Ext.create('USIMobile.store.MenuMensa'); 
+		menumensa_store.load();
+		USIMobile.Session.setMenuMensaStore(menumensa_store);
 
 		/*********************************
 		 * DEBUG/LOG MESSAGES
@@ -106,11 +110,11 @@ Ext.define('USIMobile.controller.Init', {
 						console.log(record.getData());
 					});
 				});
-
-			menumensa_store.on(
+				
+			courses_store.on(
 				'write',
 				function(store, operation) {
-					USIMobile.log('=> menumensa_store operation: action='+operation.getAction()+'; success: '+operation.wasSuccessful());
+					USIMobile.log('=> courses_store operation: action='+operation.getAction()+'; success: '+operation.wasSuccessful());
 					Ext.iterate(operation.getRecords(), function(record){
 						console.log(' --> data: ');
 						console.log(record.getData());
@@ -127,6 +131,15 @@ Ext.define('USIMobile.controller.Init', {
 					});
 				});
 
+			teaching_timetables_store.on(
+				'write',
+				function(store, operation) {
+					USIMobile.log('=> teaching_timetables_store operation: action='+operation.getAction()+'; success: '+operation.wasSuccessful());
+					Ext.iterate(operation.getRecords(), function(record){
+						console.log(' --> faculty: '+record.get('faculty'));
+					});
+				});
+
 			detailed_news_store.on(
 				'write',
 				function(store, operation) {
@@ -137,14 +150,16 @@ Ext.define('USIMobile.controller.Init', {
 					});
 				});
 
-			teaching_timetables_store.on(
+			menumensa_store.on(
 				'write',
 				function(store, operation) {
-					USIMobile.log('=> teaching_timetables_store operation: action='+operation.getAction()+'; success: '+operation.wasSuccessful());
+					USIMobile.log('=> menumensa_store operation: action='+operation.getAction()+'; success: '+operation.wasSuccessful());
 					Ext.iterate(operation.getRecords(), function(record){
-						console.log(' --> faculty: '+record.get('faculty'));
+						console.log(' --> data: ');
+						console.log(record.getData());
 					});
 				});
+			
 		}
 	}
 });

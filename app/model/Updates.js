@@ -4,8 +4,10 @@ Ext.define('USIMobile.model.Updates', {
 	config: {
 		identifier: 'uuid',
 		fields: [ 
-			{name: 'menumensa', type: 'string'},
+			{name: 'courses', type: 'string'},
 			{name: 'teachingtimetables', type: 'string'},
+			{name: 'usinews', type: 'string'},
+			{name: 'menumensa', type: 'string'},
 		]
 	}
 });

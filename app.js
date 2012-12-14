@@ -30,6 +30,9 @@ Ext.application({
 		'USIMobile.view.UsageAgreement',
 		'USIMobile.view.AaiAccount',
 		'USIMobile.view.Main',
+		'USIMobile.view.SearchCourses',
+		'USIMobile.view.Courses',
+		'USIMobile.view.Course',
 		'USIMobile.view.ShortNews',
 		'USIMobile.view.DetailedNews',
 		'USIMobile.view.Calendar',
@@ -46,9 +49,10 @@ Ext.application({
 		"USIMobile.controller.UsageAgreement", 
 		"USIMobile.controller.AaiAccount", 
 		"USIMobile.controller.StoreFeed",
-		"USIMobile.controller.News", 
-		"USIMobile.controller.Calendar",
 		"USIMobile.controller.Dash", 
+		"USIMobile.controller.SearchCourses",
+		"USIMobile.controller.Calendar",
+		"USIMobile.controller.News", 
 	],
 
     icon: {

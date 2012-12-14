@@ -33,13 +33,14 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	},
 
 	updateLocalStores: function(server_updates_store) {
-		// menumensa store
+		// courses store
 		if(
-			USIMobile.Session.getMenuMensaStore().getCount() == 0 ||
-			server_updates_store.first().get('menumensa') != USIMobile.Session.getUpdatesStore().first().get('menumensa')
+			USIMobile.Session.getCoursesStore().getCount() == 0 ||
+			server_updates_store.first().get('courses') != USIMobile.Session.getUpdatesStore().first().get('courses')
 		) {
-			this.updateMenuMensaStore();
+			this.updateCoursesStore();
 		}
+
 
 		// teaching timetables store
 		if( 
@@ -49,23 +50,41 @@ Ext.define('USIMobile.controller.StoreFeed', {
 			this.updateTeachingTimetablesStore();
 		}
 
-		this.updateShortNewsStore();
+		// usinews store
+		if(
+			USIMobile.Session.getShortNewsStore().getCount() == 0 ||
+			server_updates_store.first().get('usinews') != USIMobile.Session.getUpdatesStore().first().get('usinews')
+		) {
+			this.updateShortNewsStore();
+		}
+
+		// menumensa store
+		if(
+			USIMobile.Session.getMenuMensaStore().getCount() == 0 ||
+			server_updates_store.first().get('menumensa') != USIMobile.Session.getUpdatesStore().first().get('menumensa')
+		) {
+			this.updateMenuMensaStore();
+		}
+
 		this.syncUpdatesStore(server_updates_store);
 	},
 
-	updateMenuMensaStore: function() {
-		USIMobile.WebService.getMenuMensa().on('load',
+	updateCoursesStore: function() {
+		USIMobile.WebService.getCourses().on('load',
 			function(store, records, success) {
 				// check if there are any exceptions 
 				// check for errors here
 				if(this.getProxy().getReader().rawData.error == null){
 					// remove old entries
-					USIMobile.Session.getMenuMensaStore().removeAll();
-					USIMobile.Session.getMenuMensaStore().getProxy().clear();
-					// insert the new entry
-					USIMobile.Session.getMenuMensaStore().add(store.first());
+					USIMobile.Session.getCoursesStore().removeAll();
+					USIMobile.Session.getCoursesStore().getProxy().clear();
+					store.each(function(course_entry) {
+						// insert the new entry
+						//course_entry.setDirty();
+						USIMobile.Session.getCoursesStore().add(course_entry);
+					});
 					// store data
-					USIMobile.Session.getMenuMensaStore().sync();
+					USIMobile.Session.getCoursesStore().sync();
 				} else {
 					Ext.Msg.alert(
 						this.getProxy().getReader().rawData.title,
@@ -146,6 +165,31 @@ Ext.define('USIMobile.controller.StoreFeed', {
 					});
 					// store data
 					USIMobile.Session.getTeachingTimetablesStore().sync();
+				} else {
+					Ext.Msg.alert(
+						this.getProxy().getReader().rawData.title,
+						this.getProxy().getReader().rawData.message + '; Code: ' + this.getProxy().getReader().rawData.code
+					);
+				}
+			},
+			'',
+			{single: true}
+		);
+	},
+
+	updateMenuMensaStore: function() {
+		USIMobile.WebService.getMenuMensa().on('load',
+			function(store, records, success) {
+				// check if there are any exceptions 
+				// check for errors here
+				if(this.getProxy().getReader().rawData.error == null){
+					// remove old entries
+					USIMobile.Session.getMenuMensaStore().removeAll();
+					USIMobile.Session.getMenuMensaStore().getProxy().clear();
+					// insert the new entry
+					USIMobile.Session.getMenuMensaStore().add(store.first());
+					// store data
+					USIMobile.Session.getMenuMensaStore().sync();
 				} else {
 					Ext.Msg.alert(
 						this.getProxy().getReader().rawData.title,

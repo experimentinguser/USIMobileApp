@@ -4,10 +4,11 @@ Ext.define('USIMobile.Config', {
 	constructor: function(config) {
 		// DRY config approach
 		this.config.updatesUrl = this.config.kurogoRestUrl + this.config.updatesUrl;
-		this.config.menuMensaUrl = this.config.kurogoRestUrl + this.config.menuMensaUrl;
+		this.config.coursesUrl = this.config.kurogoRestUrl + this.config.coursesUrl;
+		this.config.teachingTimetablesUrl = this.config.kurogoRestUrl + this.config.teachingTimetablesUrl;
 		this.config.shortNewsUrl = this.config.kurogoRestUrl + this.config.shortNewsUrl;
 		this.config.detailedNewsUrl = this.config.kurogoRestUrl + this.config.detailedNewsUrl;
-		this.config.teachingTimetablesUrl = this.config.kurogoRestUrl + this.config.teachingTimetablesUrl;
+		this.config.menuMensaUrl = this.config.kurogoRestUrl + this.config.menuMensaUrl;
 		this.config.homeOrgsUrl = this.config.kurogoRestUrl + this.config.homeOrgsUrl;
 
   		this.initConfig(config);
@@ -16,13 +17,14 @@ Ext.define('USIMobile.Config', {
 
 	config : {
 		// url
-		kurogoRestUrl: 'https://usimobile-dev.elearninglab.org/rest/',
-		//kurogoRestUrl: 'http://localhost/kurogo/www/rest/',
+		//kurogoRestUrl: 'https://usimobile-dev.elearninglab.org/rest/',
+		kurogoRestUrl: 'http://localhost/kurogo/www/rest/',
 		updatesUrl: 'updates/check',
-		menuMensaUrl: 'mensa/get_menu',
+		coursesUrl: 'courses/get',
+		teachingTimetablesUrl: 'teachingtimetables/get',
 		shortNewsUrl: 'usinews/get_list',
 		detailedNewsUrl: 'usinews/get_item',
-		teachingTimetablesUrl: 'teachingtimetables/get',
+		menuMensaUrl: 'mensa/get_menu',
 		homeOrgsUrl: 'aai/get_idps',
 		// local paths
 		fileCacheDir: 'USIMobile',

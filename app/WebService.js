@@ -65,13 +65,22 @@ Ext.define('USIMobile.WebService', {
 		return updates_store;
 	},
 
-	getMenuMensa: function() {
-		var url = USIMobile.Config.getMenuMensaUrl();
+	getCourses: function() {
+		var url = USIMobile.Config.getCoursesUrl();
 		// set parameters
 		var params = new Object();
 		// request
-		var menumensa_store = this.request(url, params, 'USIMobile.model.MenuMensa');
-		return menumensa_store;
+		var courses_store = this.request(url, params, 'USIMobile.model.Course');
+		return courses_store;
+	},
+
+	getTeachingTimetables: function() {
+		var url = USIMobile.Config.getTeachingTimetablesUrl();
+		// set parameters
+		var params = new Object();
+		// request
+		var teaching_timetables_store = this.request(url, params, 'USIMobile.model.TeachingTimetable');
+		return teaching_timetables_store;
 	},
 
 	getShortNews: function() {
@@ -93,12 +102,12 @@ Ext.define('USIMobile.WebService', {
 		return detailed_news_store;
 	},
 
-	getTeachingTimetables: function() {
-		var url = USIMobile.Config.getTeachingTimetablesUrl();
+	getMenuMensa: function() {
+		var url = USIMobile.Config.getMenuMensaUrl();
 		// set parameters
 		var params = new Object();
 		// request
-		var teaching_timetables_store = this.request(url, params, 'USIMobile.model.TeachingTimetable');
-		return teaching_timetables_store;
+		var menumensa_store = this.request(url, params, 'USIMobile.model.MenuMensa');
+		return menumensa_store;
 	},
 });

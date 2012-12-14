@@ -11189,3 +11189,17 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .detailed_news_title{ }
+
+.course_title,
+.course_description,
+.course_professors,
+.course_level,
+.course_credits,
+.course_semester,
+.course_semester_start,
+.course_semester_end {
+	padding: 5px;
+	margin-top: 10px;
+	background-color: white;
+}
+
