@@ -11,7 +11,7 @@ Ext.define('USIMobile.controller.Calendar', {
 			calendar: '#calendar',
 			faculties: '#faculties',
 			levels: '#levels',
-			timetables: '#timetables',
+			teachingTimetables: '#teachingtimetables',
 			examinationTimetables: '#examinationtimetables',
 		},
 
@@ -20,7 +20,8 @@ Ext.define('USIMobile.controller.Calendar', {
 			calendar: { itemtap: 'selectCalendar' },
 			faculties: { itemtap: 'selectFaculty' },
 			levels: { itemtap: 'selectLevel' },
-			timetables: { itemtap: 'selectTimetable' },
+			teachingTimetables: { itemtap: 'selectTeachingTimetable' },
+			examinationTimetables: { itemtap: 'selectExaminationTimetable' },
 		}
 	},
 	
@@ -75,40 +76,77 @@ Ext.define('USIMobile.controller.Calendar', {
 	selectLevel: function(view, index, target, record) {
 		// record the faculty choice
 		this.filter.level = record.get('id');
-		this.showTimetables();
-	},
 
-	showTimetables: function() {
-		if(typeof this.getTimetables() == 'object') {
-			this.getTimetables().store = this.getFilteredTimetablesStore();
-			this.getDash().push(this.getTimetables());
-		} else {
-			this.getDash().push({
-				xtype: 'timetables',
-				store: this.getFilteredTimetablesStore()
-			});
-		}
-	},
-
-	getFilteredTimetablesStore: function(){
-		// filter teaching timetables
 		switch(this.filter.calendar) {
-			case 'teaching':
-				USIMobile.Session.getTeachingTimetablesStore().clearFilter();
-				USIMobile.Session.getTeachingTimetablesStore().filterBy(
-					function(record) {
-							return record.get('faculty') === this.filter.faculty && record.get('level') === this.filter.level;
-					},
-					this
-				);
-				return USIMobile.Session.getTeachingTimetablesStore();
+			case 'teaching':	
+				this.showTeachingTimetables();
+				break;
+			case 'examination':	
+				this.showExaminationTimetables();
 				break;
 		}
 	},
 
-	selectTimetable: function(view, index, target, record) {
+	showTeachingTimetables: function() {
+		if(typeof this.getTeachingTimetables() == 'object') {
+			this.getTeachingTimetables().store = this.getFilteredTeachingTimetablesStore();
+			this.getDash().push(this.getTeachingTimetables());
+		} else {
+			this.getDash().push({
+				xtype: 'teachingtimetables',
+				store: this.getFilteredTeachingTimetablesStore()
+			});
+		}
+	},
+
+	getFilteredTeachingTimetablesStore: function(){
+		USIMobile.Session.getTeachingTimetablesStore().clearFilter();
+		USIMobile.Session.getTeachingTimetablesStore().filterBy(
+			function(record) {
+					return record.get('faculty') === this.filter.faculty && record.get('level') === this.filter.level;
+			},
+			this
+		);
+		return USIMobile.Session.getTeachingTimetablesStore();
+	},
+
+	selectTeachingTimetable: function(view, index, target, record) {
 		// record the faculty choice
 		if(record.get('mime') == 'website') {
+			USIMobile.app.openURL(record.get('url'));	
+		} else {
+			USIMobile.app.getFile(record.get('url'), record.get('filename'), record.get('mime'));	
+		}
+	},
+
+	showExaminationTimetables: function() {
+		if(typeof this.getExaminationTimetables() == 'object') {
+			this.getExaminationTimetables().store = this.getFilteredExaminationTimetablesStore();
+			this.getDash().push(this.getExaminationTimetables());
+		} else {
+			this.getDash().push({
+				xtype: 'examinationtimetables',
+				store: this.getFilteredExaminationTimetablesStore()
+			});
+		}
+	},
+
+	getFilteredExaminationTimetablesStore: function(){
+		USIMobile.Session.getExaminationTimetablesStore().clearFilter();
+		USIMobile.Session.getExaminationTimetablesStore().filterBy(
+			function(record) {
+					return record.get('faculty') === this.filter.faculty && record.get('level') === this.filter.level;
+			},
+			this
+		);
+		return USIMobile.Session.getExaminationTimetablesStore();
+	},
+
+	selectExaminationTimetable: function(view, index, target, record) {
+		// record the faculty choice
+		if(record.get('url') == null || record.get('filename') == null || record.get('mime') == null) {
+			Ext.Msg.alert('File not available','This timetable has not been provided yet.');
+		}else if(record.get('mime') == 'website') {
 			USIMobile.app.openURL(record.get('url'));	
 		} else {
 			USIMobile.app.getFile(record.get('url'), record.get('filename'), record.get('mime'));	

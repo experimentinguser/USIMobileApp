@@ -10,6 +10,7 @@ Ext.define('USIMobile.controller.Init', {
 			'USIMobile.store.Updates',
 			'USIMobile.store.Courses',
 			'USIMobile.store.TeachingTimetables',
+			'USIMobile.store.ExaminationTimetables',
 			'USIMobile.store.ShortNews',
 			'USIMobile.store.DetailedNews',
 			'USIMobile.store.MenuMensa',
@@ -62,6 +63,11 @@ Ext.define('USIMobile.controller.Init', {
 		var teaching_timetables_store = Ext.create('USIMobile.store.TeachingTimetables'); 
 		teaching_timetables_store.load();
 		USIMobile.Session.setTeachingTimetablesStore(teaching_timetables_store);
+
+		// create the Examination Timetables store
+		var examination_timetables_store = Ext.create('USIMobile.store.ExaminationTimetables'); 
+		examination_timetables_store.load();
+		USIMobile.Session.setExaminationTimetablesStore(examination_timetables_store);
 
 		// create the Short News store
 		var short_news_store = Ext.create('USIMobile.store.ShortNews'); 
@@ -139,6 +145,16 @@ Ext.define('USIMobile.controller.Init', {
 						console.log(' --> faculty: '+record.get('faculty'));
 					});
 				});
+
+			examination_timetables_store.on(
+				'write',
+				function(store, operation) {
+					USIMobile.log('=> examination_timetables_store operation: action='+operation.getAction()+'; success: '+operation.wasSuccessful());
+					Ext.iterate(operation.getRecords(), function(record){
+						console.log(' --> faculty: '+record.get('faculty'));
+					});
+				});
+
 
 			detailed_news_store.on(
 				'write',

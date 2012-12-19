@@ -11203,3 +11203,22 @@ input[type="search"]::-webkit-search-cancel-button {
 	background-color: white;
 }
 
+.examination_session {
+	padding-bottom: 5px;
+}
+
+.registration_begin,
+.registration_end,
+.examination_begin,
+.examination_end {
+	font-size: small;
+	color: gray;
+}
+
+.registration_end,
+.examination_end {
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+

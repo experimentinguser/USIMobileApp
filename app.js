@@ -38,7 +38,7 @@ Ext.application({
 		'USIMobile.view.Calendar',
 		'USIMobile.view.Faculties',
 		'USIMobile.view.Levels',
-		'USIMobile.view.Timetables',
+		'USIMobile.view.TeachingTimetables',
 		'USIMobile.view.ExaminationTimetables',
 		'USIMobile.view.Foo',
 		'USIMobile.view.Dash',
@@ -169,6 +169,14 @@ Ext.application({
 		};
 		// get the file
 		window.plugins.downloader.downloadFile(url, {'overwrite': true}, successFunc, failFunc, filename, dir);
+	},
+
+	formatDate: function(date, date_format) {
+		if(date_format == null) {
+			date_format = "Y-m-d";
+		}
+		return Ext.Date.format(Ext.Date.parse(date, date_format), "l d F Y");
 	}
+
 
 });

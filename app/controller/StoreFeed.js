@@ -50,6 +50,14 @@ Ext.define('USIMobile.controller.StoreFeed', {
 			this.updateTeachingTimetablesStore();
 		}
 
+		// examination timetables store
+		if( 
+			USIMobile.Session.getExaminationTimetablesStore().getCount() == 0 || 
+			server_updates_store.first().get('examinationtimetables') != USIMobile.Session.getUpdatesStore().first().get('examinationtimetables')
+		) {
+			this.updateExaminationTimetablesStore();
+		}
+
 		// usinews store
 		if(
 			USIMobile.Session.getShortNewsStore().getCount() == 0 ||
@@ -108,11 +116,6 @@ Ext.define('USIMobile.controller.StoreFeed', {
 					USIMobile.Session.getShortNewsStore().getProxy().clear();
 
 					store.each(function(news_entry) {
-						// format date
-						string_date = news_entry.get('publish_start_date');
-						timestamp = Ext.Date.parse(string_date, "Y-m-d")
-						formated_date = Ext.Date.format(timestamp, "l d F Y"); 
-						news_entry.set('publish_start_date', formated_date);
 						news_entry.setDirty();
 						USIMobile.Session.getShortNewsStore().add(news_entry);
 					});
@@ -137,11 +140,6 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		USIMobile.Session.getShortNewsStore().each(function(entry){
 			USIMobile.WebService.getDetailedNews(entry.get('id')).on('load', function(store){
 				news_entry = store.first();
-				// format date
-				string_date = news_entry.get('publish_start_date');
-				timestamp = Ext.Date.parse(string_date, "Y-m-d")
-				formated_date = Ext.Date.format(timestamp, "l d F Y"); 
-				news_entry.set('publish_start_date', formated_date);
 				news_entry.setDirty();
 				USIMobile.Session.getDetailedNewsStore().add(news_entry);
 				USIMobile.Session.getDetailedNewsStore().sync();
@@ -165,6 +163,34 @@ Ext.define('USIMobile.controller.StoreFeed', {
 					});
 					// store data
 					USIMobile.Session.getTeachingTimetablesStore().sync();
+				} else {
+					Ext.Msg.alert(
+						this.getProxy().getReader().rawData.title,
+						this.getProxy().getReader().rawData.message + '; Code: ' + this.getProxy().getReader().rawData.code
+					);
+				}
+			},
+			'',
+			{single: true}
+		);
+	},
+
+	updateExaminationTimetablesStore: function() {
+		USIMobile.WebService.getExaminationTimetables().on('load',
+			function(store, records, success) {
+				// check if there are any exceptions 
+				// check for errors here
+				if(this.getProxy().getReader().rawData.error == null){
+					// remove old entries
+					USIMobile.Session.getExaminationTimetablesStore().removeAll();
+					USIMobile.Session.getExaminationTimetablesStore().getProxy().clear();
+					// insert the entries
+					this.each(function(entry){
+						entry.setDirty();
+						USIMobile.Session.getExaminationTimetablesStore().add(entry);
+					});
+					// store data
+					USIMobile.Session.getExaminationTimetablesStore().sync();
 				} else {
 					Ext.Msg.alert(
 						this.getProxy().getReader().rawData.title,

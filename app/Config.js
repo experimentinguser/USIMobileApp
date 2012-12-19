@@ -6,6 +6,7 @@ Ext.define('USIMobile.Config', {
 		this.config.updatesUrl = this.config.kurogoRestUrl + this.config.updatesUrl;
 		this.config.coursesUrl = this.config.kurogoRestUrl + this.config.coursesUrl;
 		this.config.teachingTimetablesUrl = this.config.kurogoRestUrl + this.config.teachingTimetablesUrl;
+		this.config.examinationTimetablesUrl = this.config.kurogoRestUrl + this.config.examinationTimetablesUrl;
 		this.config.shortNewsUrl = this.config.kurogoRestUrl + this.config.shortNewsUrl;
 		this.config.detailedNewsUrl = this.config.kurogoRestUrl + this.config.detailedNewsUrl;
 		this.config.menuMensaUrl = this.config.kurogoRestUrl + this.config.menuMensaUrl;
@@ -22,12 +23,13 @@ Ext.define('USIMobile.Config', {
 		updatesUrl: 'updates/check',
 		coursesUrl: 'courses/get',
 		teachingTimetablesUrl: 'teachingtimetables/get',
+		examinationTimetablesUrl: 'examinationtimetables/get',
 		shortNewsUrl: 'usinews/get_list',
 		detailedNewsUrl: 'usinews/get_item',
 		menuMensaUrl: 'mensa/get_menu',
 		homeOrgsUrl: 'aai/get_idps',
 		// local paths
 		fileCacheDir: 'USIMobile',
-		verbose: true,
+		verbose: false,
 	}
 });

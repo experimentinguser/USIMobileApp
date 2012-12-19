@@ -6,6 +6,7 @@ Ext.define('USIMobile.model.Updates', {
 		fields: [ 
 			{name: 'courses', type: 'string'},
 			{name: 'teachingtimetables', type: 'string'},
+			{name: 'examinationtimetables', type: 'string'},
 			{name: 'usinews', type: 'string'},
 			{name: 'menumensa', type: 'string'},
 		]

@@ -83,6 +83,15 @@ Ext.define('USIMobile.WebService', {
 		return teaching_timetables_store;
 	},
 
+	getExaminationTimetables: function() {
+		var url = USIMobile.Config.getExaminationTimetablesUrl();
+		// set parameters
+		var params = new Object();
+		// request
+		var examination_timetables_store = this.request(url, params, 'USIMobile.model.ExaminationTimetable');
+		return examination_timetables_store;
+	},
+
 	getShortNews: function() {
 		var url = USIMobile.Config.getShortNewsUrl();
 		// set parameters

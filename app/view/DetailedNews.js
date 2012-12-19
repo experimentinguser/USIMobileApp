@@ -19,7 +19,7 @@ Ext.define("USIMobile.view.DetailedNews", {
 				var html_content = '<div class="detailed_news_title x-docked-top">'+data.title+'</div>';
 					html_content+= '<div class="detailed_news_body x-docked-top">'+data.body+'</div>';
 					html_content+= '<div class="detailed_detailed_url x-docked-top">'+data.url+'</div>';
-					html_content+= '<div class="detailed_news_publish_start_date x-docked-top">'+data.publish_start_date+'</div>';
+					html_content+= '<div class="detailed_news_publish_start_date x-docked-top">'+USIMobile.app.formatDate(data.publish_start_date)+'</div>';
 				// inject html
 				this.setHtml(html_content);
 				this.fireEvent('heightchange');

@@ -1,10 +1,10 @@
-Ext.define("USIMobile.view.Timetables", {
+Ext.define("USIMobile.view.TeachingTimetables", {
 	extend: 'Ext.dataview.List',
-	xtype: 'timetables',
+	xtype: 'teachingtimetables',
 
 	config: {
-		id: 'timetables',
-		title: 'Timetables', 
+		id: 'teachingtimetables',
+		title: 'Teaching Timetables', 
 		emptyText: 'No info available.',
 		grouped: true,
 		itemTpl: '<div class="timetable_title">{program}</div>',
