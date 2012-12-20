@@ -5,6 +5,7 @@ Ext.define('USIMobile.model.Updates', {
 		identifier: 'uuid',
 		fields: [ 
 			{name: 'courses', type: 'string'},
+			{name: 'academiccalendar', type: 'string'},
 			{name: 'teachingtimetables', type: 'string'},
 			{name: 'examinationtimetables', type: 'string'},
 			{name: 'usinews', type: 'string'},

@@ -41,6 +41,13 @@ Ext.define('USIMobile.controller.StoreFeed', {
 			this.updateCoursesStore();
 		}
 
+		// academiccalendar store
+		if(
+			USIMobile.Session.getAcademicCalendarStore().getCount() == 0 ||
+			server_updates_store.first().get('academiccalendar') != USIMobile.Session.getUpdatesStore().first().get('academiccalendar')
+		) {
+			this.updateAcademicCalendarStore();
+		}
 
 		// teaching timetables store
 		if( 
@@ -103,48 +110,31 @@ Ext.define('USIMobile.controller.StoreFeed', {
 			'',
 			{single: true}
 		);
-	},
+	},	
 
-	updateShortNewsStore: function() {
-		USIMobile.WebService.getShortNews().on('load',
+	updateAcademicCalendarStore: function() {
+		USIMobile.WebService.getAcademicCalendar().on('load',
 			function(store, records, success) {
 				// check if there are any exceptions 
 				// check for errors here
-				if(store.getProxy().getReader().rawData.error == null){
+				if(this.getProxy().getReader().rawData.error == null){
 					// remove old entries
-					USIMobile.Session.getShortNewsStore().removeAll();
-					USIMobile.Session.getShortNewsStore().getProxy().clear();
-
-					store.each(function(news_entry) {
-						news_entry.setDirty();
-						USIMobile.Session.getShortNewsStore().add(news_entry);
-					});
-
-					// update the detailed news store
-					USIMobile.Session.getShortNewsStore().on('write', this.updateDetailedNewsStore, this, {single: true});
+					USIMobile.Session.getAcademicCalendarStore().removeAll();
+					USIMobile.Session.getAcademicCalendarStore().getProxy().clear();
+					// insert the new entry
+					USIMobile.Session.getAcademicCalendarStore().add(store.first());
 					// store data
-					USIMobile.Session.getShortNewsStore().sync();
+					USIMobile.Session.getAcademicCalendarStore().sync();
 				} else {
 					Ext.Msg.alert(
-						store.getProxy().getReader().rawData.title,
-						store.getProxy().getReader().rawData.message + '; Code: ' + store.getProxy().getReader().rawData.code
+						this.getProxy().getReader().rawData.title,
+						this.getProxy().getReader().rawData.message + '; Code: ' + this.getProxy().getReader().rawData.code
 					);
 				}
 			},
-			this,
+			'',
 			{single: true}
 		);
-	},
-	
-	updateDetailedNewsStore: function(){
-		USIMobile.Session.getShortNewsStore().each(function(entry){
-			USIMobile.WebService.getDetailedNews(entry.get('id')).on('load', function(store){
-				news_entry = store.first();
-				news_entry.setDirty();
-				USIMobile.Session.getDetailedNewsStore().add(news_entry);
-				USIMobile.Session.getDetailedNewsStore().sync();
-			});
-		}, this);
 	},
 
 	updateTeachingTimetablesStore: function() {
@@ -201,6 +191,48 @@ Ext.define('USIMobile.controller.StoreFeed', {
 			'',
 			{single: true}
 		);
+	},
+
+	updateShortNewsStore: function() {
+		USIMobile.WebService.getShortNews().on('load',
+			function(store, records, success) {
+				// check if there are any exceptions 
+				// check for errors here
+				if(store.getProxy().getReader().rawData.error == null){
+					// remove old entries
+					USIMobile.Session.getShortNewsStore().removeAll();
+					USIMobile.Session.getShortNewsStore().getProxy().clear();
+
+					store.each(function(news_entry) {
+						news_entry.setDirty();
+						USIMobile.Session.getShortNewsStore().add(news_entry);
+					});
+
+					// update the detailed news store
+					USIMobile.Session.getShortNewsStore().on('write', this.updateDetailedNewsStore, this, {single: true});
+					// store data
+					USIMobile.Session.getShortNewsStore().sync();
+				} else {
+					Ext.Msg.alert(
+						store.getProxy().getReader().rawData.title,
+						store.getProxy().getReader().rawData.message + '; Code: ' + store.getProxy().getReader().rawData.code
+					);
+				}
+			},
+			this,
+			{single: true}
+		);
+	},
+	
+	updateDetailedNewsStore: function(){
+		USIMobile.Session.getShortNewsStore().each(function(entry){
+			USIMobile.WebService.getDetailedNews(entry.get('id')).on('load', function(store){
+				news_entry = store.first();
+				news_entry.setDirty();
+				USIMobile.Session.getDetailedNewsStore().add(news_entry);
+				USIMobile.Session.getDetailedNewsStore().sync();
+			});
+		}, this);
 	},
 
 	updateMenuMensaStore: function() {

@@ -6,11 +6,11 @@ Ext.define("USIMobile.view.Calendar", {
 		id: 'calendar',
 		title: 'Calendar', 
 		emptyText: 'No info available.',
-		itemTpl: '{title}',
+		itemTpl: '{[values.id != "academiccalendar" ? values.title : values.title + USIMobile.Session.getAcademicCalendarStore().first().get("year")]}',
 		data: [
+			{ id: 'academiccalendar', title: "Academic Calendar: ", },
 			{ id: 'teaching', title: "Teaching timetables", },
 			{ id: 'examination', title: "Examination timetables", },
-		]
-
+		],
 	}
 });

@@ -43,8 +43,18 @@ Ext.define('USIMobile.controller.Calendar', {
 
 	selectCalendar: function(view, index, target, record) {
 		// record the faculty choice
-		this.filter.calendar = record.get('id');
-		this.showFaculties();
+		if(record.get('id') == 'academiccalendar') {
+			this.showAcademicCalendar();
+		} else {
+			this.filter.calendar = record.get('id');
+			this.showFaculties();
+		}
+	},
+
+
+	showAcademicCalendar: function(){
+		var data = USIMobile.Session.getAcademicCalendarStore().first().getData();
+		USIMobile.app.getFile(data.url, data.filename, data.mime);	
 	},
 
 	showFaculties: function() {

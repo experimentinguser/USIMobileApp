@@ -74,6 +74,15 @@ Ext.define('USIMobile.WebService', {
 		return courses_store;
 	},
 
+	getAcademicCalendar: function() {
+		var url = USIMobile.Config.getAcademicCalendarUrl();
+		// set parameters
+		var params = new Object();
+		// request
+		var academiccalendar_store = this.request(url, params, 'USIMobile.model.AcademicCalendar');
+		return academiccalendar_store;
+	},
+
 	getTeachingTimetables: function() {
 		var url = USIMobile.Config.getTeachingTimetablesUrl();
 		// set parameters

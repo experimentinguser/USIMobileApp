@@ -5,6 +5,7 @@ Ext.define('USIMobile.Config', {
 		// DRY config approach
 		this.config.updatesUrl = this.config.kurogoRestUrl + this.config.updatesUrl;
 		this.config.coursesUrl = this.config.kurogoRestUrl + this.config.coursesUrl;
+		this.config.academicCalendarUrl = this.config.kurogoRestUrl + this.config.academicCalendarUrl;
 		this.config.teachingTimetablesUrl = this.config.kurogoRestUrl + this.config.teachingTimetablesUrl;
 		this.config.examinationTimetablesUrl = this.config.kurogoRestUrl + this.config.examinationTimetablesUrl;
 		this.config.shortNewsUrl = this.config.kurogoRestUrl + this.config.shortNewsUrl;
@@ -22,6 +23,7 @@ Ext.define('USIMobile.Config', {
 		kurogoRestUrl: 'http://localhost/kurogo/www/rest/',
 		updatesUrl: 'updates/check',
 		coursesUrl: 'courses/get',
+		academicCalendarUrl: 'academiccalendar/get',
 		teachingTimetablesUrl: 'teachingtimetables/get',
 		examinationTimetablesUrl: 'examinationtimetables/get',
 		shortNewsUrl: 'usinews/get_list',
