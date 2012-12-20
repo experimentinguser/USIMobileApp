@@ -10,7 +10,7 @@ Ext.define('USIMobile.controller.Dash', {
 			dash: '#dash',
 			listaCorsiButton: 'button#listacorsi_dash_button',
 			cercaPersoneButton: 'button#cercapersone_dash_button',
-			menuMensaButton: 'button#menumensa_dash_button',
+			menuMensaButton: 'button#mensa_dash_button',
 			usiSportButton: 'button#usisport_dash_button',
 			offerteLavoroButton: 'button#offertelavoro_dash_button',
 		},
