@@ -10,6 +10,7 @@ Ext.define('USIMobile.controller.Init', {
 			'USIMobile.store.Updates',
 			'USIMobile.store.Courses',
 			'USIMobile.store.AcademicCalendar',
+			'USIMobile.store.People',
 			'USIMobile.store.TeachingTimetables',
 			'USIMobile.store.ExaminationTimetables',
 			'USIMobile.store.ShortNews',
@@ -55,7 +56,7 @@ Ext.define('USIMobile.controller.Init', {
 		updates_store.load();
 		USIMobile.Session.setUpdatesStore(updates_store);
 
-		// create the Short News store
+		// create the Courses store
 		var courses_store = Ext.create('USIMobile.store.Courses'); 
 		courses_store.load();
 		USIMobile.Session.setCoursesStore(courses_store);
@@ -64,6 +65,11 @@ Ext.define('USIMobile.controller.Init', {
 		var academiccalendar_store = Ext.create('USIMobile.store.AcademicCalendar'); 
 		academiccalendar_store.load();
 		USIMobile.Session.setAcademicCalendarStore(academiccalendar_store);
+
+		// create the Courses store
+		var people_store = Ext.create('USIMobile.store.People'); 
+		people_store.load();
+		USIMobile.Session.setPeopleStore(people_store);
 
 		// create the Teaching Timetables store
 		var teaching_timetables_store = Ext.create('USIMobile.store.TeachingTimetables'); 
@@ -134,10 +140,10 @@ Ext.define('USIMobile.controller.Init', {
 					});
 				});
 
-			short_news_store.on(
+			people_store.on(
 				'write',
 				function(store, operation) {
-					USIMobile.log('=> short_news_store operation: action='+operation.getAction()+'; success: '+operation.wasSuccessful());
+					USIMobile.log('=> people_store operation: action='+operation.getAction()+'; success: '+operation.wasSuccessful());
 					Ext.iterate(operation.getRecords(), function(record){
 						console.log(' --> data: ');
 						console.log(record.getData());
@@ -172,6 +178,15 @@ Ext.define('USIMobile.controller.Init', {
 					});
 				});
 
+			short_news_store.on(
+				'write',
+				function(store, operation) {
+					USIMobile.log('=> short_news_store operation: action='+operation.getAction()+'; success: '+operation.wasSuccessful());
+					Ext.iterate(operation.getRecords(), function(record){
+						console.log(' --> data: ');
+						console.log(record.getData());
+					});
+				});
 
 			detailed_news_store.on(
 				'write',

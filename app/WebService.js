@@ -101,6 +101,15 @@ Ext.define('USIMobile.WebService', {
 		return examination_timetables_store;
 	},
 
+	getPeople: function() {
+		var url = USIMobile.Config.getPeopleUrl();
+		// set parameters
+		var params = new Object();
+		// request
+		var people_store = this.request(url, params, 'USIMobile.model.People');
+		return people_store;
+	},
+
 	getShortNews: function() {
 		var url = USIMobile.Config.getShortNewsUrl();
 		// set parameters

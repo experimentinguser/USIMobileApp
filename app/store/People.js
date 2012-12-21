@@ -1,22 +1,22 @@
-Ext.define('USIMobile.store.Courses', {
+Ext.define('USIMobile.store.People', {
 	extend: 'Ext.data.Store',
 
 	requires: [
 		'Ext.data.proxy.LocalStorage',
-		'USIMobile.model.Course',
+		'USIMobile.model.People',
 	],
 
 	models: [ ],
 
 	config: {
-		storeId: 'courses_store',
-		model: 'USIMobile.model.Course',
+		storeId: 'people_store',
+		model: 'USIMobile.model.People',
 		autoLoad: true,
 		autoSync: true,
-		sorters: 'title',
+		sorters: 'firstname',
 		proxy: {
 			type: 'localstorage',	
-			id: 'courses'
+			id: 'people'
 		},
 	}
 });

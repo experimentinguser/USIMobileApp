@@ -33,6 +33,8 @@ Ext.application({
 		'USIMobile.view.SearchCourses',
 		'USIMobile.view.Courses',
 		'USIMobile.view.Course',
+		'USIMobile.view.SearchPeople',
+		'USIMobile.view.People',
 		'USIMobile.view.ShortNews',
 		'USIMobile.view.DetailedNews',
 		'USIMobile.view.Calendar',
@@ -52,6 +54,7 @@ Ext.application({
 		"USIMobile.controller.Dash", 
 		"USIMobile.controller.SearchCourses",
 		"USIMobile.controller.Calendar",
+		"USIMobile.controller.SearchPeople",
 		"USIMobile.controller.News", 
 	],
 

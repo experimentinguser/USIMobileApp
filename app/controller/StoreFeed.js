@@ -49,6 +49,14 @@ Ext.define('USIMobile.controller.StoreFeed', {
 			this.updateAcademicCalendarStore();
 		}
 
+		// people store
+		if(
+			USIMobile.Session.getPeopleStore().getCount() == 0 ||
+			server_updates_store.first().get('people') != USIMobile.Session.getUpdatesStore().first().get('people')
+		) {
+			this.updatePeopleStore();
+		}
+
 		// teaching timetables store
 		if( 
 			USIMobile.Session.getTeachingTimetablesStore().getCount() == 0 || 
@@ -181,6 +189,34 @@ Ext.define('USIMobile.controller.StoreFeed', {
 					});
 					// store data
 					USIMobile.Session.getExaminationTimetablesStore().sync();
+				} else {
+					Ext.Msg.alert(
+						this.getProxy().getReader().rawData.title,
+						this.getProxy().getReader().rawData.message + '; Code: ' + this.getProxy().getReader().rawData.code
+					);
+				}
+			},
+			'',
+			{single: true}
+		);
+	},
+
+	updatePeopleStore: function() {
+		USIMobile.WebService.getPeople().on('load',
+			function(store, records, success) {
+				// check if there are any exceptions 
+				// check for errors here
+				if(this.getProxy().getReader().rawData.error == null){
+					// remove old entries
+					USIMobile.Session.getPeopleStore().removeAll();
+					USIMobile.Session.getPeopleStore().getProxy().clear();
+					store.each(function(people_entry) {
+						// insert the new entry
+						people_entry.setDirty();
+						USIMobile.Session.getPeopleStore().add(people_entry);
+					});
+					// store data
+					USIMobile.Session.getPeopleStore().sync();
 				} else {
 					Ext.Msg.alert(
 						this.getProxy().getReader().rawData.title,

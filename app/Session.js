@@ -13,6 +13,7 @@ Ext.define('USIMobile.Session', {
 		aaiAccountStore: null,
 		updatesStore: null,
 		coursesStore: null,
+		peopleStore: null,
 		academicCalendarStore: null,
 		teachingTimetablesStore: null,
 		examinationTimetablesStore: null,

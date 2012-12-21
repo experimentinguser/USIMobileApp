@@ -8,6 +8,7 @@ Ext.define('USIMobile.Config', {
 		this.config.academicCalendarUrl = this.config.kurogoRestUrl + this.config.academicCalendarUrl;
 		this.config.teachingTimetablesUrl = this.config.kurogoRestUrl + this.config.teachingTimetablesUrl;
 		this.config.examinationTimetablesUrl = this.config.kurogoRestUrl + this.config.examinationTimetablesUrl;
+		this.config.peopleUrl = this.config.kurogoRestUrl + this.config.peopleUrl;
 		this.config.shortNewsUrl = this.config.kurogoRestUrl + this.config.shortNewsUrl;
 		this.config.detailedNewsUrl = this.config.kurogoRestUrl + this.config.detailedNewsUrl;
 		this.config.menuMensaUrl = this.config.kurogoRestUrl + this.config.menuMensaUrl;
@@ -19,13 +20,14 @@ Ext.define('USIMobile.Config', {
 
 	config : {
 		// url
-		kurogoRestUrl: 'https://usimobile-dev.elearninglab.org/rest/',
-		//kurogoRestUrl: 'http://localhost/kurogo/www/rest/',
+		//kurogoRestUrl: 'https://usimobile-dev.elearninglab.org/rest/',
+		kurogoRestUrl: 'http://localhost/kurogo/www/rest/',
 		updatesUrl: 'updates/check',
 		coursesUrl: 'courses/get',
 		academicCalendarUrl: 'academiccalendar/get',
 		teachingTimetablesUrl: 'teachingtimetables/get',
 		examinationTimetablesUrl: 'examinationtimetables/get',
+		peopleUrl: 'usipeople/get',
 		shortNewsUrl: 'usinews/get_list',
 		detailedNewsUrl: 'usinews/get_item',
 		menuMensaUrl: 'mensa/get_menu',
