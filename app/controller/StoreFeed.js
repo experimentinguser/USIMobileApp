@@ -10,9 +10,12 @@ Ext.define('USIMobile.controller.StoreFeed', {
     
     init: function() {
 		Ext.fs = this;
-		// get update checks
-		var updates = USIMobile.WebService.getUpdates();
-		updates.on('load', function(server_updates_store){ this.checkUpdates(server_updates_store); }, this, {single: true});
+		// start updates only if the usageagreemnt has been accepted and the aai account has been set
+		if(USIMobile.Session.getSettingsStore().first().get('usageagreement') && USIMobile.Session.getSettingsStore().first().get('accountset')) {
+			// get hash updates
+			var updates = USIMobile.WebService.getUpdates();
+			updates.on('load', function(server_updates_store){ this.checkUpdates(server_updates_store); }, this, {single: true});
+		}
 	},
 
 	syncUpdatesStore: function(server_updates_store) {
