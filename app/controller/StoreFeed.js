@@ -9,6 +9,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
     },
     
     init: function() {
+		Ext.fs = this;
 		// get update checks
 		var updates = USIMobile.WebService.getUpdates();
 		updates.on('load', function(server_updates_store){ this.checkUpdates(server_updates_store); }, this, {single: true});
@@ -89,13 +90,21 @@ Ext.define('USIMobile.controller.StoreFeed', {
 			this.updateMenuMensaStore();
 		}
 
+		// sportactivity store
+		if(
+			USIMobile.Session.getSportActivityStore().getCount() == 0 ||
+			server_updates_store.first().get('sportactivity') != USIMobile.Session.getUpdatesStore().first().get('sportactivity')
+		) {
+			this.updateSportActivityStore();
+		}
+
 		this.syncUpdatesStore(server_updates_store);
 	},
 
 	updateCoursesStore: function() {
 		USIMobile.WebService.getCourses().on('load',
 			function(store, records, success) {
-				// check if there are any exceptions 
+				// check if there are any exceptions
 				// check for errors here
 				if(this.getProxy().getReader().rawData.error == null){
 					// remove old entries
@@ -123,7 +132,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	updateAcademicCalendarStore: function() {
 		USIMobile.WebService.getAcademicCalendar().on('load',
 			function(store, records, success) {
-				// check if there are any exceptions 
+				// check if there are any exceptions
 				// check for errors here
 				if(this.getProxy().getReader().rawData.error == null){
 					// remove old entries
@@ -148,7 +157,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	updateTeachingTimetablesStore: function() {
 		USIMobile.WebService.getTeachingTimetables().on('load',
 			function(store, records, success) {
-				// check if there are any exceptions 
+				// check if there are any exceptions
 				// check for errors here
 				if(this.getProxy().getReader().rawData.error == null){
 					// remove old entries
@@ -176,7 +185,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	updateExaminationTimetablesStore: function() {
 		USIMobile.WebService.getExaminationTimetables().on('load',
 			function(store, records, success) {
-				// check if there are any exceptions 
+				// check if there are any exceptions
 				// check for errors here
 				if(this.getProxy().getReader().rawData.error == null){
 					// remove old entries
@@ -204,7 +213,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	updatePeopleStore: function() {
 		USIMobile.WebService.getPeople().on('load',
 			function(store, records, success) {
-				// check if there are any exceptions 
+				// check if there are any exceptions
 				// check for errors here
 				if(this.getProxy().getReader().rawData.error == null){
 					// remove old entries
@@ -232,7 +241,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	updateShortNewsStore: function() {
 		USIMobile.WebService.getShortNews().on('load',
 			function(store, records, success) {
-				// check if there are any exceptions 
+				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
 					// remove old entries
@@ -274,7 +283,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	updateMenuMensaStore: function() {
 		USIMobile.WebService.getMenuMensa().on('load',
 			function(store, records, success) {
-				// check if there are any exceptions 
+				// check if there are any exceptions
 				// check for errors here
 				if(this.getProxy().getReader().rawData.error == null){
 					// remove old entries
@@ -284,6 +293,34 @@ Ext.define('USIMobile.controller.StoreFeed', {
 					USIMobile.Session.getMenuMensaStore().add(store.first());
 					// store data
 					USIMobile.Session.getMenuMensaStore().sync();
+				} else {
+					Ext.Msg.alert(
+						this.getProxy().getReader().rawData.title,
+						this.getProxy().getReader().rawData.message + '; Code: ' + this.getProxy().getReader().rawData.code
+					);
+				}
+			},
+			'',
+			{single: true}
+		);
+	},
+
+	updateSportActivityStore: function() {
+		USIMobile.WebService.getSportActivities().on('load',
+			function(store, records, success) {
+				// check if there are any exceptions
+				// check for errors here
+				if(this.getProxy().getReader().rawData.error == null){
+					// remove old entries
+					USIMobile.Session.getSportActivityStore().removeAll();
+					USIMobile.Session.getSportActivityStore().getProxy().clear();
+					store.each(function(activity) {
+						// insert the new entry
+						activity.setDirty();
+						USIMobile.Session.getSportActivityStore().add(activity);
+					});
+					// store data
+					//USIMobile.Session.getSportActivityStore().sync();
 				} else {
 					Ext.Msg.alert(
 						this.getProxy().getReader().rawData.title,

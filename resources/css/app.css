@@ -11197,7 +11197,22 @@ input[type="search"]::-webkit-search-cancel-button {
 .course_credits,
 .course_semester,
 .course_semester_start,
-.course_semester_end {
+.course_semester_end,
+.sport_activity_name,
+.sport_activity_description,
+.sport_activity_discipline,
+.sport_activity_start_date,
+.sport_activity_end_date,
+.sport_activity_location,
+.sport_activity_lodging,
+.sport_activity_comeback,
+.sport_activity_contact,
+.sport_activity_meal,
+.sport_activity_requirements,
+.sport_activity_equipment,
+.sport_activity_transport,
+.sport_activity_subscription_start_date,
+.sport_activity_subscription_end_date {
 	padding: 5px;
 	margin-top: 10px;
 	background-color: white;
@@ -11220,5 +11235,4 @@ input[type="search"]::-webkit-search-cancel-button {
 	padding-top: 5px;
 	padding-bottom: 10px;
 }
-
 

@@ -42,7 +42,9 @@ Ext.application({
 		'USIMobile.view.Levels',
 		'USIMobile.view.TeachingTimetables',
 		'USIMobile.view.ExaminationTimetables',
-		'USIMobile.view.Foo',
+		'USIMobile.view.SearchSportActivity',
+		'USIMobile.view.SportActivities',
+		'USIMobile.view.SportActivity',
 		'USIMobile.view.Dash',
 	],
 
@@ -52,10 +54,11 @@ Ext.application({
 		"USIMobile.controller.AaiAccount", 
 		"USIMobile.controller.StoreFeed",
 		"USIMobile.controller.Dash", 
-		"USIMobile.controller.SearchCourses",
+		"USIMobile.controller.Course",
 		"USIMobile.controller.Calendar",
-		"USIMobile.controller.SearchPeople",
+		"USIMobile.controller.People",
 		"USIMobile.controller.News", 
+		"USIMobile.controller.SportActivity",
 	],
 
     icon: {
@@ -179,7 +182,30 @@ Ext.application({
 			date_format = "Y-m-d";
 		}
 		return Ext.Date.format(Ext.Date.parse(date, date_format), "l d F Y");
+	},
+
+	sendEmail: function(to, subject, body) {
+		var extras = {};
+		extras[WebIntent.EXTRA_SUBJECT] = subject;
+		extras[WebIntent.EXTRA_TEXT] = body;
+		var successFunc = function() {};
+		// fail function
+		var failFunc = function(){
+			Ext.Msg.alert(
+				'Sending e-mail error',
+				'Failed to open the mail client and send a mail to:' + to
+			);
+		};
+
+		window.plugins.webintent.startActivity(
+			{
+				url: to,
+				action: WebIntent.ACTION_SEND,
+				type: 'text/plain',
+				extras: extras
+			},
+			successFunc,
+			failFunc
+		);
 	}
-
-
 });

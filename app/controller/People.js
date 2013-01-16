@@ -1,4 +1,4 @@
-Ext.define('USIMobile.controller.SearchPeople', {
+Ext.define('USIMobile.controller.People', {
 	extend: 'Ext.app.Controller',
 
 	requires: [
@@ -29,7 +29,7 @@ Ext.define('USIMobile.controller.SearchPeople', {
 			this.getDash().push(this.getSearchPeopleForm());
 		} else {
 			this.getDash().push({
-				xtype: 'searchpeopleform',	
+				xtype: 'searchpeopleform',
 			});
 		}
 	},

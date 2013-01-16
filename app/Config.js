@@ -12,6 +12,7 @@ Ext.define('USIMobile.Config', {
 		this.config.shortNewsUrl = this.config.kurogoRestUrl + this.config.shortNewsUrl;
 		this.config.detailedNewsUrl = this.config.kurogoRestUrl + this.config.detailedNewsUrl;
 		this.config.menuMensaUrl = this.config.kurogoRestUrl + this.config.menuMensaUrl;
+		this.config.sportActivityUrl = this.config.kurogoRestUrl + this.config.sportActivityUrl;
 		this.config.homeOrgsUrl = this.config.kurogoRestUrl + this.config.homeOrgsUrl;
 
   		this.initConfig(config);
@@ -31,6 +32,7 @@ Ext.define('USIMobile.Config', {
 		shortNewsUrl: 'usinews/get_list',
 		detailedNewsUrl: 'usinews/get_item',
 		menuMensaUrl: 'mensa/get_menu',
+		sportActivityUrl: 'sport/get',
 		homeOrgsUrl: 'aai/get_idps',
 		// local paths
 		fileCacheDir: 'USIMobile',

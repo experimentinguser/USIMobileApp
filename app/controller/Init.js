@@ -16,6 +16,7 @@ Ext.define('USIMobile.controller.Init', {
 			'USIMobile.store.ShortNews',
 			'USIMobile.store.DetailedNews',
 			'USIMobile.store.MenuMensa',
+			'USIMobile.store.SportActivity',
 		],
 
 		refs: {
@@ -95,6 +96,12 @@ Ext.define('USIMobile.controller.Init', {
 		var menumensa_store = Ext.create('USIMobile.store.MenuMensa'); 
 		menumensa_store.load();
 		USIMobile.Session.setMenuMensaStore(menumensa_store);
+
+		// create the sportactivity store
+		var sportactivity_store = Ext.create('USIMobile.store.SportActivity');
+		sportactivity_store.load();
+		USIMobile.Session.setSportActivityStore(sportactivity_store);
+
 
 
 		/*********************************
@@ -207,7 +214,16 @@ Ext.define('USIMobile.controller.Init', {
 						console.log(record.getData());
 					});
 				});
-			
+
+			sportactivity_store.on(
+				'write',
+				function(store, operation) {
+					USIMobile.log('=> sportactivity_store operation: action='+operation.getAction()+'; success: '+operation.wasSuccessful());
+					Ext.iterate(operation.getRecords(), function(record){
+						console.log(' --> data: ');
+						console.log(record.getData());
+					});
+				});
 		}
 	}
 });

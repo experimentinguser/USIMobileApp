@@ -14,7 +14,7 @@ Ext.define("USIMobile.view.Course", {
 			directionLock: true
 		},
 		listeners: {
-			initialize: function(){
+			painted: function(){
 				// display the parent post
 				var data = this.getRecord().getData();
 				// prepare the html

@@ -1,4 +1,4 @@
-Ext.define('USIMobile.controller.SearchCourses', {
+Ext.define('USIMobile.controller.Course', {
 	extend: 'Ext.app.Controller',
 
 	requires: [

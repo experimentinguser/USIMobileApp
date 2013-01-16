@@ -88,10 +88,10 @@ Ext.define("USIMobile.view.Dash", {
 							},
 							{
 								xtype: 'button',
-								id: 'sport_dash_button',
-								baseCls: 'dash_button sport_dash_button',
+								id: 'sport_activity_dash_button',
+								baseCls: 'dash_button sport_activity_dash_button',
 								width: '33.3%',
-								html: '<div class="label_container"><div class="label">Sport</div></div>',
+								html: '<div class="label_container"><div class="label">Sport Act.</div></div>',
 							},
 							{
 								xtype: 'button',

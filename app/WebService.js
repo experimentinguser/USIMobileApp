@@ -137,4 +137,13 @@ Ext.define('USIMobile.WebService', {
 		var menumensa_store = this.request(url, params, 'USIMobile.model.MenuMensa');
 		return menumensa_store;
 	},
+
+	getSportActivities: function() {
+		var url = USIMobile.Config.getSportActivityUrl();
+		// set parameters
+		var params = new Object();
+		// request
+		var courses_store = this.request(url, params, 'USIMobile.model.SportActivity');
+		return courses_store;
+	},
 });

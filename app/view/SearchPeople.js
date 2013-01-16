@@ -10,10 +10,6 @@ Ext.define("USIMobile.view.SearchPeople", {
 		'Ext.field.Select',
 	],
 
-	controllers: [
-		'USIMobile.controller.People'
-	],
-
 	config: {
 		id: 'searchpeople',
 		title: 'Search People',
