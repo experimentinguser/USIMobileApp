@@ -9,7 +9,7 @@ Ext.define('USIMobile.store.AcademicCalendar', {
 	config: {
 		storeId: 'academiccalendar_store',
 		model: 'USIMobile.model.AcademicCalendar',
-		autoLoad: true,
+		//autoLoad: true,
 		//autoSync: true,
 		proxy: {
 			type: 'localstorage',	

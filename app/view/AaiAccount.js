@@ -42,11 +42,9 @@ Ext.define("USIMobile.view.AaiAccount", {
 						name: 'homeorganisation',
 						label: 'Home Organisation',
 						usePicker: false,
-						//store: USIMobile.Session.getHomeOrgsStore(),
-						store: Ext.create('USIMobile.store.HomeOrgs'),
 						displayField: 'name',
 						valueField: 'url',
-						value: 'https://login2.usi.ch/idp/shibboleth'
+						value: 'https://login2.usi.ch/idp/shibboleth',
 					},
 					{
 						xtype: 'button',
@@ -54,9 +52,8 @@ Ext.define("USIMobile.view.AaiAccount", {
 						ui: 'confirm',
 						action: 'save',	
 					}
-
 				]
-			}
-		]
+			},
+		],
 	}
 });

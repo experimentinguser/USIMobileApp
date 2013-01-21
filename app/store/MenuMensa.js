@@ -9,7 +9,7 @@ Ext.define('USIMobile.store.MenuMensa', {
 	config: {
 		storeId: 'menumensa_store',
 		model: 'USIMobile.model.MenuMensa',
-		autoLoad: true,
+		//autoLoad: true,
 		//autoSync: true,
 		proxy: {
 			type: 'localstorage',	

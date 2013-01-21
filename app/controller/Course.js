@@ -19,13 +19,16 @@ Ext.define('USIMobile.controller.Course', {
 		control: {
 			dashCoursesButton: { tap: 'showSearchCoursesForm' },
 			searchCoursesButton: { tap: 'searchCourses' },
-			courses: { itemtap: 'showCourse' },
-
+			courses: {
+				itemtap: 'showCourse',
+				show: function() {
+					USIMobile.app.hideLoadMask();
+				}
+			},
 		}
 	},
 	
 	init: function(){
-		Ext.sc = this;
 		this.filter = { };
 	},
 
@@ -40,14 +43,18 @@ Ext.define('USIMobile.controller.Course', {
 	},
 
 	searchCourses: function() {
+		USIMobile.app.showLoadMask('Searching Courses.');
 		// set the filter
 		this.filter = this.getSearchCoursesForm().getValues();
-		this.listCourses();
+		var scope = this;
+		// wait for the loadmask to be displayed
+		setTimeout(function() {
+			scope.listCourses();
+		}, 100);
 	},
 
 	listCourses: function() {
 		this.filterCoursesStore();
-
 		if(typeof this.getCourses() == 'object') {
 			this.getCourses().refresh();
 			this.getDash().push(this.getCourses());
@@ -67,7 +74,7 @@ Ext.define('USIMobile.controller.Course', {
 			function(record) {
 				var result = true;
 				// check course title and description
-				if(this.filter.pattern != ""){
+				if(this.filter.pattern != "") {
 					if(
 						!((record.get('title').toLowerCase().indexOf(this.filter.pattern.toLowerCase()) != -1) || 
 						(record.get('description') != null && record.get('description').toLowerCase().indexOf(this.filter.pattern.toLowerCase()) != -1))
@@ -77,7 +84,7 @@ Ext.define('USIMobile.controller.Course', {
 				}
 				
 				// check professor
-				if(this.filter.professor != ""){
+				if(this.filter.professor != "") {
 					if (record.get('professor').toLowerCase().indexOf(this.filter.professor.toLowerCase()) == -1){
 						return false;
 					}
@@ -97,6 +104,7 @@ Ext.define('USIMobile.controller.Course', {
 				if(this.filter.semester != 'both') {
 					result = result && record.get('semester') == this.filter.semester;
 				}
+
 				return result;
 			},
 			this

@@ -19,7 +19,12 @@ Ext.define('USIMobile.controller.SportActivity', {
 			dashSportActivityButton: { tap: 'showSearchSportActivityForm' },
 			searchSportActivityButton: { tap: 'searchSportActivity' },
 			sportActivities: { itemtap: 'showSportActivity' },
-			sportActivityMailToButton: { tap: 'mailTo' }
+			sportActivityMailToButton: { tap: 'mailTo' },
+			sportActivities: {
+				show: function() {
+					USIMobile.app.hideLoadMask();
+				}
+			}
 		}
 	},
 	
@@ -28,7 +33,6 @@ Ext.define('USIMobile.controller.SportActivity', {
 	},
 
 	showSearchSportActivityForm: function() {
-		console.log('show sport activity');
 		if(typeof this.getSearchSportActivityForm() == 'object') {
 			this.getDash().push(this.getSearchSportActivityForm());
 		} else {
@@ -39,9 +43,15 @@ Ext.define('USIMobile.controller.SportActivity', {
 	},
 
 	searchSportActivity: function() {
+		USIMobile.app.showLoadMask('Searching Activities.');
 		// set the filter
 		this.filter = this.getSearchSportActivityForm().getValues();
-		this.listSportActivities();
+		var scope = this;
+		// wait for the loadmask to be displayed
+		setTimeout(function() {
+			scope.listSportActivities();
+		}, 100);
+
 	},
 
 	listSportActivities: function() {

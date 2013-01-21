@@ -8,7 +8,7 @@ Ext.define('USIMobile.store.HomeOrgs', {
 	config: {
 		storeId: 'homeorganisations_store',
 		model: 'USIMobile.model.HomeOrg',
-		autoLoad: true,
+		//autoLoad: true,
 		//autoSync: true,
 		proxy: {
 			type: 'ajax',	

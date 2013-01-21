@@ -12,7 +12,7 @@ Ext.define('USIMobile.store.AaiAccount', {
 	config: {
 		storeId: 'aaiaccount_store',
 		model: 'USIMobile.model.AaiAccount',
-		autoLoad: true,
+		//autoLoad: true,
 		//autoSync: true,
 		proxy: {
 			type: 'localstorage',	

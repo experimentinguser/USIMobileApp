@@ -11,8 +11,8 @@ Ext.define('USIMobile.store.People', {
 	config: {
 		storeId: 'people_store',
 		model: 'USIMobile.model.People',
-		autoLoad: true,
-		autoSync: true,
+		//autoLoad: true,
+		//autoSync: true,
 		sorters: 'firstname',
 		proxy: {
 			type: 'localstorage',	

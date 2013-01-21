@@ -11,8 +11,8 @@ Ext.define('USIMobile.store.ShortNews', {
 	config: {
 		storeId: 'shortnews_store',
 		model: 'USIMobile.model.ShortNews',
-		autoLoad: true,
-		autoSync: true,
+		//autoLoad: true,
+		//autoSync: true,
 		sorters: 'rank',
 		proxy: {
 			type: 'localstorage',	

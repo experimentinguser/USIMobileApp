@@ -36,5 +36,4 @@ Ext.define('USIMobile.controller.Dash', {
 	showOfferteLavoro: function(btn, e, eOpts){
 		console.log('show offerte lavoro');
 	},
-
 });

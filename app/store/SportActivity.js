@@ -11,8 +11,8 @@ Ext.define('USIMobile.store.SportActivity', {
 	config: {
 		storeId: 'sportactivities_store',
 		model: 'USIMobile.model.SportActivity',
-		autoLoad: true,
-		autoSync: true,
+		//autoLoad: true,
+		//autoSync: true,
 		sorters: 'name',
 		groupField: 'category_en',
 		proxy: {

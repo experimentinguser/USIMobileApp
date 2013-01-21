@@ -9,7 +9,7 @@ Ext.define('USIMobile.store.Settings', {
 	config: {
 		storeId: 'settings_store',
 		model: 'USIMobile.model.Settings',
-		autoLoad: true,
+		//autoLoad: true,
 		//autoSync: true,
 		proxy: {
 			type: 'localstorage',	

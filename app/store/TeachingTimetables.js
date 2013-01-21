@@ -11,8 +11,8 @@ Ext.define('USIMobile.store.TeachingTimetables', {
 	config: {
 		storeId: 'teachingtimetables_store',
 		model: 'USIMobile.model.TeachingTimetable',
-		autoLoad: true,
-		autoSync: true,
+		//autoLoad: true,
+		//autoSync: true,
 		groupField: 'semester',
 		proxy: {
 			type: 'localstorage',	

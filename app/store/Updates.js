@@ -9,7 +9,7 @@ Ext.define('USIMobile.store.Updates', {
 	config: {
 		storeId: 'updates_store',
 		model: 'USIMobile.model.Updates',
-		autoLoad: true,
+		//autoLoad: true,
 		proxy: {
 			type: 'localstorage',	
 			id: 'updates'

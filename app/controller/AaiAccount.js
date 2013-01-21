@@ -8,16 +8,28 @@ Ext.define('USIMobile.controller.AaiAccount', {
 
 		refs: {
 			form: '#aaiaccount_form',
-			save: '#aaiaccount_form button[action=save]'
+			save: '#aaiaccount_form button[action=save]',
 		},
 
 		control: {
 			form: {
-				initialize: 'loadAccountData'
+				initialize: 'loadAccountData',
+				show: 'loadHomeOrganisationValues',
 			},
    			save: {
 				tap: 'saveAccountData'
-			}	
+			},
+		}
+	},
+
+	loadHomeOrganisationValues: function() {
+		var homeOrgField = this.getForm().getItems().getAt(1).getItems().getAt(2);
+		if(homeOrgField.getStore() == null) {
+			var homeorgs_store = Ext.create('USIMobile.store.HomeOrgs');
+			USIMobile.app.showLoadMask('Loading Home Organisations.');
+			homeorgs_store.on('load', function(store){ USIMobile.app.hideLoadMask(); });
+			homeorgs_store.load();
+			homeOrgField.setStore(homeorgs_store);
 		}
 	},
 
@@ -39,33 +51,18 @@ Ext.define('USIMobile.controller.AaiAccount', {
 		// set user accounttype setting
 		USIMobile.Session.getSettingsStore().first().set('accountset', 'true');
 		USIMobile.Session.getSettingsStore().sync();
-
 		// Mask the form
-		form.setMasked({
-			xtype: 'loadmask',
-			message: 'Saving...'
-		});
+		USIMobile.app.showLoadMask('Saving...');
 
 		// Put it inside a timeout so it feels like it is going to a server.
 		setTimeout(function() {
 			// Unmask the formpanel
-			form.setMasked(false);
+			//form.setMasked(false);
+			USIMobile.app.hideLoadMask();
 			location.reload();
 		}, 1000);
 	},
 
-	init: function(app) {
-		// if the account is the active one
-		// authenticate and get the course data
-		/*
-		var parameters = new Object();
-		parameters.username = USIMobile.Session.getAaiAccountStore().first().get('username');
-		parameters.password = USIMobile.Session.getAaiAccountStore().first().get('password');
-		parameters.idp = USIMobile.Session.getAaiAccountStore().first().get('homeorganisation');
-		*/
-		//var auth_url = USIMobile.Config.getAaiAuthUrl();
-
-		//this.authenticate(auth_url, parameters);
-	},
+	init: function(app) { },
   
 });

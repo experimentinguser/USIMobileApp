@@ -59,54 +59,45 @@ Ext.define('USIMobile.controller.Init', {
 
 		// create the Courses store
 		var courses_store = Ext.create('USIMobile.store.Courses'); 
-		courses_store.load();
 		USIMobile.Session.setCoursesStore(courses_store);
 
 		// create the academiccalendar store
 		var academiccalendar_store = Ext.create('USIMobile.store.AcademicCalendar'); 
-		academiccalendar_store.load();
 		USIMobile.Session.setAcademicCalendarStore(academiccalendar_store);
 
 		// create the Courses store
 		var people_store = Ext.create('USIMobile.store.People'); 
-		people_store.load();
 		USIMobile.Session.setPeopleStore(people_store);
 
 		// create the Teaching Timetables store
 		var teaching_timetables_store = Ext.create('USIMobile.store.TeachingTimetables'); 
-		teaching_timetables_store.load();
 		USIMobile.Session.setTeachingTimetablesStore(teaching_timetables_store);
 
 		// create the Examination Timetables store
 		var examination_timetables_store = Ext.create('USIMobile.store.ExaminationTimetables'); 
-		examination_timetables_store.load();
 		USIMobile.Session.setExaminationTimetablesStore(examination_timetables_store);
 
 		// create the Short News store
 		var short_news_store = Ext.create('USIMobile.store.ShortNews'); 
-		short_news_store.load();
 		USIMobile.Session.setShortNewsStore(short_news_store);
 
 		// create the Detailed News store
 		var detailed_news_store = Ext.create('USIMobile.store.DetailedNews'); 
-		detailed_news_store.load();
 		USIMobile.Session.setDetailedNewsStore(detailed_news_store);
 
 		// create the menumensa store
 		var menumensa_store = Ext.create('USIMobile.store.MenuMensa'); 
-		menumensa_store.load();
 		USIMobile.Session.setMenuMensaStore(menumensa_store);
 
 		// create the sportactivity store
 		var sportactivity_store = Ext.create('USIMobile.store.SportActivity');
-		sportactivity_store.load();
 		USIMobile.Session.setSportActivityStore(sportactivity_store);
 
 
 
 		/*********************************
 		 * DEBUG/LOG MESSAGES
-		 * ******************************/
+		 *********************************/
 		if(USIMobile.Config.getVerbose()) {
 			settings_store.on(
 				'write',

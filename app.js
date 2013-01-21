@@ -139,21 +139,14 @@ Ext.application({
 	// {"name": "filename", "mime":"mime/type"}
 	getFile: function(url, filename, mime) {
 		var dir = USIMobile.Config.getFileCacheDir();
+		this.showLoadMask('');
 		// success function
 		var successFunc = function(result) {
 			// download mask code
-			if(
-				Ext.Viewport.getActiveItem().getMasked() == null || 
-				Ext.Viewport.getActiveItem().getMasked().isHidden() && result.progress < 100
-			) { // init mask
-				Ext.Viewport.getActiveItem().setMasked({
-					xtype: 'loadmask',
-					message: result.progress+' %'
-				});
-			} else if(result.progress < 100){ // update the progress
-				Ext.Viewport.getActiveItem().getMasked().setMessage(result.progress+' %');
+			if(result.progress < 100){ // update the progress
+				USIMobile.app.updateLoadMaskMessage(result.progress+' %');
 			} else { // remove the mask
-				Ext.Viewport.getActiveItem().setMasked(false);
+				USIMobile.app.hideLoadMask();
 			}
 
 			if(result.progress == 100 && result.status == 1) {
@@ -207,5 +200,24 @@ Ext.application({
 			successFunc,
 			failFunc
 		);
+	},
+
+	isLoadMaskVisible: function() {
+		return Ext.Viewport.getActiveItem().getMasked() == null || Ext.Viewport.getActiveItem().getMasked().isHidden();
+	},
+
+	showLoadMask: function(msg) {
+		Ext.Viewport.getActiveItem().setMasked({
+			xtype: 'loadmask',
+			message: msg
+		});
+	},
+
+	updateLoadMaskMessage: function(msg) {
+		Ext.Viewport.getActiveItem().getMasked().setMessage(msg);
+	},
+
+	hideLoadMask: function() {
+		Ext.Viewport.getActiveItem().setMasked(false);
 	}
 });

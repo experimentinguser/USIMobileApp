@@ -11,8 +11,8 @@ Ext.define('USIMobile.store.Courses', {
 	config: {
 		storeId: 'courses_store',
 		model: 'USIMobile.model.Course',
-		autoLoad: true,
-		autoSync: true,
+		//autoLoad: true,
+		//autoSync: true,
 		sorters: 'title',
 		proxy: {
 			type: 'localstorage',	

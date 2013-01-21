@@ -11,8 +11,8 @@ Ext.define('USIMobile.store.ExaminationTimetables', {
 	config: {
 		storeId: 'examinationtimetables_store',
 		model: 'USIMobile.model.ExaminationTimetable',
-		autoLoad: true,
-		autoSync: true,
+		//autoLoad: true,
+		//autoSync: true,
 		groupField: 'semester',
 		proxy: {
 			type: 'localstorage',	

@@ -39,7 +39,7 @@ Ext.define("USIMobile.view.Dash", {
 								id: 'empty_b',
 								baseCls: 'dash_button item_dash_button',
 								width: '33.3%',
-								html: '<div class="label_container"><div class="label">Agenda</div></div>',
+								html: '<div class="label_container"><div class="label">Services</div></div>',
 							},
 						]
 					},

@@ -16,6 +16,11 @@ Ext.define('USIMobile.controller.People', {
 		control: {
 			dashPeopleButton: { tap: 'showSearchPeopleForm' },
 			searchPeopleButton: { tap: 'searchPeople' },
+			people: {
+				show: function() {
+					USIMobile.app.hideLoadMask();
+				}
+			}
 		}
 	},
 	
@@ -35,9 +40,14 @@ Ext.define('USIMobile.controller.People', {
 	},
 
 	searchPeople: function() {
+		USIMobile.app.showLoadMask('Searching People.');
 		// set the filter
 		this.filter = this.getSearchPeopleForm().getValues();
-		this.listPeople();
+		var scope = this;
+		// wait for the loadmask to be displayed
+		setTimeout(function() {
+			scope.listPeople();
+		}, 100);
 	},
 
 	listPeople: function() {
