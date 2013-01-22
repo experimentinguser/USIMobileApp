@@ -11,12 +11,12 @@ Ext.define("USIMobile.view.Main", {
 		items: [
 			{
 				title: 'Dash',
-				iconCls: 'home',
+				iconCls: 'usi_home',
 				xtype: 'dash'
 			},
 			{
 				title: 'Account Settings',
-				iconCls: 'user',
+				iconCls: 'usi_user',
 				xtype: 'aaiaccount',
 				
 			},

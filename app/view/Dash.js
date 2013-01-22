@@ -36,8 +36,8 @@ Ext.define("USIMobile.view.Dash", {
 							},
 							{
 								xtype: 'button',
-								id: 'empty_b',
-								baseCls: 'dash_button item_dash_button',
+								id: 'services_dash_button',
+								baseCls: 'dash_button services_dash_button',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">Services</div></div>',
 							},
@@ -52,14 +52,14 @@ Ext.define("USIMobile.view.Dash", {
 							{
 								xtype: 'button',
 								id: 'library_dash_button',
-								baseCls: 'dash_button item_dash_button',
+								baseCls: 'dash_button library_dash_button',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">Library</div></div>',
 							},
 							{
 								xtype: 'button',
 								id: 'people_dash_button',
-								baseCls: 'dash_button people_dash_button',
+								baseCls: 'dash_button people_dash_button address_book',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">People</div></div>',
 							},

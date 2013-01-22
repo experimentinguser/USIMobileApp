@@ -178,6 +178,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 					this.store_update_status.short_news = true;
 				}, this, {single: true});
 				USIMobile.Session.getShortNewsStore().load();
+				USIMobile.Session.getDetailedNewsStore().load();
 			}
 		}
 
