@@ -21,8 +21,7 @@ Ext.define('USIMobile.Config', {
 
 	config : {
 		// url
-		kurogoRestUrl: 'https://usimobile-dev.elearninglab.org/rest/',
-		//kurogoRestUrl: 'http://localhost/kurogo/www/rest/',
+		kurogoRestUrl: 'http://your_moodle_installation_with_uniappws/rest/',
 		updatesUrl: 'updates/check',
 		coursesUrl: 'courses/get',
 		academicCalendarUrl: 'academiccalendar/get',
