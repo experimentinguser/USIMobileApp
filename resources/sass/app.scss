@@ -26,7 +26,6 @@ $base-color: #F90;
 	//background-image: url('../icons/item.png');
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 90px 90px;
 	position: relative;
 	.label_container {
 		width: 100%;
@@ -37,7 +36,7 @@ $base-color: #F90;
 		margin-top: 50%;
 		.label {
 			position:absolute;
-			margin-top: 50px;
+			margin-top: 30px;
 			font-weight: normal;
 			text-align:center;
 			color: black;

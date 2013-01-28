@@ -10636,10 +10636,9 @@ input[type="search"]::-webkit-search-cancel-button {
 .dash_button {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 90px 90px;
   position: relative;
 }
-/* line 31, ../sass/app.scss */
+/* line 30, ../sass/app.scss */
 .dash_button .label_container {
   width: 100%;
   height: 100%;
@@ -10648,69 +10647,69 @@ input[type="search"]::-webkit-search-cancel-button {
   margin-left: -60px;
   margin-top: 50%;
 }
-/* line 38, ../sass/app.scss */
+/* line 37, ../sass/app.scss */
 .dash_button .label_container .label {
   position: absolute;
-  margin-top: 50px;
+  margin-top: 30px;
   font-weight: normal;
   text-align: center;
   color: black;
   width: 120px;
 }
 
-/* line 49, ../sass/app.scss */
+/* line 48, ../sass/app.scss */
 .news_dash_button {
   background-image: url("../icons/news.png");
 }
 
-/* line 53, ../sass/app.scss */
+/* line 52, ../sass/app.scss */
 .courses_dash_button {
   background-image: url("../icons/courses.png");
 }
 
-/* line 57, ../sass/app.scss */
+/* line 56, ../sass/app.scss */
 .calendar_dash_button {
   background-image: url("../icons/calendar.png");
 }
 
-/* line 61, ../sass/app.scss */
+/* line 60, ../sass/app.scss */
 .services_dash_button {
   background-image: url("../icons/services.png");
 }
 
-/* line 65, ../sass/app.scss */
+/* line 64, ../sass/app.scss */
 .library_dash_button {
   background-image: url("../icons/library.png");
 }
 
-/* line 69, ../sass/app.scss */
+/* line 68, ../sass/app.scss */
 .people_dash_button {
   background-image: url("../icons/people.png");
 }
 
-/* line 73, ../sass/app.scss */
+/* line 72, ../sass/app.scss */
 .mensa_dash_button {
   background-image: url("../icons/mensa.png");
 }
 
-/* line 77, ../sass/app.scss */
+/* line 76, ../sass/app.scss */
 .sport_activity_dash_button {
   background-image: url("../icons/sport.png");
 }
 
-/* line 81, ../sass/app.scss */
+/* line 80, ../sass/app.scss */
 .jobs_dash_button {
   background-image: url("../icons/jobopp.png");
 }
 
-/* line 85, ../sass/app.scss */
+/* line 84, ../sass/app.scss */
 .short_news_publish_date {
   color: gray;
   text-align: right;
   font-size: small;
 }
 
-/* line 94, ../sass/app.scss */
+/* line 93, ../sass/app.scss */
 .detailed_news_title,
 .detailed_news_body,
 .detailed_detailed_url,
@@ -10720,7 +10719,7 @@ input[type="search"]::-webkit-search-cancel-button {
   padding: 10px;
 }
 
-/* line 124, ../sass/app.scss */
+/* line 123, ../sass/app.scss */
 .course_title,
 .course_description,
 .course_professors,
@@ -10749,12 +10748,12 @@ input[type="search"]::-webkit-search-cancel-button {
   background-color: white;
 }
 
-/* line 130, ../sass/app.scss */
+/* line 129, ../sass/app.scss */
 .examination_session {
   padding-bottom: 5px;
 }
 
-/* line 137, ../sass/app.scss */
+/* line 136, ../sass/app.scss */
 .registration_begin,
 .registration_end,
 .examination_begin,
@@ -10763,7 +10762,7 @@ input[type="search"]::-webkit-search-cancel-button {
   color: gray;
 }
 
-/* line 143, ../sass/app.scss */
+/* line 142, ../sass/app.scss */
 .registration_end,
 .examination_end {
   padding-top: 5px;
