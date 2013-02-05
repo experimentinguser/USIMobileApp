@@ -21,6 +21,7 @@ Ext.define('USIMobile.Session', {
 		detailedNewsStore: null,
 		menuMensaStore: null,
 		sportActivityStore: null,
+		servicesStore: null,
 	}
 	
 });

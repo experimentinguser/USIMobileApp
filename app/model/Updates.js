@@ -12,6 +12,7 @@ Ext.define('USIMobile.model.Updates', {
 			{name: 'usinews', type: 'string'},
 			{name: 'menumensa', type: 'string'},
 			{name: 'sport', type: 'string'},
+			{name: 'services', type: 'string'},
 		]
 	}
 });

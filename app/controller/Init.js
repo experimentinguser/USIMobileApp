@@ -17,6 +17,7 @@ Ext.define('USIMobile.controller.Init', {
 			'USIMobile.store.DetailedNews',
 			'USIMobile.store.MenuMensa',
 			'USIMobile.store.SportActivity',
+			'USIMobile.store.Services',
 		],
 
 		refs: {
@@ -93,7 +94,9 @@ Ext.define('USIMobile.controller.Init', {
 		var sportactivity_store = Ext.create('USIMobile.store.SportActivity');
 		USIMobile.Session.setSportActivityStore(sportactivity_store);
 
-
+		// create the Services store
+		var services_store = Ext.create('USIMobile.store.Services');
+		USIMobile.Session.setServicesStore(services_store);
 
 		/*********************************
 		 * DEBUG/LOG MESSAGES
@@ -210,6 +213,16 @@ Ext.define('USIMobile.controller.Init', {
 				'write',
 				function(store, operation) {
 					USIMobile.log('=> sportactivity_store operation: action='+operation.getAction()+'; success: '+operation.wasSuccessful());
+					Ext.iterate(operation.getRecords(), function(record){
+						console.log(' --> data: ');
+						console.log(record.getData());
+					});
+				});
+
+			services_store.on(
+				'write',
+				function(store, operation) {
+					USIMobile.log('=> services_store operation: action='+operation.getAction()+'; success: '+operation.wasSuccessful());
 					Ext.iterate(operation.getRecords(), function(record){
 						console.log(' --> data: ');
 						console.log(record.getData());

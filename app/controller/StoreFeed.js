@@ -60,6 +60,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 			'short_news': false,
 			'menu_mensa': false,
 			'sport_activity': false,
+			'services': false,
 		};
 		// check
 		var scope = this;
@@ -72,7 +73,8 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				scope.store_update_status.people == true &&
 				scope.store_update_status.short_news == true &&
 				scope.store_update_status.menu_mensa == true &&
-				scope.store_update_status.sport_activity == true
+				scope.store_update_status.sport_activity == true &&
+				scope.store_update_status.services == true
 			) {
 				clearInterval(scope.store_update_status.check_interval);
 				USIMobile.app.hideLoadMask();
@@ -98,6 +100,8 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		this.updateMenuMensaStore();
 		// sportactivity store
 		this.updateSportActivityStore();
+		// services store
+		this.updateServicesStore();
 		// write to updates store
 		this.syncUpdatesStore(server_updates_store);
 	},
@@ -204,6 +208,18 @@ Ext.define('USIMobile.controller.StoreFeed', {
 					this.store_update_status.sport_activity = true;
 				}, this, {single: true});
 				USIMobile.Session.getSportActivityStore().load();
+			}
+		}
+
+		// services store
+		if(server_updates_store.first().get('services') != USIMobile.Session.getUpdatesStore().first().get('services')) {
+			this.updateServicesStore();
+		} else {
+			if(USIMobile.Session.getServicesStore().getCount() == 0){
+				USIMobile.Session.getServicesStore().on('load', function(){
+					this.store_update_status.services = true;
+				}, this, {single: true});
+				USIMobile.Session.getServicesStore().load();
 			}
 		}
 
@@ -440,6 +456,35 @@ Ext.define('USIMobile.controller.StoreFeed', {
 					});
 					// store data
 					USIMobile.Session.getSportActivityStore().sync();
+				} else {
+					Ext.Msg.alert(
+						store.getProxy().getReader().rawData.title,
+						store.getProxy().getReader().rawData.message + '; Code: ' + store.getProxy().getReader().rawData.code
+					);
+				}
+			},
+			this,
+			{single: true}
+		);
+	},
+
+	updateServicesStore: function() {
+		USIMobile.WebService.getServices().on('load',
+			function(store, records, success) {
+				// check if there are any exceptions
+				// check for errors here
+				if(store.getProxy().getReader().rawData.error == null){
+					this.store_update_status.services = true;
+					// remove old entries
+					USIMobile.Session.getServicesStore().removeAll();
+					USIMobile.Session.getServicesStore().getProxy().clear();
+					// insert the entries
+					store.each(function(entry){
+						entry.setDirty();
+						USIMobile.Session.getServicesStore().add(entry);
+					});
+					// store data
+					USIMobile.Session.getServicesStore().sync();
 				} else {
 					Ext.Msg.alert(
 						store.getProxy().getReader().rawData.title,

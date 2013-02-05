@@ -45,6 +45,7 @@ Ext.application({
 		'USIMobile.view.SearchSportActivity',
 		'USIMobile.view.SportActivities',
 		'USIMobile.view.SportActivity',
+		'USIMobile.view.Services',
 		'USIMobile.view.Dash',
 	],
 
@@ -59,6 +60,7 @@ Ext.application({
 		"USIMobile.controller.People",
 		"USIMobile.controller.News", 
 		"USIMobile.controller.SportActivity",
+		"USIMobile.controller.Service",
 	],
 
     icon: {
@@ -186,7 +188,7 @@ Ext.application({
 		var failFunc = function(){
 			Ext.Msg.alert(
 				'Sending e-mail error',
-				'Failed to open the mail client and send a mail to:' + to
+				'Failed to open the mail client and send a mail to: ' + to
 			);
 		};
 
