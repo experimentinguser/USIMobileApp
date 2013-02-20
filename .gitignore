@@ -1,1 +1,3 @@
 *.swp
+resources/sass/.sass-cache/*
+.git-ftp-ignore
