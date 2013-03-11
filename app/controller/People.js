@@ -6,15 +6,15 @@ Ext.define('USIMobile.controller.People', {
 
 	config: {
 		refs: {
-			dash: '#dash',
-			dashPeopleButton: 'button#people_dash_button',
+			home: '#home',
+			homePeopleButton: 'button#people_home_button',
 			people: '#people',
 			searchPeopleForm: '#searchpeople',
 			searchPeopleButton: '#searchpeople button[action=search]',
 		},
 
 		control: {
-			dashPeopleButton: { tap: 'showSearchPeopleForm' },
+			homePeopleButton: { tap: 'showSearchPeopleForm' },
 			searchPeopleButton: { tap: 'searchPeople' },
 			people: {
 				show: function() {
@@ -31,9 +31,9 @@ Ext.define('USIMobile.controller.People', {
 
 	showSearchPeopleForm: function() {
 		if(typeof this.getSearchPeopleForm() == 'object') {
-			this.getDash().push(this.getSearchPeopleForm());
+			this.getHome().push(this.getSearchPeopleForm());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'searchpeopleform',
 			});
 		}
@@ -55,9 +55,9 @@ Ext.define('USIMobile.controller.People', {
 
 		if(typeof this.getPeople() == 'object') {
 			this.getPeople().refresh();
-			this.getDash().push(this.getPeople());
+			this.getHome().push(this.getPeople());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'people',
 				store: USIMobile.Session.getPeopleStore()
 			});
@@ -108,9 +108,9 @@ Ext.define('USIMobile.controller.People', {
 	showPeople: function(view, index, target, record) {
 		if(typeof this.getPeople() == 'object') {
 			this.getPeople().setRecord(record);
-			this.getDash().push(this.getPeople());
+			this.getHome().push(this.getPeople());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'people',
 				record: record
 			});

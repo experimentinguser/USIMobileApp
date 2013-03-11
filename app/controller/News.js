@@ -7,10 +7,10 @@ Ext.define('USIMobile.controller.News', {
 
 	config: {
 		refs: {
-			dash: '#dash',
+			home: '#home',
 			shortNews: '#shortnews',
 			detailedNews: '#detailednews',
-			newsButton: 'button#news_dash_button',
+			newsButton: 'button#news_home_button',
 		},
 
 		control: {
@@ -26,9 +26,9 @@ Ext.define('USIMobile.controller.News', {
 	showShortNews: function(btn, e, eOpts){
 		// display news
 		if(typeof this.getShortNews() == 'object') {
-			this.getDash().push(this.getShortNews());
+			this.getHome().push(this.getShortNews());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'shortnews',	
 				store: USIMobile.Session.getShortNewsStore()
 			});
@@ -40,9 +40,9 @@ Ext.define('USIMobile.controller.News', {
 		// display details
 		if(typeof this.getDetailedNews() == 'object') {
 			this.getDetailedNews().setRecord(detailednews_record);
-			this.getDash().push(this.getDetailedNews());
+			this.getHome().push(this.getDetailedNews());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'detailednews',	
 				record: detailednews_record
 			});

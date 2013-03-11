@@ -7,15 +7,15 @@ Ext.define('USIMobile.controller.Service', {
 
 	config: {
 		refs: {
-			dash: '#dash',
-			dashServicesButton: 'button#services_dash_button',
+			home: '#home',
+			homeServicesButton: 'button#services_home_button',
 			services: '#services',
 			sendMailBtn: 'button[action=send_email_to_service]',
 			phoneBtn: 'button[action=call_service]',
 		},
 
 		control: {
-			dashServicesButton: { tap: 'showServices' },
+			homeServicesButton: { tap: 'showServices' },
 			services: { itemtap: 'contactService' },
 			sendMailBtn: { tap: 'sendMail' },
 			phoneBtn: { tap: 'phone' }
@@ -75,9 +75,9 @@ Ext.define('USIMobile.controller.Service', {
 	showServices: function() {
 		console.log('show services');
 		if(typeof this.getServices() == 'object') {
-			this.getDash().push(this.getServices());
+			this.getHome().push(this.getServices());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'services',	
 				store: USIMobile.Session.getServicesStore(),
 			});

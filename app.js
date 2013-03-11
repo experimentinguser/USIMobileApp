@@ -46,7 +46,7 @@ Ext.application({
 		'USIMobile.view.SportActivities',
 		'USIMobile.view.SportActivity',
 		'USIMobile.view.Services',
-		'USIMobile.view.Dash',
+		'USIMobile.view.Home',
 	],
 
 	controllers: [
@@ -54,7 +54,7 @@ Ext.application({
 		"USIMobile.controller.UsageAgreement", 
 		"USIMobile.controller.AaiAccount", 
 		"USIMobile.controller.StoreFeed",
-		"USIMobile.controller.Dash", 
+		"USIMobile.controller.Home", 
 		"USIMobile.controller.Course",
 		"USIMobile.controller.Calendar",
 		"USIMobile.controller.People",

@@ -22,7 +22,7 @@ $base-color: #F90;
 @include pictos-iconmask('usi_home');
 @include pictos-iconmask('usi_user');
 
-.dash_button {
+.home_button {
 	//background-image: url('../icons/item.png');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -45,39 +45,39 @@ $base-color: #F90;
 	}
 }
 
-.news_dash_button {
+.news_home_button {
 	background-image: url('../icons/news.png');
 }
 
-.courses_dash_button {
+.courses_home_button {
 	background-image: url('../icons/courses.png');
 }
 
-.calendar_dash_button {
+.calendar_home_button {
 	background-image: url('../icons/calendar.png');
 }
 
-.services_dash_button {
+.services_home_button {
 	background-image: url('../icons/services.png');
 }
 
-.library_dash_button {
+.library_home_button {
 	background-image: url('../icons/library.png');
 }
 
-.people_dash_button {
+.people_home_button {
 	background-image: url('../icons/people.png');
 }
 
-.mensa_dash_button {
+.mensa_home_button {
 	background-image: url('../icons/mensa.png');
 }
 
-.sport_activity_dash_button {
+.sport_activity_home_button {
 	background-image: url('../icons/sport.png');
 }
 
-.jobs_dash_button {
+.jobs_home_button {
 	background-image: url('../icons/jobopp.png');
 }
 

@@ -1,12 +1,12 @@
-Ext.define("USIMobile.view.Dash", {
+Ext.define("USIMobile.view.Home", {
 	extend: 'Ext.navigation.View',
-	xtype: 'dash',
+	xtype: 'home',
 
 	views:[
 	],
 
 	config: {
-		id: 'dash',
+		id: 'home',
 		autoDestroy: false,
 		items: [	
 			{
@@ -22,22 +22,22 @@ Ext.define("USIMobile.view.Dash", {
 						items: [
 							{
 								xtype: 'button',
-								id: 'courses_dash_button',
-								baseCls: 'dash_button courses_dash_button',
+								id: 'courses_home_button',
+								baseCls: 'home_button courses_home_button',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">Courses</div></div>',
 							},
 							{
 								xtype: 'button',
-								id: 'calendar_dash_button',
-								baseCls: 'dash_button calendar_dash_button',
+								id: 'calendar_home_button',
+								baseCls: 'home_button calendar_home_button',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">Calendar</div></div>',
 							},
 							{
 								xtype: 'button',
-								id: 'services_dash_button',
-								baseCls: 'dash_button services_dash_button',
+								id: 'services_home_button',
+								baseCls: 'home_button services_home_button',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">Services</div></div>',
 							},
@@ -51,22 +51,22 @@ Ext.define("USIMobile.view.Dash", {
 						items: [
 							{
 								xtype: 'button',
-								id: 'library_dash_button',
-								baseCls: 'dash_button library_dash_button',
+								id: 'library_home_button',
+								baseCls: 'home_button library_home_button',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">Library</div></div>',
 							},
 							{
 								xtype: 'button',
-								id: 'people_dash_button',
-								baseCls: 'dash_button people_dash_button address_book',
+								id: 'people_home_button',
+								baseCls: 'home_button people_home_button address_book',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">People</div></div>',
 							},
 							{
 								xtype: 'button',
-								id: 'news_dash_button',
-								baseCls: 'dash_button news_dash_button',
+								id: 'news_home_button',
+								baseCls: 'home_button news_home_button',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">News</div></div>',
 							},
@@ -81,22 +81,22 @@ Ext.define("USIMobile.view.Dash", {
 						items: [
 							{
 								xtype: 'button',
-								id: 'mensa_dash_button',
-								baseCls: 'dash_button mensa_dash_button',
+								id: 'mensa_home_button',
+								baseCls: 'home_button mensa_home_button',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">Mensa</div></div>',
 							},
 							{
 								xtype: 'button',
-								id: 'sport_activity_dash_button',
-								baseCls: 'dash_button sport_activity_dash_button',
+								id: 'sport_activity_home_button',
+								baseCls: 'home_button sport_activity_home_button',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">Sport Act.</div></div>',
 							},
 							{
 								xtype: 'button',
-								id: 'jobs_dash_button',
-								baseCls: 'dash_button jobs_dash_button',
+								id: 'jobs_home_button',
+								baseCls: 'home_button jobs_home_button',
 								width: '33.3%',
 								html: '<div class="label_container"><div class="label">Job Opp.</div></div>',
 							},

@@ -6,8 +6,8 @@ Ext.define('USIMobile.controller.Calendar', {
 
 	config: {
 		refs: {
-			dash: '#dash',
-			calendarButton: 'button#calendar_dash_button',
+			home: '#home',
+			calendarButton: 'button#calendar_home_button',
 			calendar: '#calendar',
 			faculties: '#faculties',
 			levels: '#levels',
@@ -33,9 +33,9 @@ Ext.define('USIMobile.controller.Calendar', {
 	showCalendar: function(btn, e, eOpts){
 		// display news
 		if(typeof this.getCalendar() == 'object') {
-			this.getDash().push(this.getCalendar());
+			this.getHome().push(this.getCalendar());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'calendar',	
 			});
 		}
@@ -59,9 +59,9 @@ Ext.define('USIMobile.controller.Calendar', {
 
 	showFaculties: function() {
 		if(typeof this.getFaculties() == 'object') {
-			this.getDash().push(this.getFaculties());
+			this.getHome().push(this.getFaculties());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'faculties',	
 			});
 		}
@@ -75,9 +75,9 @@ Ext.define('USIMobile.controller.Calendar', {
 
 	showLevels: function() {
 		if(typeof this.getLevels() == 'object') {
-			this.getDash().push(this.getLevels());
+			this.getHome().push(this.getLevels());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'levels',
 			});
 		}
@@ -100,9 +100,9 @@ Ext.define('USIMobile.controller.Calendar', {
 	showTeachingTimetables: function() {
 		if(typeof this.getTeachingTimetables() == 'object') {
 			this.getTeachingTimetables().store = this.getFilteredTeachingTimetablesStore();
-			this.getDash().push(this.getTeachingTimetables());
+			this.getHome().push(this.getTeachingTimetables());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'teachingtimetables',
 				store: this.getFilteredTeachingTimetablesStore()
 			});
@@ -132,9 +132,9 @@ Ext.define('USIMobile.controller.Calendar', {
 	showExaminationTimetables: function() {
 		if(typeof this.getExaminationTimetables() == 'object') {
 			this.getExaminationTimetables().store = this.getFilteredExaminationTimetablesStore();
-			this.getDash().push(this.getExaminationTimetables());
+			this.getHome().push(this.getExaminationTimetables());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'examinationtimetables',
 				store: this.getFilteredExaminationTimetablesStore()
 			});

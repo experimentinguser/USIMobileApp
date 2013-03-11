@@ -1,4 +1,4 @@
-Ext.define('USIMobile.controller.Dash', {
+Ext.define('USIMobile.controller.Home', {
 	extend: 'Ext.app.Controller',
 
 	requires: [
@@ -7,10 +7,10 @@ Ext.define('USIMobile.controller.Dash', {
 
 	config: {
 		refs: {
-			dash: '#dash',
-			menuMensaButton: 'button#mensa_dash_button',
-			usiSportButton: 'button#usisport_dash_button',
-			offerteLavoroButton: 'button#offertelavoro_dash_button',
+			home: '#home',
+			menuMensaButton: 'button#mensa_home_button',
+			usiSportButton: 'button#usisport_home_button',
+			offerteLavoroButton: 'button#offertelavoro_home_button',
 		},
 
 		control: {

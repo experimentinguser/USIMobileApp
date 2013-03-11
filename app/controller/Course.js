@@ -6,8 +6,8 @@ Ext.define('USIMobile.controller.Course', {
 
 	config: {
 		refs: {
-			dash: '#dash',
-			dashCoursesButton: 'button#courses_dash_button',
+			home: '#home',
+			homeCoursesButton: 'button#courses_home_button',
 			courses: '#courses',
 			course: '#course',
 			searchCoursesForm: '#searchcourses',
@@ -17,7 +17,7 @@ Ext.define('USIMobile.controller.Course', {
 		},
 
 		control: {
-			dashCoursesButton: { tap: 'showSearchCoursesForm' },
+			homeCoursesButton: { tap: 'showSearchCoursesForm' },
 			searchCoursesButton: { tap: 'searchCourses' },
 			courses: {
 				itemtap: 'showCourse',
@@ -34,9 +34,9 @@ Ext.define('USIMobile.controller.Course', {
 
 	showSearchCoursesForm: function() {
 		if(typeof this.getSearchCoursesForm() == 'object') {
-			this.getDash().push(this.getSearchCoursesForm());
+			this.getHome().push(this.getSearchCoursesForm());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'searchcoursesform',	
 			});
 		}
@@ -57,9 +57,9 @@ Ext.define('USIMobile.controller.Course', {
 		this.filterCoursesStore();
 		if(typeof this.getCourses() == 'object') {
 			this.getCourses().refresh();
-			this.getDash().push(this.getCourses());
+			this.getHome().push(this.getCourses());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'courses',
 				store: USIMobile.Session.getCoursesStore()
 			});
@@ -115,9 +115,9 @@ Ext.define('USIMobile.controller.Course', {
 	showCourse: function(view, index, target, record) {
 		if(typeof this.getCourse() == 'object') {
 			this.getCourse().setRecord(record);
-			this.getDash().push(this.getCourse());
+			this.getHome().push(this.getCourse());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'course',
 				record: record
 			});

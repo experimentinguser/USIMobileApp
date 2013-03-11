@@ -2,7 +2,7 @@ Ext.define("USIMobile.view.Main", {
 	extend: 'Ext.tab.Panel',
 
 	requires: [
-		'USIMobile.view.Dash',
+		'USIMobile.view.Home',
 	],
 
 	config: {
@@ -10,9 +10,9 @@ Ext.define("USIMobile.view.Main", {
 
 		items: [
 			{
-				title: 'Dash',
+				title: 'USI',
 				iconCls: 'usi_home',
-				xtype: 'dash'
+				xtype: 'home'
 			},
 			{
 				title: 'Account Settings',

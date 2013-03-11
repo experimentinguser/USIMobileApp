@@ -6,8 +6,8 @@ Ext.define('USIMobile.controller.SportActivity', {
 
 	config: {
 		refs: {
-			dash: '#dash',
-			dashSportActivityButton: 'button#sport_activity_dash_button',
+			home: '#home',
+			homeSportActivityButton: 'button#sport_activity_home_button',
 			searchSportActivityForm: '#searchsportactivityform',
 			searchSportActivityButton: '#searchsportactivityform button[action=search]',
 			sportActivities: '#sportactivities',
@@ -16,7 +16,7 @@ Ext.define('USIMobile.controller.SportActivity', {
 		},
 
 		control: {
-			dashSportActivityButton: { tap: 'showSearchSportActivityForm' },
+			homeSportActivityButton: { tap: 'showSearchSportActivityForm' },
 			searchSportActivityButton: { tap: 'searchSportActivity' },
 			sportActivityMailToButton: { tap: 'mailTo' },
 			sportActivities: {
@@ -35,9 +35,9 @@ Ext.define('USIMobile.controller.SportActivity', {
 
 	showSearchSportActivityForm: function() {
 		if(typeof this.getSearchSportActivityForm() == 'object') {
-			this.getDash().push(this.getSearchSportActivityForm());
+			this.getHome().push(this.getSearchSportActivityForm());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'searchsportactivityform',
 			});
 		}
@@ -59,9 +59,9 @@ Ext.define('USIMobile.controller.SportActivity', {
 		this.filterSportActivityStore();
 		if(typeof this.getSportActivities() == 'object') {
 			this.getSportActivities().refresh();
-			this.getDash().push(this.getSportActivities());
+			this.getHome().push(this.getSportActivities());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'sportactivities',
 				store: USIMobile.Session.getSportActivityStore()
 			});
@@ -91,9 +91,9 @@ Ext.define('USIMobile.controller.SportActivity', {
 	showSportActivity: function(view, index, target, record) {
 		if(typeof this.getSportActivity() == 'object') {
 			this.getSportActivity().setRecord(record);
-			this.getDash().push(this.getSportActivity());
+			this.getHome().push(this.getSportActivity());
 		} else {
-			this.getDash().push({
+			this.getHome().push({
 				xtype: 'sportactivity',
 				record: record
 			});
