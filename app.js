@@ -87,8 +87,8 @@ Ext.application({
 
 		if(USIMobile.Session.getSettingsStore().first().getData().usageagreement == false) {
 			Ext.Viewport.add( Ext.create('USIMobile.view.UsageAgreement') );
-		} else if(USIMobile.Session.getSettingsStore().first().get('accountset') == false) {
-			Ext.Viewport.add(Ext.create('USIMobile.view.AaiAccount'));
+		//} else if(USIMobile.Session.getSettingsStore().first().get('accountset') == false) {
+			//Ext.Viewport.add(Ext.create('USIMobile.view.AaiAccount'));
 		} else {
 			Ext.Viewport.add(Ext.create('USIMobile.view.Main'));
 		}
