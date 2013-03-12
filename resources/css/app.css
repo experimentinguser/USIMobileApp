@@ -10675,7 +10675,19 @@ input[type="search"]::-webkit-search-cancel-button {
   -webkit-mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QEWDB4LYO+bkQAAAuhJREFUaN7tm+2RmzAQht/N5L9JBUcHJhWEEijB6YASKMEdhBJcAldBuA7oILoKNj8sPJhDfIjVws2hGc14zhLSw0r7eSZmxldq30MvQEQZgBRAAuCXY9grgBpAxcy3oBtiZvEOIAJQAGgA8MLe2LlRkL0FgM0BGA/QfjcA8t0CW6neBED7/SYpbUnYOgBs22sp6M8AKwpNa80SEdUAzkpW5Y2ZkzUP+LYS9qoICwBnu6a+WbK2lTfqqfodBlBtCFyp3mEiSgD83dhL/MnMtdYdznfgFnvtwVfCBsBpY+B3Zo6CS9ge59MOJHyyewl+pBPsp6kAxzsCjjWAP3U7gA/gAxjNjvbfaADXOwJevJfD05rZbjuQrtcejmhpZtKgxj15vlV79YE9Mh4e0NcNYK9H1lLZ00oBvGnA2rXWtaPycNSWjurhUB3YoJMrhnB9GPccuIFA3VhaksnAuMyar2oEsrJjsoH5iaTkfUCTEQVVBrgi5YgiS4LaYSK6APgzMewHMxvH/MJ+bL+PrKUoHOMjAP8m1vvNzKW4WRp50/1ejJwM15zEMaeYuWYpeqQXwDKAxvGMy8ici2POEqVXigAvhG17ttDvvjqU3dJ1y1XAnrCD5cwpLS1Yji29gK3ZWeM4xL3njY7vjY1Xrp0vAp5QMIvf9MznJQInazJmdnlPjZBrGC24j1lnfQnXtBnyyobCwxzAi0Q502rmh72daO2YTCgj+oKhovnA3TGCkU4zU2rd09AIrm8+6BIhrTx5l+aYpUB5snIQWPDufIhnZ2je2I4JEU+bp8hL0AyxJ9BNyBTNMlNd4JApmrEjmypkQOsn4MBvlwEYx4utO383gfcQd81SirDtZEPLVpLofrbfhS7OpQ+zFEg7u4/VXZpG6To9aev2Rx6xQl75TEQpM1ddKRNRqpTIj7sS1iqTlB0TGCmerkeAog38FEVZcNYE3uKfWi49v123KZmEwRSQsN88yzTSV/sp3n+OgDgXRPAYuQAAAABJRU5ErkJggg==');
 }
 
-/* line 26, ../sass/app.scss */
+/* line 25, ../sass/app.scss */
+.license_title {
+  font-size: large;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* line 31, ../sass/app.scss */
+.license_body {
+  padding: 10px;
+}
+
+/* line 36, ../sass/app.scss */
 .home_button .icon {
   position: absolute;
   left: 50%;
@@ -10687,7 +10699,7 @@ input[type="search"]::-webkit-search-cancel-button {
   padding-top: 80px;
   margin-left: -50px;
 }
-/* line 36, ../sass/app.scss */
+/* line 46, ../sass/app.scss */
 .home_button .icon .label {
   position: relative;
   font-weight: normal;
@@ -10695,59 +10707,59 @@ input[type="search"]::-webkit-search-cancel-button {
   color: black;
 }
 
-/* line 46, ../sass/app.scss */
+/* line 56, ../sass/app.scss */
 .courses_icon {
   background-image: url("../icons/courses.png");
 }
 
-/* line 50, ../sass/app.scss */
+/* line 60, ../sass/app.scss */
 .news_icon {
   background-image: url("../icons/news.png");
 }
 
-/* line 54, ../sass/app.scss */
+/* line 64, ../sass/app.scss */
 .calendar_icon {
   background-image: url("../icons/calendar.png");
 }
 
-/* line 58, ../sass/app.scss */
+/* line 68, ../sass/app.scss */
 .services_icon {
   background-image: url("../icons/services.png");
 }
 
-/* line 62, ../sass/app.scss */
+/* line 72, ../sass/app.scss */
 .library_icon {
   background-image: url("../icons/library.png");
 }
 
-/* line 66, ../sass/app.scss */
+/* line 76, ../sass/app.scss */
 .people_icon {
   background-image: url("../icons/people.png");
 }
 
-/* line 70, ../sass/app.scss */
+/* line 80, ../sass/app.scss */
 .mensa_icon {
   background-image: url("../icons/mensa.png");
 }
 
-/* line 74, ../sass/app.scss */
+/* line 84, ../sass/app.scss */
 .sport_icon {
   background-image: url("../icons/sport.png");
 }
 
-/* line 78, ../sass/app.scss */
+/* line 88, ../sass/app.scss */
 .career_icon {
   background-image: url("../icons/career.png");
 }
 
-/* line 82, ../sass/app.scss */
+/* line 92, ../sass/app.scss */
 .short_news_publish_date {
   color: gray;
   text-align: right;
   font-size: small;
 }
 
-/* line 91, ../sass/app.scss */
+/* line 101, ../sass/app.scss */
 .detailed_news_title,
 .detailed_news_body,
 .detailed_detailed_url,
@@ -10757,7 +10769,7 @@ input[type="search"]::-webkit-search-cancel-button {
   padding: 10px;
 }
 
-/* line 121, ../sass/app.scss */
+/* line 131, ../sass/app.scss */
 .course_title,
 .course_description,
 .course_professors,
@@ -10786,12 +10798,12 @@ input[type="search"]::-webkit-search-cancel-button {
   background-color: white;
 }
 
-/* line 127, ../sass/app.scss */
+/* line 137, ../sass/app.scss */
 .examination_session {
   padding-bottom: 5px;
 }
 
-/* line 134, ../sass/app.scss */
+/* line 144, ../sass/app.scss */
 .registration_begin,
 .registration_end,
 .examination_begin,
@@ -10800,7 +10812,7 @@ input[type="search"]::-webkit-search-cancel-button {
   color: gray;
 }
 
-/* line 140, ../sass/app.scss */
+/* line 150, ../sass/app.scss */
 .registration_end,
 .examination_end {
   padding-top: 5px;

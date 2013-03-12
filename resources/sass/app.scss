@@ -22,6 +22,16 @@ $base-color: #F90;
 @include pictos-iconmask('usi_home');
 @include pictos-iconmask('usi_user');
 
+.license_title {
+	font-size: large;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.license_body {
+	padding: 10px;
+}
+
 .home_button {
 	.icon {
 		position: absolute;

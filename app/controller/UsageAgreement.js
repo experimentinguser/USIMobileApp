@@ -3,23 +3,33 @@ Ext.define('USIMobile.controller.UsageAgreement', {
 	
 	config: {
 		refs: {
-			agree: '#usageagreement_panel button[action=agree]',
-			disagree: '#usageagreement_panel button[action=disagree]'
+			UApanel: '#usageagreement',
+			agree: '#usageagreement button[action=agree]',
+			disagree: '#usageagreement button[action=disagree]'
 		},
 		control: {
-		   agree:  {
+			UApanel:  {
+				activeitemchange: 'setLanguage'
+			},
+			agree:  {
 				tap: 'registerAgreement'
-		   },
-		   disagree: {
-		   		tap: 'registerDisagreement'
-		  }
+			},
+			disagree: {
+				tap: 'registerDisagreement'
+			}
 		}
 	},
 
+	setLanguage: function() {
+		var item = this.getUApanel().getActiveItem();
+		console.log(item);
+	},
+
 	registerAgreement: function() {
-		console.log('user agreed');
+		var language = this.getUApanel().getActiveItem().getId();
 		USIMobile.Session.getSettingsStore().load();
 		USIMobile.Session.getSettingsStore().first().set('usageagreement', true);
+		USIMobile.Session.getSettingsStore().first().set('language', language);
 		USIMobile.Session.getSettingsStore().sync();
 		location.reload();
 	},

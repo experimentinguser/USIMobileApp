@@ -20,7 +20,6 @@ Ext.application({
 
 	models: [
 		'USIMobile.model.Settings',
-		'USIMobile.model.AaiAccount',
 		'USIMobile.model.Updates',
 		'USIMobile.model.ShortNews',
 		'USIMobile.model.DetailedNews',
