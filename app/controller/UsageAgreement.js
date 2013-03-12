@@ -17,6 +17,7 @@ Ext.define('USIMobile.controller.UsageAgreement', {
 	},
 
 	registerAgreement: function() {
+		console.log('user agreed');
 		USIMobile.Session.getSettingsStore().load();
 		USIMobile.Session.getSettingsStore().first().set('usageagreement', true);
 		USIMobile.Session.getSettingsStore().sync();

@@ -12,7 +12,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		Ext.sf = this;
 		//this.self = this;
 		// start updates only if the usageagreemnt has been accepted and the aai account has been set
-		if(USIMobile.Session.getSettingsStore().first().get('usageagreement') && USIMobile.Session.getSettingsStore().first().get('accountset')) {
+		if(USIMobile.Session.getSettingsStore().first().get('usageagreement') && USIMobile.Session.getSettingsStore().first().get('cache')) {
 			// get hash updates
 			var updates = USIMobile.WebService.getUpdates();
 			updates.on('load', function(server_updates_store){ this.checkUpdates(server_updates_store); }, this, {single: true});

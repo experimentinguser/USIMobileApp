@@ -1,31 +1,38 @@
-Ext.define("USIMobile.view.AaiAccount", {
+Ext.define("USIMobile.view.Settings", {
 	extend: 'Ext.form.Panel',
-	xtype: 'aaiaccount',
+	xtype: 'settings',
 	fullscreen: true,
 	
 	requires: [
 		'Ext.TitleBar',
 		'Ext.form.FieldSet',
+		'Ext.field.Hidden',
 		'Ext.field.Text',
 		'Ext.field.Password',
 		'Ext.field.Select',
 	],
 
 	controllers: [
-		'USIMobile.controller.AaiAccount'
+		'USIMobile.controller.Settings'
 	],
 
 	config: {
-		id: 'aaiaccount_form',
+		id: 'settings',
 		items: [
 			{
 				docked: 'top',
 				xtype: 'titlebar',
-				title: 'Your AAI/NetID profile',
+				title: 'Settings',
 				iconCls: 'user'
 			},
 			{
+				xtype: 'hiddenfield',
+				name: 'usageagreement'
+			},
+			{
 				xtype: 'fieldset',
+				title: 'Login AAI',
+				id: 'logindata',
 				items: [
 					{
 						xtype: 'textfield',	
@@ -46,14 +53,30 @@ Ext.define("USIMobile.view.AaiAccount", {
 						valueField: 'url',
 						value: 'https://login2.usi.ch/idp/shibboleth',
 					},
-					{
-						xtype: 'button',
-						text: 'Save',
-						ui: 'confirm',
-						action: 'save',	
-					}
 				]
 			},
+			{
+				xtype: 'fieldset',
+				title: 'App Settings',
+				id: 'appsettings',
+				items: [
+					{
+						xtype: 'selectfield',
+						name: 'language',
+						label: 'Language',
+						options: [
+							{text: 'English', value: 'eng'},
+							{text: 'Italiano', value: 'ita'},
+						]
+					},
+					{
+						xtype: 'checkboxfield',
+						name: 'cache',
+						label: 'Cache',
+						checked: true,
+					},
+				]
+			}
 		],
 	}
 });

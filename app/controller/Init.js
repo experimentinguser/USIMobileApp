@@ -6,7 +6,6 @@ Ext.define('USIMobile.controller.Init', {
 
 		stores: [
 			'USIMobile.store.Settings',
-			'USIMobile.store.AaiAccount',
 			'USIMobile.store.Updates',
 			'USIMobile.store.Courses',
 			'USIMobile.store.AcademicCalendar',
@@ -36,22 +35,13 @@ Ext.define('USIMobile.controller.Init', {
 		settings_store.load({
 			callback: function(records, operation, success) {
 				if( records.length == 0 ) { // initialize usersettings
-					var settings_init_data = Ext.create('USIMobile.model.Settings', {
-						usageagreement: false,
-						accounttype: '',
-						storeaccount: false
-					});	
+					var settings_init_data = Ext.create('USIMobile.model.Settings');	
 					this.setData(settings_init_data);
 					this.sync();
 				}
 			}
 		});
 		USIMobile.Session.setSettingsStore(settings_store);
-
-		// create the AAI account store
-		var aai_account_store = Ext.create('USIMobile.store.AaiAccount'); 
-		aai_account_store.load();
-		USIMobile.Session.setAaiAccountStore(aai_account_store);
 
 		// create the updates
 		var updates_store = Ext.create('USIMobile.store.Updates'); 

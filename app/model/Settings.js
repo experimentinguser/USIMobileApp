@@ -4,8 +4,12 @@ Ext.define('USIMobile.model.Settings', {
 	config: {
 		identifier: 'uuid',
 		fields: [
-			{name: 'usageagreement', type: 'boolean'},
-			{name: 'accountset', type: 'boolean', defaultValue: false}
+			{name: 'usageagreement', type: 'boolean', defaultValue: false},
+			{name: 'cache', type: 'boolean', defaultValue: true},
+			{name: 'language', type: 'string'},
+			{name: 'username', type: 'string'},
+			{name: 'password', type: 'string'},
+			{name: 'homeorganisation', type: 'string'},
 		]
 	}
 });

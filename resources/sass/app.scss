@@ -23,62 +23,60 @@ $base-color: #F90;
 @include pictos-iconmask('usi_user');
 
 .home_button {
-	//background-image: url('../icons/item.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	position: relative;
-	.label_container {
-		width: 100%;
-		height: 100%;
-		position:absolute;
+	.icon {
+		position: absolute;
 		left: 50%;
-		margin-left: -60px;
-		margin-top: 50%;
+		top: 15%;
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 100px;
+		height: 100px;
+		padding-top: 80px;
+		margin-left: -50px;
 		.label {
-			position:absolute;
-			margin-top: 30px;
+			position: relative;
 			font-weight: normal;
-			text-align:center;
+			text-align: center;
 			color: black;
-			width: 120px;
 		}
 	}
 }
 
-.news_home_button {
-	background-image: url('../icons/news.png');
-}
 
-.courses_home_button {
+.courses_icon {
 	background-image: url('../icons/courses.png');
 }
 
-.calendar_home_button {
+.news_icon {
+	background-image: url('../icons/news.png');
+}
+
+.calendar_icon {
 	background-image: url('../icons/calendar.png');
 }
 
-.services_home_button {
+.services_icon {
 	background-image: url('../icons/services.png');
 }
 
-.library_home_button {
+.library_icon {
 	background-image: url('../icons/library.png');
 }
 
-.people_home_button {
+.people_icon {
 	background-image: url('../icons/people.png');
 }
 
-.mensa_home_button {
+.mensa_icon {
 	background-image: url('../icons/mensa.png');
 }
 
-.sport_activity_home_button {
+.sport_icon {
 	background-image: url('../icons/sport.png');
 }
 
-.jobs_home_button {
-	background-image: url('../icons/jobopp.png');
+.career_icon {
+	background-image: url('../icons/career.png');
 }
 
 .short_news_publish_date{

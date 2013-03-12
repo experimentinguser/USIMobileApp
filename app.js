@@ -28,7 +28,7 @@ Ext.application({
 
 	views: [
 		'USIMobile.view.UsageAgreement',
-		'USIMobile.view.AaiAccount',
+		'USIMobile.view.Settings',
 		'USIMobile.view.Main',
 		'USIMobile.view.SearchCourses',
 		'USIMobile.view.Courses',
@@ -52,7 +52,7 @@ Ext.application({
 	controllers: [
 		"USIMobile.controller.Init", 
 		"USIMobile.controller.UsageAgreement", 
-		"USIMobile.controller.AaiAccount", 
+		"USIMobile.controller.Settings", 
 		"USIMobile.controller.StoreFeed",
 		"USIMobile.controller.Home", 
 		"USIMobile.controller.Course",
@@ -87,8 +87,6 @@ Ext.application({
 
 		if(USIMobile.Session.getSettingsStore().first().getData().usageagreement == false) {
 			Ext.Viewport.add( Ext.create('USIMobile.view.UsageAgreement') );
-		//} else if(USIMobile.Session.getSettingsStore().first().get('accountset') == false) {
-			//Ext.Viewport.add(Ext.create('USIMobile.view.AaiAccount'));
 		} else {
 			Ext.Viewport.add(Ext.create('USIMobile.view.Main'));
 		}

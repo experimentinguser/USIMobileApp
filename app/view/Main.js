@@ -15,10 +15,9 @@ Ext.define("USIMobile.view.Main", {
 				xtype: 'home'
 			},
 			{
-				title: 'Account Settings',
-				iconCls: 'usi_user',
-				xtype: 'aaiaccount',
-				
+				title: 'Settings',
+				iconCls: 'settings',
+				xtype: 'settings',
 			},
 
 		]
