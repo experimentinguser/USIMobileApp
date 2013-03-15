@@ -198,6 +198,8 @@ Ext.application({
 		if(date_format == null) {
 			date_format = "Y-m-d";
 		}
+		Ext.Date.dayNames = Ux.locale.Manager.get('dayNames');
+		Ext.Date.monthNames = Ux.locale.Manager.get('monthNames');
 		return Ext.Date.format(Ext.Date.parse(date, date_format), "l d F Y");
 	},
 
@@ -233,7 +235,8 @@ Ext.application({
 	showLoadMask: function(msg) {
 		Ext.Viewport.getActiveItem().setMasked({
 			xtype: 'loadmask',
-			message: msg
+			indicator: true,
+			message: msg,
 		});
 	},
 

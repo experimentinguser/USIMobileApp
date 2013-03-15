@@ -11,16 +11,19 @@ Ext.define("USIMobile.view.Main", {
 		locales: {},
 		items: [
 			{
+				xtype: 'home',
 				title: 'USI',
 				iconCls: 'usi_home',
-				xtype: 'home'
 			},
 			{
-				iconCls: 'settings',
 				xtype: 'settings',
+				iconCls: 'settings',
 			},
-
-		]
+		],
+	listeners : {
+        delegate : 'tabbar > tab',
+        tap      : function() { this.getAt(0).pop(10); } // go home button
+    }
 	},
 
 	setLocale : function(locale) {

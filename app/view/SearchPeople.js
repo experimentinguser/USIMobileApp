@@ -19,16 +19,22 @@ Ext.define("USIMobile.view.SearchPeople", {
 					{
 						xtype: 'textfield',	
 						name: 'firstname',
-						label: 'Firstname'
+						locales: {
+							label: 'label.firstname'
+						}
 					},
 					{
 						xtype: 'textfield',	
 						name: 'lastname',
-						label: 'Lastname'
+						locales: {
+							label: 'label.lastname'
+						}
 					},
 					{
 						xtype: 'button',
-						text: 'Search',
+						locales: {
+							text: 'button.search',
+						},
 						ui: 'confirm',
 						action: 'search',	
 					}

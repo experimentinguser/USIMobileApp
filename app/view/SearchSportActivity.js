@@ -8,6 +8,7 @@ Ext.define("USIMobile.view.SearchSportActivity", {
 		'Ext.form.FieldSet',
 		'Ext.field.Text',
 		'Ext.field.Select',
+		'Ext.picker.Date',
 		'Ext.field.DatePicker',
 	],
 
@@ -21,7 +22,7 @@ Ext.define("USIMobile.view.SearchSportActivity", {
 						xtype: 'textfield',	
 						name: 'name',
 						locales: {
-							label: 'label.name'
+							label: 'label.activity'
 						}
 					},
 					{
@@ -40,8 +41,14 @@ Ext.define("USIMobile.view.SearchSportActivity", {
 						locales: {
 							label: 'label.from',
 						},
-						value: null,
 						dateFormat: 'd M Y',
+						picker : {
+							enableLocale : true,
+							locales      : {
+								months : 'months'
+							},
+							yearFrom: 2013,
+						},
 					},
 					{
 						xtype: 'datepickerfield',	
@@ -49,8 +56,14 @@ Ext.define("USIMobile.view.SearchSportActivity", {
 						locales: {
 							label: 'label.to',
 						},
-						value: null,
-						dateFormat: 'd M Y'
+						dateFormat: 'd M Y',
+						picker : {
+							enableLocale : true,
+							locales      : {
+								months : 'months'
+							},
+							yearFrom: 2013,
+						},
 					},
 					{
 						xtype: 'button',
@@ -64,5 +77,5 @@ Ext.define("USIMobile.view.SearchSportActivity", {
 				]
 			}
 		]
-	}
+	},
 });

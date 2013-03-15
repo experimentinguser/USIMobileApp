@@ -23,11 +23,13 @@
     },
 
 	"label" : {
+        "firstname" : "Firstname",
+        "lastname" : "Lastname",
         "username" : "Username",
-        "name" : "Name",
         "password" : "Password",
         "homeorg" : "Home Organisation",
         "language" : "Language",
+        "activity" : "Activity",
         "cache" : "Cache",
         "courseTitle" : "Title",
         "description" : "Description",
@@ -58,6 +60,7 @@
     },
 
     "button" : {
+        "done" : "Done",
         "cancel" : "Cancel",
         "save"   : "Save",
         "agree"   : "I agree",
@@ -155,5 +158,30 @@
         "10" : "October",
         "11" : "November",
         "12" : "December"
-    }
+    },
+
+    "monthNames": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ],
+
+    "dayNames" : [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ]
 }

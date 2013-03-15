@@ -26,6 +26,7 @@ Ext.define('USIMobile.controller.News', {
 	showShortNews: function(btn, e, eOpts){
 		// display news
 		if(typeof this.getShortNews() == 'object') {
+			this.getShortNews().refresh();
 			this.getHome().push(this.getShortNews());
 		} else {
 			this.getHome().push({

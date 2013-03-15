@@ -7,7 +7,7 @@
         "calendar" : "Calendario",
         "services" : "Servizi",
         "library" : "Biblioteca",
-        "searchPeople" : "Cerca Person",
+        "searchPeople" : "Cerca Persone",
         "people" : "Persone",
         "usinews" : "USI News",
         "news" : "News",
@@ -23,11 +23,13 @@
     },
 
 	"label" : {
+        "firstname" : "Nome",
+        "lastname" : "Cognome",
         "username" : "Utente",
-        "name" : "Nome",
         "password" : "Password",
         "homeorg" : "Home Organisation",
         "language" : "Lingua",
+        "activity" : "Attività",
         "cache" : "Cache",
         "courseTitle" : "Titolo",
         "description" : "Descrizione",
@@ -47,7 +49,7 @@
         "requirements" : "Requisiti",
         "equipment" : "Attrezzatura",
         "trasport" : "Trasporto",
-        "subscriptionStartDate" : "Inizio Sottscrizione",
+        "subscriptionStartDate" : "Inizio Sottoscrizione",
         "subscriptionEndDate" : "Fine Sottoscrizione",
         "registrationBegin" : "Inizio Registrazione",
         "registrationEnd" : "Fine Registrazione",
@@ -58,6 +60,7 @@
     },
 
     "button" : {
+        "done" : "Fatto",
         "cancel" : "Annulla",
         "save"   : "Salva",
         "agree"   : "Accetto",
@@ -155,5 +158,31 @@
         "10" : "Ottobre",
         "11" : "Novembre",
         "12" : "Dicembre"
-    }
+    },
+
+    "monthNames" : [
+        "Gennaio",
+        "Febbraio",
+        "Marzo",
+        "Aprile",
+        "Maggio",
+        "Giugno",
+        "Luglio",
+        "Agosto",
+        "Settembre",
+        "Ottobre",
+        "Novembre",
+        "Dicembre"
+    ],
+	
+	"dayNames" : [
+        "Domenica",
+        "Lunedì",
+        "Martedì",
+        "Mecoledì",
+        "Giovedì",
+        "Venerdì",
+        "Sabato",
+    ]
+
 }

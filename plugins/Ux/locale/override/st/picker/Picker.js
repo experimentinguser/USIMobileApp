@@ -4,12 +4,12 @@ Ext.define('Ux.locale.override.st.picker.Picker', {
     config : {
         doneButton   : {
             locales   : {
-                text   : 'buttons.done'
+                text   : 'button.done'
             }
         },
         cancelButton : {
             locales   : {
-                text   : 'buttons.cancel'
+                text   : 'button.cancel'
             }
         }
     }

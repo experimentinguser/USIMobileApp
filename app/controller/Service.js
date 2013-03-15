@@ -73,7 +73,6 @@ Ext.define('USIMobile.controller.Service', {
 	},
 
 	showServices: function() {
-		console.log('show services');
 		if(typeof this.getServices() == 'object') {
 			this.getHome().push(this.getServices());
 		} else {
