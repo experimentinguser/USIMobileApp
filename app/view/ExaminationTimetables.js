@@ -4,20 +4,18 @@ Ext.define("USIMobile.view.ExaminationTimetables", {
 
 	config: {
 		id: 'examinationtimetables',
-		title: 'Examination Timetables', 
-		emptyText: 'No info available.',
 		itemTpl: '<div class="examination_session">{session}</div>'+
 					'<div class="registration_begin">'+
-							'Registration begin: {[USIMobile.app.formatDate(values.registration_begin)]}'+
+							'{[Ux.locale.Manager.get("label.registrationBegin")]}: {[USIMobile.app.formatDate(values.registration_begin)]}'+
 					'</div>'+
 					'<div class="registration_end">'+
-							'Registration end: {[USIMobile.app.formatDate(values.registration_end)]}'+
+							'{[Ux.locale.Manager.get("label.registrationEnd")]}: {[USIMobile.app.formatDate(values.registration_end)]}'+
 					'</div>'+
 					'<div class="examination_begin">'+
-							'Examination begin: {[USIMobile.app.formatDate(values.examination_begin)]}'+
+							'{[Ux.locale.Manager.get("label.examinationBegin")]}: {[USIMobile.app.formatDate(values.examination_begin)]}'+
 					'</div>'+
 					'<div class="examination_end">'+
-							'Examination end: {[USIMobile.app.formatDate(values.examination_end)]}'+
+							'{[Ux.locale.Manager.get("label.registrationEnd")]}: {[USIMobile.app.formatDate(values.examination_end)]}'+
 					'</div>',
 	}
 });

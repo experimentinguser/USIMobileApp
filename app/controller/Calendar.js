@@ -10,7 +10,6 @@ Ext.define('USIMobile.controller.Calendar', {
 			calendarButton: 'button#calendar_home_button',
 			calendar: '#calendar',
 			faculties: '#faculties',
-			levels: '#levels',
 			teachingTimetables: '#teachingtimetables',
 			examinationTimetables: '#examinationtimetables',
 		},
@@ -18,8 +17,7 @@ Ext.define('USIMobile.controller.Calendar', {
 		control: {
 			calendarButton: { tap: 'showCalendar' },
 			calendar: { itemtap: 'selectCalendar' },
-			faculties: { itemtap: 'selectFaculty' },
-			levels: { itemtap: 'selectLevel' },
+			faculties: { itemtap: 'selectFaculties' },
 			teachingTimetables: { itemtap: 'selectTeachingTimetable' },
 			examinationTimetables: { itemtap: 'selectExaminationTimetable' },
 		}
@@ -31,12 +29,32 @@ Ext.define('USIMobile.controller.Calendar', {
 	},
 
 	showCalendar: function(btn, e, eOpts){
-		// display news
+		var localized_data = [
+			{ 
+				id: 'academiccalendar',
+				title: Ux.locale.Manager.get('list.calendar.academicCalendar')
+			},
+			{ 
+				id: 'teaching',
+				title: Ux.locale.Manager.get('list.calendar.teachingTimetables')
+			},
+			{ 
+				id: 'examination',
+				title: Ux.locale.Manager.get('list.calendar.examinationTimetables')
+			},
+		];
+
+		// display caledar
 		if(typeof this.getCalendar() == 'object') {
+			this.getCalendar().setData(localized_data);
+			this.getCalendar().setEmptyText(Ux.locale.Manager.get('message.noinfo'));
 			this.getHome().push(this.getCalendar());
 		} else {
 			this.getHome().push({
-				xtype: 'calendar',	
+				xtype: 'calendar',
+				title: Ux.locale.Manager.get('title.calendar'),
+				emptyText: Ux.locale.Manager.get('message.noinfo'),
+				data: localized_data
 			});
 		}
 	},
@@ -67,26 +85,10 @@ Ext.define('USIMobile.controller.Calendar', {
 		}
 	},
 
-	selectFaculty: function(view, index, target, record) {
+	selectFaculties: function(view, index, target, record) {
 		// record the faculty choice
-		this.filter.faculty = record.get('id');
-		this.showLevels();
-	},
-
-	showLevels: function() {
-		if(typeof this.getLevels() == 'object') {
-			this.getHome().push(this.getLevels());
-		} else {
-			this.getHome().push({
-				xtype: 'levels',
-			});
-		}
-	},
-
-	selectLevel: function(view, index, target, record) {
-		// record the faculty choice
-		this.filter.level = record.get('id');
-
+		this.filter.faculty = record.get('faculty');
+		this.filter.level = record.get('level');
 		switch(this.filter.calendar) {
 			case 'teaching':	
 				this.showTeachingTimetables();
@@ -95,6 +97,7 @@ Ext.define('USIMobile.controller.Calendar', {
 				this.showExaminationTimetables();
 				break;
 		}
+
 	},
 
 	showTeachingTimetables: function() {
@@ -136,6 +139,8 @@ Ext.define('USIMobile.controller.Calendar', {
 		} else {
 			this.getHome().push({
 				xtype: 'examinationtimetables',
+				title: Ux.locale.Manager.get('title.examinationTimeTables'),
+				emptyText: Ux.locale.Manager.gel('message.noTimeTables'),
 				store: this.getFilteredExaminationTimetablesStore()
 			});
 		}
@@ -162,5 +167,4 @@ Ext.define('USIMobile.controller.Calendar', {
 			USIMobile.app.getFile(record.get('url'), record.get('filename'), record.get('mime'));	
 		}
 	},
-
 });

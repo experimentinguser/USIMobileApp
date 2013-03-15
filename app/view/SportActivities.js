@@ -4,9 +4,6 @@ Ext.define("USIMobile.view.SportActivities", {
 
 	config: {
 		id: 'sportactivities',
-		title: 'Sport Activities', 
-		emptyText: 'No sport activities found.',
-		itemTpl: '{name_en}',
 		grouped: true
 	}
 });

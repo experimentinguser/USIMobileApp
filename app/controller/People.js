@@ -35,6 +35,7 @@ Ext.define('USIMobile.controller.People', {
 		} else {
 			this.getHome().push({
 				xtype: 'searchpeopleform',
+				title: Ux.locale.Manager.get('title.searchPeople'),
 			});
 		}
 	},
@@ -59,6 +60,7 @@ Ext.define('USIMobile.controller.People', {
 		} else {
 			this.getHome().push({
 				xtype: 'people',
+				title: Ux.locale.Manager.get('title.people'),
 				store: USIMobile.Session.getPeopleStore()
 			});
 		}

@@ -10,14 +10,13 @@ Ext.define('USIMobile.controller.Course', {
 			homeCoursesButton: 'button#courses_home_button',
 			courses: '#courses',
 			course: '#course',
-			searchCoursesForm: '#searchcourses',
+			searchCourses: '#searchcourses',
 			searchCoursesButton: '#searchcourses button[action=search]',
-			faculties: '#faculties',
 			levels: '#levels',
 		},
 
 		control: {
-			homeCoursesButton: { tap: 'showSearchCoursesForm' },
+			homeCoursesButton: { tap: 'showSearchCourses' },
 			searchCoursesButton: { tap: 'searchCourses' },
 			courses: {
 				itemtap: 'showCourse',
@@ -30,22 +29,24 @@ Ext.define('USIMobile.controller.Course', {
 	
 	init: function(){
 		this.filter = { };
+		Ext.sc = this;
 	},
 
-	showSearchCoursesForm: function() {
-		if(typeof this.getSearchCoursesForm() == 'object') {
-			this.getHome().push(this.getSearchCoursesForm());
+	showSearchCourses: function() {
+		if(typeof this.getSearchCourses() == 'object') {
+			this.getHome().push(this.getSearchCourses());
 		} else {
 			this.getHome().push({
-				xtype: 'searchcoursesform',	
+				xtype: 'searchcourses',	
+				title: Ux.locale.Manager.get('title.searchCourses'),
 			});
 		}
 	},
 
 	searchCourses: function() {
-		USIMobile.app.showLoadMask('Searching Courses.');
+		USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.searchingCourses'));
 		// set the filter
-		this.filter = this.getSearchCoursesForm().getValues();
+		this.filter = this.getSearchCourses().getValues();
 		var scope = this;
 		// wait for the loadmask to be displayed
 		setTimeout(function() {
@@ -61,6 +62,8 @@ Ext.define('USIMobile.controller.Course', {
 		} else {
 			this.getHome().push({
 				xtype: 'courses',
+				title: Ux.locale.Manager.get('title.courses'),
+				emptyText: Ux.locale.Manager.get('message.noCourses'),
 				store: USIMobile.Session.getCoursesStore()
 			});
 		}
@@ -119,6 +122,7 @@ Ext.define('USIMobile.controller.Course', {
 		} else {
 			this.getHome().push({
 				xtype: 'course',
+				title: Ux.locale.Manager.get('title.course'),
 				record: record
 			});
 		}

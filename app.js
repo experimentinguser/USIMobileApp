@@ -1,7 +1,8 @@
 //<debug>
 Ext.Loader.setPath({
     'Ext': 'touch/src',
-    'USIMobile': 'app'
+    'USIMobile': 'app',
+	'Ux': 'plugins/Ux'
 });
 //</debug>
 
@@ -12,6 +13,19 @@ Ext.application({
         'Ext.MessageBox',
 		'Ext.data.identifier.Uuid',
 		'Ext.Img',
+
+		'Ux.locale.Manager',
+		'Ux.locale.override.st.Component',
+		'Ux.locale.override.st.Button',
+		'Ux.locale.override.st.Container',
+		'Ux.locale.override.st.TitleBar',
+		'Ux.locale.override.st.field.Field',
+		'Ux.locale.override.st.field.Select',
+		'Ux.locale.override.st.field.DatePicker',
+		'Ux.locale.override.st.form.FieldSet',
+		'Ux.locale.override.st.picker.Picker',
+		'Ux.locale.override.st.picker.Date',
+
 		'USIMobile.Config',
 		'USIMobile.Session',
 		'USIMobile.WebService',
@@ -38,7 +52,6 @@ Ext.application({
 		'USIMobile.view.DetailedNews',
 		'USIMobile.view.Calendar',
 		'USIMobile.view.Faculties',
-		'USIMobile.view.Levels',
 		'USIMobile.view.TeachingTimetables',
 		'USIMobile.view.ExaminationTimetables',
 		'USIMobile.view.SearchSportActivity',
@@ -81,6 +94,18 @@ Ext.application({
     },
 
     launch: function() {
+		// set the language
+		var settings = USIMobile.Session.getSettingsStore().first().getData(); 
+        Ux.locale.Manager.setConfig({
+            ajaxConfig : {
+                method : 'GET'
+            },
+            language   : navigator.language.split('-')[0],
+            tpl        : 'locales/{locale}.json',
+            type       : 'ajax'
+        });
+
+        Ux.locale.Manager.init();
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
 

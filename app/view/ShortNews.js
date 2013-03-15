@@ -4,8 +4,6 @@ Ext.define("USIMobile.view.ShortNews", {
 
 	config: {
 		id: 'shortnews',
-		title: 'USI News', 
-		emptyText: 'No news available.',
 		itemTpl: '<div class="short_news_title">{title}</div>'+
 					'<div class="short_news_publish_date">{[USIMobile.app.formatDate(values.publish_start_date)]}</div>',
 	}

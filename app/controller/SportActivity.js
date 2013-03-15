@@ -39,6 +39,7 @@ Ext.define('USIMobile.controller.SportActivity', {
 		} else {
 			this.getHome().push({
 				xtype: 'searchsportactivityform',
+				title: Ux.locale.Manager.get('title.searchSportActivity'),
 			});
 		}
 	},
@@ -57,12 +58,17 @@ Ext.define('USIMobile.controller.SportActivity', {
 
 	listSportActivities: function() {
 		this.filterSportActivityStore();
+		var template = Ux.locale.Manager.getLanguage() == "en" ? '{name_en}' : '{name_it}';
 		if(typeof this.getSportActivities() == 'object') {
+			this.getSportActivities().setItemTpl(template);
 			this.getSportActivities().refresh();
 			this.getHome().push(this.getSportActivities());
 		} else {
 			this.getHome().push({
 				xtype: 'sportactivities',
+				itemTpl: template,
+				title: Ux.locale.Manager.get('title.sportActivities'),
+				emptyText: Ux.locale.Manager.get('message.noSportActivities'),
 				store: USIMobile.Session.getSportActivityStore()
 			});
 		}
@@ -95,6 +101,7 @@ Ext.define('USIMobile.controller.SportActivity', {
 		} else {
 			this.getHome().push({
 				xtype: 'sportactivity',
+				title: Ux.locale.Manager.get('title.sportActivity'),
 				record: record
 			});
 		}

@@ -10797,13 +10797,44 @@ input[type="search"]::-webkit-search-cancel-button {
   margin-top: 10px;
   background-color: white;
 }
+/* line 135, ../sass/app.scss */
+.course_title .label,
+.course_description .label,
+.course_professors .label,
+.course_level .label,
+.course_credits .label,
+.course_semester .label,
+.course_semester_start .label,
+.course_semester_end .label,
+.sport_activity_name .label,
+.sport_activity_description .label,
+.sport_activity_discipline .label,
+.sport_activity_start_date .label,
+.sport_activity_end_date .label,
+.sport_activity_location .label,
+.sport_activity_lodging .label,
+.sport_activity_comeback .label,
+.sport_activity_contact .label,
+.sport_activity_meal .label,
+.sport_activity_requirements .label,
+.sport_activity_equipment .label,
+.sport_activity_transport .label,
+.sport_activity_subscription_start_date .label,
+.sport_activity_subscription_end_date .label {
+  font-style: italic;
+}
 
-/* line 137, ../sass/app.scss */
+/* line 140, ../sass/app.scss */
+.course_title {
+  font-weight: bold;
+}
+
+/* line 144, ../sass/app.scss */
 .examination_session {
   padding-bottom: 5px;
 }
 
-/* line 144, ../sass/app.scss */
+/* line 151, ../sass/app.scss */
 .registration_begin,
 .registration_end,
 .examination_begin,
@@ -10812,7 +10843,7 @@ input[type="search"]::-webkit-search-cancel-button {
   color: gray;
 }
 
-/* line 150, ../sass/app.scss */
+/* line 157, ../sass/app.scss */
 .registration_end,
 .examination_end {
   padding-top: 5px;

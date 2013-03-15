@@ -132,6 +132,13 @@ $base-color: #F90;
 	padding: 5px;
 	margin-top: 10px;
 	background-color: white;
+	.label{
+		font-style: italic;
+	}
+}
+
+.course_title {
+	font-weight: bold;
 }
 
 .examination_session {

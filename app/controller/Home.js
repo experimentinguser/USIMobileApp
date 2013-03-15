@@ -11,17 +11,20 @@ Ext.define('USIMobile.controller.Home', {
 			menuMensaButton: 'button#mensa_home_button',
 			usiSportButton: 'button#usisport_home_button',
 			offerteLavoroButton: 'button#offertelavoro_home_button',
+			language: 'selectfield[name=language]'
 		},
 
 		control: {
 			menuMensaButton: { tap: 'showMenuMensa' },
 			usiSportButton: { tap: 'showUsiSport' },
-			offerteLavoroButton: { tap: 'showOfferteLavoro' }
+			offerteLavoroButton: { tap: 'showOfferteLavoro' },
+			language : { change: 'setLanguage' }
 		}
 	},
 	
 	//called when the Application is launched, remove if not needed
 	init: function(){
+		Ext.h = this;
 	},
 
 	showMenuMensa: function(btn, e, eOpts){
@@ -36,4 +39,8 @@ Ext.define('USIMobile.controller.Home', {
 	showOfferteLavoro: function(btn, e, eOpts){
 		console.log('show offerte lavoro');
 	},
+
+	setLanguage: function(view, lang){
+		this.getHome().setLocale(lang);
+	}
 });

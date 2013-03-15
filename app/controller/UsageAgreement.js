@@ -22,7 +22,7 @@ Ext.define('USIMobile.controller.UsageAgreement', {
 
 	setLanguage: function() {
 		var item = this.getUApanel().getActiveItem();
-		console.log(item);
+		Ux.locale.Manager.updateLocale(item.getId());
 	},
 
 	registerAgreement: function() {

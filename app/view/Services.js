@@ -4,7 +4,6 @@ Ext.define("USIMobile.view.Services", {
 
 	config: {
 		id: 'services',
-		title: 'Services', 
 		emptyText: 'No services found.',
 		itemTpl: 	'<b>{name_en}</b> <br/>'+
 					'{description_en} <br/><br/>'+

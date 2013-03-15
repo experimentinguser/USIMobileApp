@@ -18,11 +18,14 @@ Ext.define("USIMobile.view.Settings", {
 
 	config: {
 		id: 'settings',
+		locales: {},
 		items: [
 			{
 				docked: 'top',
 				xtype: 'titlebar',
-				title: 'Settings',
+				locales: {
+					title: 'title.settings',
+				},
 				iconCls: 'user'
 			},
 			{
@@ -31,23 +34,34 @@ Ext.define("USIMobile.view.Settings", {
 			},
 			{
 				xtype: 'fieldset',
-				title: 'Login AAI',
 				id: 'logindata',
+				locales: {
+					title: 'title.login',
+				},
 				items: [
 					{
 						xtype: 'textfield',	
 						name: 'username',
-						label: 'Username'
+						id: 'username',
+						locales: {
+							label: 'label.username'
+						},
 					},
 					{
 						xtype: 'passwordfield',	
 						name: 'password',
-						label: 'Password'
+						id: 'password',
+						locales: {
+							label: 'label.password'
+						},
 					},
 					{
 						xtype: 'selectfield',
 						name: 'homeorganisation',
-						label: 'Home Organisation',
+						id: 'homeorganisation',
+						locales: {
+							label: 'label.homeorg'
+						},
 						usePicker: false,
 						displayField: 'name',
 						valueField: 'url',
@@ -57,26 +71,34 @@ Ext.define("USIMobile.view.Settings", {
 			},
 			{
 				xtype: 'fieldset',
-				title: 'App Settings',
 				id: 'appsettings',
+				locales: {
+					title: 'title.appSettings',
+				},
 				items: [
 					{
 						xtype: 'selectfield',
+						id: 'language',
 						name: 'language',
-						label: 'Language',
+						locales: {
+							label: 'label.language',
+						},
 						options: [
-							{text: 'English', value: 'eng'},
-							{text: 'Italiano', value: 'ita'},
+							{text: 'English', value: 'en'},
+							{text: 'Italiano', value: 'it'},
 						]
 					},
 					{
 						xtype: 'checkboxfield',
+						id: 'cache',
 						name: 'cache',
-						label: 'Cache',
+						locales: {
+							label: 'label.cache',
+						},
 						checked: true,
 					},
 				]
 			}
 		],
-	}
+	},
 });

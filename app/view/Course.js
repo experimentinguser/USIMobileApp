@@ -8,7 +8,6 @@ Ext.define("USIMobile.view.Course", {
 
 	config: {
 		id: 'course',
-		title: 'Course',
 		scrollable: {
 			direction: 'vertical',
 			directionLock: true
@@ -19,14 +18,15 @@ Ext.define("USIMobile.view.Course", {
 				var data = this.getRecord().getData();
 				// prepare the html
 				var title_html = '<div class="course_title">'+data.title+'</div>';
-				var description_html = '<div class="course_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate porttitor aliquet. Suspendisse at metus metus. Vestibulum rhoncus semper scelerisque. Proin odio quam, viverra vitae luctus non, placerat vehicula libero. Nam semper bibendum mi ut ultrices. Ut eu magna ut nulla vestibulum volutpat a in quam. Aenean non lectus nibh. </div>';
-				//var description_html = '<div class="course_title">'+data.description+'</div>';
-				var professor_html = '<div class="course_professors">Professors: '+data.professor+'</div>';
-				var level_html = '<div class="course_level">Level: '+data.level+'</div>';
-				var credits_html = '<div class="course_credits">Credits: '+data.credits+'</div>';
-				var semester_html = '<div class="course_semester">Semester: '+data.semester+'</div>';
-				var start_date_html = '<div class="course_professors">Start: '+data.semester_begin+'</div>';
-				var end_date_html = '<div class="course_professors">End: '+data.semester_end+'</div>';
+				var description_html = '<div class="course_description"><div class="label">'+Ux.locale.Manager.get('label.description')+':</div>'+
+											'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate porttitor aliquet. Suspendisse at metus metus.'+
+										'</div>';
+				var professor_html = '<div class="course_professors"><span class="label">'+Ux.locale.Manager.get('label.professor')+':</span> '+data.professor+'</div>';
+				var level_html = '<div class="course_level"><span class="label">'+Ux.locale.Manager.get('label.level')+':</span> '+data.level+'</div>';
+				var credits_html = '<div class="course_credits"><span class="label">'+Ux.locale.Manager.get('label.credits')+':</span> '+data.credits+'</div>';
+				var semester_html = '<div class="course_semester"><div class="label">'+Ux.locale.Manager.get('label.semester')+':</div>'+data.semester+'</div>';
+				var start_date_html = '<div class="course_semester_start"><span class="label">'+Ux.locale.Manager.get('label.begin')+':</span> '+data.semester_begin+'</div>';
+				var end_date_html = '<div class="course_semester_end"><span class="label">'+Ux.locale.Manager.get('label.end')+':</span> '+data.semester_end+'</div>';
 
 				var content = "";
 				content += title_html;

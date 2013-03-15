@@ -12,7 +12,6 @@ Ext.define("USIMobile.view.SearchPeople", {
 
 	config: {
 		id: 'searchpeople',
-		title: 'Search People',
 		items: [
 			{
 				xtype: 'fieldset',

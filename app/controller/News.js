@@ -30,6 +30,8 @@ Ext.define('USIMobile.controller.News', {
 		} else {
 			this.getHome().push({
 				xtype: 'shortnews',	
+				title: Ux.locale.Manager.get('title.usinews'),
+				emptyText: Ux.locale.Manager.get('message.noNews'),
 				store: USIMobile.Session.getShortNewsStore()
 			});
 		}
@@ -44,6 +46,8 @@ Ext.define('USIMobile.controller.News', {
 		} else {
 			this.getHome().push({
 				xtype: 'detailednews',	
+				title: Ux.locale.Manager.get('title.usinews'),
+				emptyText: Ux.locale.Manager.get('message.noNews'),
 				record: detailednews_record
 			});
 		}

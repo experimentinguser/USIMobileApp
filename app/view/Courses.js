@@ -4,8 +4,6 @@ Ext.define("USIMobile.view.Courses", {
 
 	config: {
 		id: 'courses',
-		title: 'Courses', 
-		emptyText: 'No courses found.',
 		itemTpl: '{title}',
 		grouped: true
 	}

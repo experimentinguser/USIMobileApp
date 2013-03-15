@@ -79,6 +79,7 @@ Ext.define('USIMobile.controller.Service', {
 		} else {
 			this.getHome().push({
 				xtype: 'services',	
+				title: Ux.locale.Manager.get('title.services'),
 				store: USIMobile.Session.getServicesStore(),
 			});
 		}
@@ -92,12 +93,11 @@ Ext.define('USIMobile.controller.Service', {
 	sendMail: function(btn, e, opts) {
 		console.log('selected');
 		var service = this.getServices().getSelection()[0];
-		USIMobile.app.sendEmail(service.get('email'), 'Hi,', '');
+		USIMobile.app.sendEmail(service.get('email'), '', '');
 	},
 
 	phone: function(btn, e, opts) {
 		var service = this.getServices().getSelection()[0];
-		//USIMobile.app.call(service.get('phone'));
 		USIMobile.app.openURL('tel:'+service.get('phone'));
 	},
 

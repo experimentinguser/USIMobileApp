@@ -1,0 +1,159 @@
+{
+    "title" : {
+        "settings" : "Impostazioni",
+        "course" : "Corso",
+        "courses" : "Corsi",
+        "searchCourses" : "Cerca Corsi",
+        "calendar" : "Calendario",
+        "services" : "Servizi",
+        "library" : "Biblioteca",
+        "searchPeople" : "Cerca Person",
+        "people" : "Persone",
+        "usinews" : "USI News",
+        "news" : "News",
+        "mensa" : "Mensa",
+        "sport" : "Sport",
+        "career" : "Carriera",
+        "searchSportActivity" : "Cerca Attività Sportive",
+        "sportActivities" : "Attività Sportive",
+        "sportActivity" : "Attività Sportiva",
+        "login" : "Login AAI",
+        "appSettings" : "Impostazioni App",
+        "examinationTimetables" : "Orario Esami",
+    },
+
+	"label" : {
+        "username" : "Utente",
+        "name" : "Nome",
+        "password" : "Password",
+        "homeorg" : "Home Organisation",
+        "language" : "Lingua",
+        "cache" : "Cache",
+        "courseTitle" : "Titolo",
+        "description" : "Descrizione",
+        "category" : "Categoria",
+        "professor" : "Docente",
+        "faculty" : "Facoltà",
+        "level" : "Livello",
+        "credits" : "Crediti",
+        "semester" : "Semestre",
+        "begin" : "Inizio",
+        "end" : "Fine",
+        "discipline" : "Disciplina",
+        "location" : "Locazione",
+        "lodging" : "Alloggio",
+        "contact" : "Contatto",
+        "meal" : "Pasti",
+        "requirements" : "Requisiti",
+        "equipment" : "Attrezzatura",
+        "trasport" : "Trasporto",
+        "subscriptionStartDate" : "Inizio Sottscrizione",
+        "subscriptionEndDate" : "Fine Sottoscrizione",
+        "registrationBegin" : "Inizio Registrazione",
+        "registrationEnd" : "Fine Registrazione",
+        "examinationBegin" : "Inizio Esami",
+        "examinationEnd" : "Fine Esami",
+        "from" : "Da",
+        "to" : "Fino",
+    },
+
+    "button" : {
+        "cancel" : "Annulla",
+        "save"   : "Salva",
+        "agree"   : "Accetto",
+        "disagree"   : "Non accetto",
+        "search"   : "Cerca",
+        "back"   : "Indietro",
+        "mailto"   : "Manda e-Mail",
+        "subscribe"   : "Iscrizione",
+    },
+
+    "list" : {
+        "calendar" : {
+			"academicCalendar" : "Calendario Academico: ",
+			"teachingTimetables" : "Orario Classi",
+			"examinationTimetables" : "Orario Esami",
+		} 
+    },
+
+    "message" : {
+        "loading" : "Caricamento...",
+		"noInfo": "Nessuna informazione disponibile",
+		"noNews": "Nessuno News disponibile",
+		"noSportActivities": "Nessuna Attività Sportiva disponibile",
+		"searchingCourses": "Ricerca Corsi",
+		"noCourses": "Nessun Corso disponibile",
+		"noTimeTables": "Nessun Orario disponibile",
+    },
+
+	"SelectFieldLanguage": {
+		"label": "Lingua",
+	},
+
+	"SelectFieldFaculty": {
+		"label": "Facoltà",
+		"options": [
+			{ "text": 'tutte', 			"value": "all" },
+			{ "text": 'Communicazione',	"value": "COM" },
+			{ "text": 'Economia', 		"value": "ECO" },
+			{ "text": 'Informatica', 	"value": "INFO" },
+		]
+	},
+
+	"SelectFieldLevel": {
+		"label": "Livello",
+		"options": [
+			{ "text": "tutti", 				"value": "all" },
+			{ "text": "Bachelor", 			"value": "Bachelor" },
+			{ "text": "Bachelor & Master", 	"value": "Bachelor e Master" },
+			{ "text": "Master", 			"value": "Master" },
+			{ "text": "PhD", 				"value": "Phd" },
+			{ "text": "Altro", 				"value": "Other/Altro" },
+		]
+	},
+
+	"SelectFieldSemester": {
+		"label": "Semestre",
+		"options": [
+			{ "text": 'entrambi',	"value": "both" },
+			{ "text": 'Autunno', 	"value": "autumn/autunno" },
+			{ "text": 'Primavera', 	"value": "spring/primavera" },
+		]
+	},
+
+	"SelectFieldGroupBy": {
+		"label": "Raggruppa per",
+		"options": [
+			{ "text": "Facoltà",	"value": "faculty" },
+			{ "text": "Livello",		"value": "level" },
+			{ "text": "Semestre",		"value": "semester" },
+			{ "text": "Professore",		"value": "professor" },
+		]
+	},
+
+	"SelectFieldCategory": {
+		"label": "Categoria",
+		"options": [
+				{ "text": 'tutto', "value": 'all' },
+				{ "text": 'Arti e Danze', "value": 'Arti e Danze' },
+				{ "text": 'Attività invernali', "value": 'Attività invernali' },
+				{ "text": 'Fitnes e salute', "value": 'Fitnes e salute' },
+				{ "text": 'Giochi e eventi', "value": 'Giochi e eventi' },
+		]
+	},
+	
+    "months" : {
+        "1"  : "Gennaio",
+        "2"  : "Febbraio",
+        "3"  : "Marzo",
+        "4"  : "Aprile",
+        "5"  : "Maggio",
+        "6"  : "Giugno",
+        "7"  : "Luglio",
+        "8"  : "Agosto",
+        "9"  : "Settembre",
+        "10" : "Ottobre",
+        "11" : "Novembre",
+        "12" : "Dicembre"
+    }
+}

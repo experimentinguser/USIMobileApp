@@ -1,6 +1,6 @@
 Ext.define("USIMobile.view.SearchCourses", {
 	extend: 'Ext.form.Panel',
-	xtype: 'searchcoursesform',
+	xtype: 'searchcourses',
 	fullscreen: true,
 	
 	requires: [
@@ -16,7 +16,6 @@ Ext.define("USIMobile.view.SearchCourses", {
 
 	config: {
 		id: 'searchcourses',
-		title: 'Search Courses',
 		items: [
 			{
 				xtype: 'fieldset',
@@ -24,65 +23,61 @@ Ext.define("USIMobile.view.SearchCourses", {
 					{
 						xtype: 'textfield',	
 						name: 'pattern',
-						label: 'Title/Desc.'
+						locales: {
+							label: 'label.courseTitle'
+						}
 					},
 					{
 						xtype: 'textfield',	
 						name: 'professor',
-						label: 'Professor'
+						locales: {
+							label: 'label.professor'
+						}
 					},
 					{
 						xtype: 'selectfield',
 						name: 'faculty',
-						label: 'Faculty',
+						locales: {
+							label: 'SelectFieldFaculty.label',
+							options: 'SelectFieldFaculty.options'
+						},
 						usePicker: false,
 						options: [
-							{ text: 'all', value: "all" },
-							{ text: 'Communication', value: "COM" },
-							{ text: 'Economics', value: "ECO" },
-							{ text: 'Informatics', value: "INFO" },
 						]
 					},
 					{
 						xtype: 'selectfield',
 						name: 'level',
-						label: 'Level',
+						locales: {
+							label: 'SelectFieldLevel.label',
+							options: 'SelectFieldLevel.options'
+						},
 						usePicker: false,
-						options: [
-							{ text: 'all', value: "all" },
-							{ text: 'Bachelor', value: "Bachelor" },
-							{ text: 'Bachelor & Master', value: "Bachelor e Master" },
-							{ text: 'Master', value: "Master" },
-							{ text: 'PHD', value: "Phd" },
-							{ text: 'Other', value: "Other/Altro" },
-						]
 					},
 					{
 						xtype: 'selectfield',
 						name: 'semester',
-						label: 'Semester',
+						locales: {
+							label: 'SelectFieldSemester.label',
+							options: 'SelectFieldSemester.options'
+						},
 						usePicker: false,
-						options: [
-							{ text: 'both', value: "both" },
-							{ text: 'Autumn', value: "autumn/autunno" },
-							{ text: 'Spring', value: "spring/primavera" },
-						]
+						
 					},
 					{
 						xtype: 'selectfield',
 						name: 'groupby',
-						label: 'Group by',
+						locales: {
+							label: 'SelectFieldGroupBy.label',
+							options: 'SelectFieldGroupBy.options'
+						},
 						usePicker: false,
-						options: [
-							{ text: 'Faculty', value: "faculty" },
-							{ text: 'Level', value: "level" },
-							{ text: 'Semester', value: "semester" },
-							{ text: 'Professor', value: "professor" },
-						]
 					},
 					{
 						xtype: 'button',
-						text: 'Search',
+						locales: {
+							text: 'button.search'
+						},
 						ui: 'confirm',
 						action: 'search',	
 					}

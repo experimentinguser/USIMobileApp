@@ -1,0 +1,159 @@
+{
+    "title" : {
+        "settings" : "Settings",
+        "course" : "Course",
+        "courses" : "Courses",
+        "searchCourses" : "Search Courses",
+        "calendar" : "Calendar",
+        "services" : "Services",
+        "library" : "Library",
+        "searchPeople" : "Search People",
+        "people" : "People",
+        "usinews" : "USI News",
+        "news" : "News",
+        "mensa" : "Mensa",
+        "sport" : "Sport",
+        "career" : "Career",
+        "searchSportActivity" : "Search Sport Activity",
+        "sportActivities" : "Sport Activities",
+        "sportActivity" : "Sport Activity",
+        "login" : "Login AAI",
+        "appSettings" : "App Settings",
+        "examinationTimetables" : "Examination Timetables",
+    },
+
+	"label" : {
+        "username" : "Username",
+        "name" : "Name",
+        "password" : "Password",
+        "homeorg" : "Home Organisation",
+        "language" : "Language",
+        "cache" : "Cache",
+        "courseTitle" : "Title",
+        "description" : "Description",
+        "category" : "Category",
+        "professor" : "Teacher",
+        "faculty" : "Faculty",
+        "level" : "Level",
+        "credits" : "Credits",
+        "semester" : "Semester",
+        "begin" : "Begin",
+        "end" : "End",
+        "discipline" : "Discipline",
+        "location" : "Location",
+        "lodging" : "Lodging",
+        "contact" : "Contact",
+        "meal" : "Meal",
+        "requirements" : "Requirements",
+        "equipment" : "Equipment",
+        "trasport" : "Trasport",
+        "subscriptionStartDate" : "Subcr. Start",
+        "subscriptionEndDate" : "Subcr. End",
+        "registrationBegin" : "Registration Begin",
+        "registrationEnd" : "Registration End",
+        "examinationBegin" : "Examination Begin",
+        "examinationEnd" : "Examination End",
+        "from" : "From",
+        "to" : "To",
+    },
+
+    "button" : {
+        "cancel" : "Cancel",
+        "save"   : "Save",
+        "agree"   : "I agree",
+        "disagree"   : "I disagree",
+        "search"   : "Search",
+        "back"   : "Yay Back",
+        "mailto"   : "Send e-Mail",
+        "subscribe"   : "Subscribe",
+    },
+
+    "list" : {
+        "calendar" : {
+			"academicCalendar" : "Academic Calendar: ",
+			"teachingTimetables" : "Teaching Timetables",
+			"examinationTimetables" : "Examination Timetables",
+		} 
+    },
+
+    "message" : {
+        "loading" : "Loading...",
+		"noInfo": "No info available",
+		"noNews": "No News available",
+		"noSportActivities": "No Sport Activities available",
+		"searchingCourses": "Searching courses",
+		"noCourses": "No Courses available",
+		"noTimeTables": "No Timetables available",
+    },
+
+	"SelectFieldLanguage": {
+		"label": "Language",
+	},
+
+	"SelectFieldFaculty": {
+		"label": "Faculty",
+		"options": [
+			{ "text": 'all', 			"value": "all" },
+			{ "text": 'Communication', 	"value": "COM" },
+			{ "text": 'Economics', 		"value": "ECO" },
+			{ "text": 'Informatics', 	"value": "INFO" },
+		]
+	},
+
+	"SelectFieldLevel": {
+		"label": "Level",
+		"options": [
+			{ "text": "all",  				"value": "all" },
+			{ "text": "Bachelor", 			"value": "Bachelor" },
+			{ "text": "Bachelor & Master", 	"value": "Bachelor e Master" },
+			{ "text": "Master", 			"value": "Master" },
+			{ "text": "PHD", 				"value": "Phd" },
+			{ "text": "Other", 				"value": "Other/Altro" },
+		]
+	},
+
+	"SelectFieldSemester": {
+		"label": "Semester",
+		"options": [
+			{ "text": 'both', 	"value": "both" },
+			{ "text": 'Autumn', "value": "autumn/autunno" },
+			{ "text": 'Spring', "value": "spring/primavera" },
+		]
+	},
+
+	"SelectFieldGroupBy": {
+		"label": "Group By",
+		"options": [
+			{ "text": "Faculty",   "value": "faculty" },
+			{ "text": "Level", 	   "value": "level" },
+			{ "text": "Semester",  "value": "semester" },
+			{ "text": "Professor", "value": "professor" },
+		]
+	},
+
+	"SelectFieldCategory": {
+		"label": "Categoria",
+		"options": [
+				{ "text": 'all', "value": 'all' },
+				{ "text": 'Art and Dance', "value": 'Arti e Danze' },
+				{ "text": 'Winter activities', "value": 'Attività invernali' },
+				{ "text": 'Fitness and Health', "value": 'Fitnes e salute' },
+				{ "text": 'Games and Events', "value": 'Giochi e eventi' },
+		]
+	},
+	
+    "months" : {
+        "1"  : "January",
+        "2"  : "February",
+        "3"  : "March",
+        "4"  : "April",
+        "5"  : "May",
+        "6"  : "June",
+        "7"  : "July",
+        "8"  : "August",
+        "9"  : "September",
+        "10" : "October",
+        "11" : "November",
+        "12" : "December"
+    }
+}

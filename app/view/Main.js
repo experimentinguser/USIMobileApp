@@ -7,7 +7,8 @@ Ext.define("USIMobile.view.Main", {
 
 	config: {
 		tabBarPosition: 'bottom',
-
+		enableLocale: true,
+		locales: {},
 		items: [
 			{
 				title: 'USI',
@@ -15,11 +16,18 @@ Ext.define("USIMobile.view.Main", {
 				xtype: 'home'
 			},
 			{
-				title: 'Settings',
 				iconCls: 'settings',
 				xtype: 'settings',
 			},
 
 		]
-	}
+	},
+
+	setLocale : function(locale) {
+		if(this.locale.get('title.settings') != undefined) {
+			// change the title/text of the settings tab
+			this.getTabBar().getAt(1).setTitle(Ux.locale.Manager.get('title.settings'));
+		}
+    },
+
 });

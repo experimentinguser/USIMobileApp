@@ -8,6 +8,7 @@ Ext.define('USIMobile.controller.Settings', {
 
 		refs: {
 			form: '#settings',
+			language: 'selectfield[name=language]'
 		},
 
 		control: {
@@ -16,10 +17,14 @@ Ext.define('USIMobile.controller.Settings', {
 				show: 'loadHomeOrganisationValues',
 				hide: 'saveSettings',
 			},
+
+			language : { change: 'setLanguage' }
 		}
 	},
 
-	init: function(app) { },
+	init: function(app) {
+		Ext.st = this;
+	},
 
 	loadHomeOrganisationValues: function() {
 		var homeOrgField = this.getForm().child('fieldset#logindata').child('selectfield[name="homeorganisation"]');
@@ -38,6 +43,12 @@ Ext.define('USIMobile.controller.Settings', {
 			// Update the form with account data.
 			form.setRecord( Ext.create('USIMobile.model.Settings', USIMobile.Session.getSettingsStore().first().getData()) );
 		}
+	},
+
+	setLanguage: function(view, lang){
+		Ux.locale.Manager.updateLocale(lang);
+		Ux.locale.Manager.applyLocales();
+		//this.getForm().setLocale(lang);
 	},
 
 	saveSettings: function() {

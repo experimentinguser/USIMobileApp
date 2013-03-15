@@ -4,8 +4,6 @@ Ext.define("USIMobile.view.DetailedNews", {
 
 	config: {
 		id: 'detailednews',
-		title: 'USI News', 
-		emptyText: 'No details available.',
 		scrollable: {
 			direction: 'vertical',
 			directionLock: true

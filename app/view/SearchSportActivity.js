@@ -13,7 +13,6 @@ Ext.define("USIMobile.view.SearchSportActivity", {
 
 	config: {
 		id: 'searchsportactivityform',
-		title: 'Search Sport Activity',
 		items: [
 			{
 				xtype: 'fieldset',
@@ -21,38 +20,43 @@ Ext.define("USIMobile.view.SearchSportActivity", {
 					{
 						xtype: 'textfield',	
 						name: 'name',
-						label: 'Name'
+						locales: {
+							label: 'label.name'
+						}
 					},
 					{
 						xtype: 'selectfield',
 						name: 'category',
-						label: 'Category',
+						locales: {
+							label: 'SelectFieldCategory.label',
+							options: 'SelectFieldCategory.options'
+						},
 						usePicker: false,
-						options: [
-							{ text: 'all', value: 'all' },
-							{ text: 'Art and Dance', value: 'Arti e Danze' },
-							{ text: 'Winter activities', value: 'Attività invernali' },
-							{ text: 'Fitness and Health', value: 'Fitnes e salute' },
-							{ text: 'Games and Events', value: 'Giochi e eventi' },
-						]
+						
 					},
 					{
 						xtype: 'datepickerfield',	
 						name: 'from',
-						label: 'From',
+						locales: {
+							label: 'label.from',
+						},
 						value: null,
 						dateFormat: 'd M Y',
 					},
 					{
 						xtype: 'datepickerfield',	
 						name: 'to',
-						label: 'To',
+						locales: {
+							label: 'label.to',
+						},
 						value: null,
 						dateFormat: 'd M Y'
 					},
 					{
 						xtype: 'button',
-						text: 'Search',
+						locales: {
+							text: 'button.search',
+						},
 						ui: 'confirm',
 						action: 'search',	
 					}
