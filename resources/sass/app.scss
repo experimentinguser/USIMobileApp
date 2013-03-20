@@ -100,6 +100,7 @@ $base-color: #F90;
 .detailed_news_body,
 .detailed_detailed_url,
 .detailed_news_publish_start_date {
+	font-size: .8em;
 	background-color: white;
 	margin-top: 10px;
 	padding: 10px;
@@ -130,12 +131,17 @@ $base-color: #F90;
 .sport_activity_transport,
 .sport_activity_subscription_start_date,
 .sport_activity_subscription_end_date {
+	font-size: .8em;
 	padding: 5px;
 	margin-top: 10px;
 	background-color: white;
 	.label{
 		font-style: italic;
 	}
+}
+
+.standard_font {
+	font-size: .8em;
 }
 
 .course_title {

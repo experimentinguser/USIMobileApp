@@ -14,6 +14,10 @@ Ext.define('USIMobile.controller.Init', {
 			'USIMobile.store.ExaminationTimetables',
 			'USIMobile.store.ShortNews',
 			'USIMobile.store.DetailedNews',
+			'USIMobile.store.ShortEventNews',
+			'USIMobile.store.DetailedEventNews',
+			'USIMobile.store.ShortCommunityNews',
+			'USIMobile.store.DetailedCommunityNews',
 			'USIMobile.store.MenuMensa',
 			'USIMobile.store.SportActivity',
 			'USIMobile.store.Services',
@@ -75,6 +79,22 @@ Ext.define('USIMobile.controller.Init', {
 		// create the Detailed News store
 		var detailed_news_store = Ext.create('USIMobile.store.DetailedNews'); 
 		USIMobile.Session.setDetailedNewsStore(detailed_news_store);
+
+		// create the Short Event News store
+		var short_event_news_store = Ext.create('USIMobile.store.ShortEventNews'); 
+		USIMobile.Session.setShortEventNewsStore(short_event_news_store);
+
+		// create the Detailed Event News store
+		var detailed_event_news_store = Ext.create('USIMobile.store.DetailedEventNews'); 
+		USIMobile.Session.setDetailedEventNewsStore(detailed_event_news_store);
+
+		// create the Short Community News store
+		var short_community_news_store = Ext.create('USIMobile.store.ShortCommunityNews'); 
+		USIMobile.Session.setShortCommunityNewsStore(short_community_news_store);
+
+		// create the Detailed Community News store
+		var detailed_community_news_store = Ext.create('USIMobile.store.DetailedCommunityNews'); 
+		USIMobile.Session.setDetailedCommunityNewsStore(detailed_community_news_store);
 
 		// create the menumensa store
 		var menumensa_store = Ext.create('USIMobile.store.MenuMensa'); 

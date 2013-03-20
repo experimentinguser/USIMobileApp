@@ -9,6 +9,9 @@ Ext.define("USIMobile.view.Main", {
 		tabBarPosition: 'bottom',
 		enableLocale: true,
 		locales: {},
+		tabBar: {
+			id: 'apptabbar'
+		},
 		items: [
 			{
 				xtype: 'home',
@@ -21,8 +24,12 @@ Ext.define("USIMobile.view.Main", {
 			},
 		],
 	listeners : {
-        delegate : 'tabbar > tab',
-        tap      : function() { this.getAt(0).pop(10); } // go home button
+        delegate : 'tabbar#apptabbar > tab',
+        tap      : function(tab, e, eOpts) { 
+			if(tab.getParent().getAt(0).getActive()) { // check the first button which is USI button
+				this.getAt(0).pop(5); // go home button; the xtype home is the navigation view so use the pop function to accomplish this.
+			}
+		}
     }
 	},
 

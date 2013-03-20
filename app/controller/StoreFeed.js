@@ -57,7 +57,9 @@ Ext.define('USIMobile.controller.StoreFeed', {
 			'teaching_timetables': false,
 			'examination_timetables': false,
 			'people': false,
-			'short_news': false,
+			'news': false,
+			'event_news': false,
+			'community_news': false,
 			'menu_mensa': false,
 			'sport_activity': false,
 			'services': false,
@@ -71,7 +73,9 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				scope.store_update_status.teaching_timetables == true &&
 				scope.store_update_status.examination_timetables == true &&
 				scope.store_update_status.people == true &&
-				scope.store_update_status.short_news == true &&
+				scope.store_update_status.news == true &&
+				scope.store_update_status.event_news == true &&
+				scope.store_update_status.community_news == true &&
 				scope.store_update_status.menu_mensa == true &&
 				scope.store_update_status.sport_activity == true &&
 				scope.store_update_status.services == true
@@ -96,6 +100,10 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		this.updateExaminationTimetablesStore();
 		// usinews store
 		this.updateShortNewsStore();
+		// usieventnews store
+		this.updateShortEventNewsStore();
+		// usicommunitynews store
+		this.updateShortCommunityNewsStore();
 		// menumensa store
 		this.updateMenuMensaStore();
 		// sportactivity store
@@ -179,10 +187,36 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		} else {
 			if(USIMobile.Session.getShortNewsStore().getCount() == 0){
 				USIMobile.Session.getShortNewsStore().on('load', function(){
-					this.store_update_status.short_news = true;
+					this.store_update_status.news = true;
 				}, this, {single: true});
 				USIMobile.Session.getShortNewsStore().load();
 				USIMobile.Session.getDetailedNewsStore().load();
+			}
+		}
+
+		// usieventnews store
+		if(server_updates_store.first().get('usieventnews') != USIMobile.Session.getUpdatesStore().first().get('usieventnews')) {
+			this.updateShortEventNewsStore();
+		} else {
+			if(USIMobile.Session.getShortEventNewsStore().getCount() == 0){
+				USIMobile.Session.getShortEventNewsStore().on('load', function(){
+					this.store_update_status.event_news = true;
+				}, this, {single: true});
+				USIMobile.Session.getShortEventNewsStore().load();
+				USIMobile.Session.getDetailedEventNewsStore().load();
+			}
+		}
+
+		// usicommunitynews store
+		if(server_updates_store.first().get('usicommunitynews') != USIMobile.Session.getUpdatesStore().first().get('usicommunitynews')) {
+			this.updateShortCommunityNewsStore();
+		} else {
+			if(USIMobile.Session.getShortCommunityNewsStore().getCount() == 0){
+				USIMobile.Session.getShortCommunityNewsStore().on('load', function(){
+					this.store_update_status.community_news = true;
+				}, this, {single: true});
+				USIMobile.Session.getShortCommunityNewsStore().load();
+				USIMobile.Session.getDetailedCommunityNewsStore().load();
 			}
 		}
 
@@ -376,7 +410,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
-					this.store_update_status.short_news = true;
+					this.store_update_status.news = true;
 					// remove old entries
 					USIMobile.Session.getShortNewsStore().removeAll();
 					USIMobile.Session.getShortNewsStore().getProxy().clear();
@@ -409,6 +443,92 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				news_entry.setDirty();
 				USIMobile.Session.getDetailedNewsStore().add(news_entry);
 				USIMobile.Session.getDetailedNewsStore().sync();
+			});
+		}, this);
+	},
+
+	updateShortEventNewsStore: function() {
+		USIMobile.WebService.getShortEventNews().on('load',
+			function(store, records, success) {
+				// check if there are any exceptions
+				// check for errors here
+				if(store.getProxy().getReader().rawData.error == null){
+					this.store_update_status.event_news = true;
+					// remove old entries
+					USIMobile.Session.getShortEventNewsStore().removeAll();
+					USIMobile.Session.getShortEventNewsStore().getProxy().clear();
+
+					store.each(function(news_entry) {
+						news_entry.setDirty();
+						USIMobile.Session.getShortEventNewsStore().add(news_entry);
+					});
+
+					// update the detailed news store
+					USIMobile.Session.getShortEventNewsStore().on('write', this.updateDetailedEventNewsStore, this, {single: true});
+					// store data
+					USIMobile.Session.getShortEventNewsStore().sync();
+				} else {
+					Ext.Msg.alert(
+						store.getProxy().getReader().rawData.title,
+						store.getProxy().getReader().rawData.message + '; Code: ' + store.getProxy().getReader().rawData.code
+					);
+				}
+			},
+			this,
+			{single: true}
+		);
+	},
+	
+	updateDetailedEventNewsStore: function(){
+		USIMobile.Session.getShortEventNewsStore().each(function(entry){
+			USIMobile.WebService.getDetailedEventNews(entry.get('id')).on('load', function(store){
+				var news_entry = store.first();
+				news_entry.setDirty();
+				USIMobile.Session.getDetailedEventNewsStore().add(news_entry);
+				USIMobile.Session.getDetailedEventNewsStore().sync();
+			});
+		}, this);
+	},
+
+	updateShortCommunityNewsStore: function() {
+		USIMobile.WebService.getShortCommunityNews().on('load',
+			function(store, records, success) {
+				// check if there are any exceptions
+				// check for errors here
+				if(store.getProxy().getReader().rawData.error == null){
+					this.store_update_status.community_news = true;
+					// remove old entries
+					USIMobile.Session.getShortCommunityNewsStore().removeAll();
+					USIMobile.Session.getShortCommunityNewsStore().getProxy().clear();
+
+					store.each(function(news_entry) {
+						news_entry.setDirty();
+						USIMobile.Session.getShortCommunityNewsStore().add(news_entry);
+					});
+
+					// update the detailed news store
+					USIMobile.Session.getShortCommunityNewsStore().on('write', this.updateDetailedCommunityNewsStore, this, {single: true});
+					// store data
+					USIMobile.Session.getShortCommunityNewsStore().sync();
+				} else {
+					Ext.Msg.alert(
+						store.getProxy().getReader().rawData.title,
+						store.getProxy().getReader().rawData.message + '; Code: ' + store.getProxy().getReader().rawData.code
+					);
+				}
+			},
+			this,
+			{single: true}
+		);
+	},
+	
+	updateDetailedCommunityNewsStore: function(){
+		USIMobile.Session.getShortCommunityNewsStore().each(function(entry){
+			USIMobile.WebService.getDetailedCommunityNews(entry.get('id')).on('load', function(store){
+				var news_entry = store.first();
+				news_entry.setDirty();
+				USIMobile.Session.getDetailedCommunityNewsStore().add(news_entry);
+				USIMobile.Session.getDetailedCommunityNewsStore().sync();
 			});
 		}, this);
 	},

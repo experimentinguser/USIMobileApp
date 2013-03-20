@@ -5,6 +5,7 @@ Ext.define("USIMobile.view.Courses", {
 	config: {
 		id: 'courses',
 		itemTpl: '{title}',
-		grouped: true
+		cls: 'standard_font',
+		grouped: true,
 	}
 });

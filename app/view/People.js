@@ -5,6 +5,7 @@ Ext.define("USIMobile.view.People", {
 	config: {
 		id: 'people',
 		emptyText: 'No people found.',
+		cls: 'standard_font',
 		itemTpl: '<div>Name: {firstname} {lastname}</div>'+
 					'<div>Email: {email}</div>'+
 					'<div>Phone: {phone}</div>'+

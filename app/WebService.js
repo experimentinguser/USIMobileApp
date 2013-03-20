@@ -129,6 +129,44 @@ Ext.define('USIMobile.WebService', {
 		return detailed_news_store;
 	},
 
+	getShortEventNews: function() {
+		var url = USIMobile.Config.getShortEventNewsUrl();
+		// set parameters
+		var params = new Object();
+		// request
+		var short_event_news_store = this.request(url, params, 'USIMobile.model.ShortNews');
+		return short_event_news_store;
+	},
+
+	getDetailedEventNews: function(id) {
+		var url = USIMobile.Config.getDetailedEventNewsUrl();
+		// set parameters
+		var params = new Object();
+		params.id = id;
+		// request
+		var detailed_event_news_store = this.request(url, params, 'USIMobile.model.DetailedNews');
+		return detailed_event_news_store;
+	},
+
+	getShortCommunityNews: function() {
+		var url = USIMobile.Config.getShortCommunityNewsUrl();
+		// set parameters
+		var params = new Object();
+		// request
+		var short_community_news_store = this.request(url, params, 'USIMobile.model.ShortNews');
+		return short_community_news_store;
+	},
+
+	getDetailedCommunityNews: function(id) {
+		var url = USIMobile.Config.getDetailedCommunityNewsUrl();
+		// set parameters
+		var params = new Object();
+		params.id = id;
+		// request
+		var detailed_event_news_store = this.request(url, params, 'USIMobile.model.DetailedNews');
+		return detailed_event_news_store;
+	},
+
 	getMenuMensa: function() {
 		var url = USIMobile.Config.getMenuMensaUrl();
 		// set parameters

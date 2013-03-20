@@ -2,54 +2,95 @@ Ext.define('USIMobile.controller.News', {
 	extend: 'Ext.app.Controller',
 
 	requires: [
+			'USIMobile.view.News',
 			'USIMobile.view.ShortNews',
+			'USIMobile.view.ShortEventNews',
+			'USIMobile.view.ShortCommunityNews',
 	],
 
 	config: {
 		refs: {
 			home: '#home',
+			news: '#news',
 			shortNews: '#shortnews',
+			shortEventNews: '#shorteventnews',
+			shortCommunityNews: '#shortcommunitynews',
 			detailedNews: '#detailednews',
 			newsButton: 'button#news_home_button',
 		},
 
 		control: {
-			newsButton: { tap: 'showShortNews' },
+			newsButton: { tap: 'showNews' },
 			shortNews: { itemtap: 'showDetailedNews' },
+			shortEventNews: { itemtap: 'showDetailedEventNews' },
+			shortCommunityNews: { itemtap: 'showDetailedCommunityNews' },
 		}
 	},
 	
 	//called when the Application is launched, remove if not needed
 	init: function(){
+		Ext.n = this;
 	},
 
-	showShortNews: function(btn, e, eOpts){
+	showNews: function(btn, e, eOpts){
 		// display news
-		if(typeof this.getShortNews() == 'object') {
-			this.getShortNews().refresh();
-			this.getHome().push(this.getShortNews());
+		if(typeof this.getNews() == 'object') {
+			this.getHome().push(this.getNews());
 		} else {
 			this.getHome().push({
-				xtype: 'shortnews',	
-				title: Ux.locale.Manager.get('title.usinews'),
-				emptyText: Ux.locale.Manager.get('message.noNews'),
-				store: USIMobile.Session.getShortNewsStore()
+				xtype: 'news',	
 			});
+			this.getShortNews().setStore(USIMobile.Session.getShortNewsStore());
+			this.getShortEventNews().setStore(USIMobile.Session.getShortEventNewsStore());
+			this.getShortCommunityNews().setStore(USIMobile.Session.getShortCommunityNewsStore());
 		}
 	},
 
-	showDetailedNews: function(view, index, target, shortnews_record) {
-		var detailednews_record = USIMobile.Session.getDetailedNewsStore().getById(shortnews_record.get('id'));
+	showDetailedNews: function(view, index, target, record) {
+		console.log('showing detailed news');
+		var details = USIMobile.Session.getDetailedNewsStore().getById(record.get('id'));
 		// display details
 		if(typeof this.getDetailedNews() == 'object') {
-			this.getDetailedNews().setRecord(detailednews_record);
+			this.getDetailedNews().setRecord(details);
 			this.getHome().push(this.getDetailedNews());
 		} else {
 			this.getHome().push({
 				xtype: 'detailednews',	
-				title: Ux.locale.Manager.get('title.usinews'),
+				title: Ux.locale.Manager.get('title.news'),
 				emptyText: Ux.locale.Manager.get('message.noNews'),
-				record: detailednews_record
+				record: details
+			});
+		}
+	},
+
+	showDetailedEventNews: function(view, index, target, record) {
+		var details = USIMobile.Session.getDetailedEventNewsStore().getById(record.get('id'));
+		// display details
+		if(typeof this.getDetailedNews() == 'object') {
+			this.getDetailedNews().setRecord(details);
+			this.getHome().push(this.getDetailedNews());
+		} else {
+			this.getHome().push({
+				xtype: 'detailednews',	
+				title: Ux.locale.Manager.get('title.events'),
+				emptyText: Ux.locale.Manager.get('message.noNews'),
+				record: details
+			});
+		}
+	},
+
+	showDetailedCommunityNews: function(view, index, target, record) {
+		var details = USIMobile.Session.getDetailedCommunityNewsStore().getById(record.get('id'));
+		// display details
+		if(typeof this.getDetailedNews() == 'object') {
+			this.getDetailedNews().setRecord(details);
+			this.getHome().push(this.getDetailedNews());
+		} else {
+			this.getHome().push({
+				xtype: 'detailednews',	
+				title: Ux.locale.Manager.get('title.community'),
+				emptyText: Ux.locale.Manager.get('message.noNews'),
+				record: details
 			});
 		}
 	}

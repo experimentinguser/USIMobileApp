@@ -4,6 +4,7 @@ Ext.define("USIMobile.view.SportActivities", {
 
 	config: {
 		id: 'sportactivities',
+		cls: 'standard_font',
 		grouped: true
 	}
 });

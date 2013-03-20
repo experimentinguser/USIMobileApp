@@ -5,6 +5,7 @@ Ext.define("USIMobile.view.Services", {
 	config: {
 		id: 'services',
 		emptyText: 'No services found.',
+		cls: 'standard_font',
 		itemTpl: 	'<b>{name_en}</b> <br/>'+
 					'{description_en} <br/><br/>'+
 					'Building: {building_en} <br/>'+

@@ -11,8 +11,13 @@ Ext.define('USIMobile.Config', {
 		this.config.peopleUrl = this.config.kurogoRestUrl + this.config.peopleUrl;
 		this.config.shortNewsUrl = this.config.kurogoRestUrl + this.config.shortNewsUrl;
 		this.config.detailedNewsUrl = this.config.kurogoRestUrl + this.config.detailedNewsUrl;
+		this.config.shortEventNewsUrl = this.config.kurogoRestUrl + this.config.shortEventNewsUrl;
+		this.config.detailedEventNewsUrl = this.config.kurogoRestUrl + this.config.detailedEventNewsUrl;
+		this.config.shortCommunityNewsUrl = this.config.kurogoRestUrl + this.config.shortCommunityNewsUrl;
+		this.config.detailedCommunityNewsUrl = this.config.kurogoRestUrl + this.config.detailedCommunityNewsUrl;
 		this.config.menuMensaUrl = this.config.kurogoRestUrl + this.config.menuMensaUrl;
 		this.config.sportActivityUrl = this.config.kurogoRestUrl + this.config.sportActivityUrl;
+		this.config.servicesUrl = this.config.kurogoRestUrl + this.config.servicesUrl;
 		this.config.homeOrgsUrl = this.config.kurogoRestUrl + this.config.homeOrgsUrl;
 
   		this.initConfig(config);
@@ -30,8 +35,13 @@ Ext.define('USIMobile.Config', {
 		peopleUrl: 'usipeople/get',
 		shortNewsUrl: 'usinews/get_list',
 		detailedNewsUrl: 'usinews/get_item',
+		shortEventNewsUrl: 'usieventnews/get_list',
+		detailedEventNewsUrl: 'usieventnews/get_item',
+		shortCommunityNewsUrl: 'usicommunitynews/get_list',
+		detailedCommunityNewsUrl: 'usicommunitynews/get_item',
 		menuMensaUrl: 'mensa/get_menu',
 		sportActivityUrl: 'sport/get',
+		servicesUrl: 'services/get',
 		homeOrgsUrl: 'aai/get_idps',
 		// local paths
 		fileCacheDir: 'USIMobile',
