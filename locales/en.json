@@ -25,6 +25,7 @@
     },
 
 	"label" : {
+        "name" : "Name",
         "firstname" : "Firstname",
         "lastname" : "Lastname",
         "username" : "Username",
@@ -59,6 +60,8 @@
         "examinationEnd" : "Examination End",
         "from" : "From",
         "to" : "To",
+        "email" : "e-Mail",
+        "floor" : "Floor",
     },
 
     "button" : {
@@ -87,6 +90,7 @@
 		"noNews": "No News available",
 		"noSportActivities": "No Sport Activities available",
 		"searchingCourses": "Searching courses",
+		"searchingPeople": "Searching people",
 		"noCourses": "No Courses available",
 		"noTimeTables": "No Timetables available",
     },

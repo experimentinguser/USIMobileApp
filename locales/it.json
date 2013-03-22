@@ -25,6 +25,7 @@
     },
 
 	"label" : {
+        "name" : "Nome",
         "firstname" : "Nome",
         "lastname" : "Cognome",
         "username" : "Utente",
@@ -59,6 +60,8 @@
         "examinationEnd" : "Fine Esami",
         "from" : "Da",
         "to" : "Fino",
+        "email" : "e-Mail",
+        "floor" : "Piano",
     },
 
     "button" : {
@@ -87,6 +90,7 @@
 		"noNews": "Nessuno News disponibile",
 		"noSportActivities": "Nessuna Attività Sportiva disponibile",
 		"searchingCourses": "Ricerca Corsi",
+		"searchingPeople": "Ricerca Persone",
 		"noCourses": "Nessun Corso disponibile",
 		"noTimeTables": "Nessun Orario disponibile",
     },

@@ -11,11 +11,15 @@ Ext.define('USIMobile.controller.People', {
 			people: '#people',
 			searchPeopleForm: '#searchpeople',
 			searchPeopleButton: '#searchpeople button[action=search]',
+			callPersonButton: 'button[action=callperson]',
+			mailPersonButton: 'button[action=mailperson]',
 		},
 
 		control: {
 			homePeopleButton: { tap: 'showSearchPeopleForm' },
 			searchPeopleButton: { tap: 'searchPeople' },
+			callPersonButton: { tap: 'callPerson' },
+			mailPersonButton: { tap: 'mailPerson' },
 			people: {
 				show: function() {
 					USIMobile.app.hideLoadMask();
@@ -41,7 +45,7 @@ Ext.define('USIMobile.controller.People', {
 	},
 
 	searchPeople: function() {
-		USIMobile.app.showLoadMask('Searching People.');
+		USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.searchPeople'));
 		// set the filter
 		this.filter = this.getSearchPeopleForm().getValues();
 		var scope = this;
@@ -117,6 +121,18 @@ Ext.define('USIMobile.controller.People', {
 				record: record
 			});
 		}
-	}
+	},
 
+	callPerson: function(button){
+		var record = button.getParent().getRecord();
+		USIMobile.app.openURL('tel:'+record.get('phone'));
+	},
+
+	mailPerson: function(button){
+		var record = button.getParent().getRecord();
+		var to = record.get(email);
+		var subject = '';
+		var body = '';
+		USIMobile.app.sendEmail(to, subject, body);
+	},
 });

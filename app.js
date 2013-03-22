@@ -48,6 +48,7 @@ Ext.application({
 		'USIMobile.view.Course',
 		'USIMobile.view.SearchPeople',
 		'USIMobile.view.People',
+		'USIMobile.view.Person',
 		'USIMobile.view.ShortNews',
 		'USIMobile.view.DetailedNews',
 		'USIMobile.view.Calendar',
