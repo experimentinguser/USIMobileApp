@@ -132,7 +132,7 @@ Ext.define('USIMobile.controller.People', {
 
 	mailPerson: function(button){
 		var record = button.getParent().getRecord();
-		var to = record.get(email);
+		var to = record.get('email');
 		var subject = '';
 		var body = '';
 		USIMobile.app.sendEmail(to, subject, body);

@@ -130,11 +130,19 @@ $base-color: #F90;
 .sport_activity_equipment,
 .sport_activity_transport,
 .sport_activity_subscription_start_date,
-.sport_activity_subscription_end_date,
-.person {
-	font-size: .8em;
+.sport_activity_subscription_end_date {
 	padding: 5px;
 	margin-top: 10px;
+	background-color: white;
+	.label{
+		font-style: italic;
+	}
+}
+
+.person,
+.service {
+	padding: 5px;
+	margin-bottom: 2px;
 	background-color: white;
 	.label{
 		font-style: italic;

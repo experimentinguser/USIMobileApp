@@ -13,6 +13,7 @@ Ext.define('USIMobile.model.Service', {
 			{name: 'office', type: 'string'},
 			{name: 'phone', type: 'string'},
 			{name: 'email', type: 'string'},
+			{name: 'url', type: 'string'},
 			{name: 'timemodify', type: 'string'},
 		]
 	}

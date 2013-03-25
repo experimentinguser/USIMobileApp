@@ -11015,7 +11015,7 @@ input[type="search"]::-webkit-search-cancel-button {
   padding: 10px;
 }
 
-/* line 134, ../sass/app.scss */
+/* line 133, ../sass/app.scss */
 .course_title,
 .course_description,
 .course_professors,
@@ -11038,14 +11038,12 @@ input[type="search"]::-webkit-search-cancel-button {
 .sport_activity_equipment,
 .sport_activity_transport,
 .sport_activity_subscription_start_date,
-.sport_activity_subscription_end_date,
-.person {
-  font-size: .8em;
+.sport_activity_subscription_end_date {
   padding: 5px;
   margin-top: 10px;
   background-color: white;
 }
-/* line 139, ../sass/app.scss */
+/* line 137, ../sass/app.scss */
 .course_title .label,
 .course_description .label,
 .course_professors .label,
@@ -11068,27 +11066,39 @@ input[type="search"]::-webkit-search-cancel-button {
 .sport_activity_equipment .label,
 .sport_activity_transport .label,
 .sport_activity_subscription_start_date .label,
-.sport_activity_subscription_end_date .label,
-.person .label {
+.sport_activity_subscription_end_date .label {
   font-style: italic;
 }
 
-/* line 144, ../sass/app.scss */
+/* line 143, ../sass/app.scss */
+.person,
+.service {
+  padding: 5px;
+  margin-bottom: 2px;
+  background-color: white;
+}
+/* line 147, ../sass/app.scss */
+.person .label,
+.service .label {
+  font-style: italic;
+}
+
+/* line 152, ../sass/app.scss */
 .standard_font {
   font-size: .8em;
 }
 
-/* line 148, ../sass/app.scss */
+/* line 156, ../sass/app.scss */
 .course_title {
   font-weight: bold;
 }
 
-/* line 152, ../sass/app.scss */
+/* line 160, ../sass/app.scss */
 .examination_session {
   padding-bottom: 5px;
 }
 
-/* line 159, ../sass/app.scss */
+/* line 167, ../sass/app.scss */
 .registration_begin,
 .registration_end,
 .examination_begin,
@@ -11097,7 +11107,7 @@ input[type="search"]::-webkit-search-cancel-button {
   color: gray;
 }
 
-/* line 165, ../sass/app.scss */
+/* line 173, ../sass/app.scss */
 .registration_end,
 .examination_end {
   padding-top: 5px;

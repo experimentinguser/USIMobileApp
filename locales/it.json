@@ -64,6 +64,8 @@
         "building" : "Edificio",
         "floor" : "Piano",
         "headquarter" : "Sede",
+        "office" : "Ufficio",
+        "phone" : "Tel",
     },
 
     "button" : {

@@ -59,6 +59,7 @@ Ext.application({
 		'USIMobile.view.SportActivities',
 		'USIMobile.view.SportActivity',
 		'USIMobile.view.Services',
+		'USIMobile.view.Service',
 		'USIMobile.view.Home',
 	],
 
