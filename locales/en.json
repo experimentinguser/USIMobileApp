@@ -149,9 +149,12 @@
 		"options": [
 				{ "text": 'all', "value": 'all' },
 				{ "text": 'Arts & Dance', "value": 'Arts & Dance' },
-				{ "text": 'Winter activities', "value": 'Winter activities' },
 				{ "text": 'Fitness and Health', "value": 'Fitness and Health' },
 				{ "text": 'Games and Events', "value": 'Games and Events' },
+				{ "text": 'Winter activities', "value": 'Winter activities' },
+				{ "text": 'Snow sports', "value": 'Snow sports' },
+				{ "text": 'Nautical sports', "value": 'Nautical sports' },
+				{ "text": 'Outdoor sports', "value": 'Outdoor sports' },
 		]
 	},
 	
