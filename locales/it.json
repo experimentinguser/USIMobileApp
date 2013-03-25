@@ -61,7 +61,9 @@
         "from" : "Da",
         "to" : "Fino",
         "email" : "e-Mail",
+        "building" : "Edificio",
         "floor" : "Piano",
+        "headquarter" : "Sede",
     },
 
     "button" : {

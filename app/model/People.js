@@ -9,7 +9,10 @@ Ext.define('USIMobile.model.People', {
 			{name: 'lastname', type: 'string'},
 			{name: 'email', type: 'string'},
 			{name: 'phone', type: 'string'},
+			{name: 'url', type: 'string'},
+			{name: 'building', type: 'string'},
 			{name: 'floor', type: 'string'},
+			{name: 'headquarter', type: 'string'},
 		]
 	}
 

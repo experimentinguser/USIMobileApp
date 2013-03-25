@@ -13,6 +13,7 @@ Ext.define('USIMobile.controller.People', {
 			searchPeopleButton: '#searchpeople button[action=search]',
 			callPersonButton: 'button[action=callperson]',
 			mailPersonButton: 'button[action=mailperson]',
+			homePagePersonButton: 'button[action=openpersonurl]',
 		},
 
 		control: {
@@ -20,6 +21,7 @@ Ext.define('USIMobile.controller.People', {
 			searchPeopleButton: { tap: 'searchPeople' },
 			callPersonButton: { tap: 'callPerson' },
 			mailPersonButton: { tap: 'mailPerson' },
+			homePagePersonButton: { tap: 'openHomePage' },
 			people: {
 				show: function() {
 					USIMobile.app.hideLoadMask();
@@ -134,5 +136,10 @@ Ext.define('USIMobile.controller.People', {
 		var subject = '';
 		var body = '';
 		USIMobile.app.sendEmail(to, subject, body);
+	},
+
+	openHomePage: function(button){
+		var record = button.getParent().getRecord();
+		USIMobile.app.openURL(record.get('url'));
 	},
 });

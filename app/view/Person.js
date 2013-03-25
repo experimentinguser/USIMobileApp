@@ -23,8 +23,20 @@ Ext.define("USIMobile.view.Person", {
 			docked: 'top',
 		},
 
+		building: {
+			cls: 'x-person-building',
+			docked: 'top',
+			hidden: true,
+		},
+
 		floor: {
 			cls: 'x-person-email',
+			docked: 'top',
+			hidden: true,
+		},
+
+		headquarter: {
+			cls: 'x-person-headquarter',
 			docked: 'top',
 			hidden: true,
 		},
@@ -46,6 +58,19 @@ Ext.define("USIMobile.view.Person", {
 			cls: 'x-person-mail-button',
 			text: 'Mail',
 			action: 'mailperson',
+			ui: 'confirm',
+			flex: 1,
+			hidden: true,
+			listeners: {
+				tap: function () {
+				}
+			},
+		},
+
+		homePageButton: {
+			cls: 'x-person-homepage-button',
+			text: 'Home Page',
+			action: 'openpersonurl',
 			ui: 'confirm',
 			flex: 1,
 			hidden: true,
@@ -112,6 +137,21 @@ Ext.define("USIMobile.view.Person", {
         }
     },
 
+	applyBuilding: function(config) {
+		config.html = '<span class="label">' + Ux.locale.Manager.get('label.building') + ':</span> ' + this.getRecord().get('building');
+        return Ext.factory(config, Ext.Component, this.getBuilding());
+    },
+
+    updateBuilding: function(newBuilding, oldBuilding) {
+        if (newBuilding) {
+            this.add(newBuilding);
+        }
+
+        if (oldBuilding) {
+            this.remove(oldBuilding);
+        }
+    },
+
 	applyFloor: function(config) {
 		config.html = '<span class="label">' + Ux.locale.Manager.get('label.floor') + ':</span> ' + this.getRecord().get('floor');
         return Ext.factory(config, Ext.Component, this.getFloor());
@@ -124,6 +164,21 @@ Ext.define("USIMobile.view.Person", {
 
         if (oldFloor) {
             this.remove(oldFloor);
+        }
+    },
+
+	applyHeadquarter: function(config) {
+		config.html = '<span class="label">' + Ux.locale.Manager.get('label.headquarter') + ':</span> ' + this.getRecord().get('headquarter');
+        return Ext.factory(config, Ext.Component, this.getHeadquarter());
+    },
+
+    updateHeadquarter: function(newHeadquarter, oldHeadquarter) {
+        if (newHeadquarter) {
+            this.add(newHeadquarter);
+        }
+
+        if (oldHeadquarter) {
+            this.remove(oldHeadquarter);
         }
     },
 
@@ -152,6 +207,20 @@ Ext.define("USIMobile.view.Person", {
 
         if (oldMailButton) {
             this.remove(oldMailButton);
+        }
+    },
+
+	applyHomePageButton: function(config) {
+        return Ext.factory(config, Ext.Button, this.getHomePageButton());
+    },
+
+    updateHomePageButton: function(newHomePageButton, oldHomePageButton) {
+        if (newHomePageButton) {
+            this.add(newHomePageButton);
+        }
+
+        if (oldHomePageButton) {
+            this.remove(oldHomePageButton);
         }
     },
 });
