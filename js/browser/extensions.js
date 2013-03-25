@@ -1,0 +1,39 @@
+function addExtensions(){
+	//////////////////////////////////////////////////////////////////////////
+	// this function opens a dialog for sending messages.
+	//////////////////////////////////////////////////////////////////////////
+	USIMobile.app.sendEmail = function(to, subject, body) {
+		console.log('mailing to: ' + to);	
+		console.log('subject: ' + subject);	
+		console.log('body: ' + body);	
+	};
+
+	//////////////////////////////////////////////////////////////////////////
+	// this function downloads a file and updates the status in the loadMask
+	// popup
+	//////////////////////////////////////////////////////////////////////////
+	//
+	// file is an object such as:
+	// {"name": "filename", "mime":"mime/type"}
+	USIMobile.app.getFile = function(url, filename, mime) {
+		console.log('getting file: '+url);
+		window.open(url, '_blank');
+	};
+
+	//////////////////////////////////////////////////////////////////////////
+	// This function opens a url in the default browser app
+	//////////////////////////////////////////////////////////////////////////
+	USIMobile.app.openURL = function(urladdr) {
+
+		console.log('opening url: '+urladdr);
+		window.open(urladdr, '_blank');
+	};
+
+	//////////////////////////////////////////////////////////////////////////
+	// This function opens a file with an external app that is
+	// associated to the mime type
+	//////////////////////////////////////////////////////////////////////////
+	USIMobile.app.openFile = function(path, mime) {
+		console.log('opening file: ' + path);	
+	};
+}

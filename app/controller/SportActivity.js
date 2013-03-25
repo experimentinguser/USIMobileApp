@@ -109,6 +109,7 @@ Ext.define('USIMobile.controller.SportActivity', {
 
 	mailTo: function(btn, e, opts) {
 		activity_record = btn.getParent().getParent().getRecord();
-		USIMobile.app.sendEmail(activity_record.get('contact_mail'), activity_record.get('name'), 'Dear '+activity_record.get('contact_name')+',');
+		var subject = Ux.locale.Manager.getLanguage() == "en" ? activity_record.get('name_en') : activity_record.get('name_it');
+		USIMobile.app.sendEmail(activity_record.get('contact_mail'), subject, 'Dear '+activity_record.get('contact_name')+',');
 	},
 });
