@@ -148,10 +148,10 @@
 		"label": "Categoria",
 		"options": [
 				{ "text": 'all', "value": 'all' },
-				{ "text": 'Art and Dance', "value": 'Arti e Danze' },
-				{ "text": 'Winter activities', "value": 'Attività invernali' },
-				{ "text": 'Fitness and Health', "value": 'Fitnes e salute' },
-				{ "text": 'Games and Events', "value": 'Giochi e eventi' },
+				{ "text": 'Arts & Dance', "value": 'Arts & Dance' },
+				{ "text": 'Winter activities', "value": 'Winter activities' },
+				{ "text": 'Fitness and Health', "value": 'Fitness and Health' },
+				{ "text": 'Games and Events', "value": 'Games and Events' },
 		]
 	},
 	

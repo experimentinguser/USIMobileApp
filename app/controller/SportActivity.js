@@ -81,11 +81,11 @@ Ext.define('USIMobile.controller.SportActivity', {
 				var result = true;
 
 				if(this.filter.name != "") {
-					result = result && record.get('name_en').toLowerCase().indexOf(this.filter.name.toLowerCase()) > -1;
+					result = result && record.get('name_' + Ux.locale.Manager.getLanguage()).toLowerCase().indexOf(this.filter.name.toLowerCase()) > -1;
 				} 
 
 				if(this.filter.category != "all") {
-					result = result && record.get('category_en').toLowerCase().indexOf(this.filter.category.toLowerCase()) == 0;
+					result = result && record.get('category_' + Ux.locale.Manager.getLanguage()).toLowerCase().indexOf(this.filter.category.toLowerCase()) == 0;
 				} 
 
 				return result;
