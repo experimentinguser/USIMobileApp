@@ -22,6 +22,8 @@
         "login" : "Login AAI",
         "appSettings" : "Impostazioni App",
         "examinationTimetables" : "Orario Esami",
+        "error" : "Errore",
+        "errorCode" : "Errore Codice: ",
     },
 
 	"label" : {
@@ -78,6 +80,7 @@
         "back"   : "Indietro",
         "mailto"   : "Manda e-Mail",
         "subscribe"   : "Iscrizione",
+        "unsubscribe"   : "Disiscrizione",
     },
 
     "list" : {
@@ -90,13 +93,25 @@
 
     "message" : {
         "loading" : "Caricamento...",
-		"noInfo": "Nessuna informazione disponibile",
-		"noNews": "Nessuno News disponibile",
-		"noSportActivities": "Nessuna Attività Sportiva disponibile",
+		"processing": "In elaborazione...",
+		"noInfo": "Nessuna informazione disponibile.",
+		"noNews": "Nessuna News disponibile.",
+		"noSportActivities": "Nessuna Attività Sportiva disponibile.",
 		"searchingCourses": "Ricerca Corsi",
 		"searchingPeople": "Ricerca Persone",
-		"noCourses": "Nessun Corso disponibile",
-		"noTimeTables": "Nessun Orario disponibile",
+		"searchingSportActivities": "Ricerca Attività Sportive",
+		"noCourses": "Nessun Corso disponibile.",
+		"noTimeTables": "Nessun Orario disponibile.",
+		"userDataMissing": "Mancano dati di accesso. Per favore insere i dati di accesso nel pannello Impostazioni",
+		"serverConnectionFailed": "La connessione al server non è disponibile al momento. Provare più tardi per favore.",
+		"checkAccountData": "L'autenticazione è fallita. Controllare i dati di accesso per favore.",
+		"accessUsiSportFirst": "Per potersi iscrivere alle attività sportive da questa app effettuare prima la registrazione sul sito: http://www.sport.usi.ch e poi riprovare.",
+		"sportActivityNonExistent": "Questa attività non è più disponbile nella bancadati.",
+		"alreadySubscribedToSportActivity": "L'iscrizione a questa attività è già stata effettuata.",
+		"unsubscribeFromTheUSISportSite": "Questa funzionalità non è ancora disponbile. Per favore, effettuare la disiscrizione dal sito http://www.sport.usi.ch.",
+		"unknownError": "Errore sconosciuto.",
+
+
     },
 
 	"SelectFieldLanguage": {

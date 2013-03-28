@@ -17,6 +17,10 @@ Ext.define('USIMobile.Config', {
 		this.config.detailedCommunityNewsUrl = this.config.kurogoRestUrl + this.config.detailedCommunityNewsUrl;
 		this.config.menuMensaUrl = this.config.kurogoRestUrl + this.config.menuMensaUrl;
 		this.config.sportActivityUrl = this.config.kurogoRestUrl + this.config.sportActivityUrl;
+		this.config.sportCheckMembershipUrl = this.config.kurogoRestUrl + this.config.sportCheckMembershipUrl;
+		this.config.sportCheckSubscriptionUrl = this.config.kurogoRestUrl + this.config.sportCheckSubscriptionUrl;
+		this.config.sportSubscribeUrl = this.config.kurogoRestUrl + this.config.sportSubscribeUrl;
+		this.config.sportUnsubscribeUrl = this.config.kurogoRestUrl + this.config.sportUnsubscribeUrl;
 		this.config.servicesUrl = this.config.kurogoRestUrl + this.config.servicesUrl;
 		this.config.homeOrgsUrl = this.config.kurogoRestUrl + this.config.homeOrgsUrl;
 
@@ -41,6 +45,10 @@ Ext.define('USIMobile.Config', {
 		detailedCommunityNewsUrl: 'usicommunitynews/get_item',
 		menuMensaUrl: 'mensa/get_menu',
 		sportActivityUrl: 'sport/get',
+		sportCheckMembershipUrl: 'sport/check_membership',
+		sportCheckSubscriptionUrl: 'sport/check_subscription',
+		sportSubscribeUrl: 'sport/subscribe',
+		sportUnsubscribeUrl: 'sport/unsubscribe',
 		servicesUrl: 'services/get',
 		homeOrgsUrl: 'aai/get_idps',
 		// local paths

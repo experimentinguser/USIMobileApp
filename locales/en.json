@@ -22,6 +22,8 @@
         "login" : "Login AAI",
         "appSettings" : "App Settings",
         "examinationTimetables" : "Examination Timetables",
+        "error" : "Error",
+        "errorCode" : "Error Code: ",
     },
 
 	"label" : {
@@ -78,6 +80,7 @@
         "back"   : "Yay Back",
         "mailto"   : "Send e-Mail",
         "subscribe"   : "Subscribe",
+        "unsubscribe"   : "Unsubscribe",
     },
 
     "list" : {
@@ -90,13 +93,23 @@
 
     "message" : {
         "loading" : "Loading...",
+		"processing": "Processing...",
 		"noInfo": "No info available",
 		"noNews": "No News available",
 		"noSportActivities": "No Sport Activities available",
-		"searchingCourses": "Searching courses",
-		"searchingPeople": "Searching people",
+		"searchingCourses": "Searching Courses",
+		"searchingPeople": "Searching People",
+		"searchingSportActivities": "Searching Sport Activities",
 		"noCourses": "No Courses available",
 		"noTimeTables": "No Timetables available",
+		"userDataMissing": "Account data are missing. Please provide a valid account data in the Settings panel",
+		"checkAccountData": "The authentication has failed. Please check your account data.",
+		"serverConnectionFailed": "Connecting to the server is not possibile at this time. Please try again later.",
+		"accessUsiSportFirst": "To subscribe to the various activities in this section please first register on http://www.sport.usi.ch then try again.",
+		"sportActivityNonExistent": "This activity is not available on the database anymore",
+		"alreadySubscribedToSportActivity": "Already subscribed to this activity.",
+		"unsubscribeFromTheUSISportSite": "This functionality is not available yet. Please unsubscribe from the activities from the site http://www.sport.usi.ch.",
+		"unknownError": "Unknown error.",
     },
 
 	"SelectFieldLanguage": {

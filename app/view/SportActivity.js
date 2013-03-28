@@ -150,6 +150,13 @@ Ext.define("USIMobile.view.SportActivity", {
 						action: 'subscribe',
 					},
 					{
+						xtype: 'button',
+						locales: {
+							text: 'button.unsubscribe',
+						},
+						action: 'unsubscribe',
+					},
+					{
 						xtype: 'spacer'
 					},
 				]

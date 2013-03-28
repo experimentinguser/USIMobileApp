@@ -4,6 +4,7 @@ Ext.define('USIMobile.model.SportActivity', {
 	config: {
 		identifier: 'uuid',
 		fields: [ 
+			{name: 'id', type: 'auto'},
 			{name: 'name_it', type: 'string'},
 			{name: 'name_en', type: 'string'},
 			{name: 'description_it', type: 'string'},
