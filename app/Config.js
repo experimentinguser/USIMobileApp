@@ -30,7 +30,7 @@ Ext.define('USIMobile.Config', {
 
 	config : {
 		// url
-		kurogoRestUrl: 'http://your_moodle_installation_with_uniappws/rest/',
+		kurogoRestUrl: 'http://your_kurogo_installation_with_USIMobile_kurogo_code',
 		updatesUrl: 'updates/check',
 		coursesUrl: 'courses/get',
 		academicCalendarUrl: 'academiccalendar/get',
