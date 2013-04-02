@@ -93,6 +93,8 @@
 
     "message" : {
         "loading" : "Loading...",
+        "homeOrgLoad" : "Loading Home Organisations",
+        "syncData" : "Updating Data",
 		"processing": "Processing...",
 		"noInfo": "No info available",
 		"noNews": "No News available",
@@ -109,6 +111,10 @@
 		"sportActivityNonExistent": "This activity is not available on the database anymore",
 		"alreadySubscribedToSportActivity": "Already subscribed to this activity.",
 		"unsubscribeFromTheUSISportSite": "This functionality is not available yet. Please unsubscribe from the activities from the site http://www.sport.usi.ch.",
+		"sendMailError": "Sending the mail failed",
+		"fileDownloadError": "Failed to download the file",
+		"openURLError": "Failed to open the url",
+		"openFileError": "Failed to open the file",
 		"unknownError": "Unknown error.",
     },
 

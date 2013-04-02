@@ -30,7 +30,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	},
 
 	checkUpdates: function(server_updates_store) {
-		USIMobile.app.showLoadMask('Sync data.');
+		USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.syncData'));
 		// if updates store is empty then initialize the local store
 		if(USIMobile.Session.getUpdatesStore().getCount() == 0) {
 			this.syncUpdatesStore(server_updates_store);

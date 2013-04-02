@@ -30,7 +30,7 @@ Ext.define('USIMobile.controller.Settings', {
 		var homeOrgField = this.getForm().child('fieldset#logindata').child('selectfield[name="homeorganisation"]');
 		if(homeOrgField.getStore() == null) {
 			var homeorgs_store = Ext.create('USIMobile.store.HomeOrgs');
-			USIMobile.app.showLoadMask('Loading Home Organisations.');
+			USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.homeOrgLoad'));
 			homeorgs_store.on('load', function(store){ USIMobile.app.hideLoadMask(); });
 			homeorgs_store.load();
 			homeOrgField.setStore(homeorgs_store);

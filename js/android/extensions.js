@@ -18,8 +18,8 @@ function addExtensions() {
 		// fail function
 		var failFunc = function(){
 			Ext.Msg.alert(
-				'Sending e-mail error',
-				'Failed to open the mail client and send a mail to: ' + to
+				Ux.locale.Manager.get('title.error'),
+				Ux.locale.Manager.get('message.sendMailError') + ': ' + to
 			);
 		};
 
@@ -44,7 +44,7 @@ function addExtensions() {
 	// {"name": "filename", "mime":"mime/type"}
 	USIMobile.app.getFile = function(url, filename, mime) {
 		var dir = USIMobile.Config.getFileCacheDir();
-		this.showLoadMask('');
+		USIMobile.app.showLoadMask('...');
 		// success function
 		var successFunc = function(result) {
 			// download mask code
@@ -67,9 +67,10 @@ function addExtensions() {
 		// fail function
 		var failFunc = function(){
 			Ext.Msg.alert(
-				'File download error',
-				'Failed to download the file: ' + filename
+				Ux.locale.Manager.get('title.error'),
+				Ux.locale.Manager.get('message.fileDownloadError') + ': ' + filename
 			);
+			USIMobile.app.hideLoadMask();
 		};
 		// get the file
 		window.plugins.downloader.downloadFile(url, {'overwrite': true}, successFunc, failFunc, filename, dir);
@@ -90,7 +91,10 @@ function addExtensions() {
 			}, 
 			function () {}, 
 			function () {
-				Ext.Msg.alert('URL Error', 'Failed to open:'+path+' via Android Intent');
+				Ext.Msg.alert(
+					Ux.locale.Manager.get('title.error'),
+					Ux.locale.Manager.get('message.openURLError') + ': ' + path
+				);
 			});
 	};
 
@@ -109,7 +113,10 @@ function addExtensions() {
 			}, 
 			function () {}, 
 			function () {
-				Ext.Msg.alert('File Error', 'Failed to open:'+path+' via Android Intent');
+				Ext.Msg.alert(
+					Ux.locale.Manager.get('title.error'),
+					Ux.locale.Manager.get('message.openFileError') + ': ' + path
+				);
 			});
 	};
 }
