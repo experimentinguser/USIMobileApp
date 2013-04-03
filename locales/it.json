@@ -24,6 +24,7 @@
         "examinationTimetables" : "Orario Esami",
         "error" : "Errore",
         "errorCode" : "Errore Codice: ",
+        "note" : "Nota",
     },
 
 	"label" : {
@@ -94,6 +95,7 @@
     "message" : {
         "loading" : "Caricamento...",
         "homeOrgLoad" : "Caricamento delle Home Organisations",
+        "noUsageAgreement" : "Per usare questa applicazione è neccessario accettare le condizioni d'uso. Terminare l'applicazione e disinistallarla se i termini di uso non sono accettabili.",
         "syncData" : "Scarico Aggiornamenti",
 		"processing": "In elaborazione...",
 		"noInfo": "Nessuna informazione disponibile.",

@@ -24,6 +24,7 @@
         "examinationTimetables" : "Examination Timetables",
         "error" : "Error",
         "errorCode" : "Error Code: ",
+        "note" : "Note",
     },
 
 	"label" : {
@@ -94,6 +95,7 @@
     "message" : {
         "loading" : "Loading...",
         "homeOrgLoad" : "Loading Home Organisations",
+        "noUsageAgreement" : "Only by accepting the usage agreement is possible to use this app. If you don't accept the usage agreement please terminate this app and uninstall it.",
         "syncData" : "Updating Data",
 		"processing": "Processing...",
 		"noInfo": "No info available",
