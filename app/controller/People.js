@@ -18,6 +18,16 @@ Ext.define('USIMobile.controller.People', {
 
 		control: {
 			homePeopleButton: { tap: 'showSearchPeopleForm' },
+			searchPeopleForm: {
+				painted: function() {
+					// clear previous search filters
+					// wait 200ms to do that because 
+					// this operation requires resources
+					setTimeout(function() {
+						USIMobile.Session.getPeopleStore().clearFilter();
+					}, 200);
+				}
+			},
 			searchPeopleButton: { tap: 'searchPeople' },
 			callPersonButton: { tap: 'callPerson' },
 			mailPersonButton: { tap: 'mailPerson' },
@@ -25,7 +35,7 @@ Ext.define('USIMobile.controller.People', {
 			people: {
 				show: function() {
 					USIMobile.app.hideLoadMask();
-				}
+				},
 			}
 		}
 	},
@@ -76,7 +86,6 @@ Ext.define('USIMobile.controller.People', {
 	filterPeopleStore: function(){
 		USIMobile.Session.getPeopleStore().setGroupField(this.filter.groupby);
 		// filter teaching timetables
-		USIMobile.Session.getPeopleStore().clearFilter();
 		USIMobile.Session.getPeopleStore().filterBy(
 			function(record) {
 				// list all if firstname or lastname has not been listed
