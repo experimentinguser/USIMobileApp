@@ -36,6 +36,7 @@ Ext.define('USIMobile.controller.People', {
 	},
 
 	showSearchPeopleForm: function() {
+		// clear filters
 		if(typeof this.getSearchPeopleForm() == 'object') {
 			this.getHome().push(this.getSearchPeopleForm());
 		} else {
@@ -47,7 +48,7 @@ Ext.define('USIMobile.controller.People', {
 	},
 
 	searchPeople: function() {
-		USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.searchPeople'));
+		USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.searchingPeople'));
 		// set the filter
 		this.filter = this.getSearchPeopleForm().getValues();
 		var scope = this;
@@ -79,20 +80,6 @@ Ext.define('USIMobile.controller.People', {
 		USIMobile.Session.getPeopleStore().filterBy(
 			function(record) {
 				// list all if firstname or lastname has not been listed
-				/*
-				if(this.filter.firstname == "" && this.filter.lastname == "") {
-					return true;
-				} else {
-					if(
-						(record.get('firstname') != null && this.filter.firstname != "" && record.get('firstname').toLowerCase().indexOf(this.filter.firstname.toLowerCase()) == 0) || 
-						(record.get('lastname') != null && this.filter.lastname != "" && record.get('lastname').toLowerCase().indexOf(this.filter.lastname.toLowerCase()) == 0)
-					){
-						return true;
-					} else {
-						return false;
-					}
-				}
-				*/
 				var result = true;
 				if(this.filter.firstname == "" && this.filter.lastname == "") {
 					return true;
