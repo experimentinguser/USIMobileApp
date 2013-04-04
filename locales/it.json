@@ -96,7 +96,7 @@
         "loading" : "Caricamento...",
         "homeOrgLoad" : "Caricamento delle Home Organisations",
         "noUsageAgreement" : "Per usare questa applicazione è neccessario accettare le condizioni d'uso. Terminare l'applicazione e disinistallarla se i termini di uso non sono accettabili.",
-        "syncData" : "Scarico Aggiornamenti",
+        "syncData" : "Scarico Aggiornamenti...",
 		"processing": "In elaborazione...",
 		"noInfo": "Nessuna informazione disponibile.",
 		"noNews": "Nessuna News disponibile.",
@@ -118,8 +118,17 @@
 		"openURLError": "Apertura del url fallita",
 		"openFileError": "Apertura del file fallita",
 		"unknownError": "Errore sconosciuto.",
-
-
+		"updatingCourses": "Aggiornamento Corsi...",
+		"updatingAcademicCalendar": "Aggiornamento Calendario Academico...",
+		"updatingTeachingTables": "Aggiornamento Orario Classi...",
+		"updatingExaminationTables": "Aggiornamento Orario Esami...",
+		"updatingServices": "Aggiornamento Servizi...",
+		"updatingPeople": "Aggiornamento Persone...",
+		"updatingNews": "Aggiornamento News...",
+		"updatingEventNews": "Aggiornamento News Eventi...",
+		"updatingCommunityNews": "Aggiornamento News Communità...",
+		"updatingMensa": "Aggiornamento Mensa...",
+		"updatingSportActivities": "Aggiornamento Attività Sportive...",
     },
 
 	"SelectFieldLanguage": {

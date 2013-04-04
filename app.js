@@ -102,25 +102,16 @@ Ext.application({
 		addExtensions(); 
 
 		// set the language
-		var settings = USIMobile.Session.getSettingsStore().first().getData(); 
         Ux.locale.Manager.setConfig({
             ajaxConfig : {
                 method : 'GET'
             },
             language   : navigator.language.split('-')[0],
             tpl        : 'locales/{locale}.json',
-            type       : 'ajax'
+            type       : 'ajax',
+			loadingInd : false,
         });
-
         Ux.locale.Manager.init();
-        // Destroy the #appLoadingIndicator element
-        Ext.fly('appLoadingIndicator').destroy();
-
-		if(USIMobile.Session.getSettingsStore().first().getData().usageagreement == false) {
-			Ext.Viewport.add( Ext.create('USIMobile.view.UsageAgreement') );
-		} else {
-			Ext.Viewport.add(Ext.create('USIMobile.view.Main'));
-		}
     },
 
     onUpdated: function() {
@@ -134,6 +125,26 @@ Ext.application({
             }
         );
     },
+
+	updatePercentageIndicator: function(text) {
+		Ext.get('percentageIndicator').setHtml(text);
+	},
+
+	hideLoadingScreen: function() {
+		// Destroy the #appLoadingIndicator element
+		Ext.fly('appLoadingIndicator').destroy();
+		Ext.fly('percentageIndicator').destroy();
+	},
+
+	showUsageAgreement: function() {
+		this.hideLoadingScreen();
+		Ext.Viewport.add(Ext.create('USIMobile.view.UsageAgreement'));
+	},
+
+	showHome: function() {
+		this.hideLoadingScreen();
+		Ext.Viewport.add(Ext.create('USIMobile.view.Main'));
+	},
 
 	formatDate: function(date, date_format) {
 		if(date_format == null) {

@@ -10,46 +10,48 @@ Ext.define('USIMobile.controller.StoreFeed', {
     
     init: function() {
 		Ext.sf = this;
-		//this.self = this;
 		// start updates only if the usageagreemnt has been accepted and the aai account has been set
-		if(USIMobile.Session.getSettingsStore().first().get('usageagreement') && USIMobile.Session.getSettingsStore().first().get('cache')) {
+		if( !USIMobile.Session.getSettingsStore().first().get('usageagreement')) {
+			USIMobile.app.showUsageAgreement();
+		} else if(USIMobile.Session.getSettingsStore().first().get('usageagreement') && USIMobile.Session.getSettingsStore().first().get('cache')) {
 			// get hash updates
 			var updates = USIMobile.WebService.getUpdates();
-			updates.on('load', function(server_updates_store){ this.checkUpdates(server_updates_store); }, this, {single: true});
+			updates.on('load', function(hash_store){ this.checkUpdates(hash_store); }, this, {single: true});
 		}
 	},
 
-	syncUpdatesStore: function(server_updates_store) {
-		if(server_updates_store.getCount() > 0) {
+	syncUpdatesStore: function(hash_store) {
+		if(hash_store.getCount() > 0) {
 			USIMobile.Session.getUpdatesStore().removeAll();
 			USIMobile.Session.getUpdatesStore().getProxy().clear();
-			server_updates_store.first().setDirty();
-			USIMobile.Session.getUpdatesStore().add(server_updates_store.first());
+			hash_store.first().setDirty();
+			USIMobile.Session.getUpdatesStore().add(hash_store.first());
 			USIMobile.Session.getUpdatesStore().sync();
 		}
 	},
 
-	checkUpdates: function(server_updates_store) {
-		USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.syncData'));
+	checkUpdates: function(hash_store) {
+		// set the language
+		Ux.locale.Manager.updateLocale(USIMobile.Session.getSettingsStore().first().get('language'));
+		Ux.locale.Manager.applyLocales();
 		// if updates store is empty then initialize the local store
 		if(USIMobile.Session.getUpdatesStore().getCount() == 0) {
-			this.syncUpdatesStore(server_updates_store);
 			var scope = this;
 			// wait for the loadmask to be displayed
 			setTimeout(function() {
-				scope.initLocalStores(server_updates_store);
+				scope.initLocalStores(hash_store);
 			}, 100);
 		} else {
 			var scope = this;
 			// wait for the loadmask to be displayed
 			setTimeout(function() {
-				scope.updateLocalStores(server_updates_store);
+				scope.updateLocalStores(hash_store);
 			}, 100);
 		}
 	},
 
 	// hides the Loading Mask whena all flags in the store_update_status are true
-	checkUpdateProgress: function() {
+	checkUpdateProgress: function(hash_store) {
 		this.store_update_status = {
 			'check_interval': null,
 			'courses': false,
@@ -81,13 +83,15 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				scope.store_update_status.services == true
 			) {
 				clearInterval(scope.store_update_status.check_interval);
-				USIMobile.app.hideLoadMask();
+				USIMobile.app.showHome();
+				// write to updates store
+				scope.syncUpdatesStore(hash_store);
 			}
-		}, 500);
+		}, 100);
 	},
 
-	initLocalStores: function(server_updates_store) {
-		this.checkUpdateProgress();
+	initLocalStores: function(hash_store) {
+		this.checkUpdateProgress(hash_store);
 		// courses store
 		this.updateCoursesStore();
 		// academiccalendar store
@@ -110,16 +114,14 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		this.updateSportActivityStore();
 		// services store
 		this.updateServicesStore();
-		// write to updates store
-		this.syncUpdatesStore(server_updates_store);
 	},
 
 
-	updateLocalStores: function(server_updates_store) {
-		this.checkUpdateProgress();
+	updateLocalStores: function(hash_store) {
+		this.checkUpdateProgress(hash_store);
 
 		// courses store
-		if(server_updates_store.first().get('courses') != USIMobile.Session.getUpdatesStore().first().get('courses')) {
+		if(hash_store.first().get('courses') != USIMobile.Session.getUpdatesStore().first().get('courses')) {
 			this.updateCoursesStore();
 		} else {
 			if(USIMobile.Session.getCoursesStore().getCount() == 0){
@@ -134,7 +136,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		}
 
 		// academiccalendar store
-		if(server_updates_store.first().get('academiccalendar') != USIMobile.Session.getUpdatesStore().first().get('academiccalendar')) {
+		if(hash_store.first().get('academiccalendar') != USIMobile.Session.getUpdatesStore().first().get('academiccalendar')) {
 			this.updateAcademicCalendarStore();
 		} else {
 			if(USIMobile.Session.getAcademicCalendarStore().getCount() == 0){
@@ -146,7 +148,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		}
 
 		// people store
-		if(server_updates_store.first().get('people') != USIMobile.Session.getUpdatesStore().first().get('people')) {
+		if(hash_store.first().get('people') != USIMobile.Session.getUpdatesStore().first().get('people')) {
 			this.updatePeopleStore();
 		} else {
 			if(USIMobile.Session.getPeopleStore().getCount() == 0){
@@ -158,7 +160,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		}
 
 		// teaching timetables store
-		if(server_updates_store.first().get('teachingtimetables') != USIMobile.Session.getUpdatesStore().first().get('teachingtimetables')) {
+		if(hash_store.first().get('teachingtimetables') != USIMobile.Session.getUpdatesStore().first().get('teachingtimetables')) {
 			this.updateTeachingTimetablesStore();
 		} else {
 			if(USIMobile.Session.getTeachingTimetablesStore().getCount() == 0){
@@ -170,7 +172,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		}
 
 		// examination timetables store
-		if(server_updates_store.first().get('examinationtimetables') != USIMobile.Session.getUpdatesStore().first().get('examinationtimetables')) {
+		if(hash_store.first().get('examinationtimetables') != USIMobile.Session.getUpdatesStore().first().get('examinationtimetables')) {
 			this.updateExaminationTimetablesStore();
 		} else {
 			if(USIMobile.Session.getExaminationTimetablesStore().getCount() == 0){
@@ -182,7 +184,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		}
 
 		// usinews store
-		if(server_updates_store.first().get('usinews') != USIMobile.Session.getUpdatesStore().first().get('usinews')) {
+		if(hash_store.first().get('usinews') != USIMobile.Session.getUpdatesStore().first().get('usinews')) {
 			this.updateShortNewsStore();
 		} else {
 			if(USIMobile.Session.getShortNewsStore().getCount() == 0){
@@ -195,7 +197,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		}
 
 		// usieventnews store
-		if(server_updates_store.first().get('usieventnews') != USIMobile.Session.getUpdatesStore().first().get('usieventnews')) {
+		if(hash_store.first().get('usieventnews') != USIMobile.Session.getUpdatesStore().first().get('usieventnews')) {
 			this.updateShortEventNewsStore();
 		} else {
 			if(USIMobile.Session.getShortEventNewsStore().getCount() == 0){
@@ -208,7 +210,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		}
 
 		// usicommunitynews store
-		if(server_updates_store.first().get('usicommunitynews') != USIMobile.Session.getUpdatesStore().first().get('usicommunitynews')) {
+		if(hash_store.first().get('usicommunitynews') != USIMobile.Session.getUpdatesStore().first().get('usicommunitynews')) {
 			this.updateShortCommunityNewsStore();
 		} else {
 			if(USIMobile.Session.getShortCommunityNewsStore().getCount() == 0){
@@ -221,7 +223,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		}
 
 		// menumensa store
-		if(server_updates_store.first().get('menumensa') != USIMobile.Session.getUpdatesStore().first().get('menumensa')) {
+		if(hash_store.first().get('menumensa') != USIMobile.Session.getUpdatesStore().first().get('menumensa')) {
 			this.updateMenuMensaStore();
 		} else {
 			if(USIMobile.Session.getMenuMensaStore().getCount() == 0){
@@ -234,7 +236,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 
 
 		// sportactivity store
-		if(server_updates_store.first().get('sportactivity') != USIMobile.Session.getUpdatesStore().first().get('sportactivity')) {
+		if(hash_store.first().get('sportactivity') != USIMobile.Session.getUpdatesStore().first().get('sportactivity')) {
 			this.updateSportActivityStore();
 		} else {
 			if(USIMobile.Session.getSportActivityStore().getCount() == 0){
@@ -246,7 +248,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 		}
 
 		// services store
-		if(server_updates_store.first().get('services') != USIMobile.Session.getUpdatesStore().first().get('services')) {
+		if(hash_store.first().get('services') != USIMobile.Session.getUpdatesStore().first().get('services')) {
 			this.updateServicesStore();
 		} else {
 			if(USIMobile.Session.getServicesStore().getCount() == 0){
@@ -256,8 +258,6 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				USIMobile.Session.getServicesStore().load();
 			}
 		}
-
-		this.syncUpdatesStore(server_updates_store);
 	},
 
 	updateCoursesStore: function() {
@@ -266,6 +266,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
+					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingCourses'));
 					this.store_update_status.courses = true;
 					// remove old entries
 					USIMobile.Session.getCoursesStore().removeAll();
@@ -274,7 +275,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 						// insert the new entry
 						//course_entry.setDirty();
 						USIMobile.Session.getCoursesStore().add(course_entry);
-					});
+					}, this);
 
 					// store data
 					USIMobile.Session.getCoursesStore().sync();
@@ -296,6 +297,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
+					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingAcademicCalendar'));
 					this.store_update_status.academic_calendar = true;
 					// remove old entries
 					USIMobile.Session.getAcademicCalendarStore().removeAll();
@@ -320,6 +322,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	updateTeachingTimetablesStore: function() {
 		USIMobile.WebService.getTeachingTimetables().on('load',
 			function(store, records, success) {
+				USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingTeachingTables'));
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
@@ -349,6 +352,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	updateExaminationTimetablesStore: function() {
 		USIMobile.WebService.getExaminationTimetables().on('load',
 			function(store, records, success) {
+				USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingExaminationTables'));
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
@@ -381,6 +385,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
+					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingPeople'));
 					this.store_update_status.people = true;
 					// remove old entries
 					USIMobile.Session.getPeopleStore().removeAll();
@@ -410,6 +415,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
+					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingNews'));
 					this.store_update_status.news = true;
 					// remove old entries
 					USIMobile.Session.getShortNewsStore().removeAll();
@@ -453,6 +459,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
+					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingEventNews'));
 					this.store_update_status.event_news = true;
 					// remove old entries
 					USIMobile.Session.getShortEventNewsStore().removeAll();
@@ -496,6 +503,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
+					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingCommunityNews'));
 					this.store_update_status.community_news = true;
 					// remove old entries
 					USIMobile.Session.getShortCommunityNewsStore().removeAll();
@@ -539,6 +547,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
+					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingMensa'));
 					this.store_update_status.menu_mensa = true;
 					// remove old entries
 					USIMobile.Session.getMenuMensaStore().removeAll();
@@ -565,6 +574,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
+					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingSportActivities'));
 					this.store_update_status.sport_activity = true;
 					// remove old entries
 					USIMobile.Session.getSportActivityStore().removeAll();
@@ -594,6 +604,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
+					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingServices'));
 					this.store_update_status.services = true;
 					// remove old entries
 					USIMobile.Session.getServicesStore().removeAll();

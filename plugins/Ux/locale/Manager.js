@@ -14,7 +14,7 @@ Ext.define('Ux.locale.Manager', {
     _beforeLoad : Ext.emptyFn,
     _language   : navigator.language.split('-')[0],
     _loaded     : true,
-    _loadingInd : true,
+    _loadingInd : false,
     _locale     : {},
     _locales    : [
         { abbr : 'en', text : 'English' },
