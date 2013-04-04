@@ -48,7 +48,6 @@ Ext.define('USIMobile.controller.Settings', {
 	setLanguage: function(view, lang){
 		Ux.locale.Manager.updateLocale(lang);
 		Ux.locale.Manager.applyLocales();
-		//this.getForm().setLocale(lang);
 	},
 
 	saveSettings: function() {

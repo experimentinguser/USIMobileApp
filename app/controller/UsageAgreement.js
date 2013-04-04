@@ -9,7 +9,6 @@ Ext.define('USIMobile.controller.UsageAgreement', {
 		},
 		control: {
 			UApanel:  {
-				show: 'presetLanguage',
 				activeitemchange: 'setLanguage'
 			},
 			agree:  {
@@ -19,10 +18,6 @@ Ext.define('USIMobile.controller.UsageAgreement', {
 				tap: 'registerDisagreement'
 			}
 		}
-	},
-
-	presetLanguage: function() {
-		Ux.locale.Manager.updateLocale('en');
 	},
 
 	setLanguage: function() {

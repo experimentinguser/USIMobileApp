@@ -112,6 +112,8 @@ Ext.application({
 			loadingInd : false,
         });
         Ux.locale.Manager.init();
+		// set language
+		Ux.locale.Manager.updateLocale(USIMobile.Session.getSettingsStore().first().get('language'));
     },
 
     onUpdated: function() {

@@ -31,9 +31,6 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	},
 
 	checkUpdates: function(hash_store) {
-		// set the language
-		Ux.locale.Manager.updateLocale(USIMobile.Session.getSettingsStore().first().get('language'));
-		Ux.locale.Manager.applyLocales();
 		// if updates store is empty then initialize the local store
 		if(USIMobile.Session.getUpdatesStore().getCount() == 0) {
 			var scope = this;

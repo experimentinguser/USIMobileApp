@@ -17,8 +17,8 @@ Ext.define('Ux.locale.Manager', {
     _loadingInd : false,
     _locale     : {},
     _locales    : [
-        { abbr : 'en', text : 'English' },
-        { abbr : 'it', text : 'Italiano'  }
+        { abbr : 'it', text : 'Italiano'  },
+        { abbr : 'en', text : 'English' }
     ],
     _tpl        : '',
     _type       : 'script',

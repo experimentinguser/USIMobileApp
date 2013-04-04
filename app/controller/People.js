@@ -9,7 +9,7 @@ Ext.define('USIMobile.controller.People', {
 			home: '#home',
 			homePeopleButton: 'button#people_home_button',
 			people: '#people',
-			searchPeopleForm: '#searchpeople',
+			searchPeople: '#searchpeople',
 			searchPeopleButton: '#searchpeople button[action=search]',
 			callPersonButton: 'button[action=callperson]',
 			mailPersonButton: 'button[action=mailperson]',
@@ -17,8 +17,8 @@ Ext.define('USIMobile.controller.People', {
 		},
 
 		control: {
-			homePeopleButton: { tap: 'showSearchPeopleForm' },
-			searchPeopleForm: {
+			homePeopleButton: { tap: 'showSearchPeople' },
+			searchPeople: {
 				painted: function() {
 					// clear previous search filters
 					// wait 200ms to do that because 
@@ -45,10 +45,10 @@ Ext.define('USIMobile.controller.People', {
 		this.filter = { };
 	},
 
-	showSearchPeopleForm: function() {
+	showSearchPeople: function() {
 		// clear filters
-		if(typeof this.getSearchPeopleForm() == 'object') {
-			this.getHome().push(this.getSearchPeopleForm());
+		if(typeof this.getSearchPeople() == 'object') {
+			this.getHome().push(this.getSearchPeople());
 		} else {
 			this.getHome().push({
 				xtype: 'searchpeopleform',
@@ -60,7 +60,7 @@ Ext.define('USIMobile.controller.People', {
 	searchPeople: function() {
 		USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.searchingPeople'));
 		// set the filter
-		this.filter = this.getSearchPeopleForm().getValues();
+		this.filter = this.getSearchPeople().getValues();
 		var scope = this;
 		// wait for the loadmask to be displayed
 		setTimeout(function() {

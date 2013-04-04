@@ -17,6 +17,17 @@ Ext.define('USIMobile.controller.Course', {
 
 		control: {
 			homeCoursesButton: { tap: 'showSearchCourses' },
+			searchCourses: {
+				painted: function() {
+					// clear previous search filters
+					// wait 200ms to do that because 
+					// this operation requires resources
+					setTimeout(function() {
+						USIMobile.Session.getCoursesStore().clearFilter();
+					}, 200);
+				}
+			},
+
 			searchCoursesButton: { tap: 'searchCourses' },
 			courses: {
 				itemtap: 'showCourse',
@@ -72,7 +83,6 @@ Ext.define('USIMobile.controller.Course', {
 	filterCoursesStore: function(){
 		USIMobile.Session.getCoursesStore().setGroupField(this.filter.groupby);
 		// filter teaching timetables
-		USIMobile.Session.getCoursesStore().clearFilter();
 		USIMobile.Session.getCoursesStore().filterBy(
 			function(record) {
 				var result = true;
