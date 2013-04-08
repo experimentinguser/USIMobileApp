@@ -119,4 +119,25 @@ function addExtensions() {
 				);
 			});
 	};
+
+	USIMobile.app.onBackKeyDown = function(e) {
+		var popOutput = USIMobile.app.getController('Home').getHome().pop();
+		if(popOutput == undefined) {
+			navigator.app.exitApp();
+			/*
+			Ext.Msg.confirm(
+				Ux.locale.Manager.get('title.exit'),
+				Ux.locale.Manager.get('message.confirmExit'),
+				function(btn) {
+					if(btn == 'yes') {
+						navigator.app.exitApp();
+					}
+				}
+			);
+			*/
+		}
+		e.preventDefault();
+	};
+
+	document.addEventListener("backbutton", Ext.bind(USIMobile.app.onBackKeyDown, this), false);
 }

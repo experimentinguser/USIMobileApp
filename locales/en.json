@@ -25,6 +25,7 @@
         "error" : "Error",
         "errorCode" : "Error Code: ",
         "note" : "Note",
+        "exit" : "Exit",
     },
 
 	"label" : {
@@ -72,6 +73,8 @@
     },
 
     "button" : {
+        "yes" : "Yes",
+        "no" : "No",
         "done" : "Done",
         "cancel" : "Cancel",
         "save"   : "Save",
@@ -98,6 +101,7 @@
         "noUsageAgreement" : "Only by accepting the usage agreement is possible to use this app. If you don't accept the usage agreement please terminate this app and uninstall it.",
         "syncData" : "Updating Data...",
 		"processing": "Processing...",
+		"confirmExit": "Are you sure you want to close this app?",
 		"noInfo": "No info available",
 		"noNews": "No News available",
 		"noSportActivities": "No Sport Activities available",

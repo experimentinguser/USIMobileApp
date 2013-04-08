@@ -25,6 +25,7 @@
         "error" : "Errore",
         "errorCode" : "Errore Codice: ",
         "note" : "Nota",
+        "exit" : "Chiudere",
     },
 
 	"label" : {
@@ -72,6 +73,8 @@
     },
 
     "button" : {
+        "yes" : "Sì",
+        "no" : "No",
         "done" : "Fatto",
         "cancel" : "Annulla",
         "save"   : "Salva",
@@ -95,9 +98,10 @@
     "message" : {
         "loading" : "Caricamento...",
         "homeOrgLoad" : "Caricamento delle Home Organisations",
-        "noUsageAgreement" : "Per usare questa applicazione è neccessario accettare le condizioni d'uso. Terminare l'applicazione e disinistallarla se i termini di uso non sono accettabili.",
+        "noUsageAgreement" : "Per usare questa applicazione è necessario accettare le condizioni d'uso. Terminare l'applicazione e disinistallarla se i termini di uso non sono accettabili.",
         "syncData" : "Scarico Aggiornamenti...",
 		"processing": "In elaborazione...",
+		"confirmExit": "Confermi di voler terminare l'applicazione?",
 		"noInfo": "Nessuna informazione disponibile.",
 		"noNews": "Nessuna News disponibile.",
 		"noSportActivities": "Nessuna Attività Sportiva disponibile.",
@@ -106,7 +110,7 @@
 		"searchingSportActivities": "Ricerca Attività Sportive",
 		"noCourses": "Nessun Corso disponibile.",
 		"noTimeTables": "Nessun Orario disponibile.",
-		"userDataMissing": "Mancano dati di accesso. Per favore insere i dati di accesso nel pannello Impostazioni",
+		"userDataMissing": "Mancano dati di accesso. Per favore inserire i dati di accesso nel pannello Impostazioni",
 		"serverConnectionFailed": "La connessione al server non è disponibile al momento. Provare più tardi per favore.",
 		"checkAccountData": "L'autenticazione è fallita. Controllare i dati di accesso per favore.",
 		"accessUsiSportFirst": "Per potersi iscrivere alle attività sportive da questa app effettuare prima la registrazione sul sito: http://www.sport.usi.ch e poi riprovare.",
