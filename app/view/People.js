@@ -13,7 +13,6 @@ Ext.define("USIMobile.view.People", {
 							dataview.selectedItem = target;
 							dataview.selectedItem.addCls('person_selected');
 					} else if (dataview.selectedItem != null && typeof dataview.selectedItem == 'object') {
-							console.log(dataview.selectedItem);
 							// unselect the previous item
 							dataview.selectedItem.down('#hiddenBlock').setHidden(true);
 							dataview.selectedItem.removeCls('person_selected');

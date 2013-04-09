@@ -119,20 +119,20 @@ Ext.define('USIMobile.controller.People', {
 	},
 
 	callPerson: function(button){
-		var record = button.getParent().getParent().getParent().getRecord();
-		USIMobile.app.openURL('tel:'+record.get('phone'));
+		var person = this.getPeople().getSelection()[0];
+		USIMobile.app.openURL('tel:'+person.get('phone'));
 	},
 
 	mailPerson: function(button){
-		var record = button.getParent().getParent().getParent().getRecord();
-		var to = record.get('email');
+		var person = this.getPeople().getSelection()[0];
+		var to = person.get('email');
 		var subject = '';
 		var body = '';
 		USIMobile.app.sendEmail(to, subject, body);
 	},
 
 	openHomePage: function(button){
-		var record = button.getParent().getParent().getParent().getRecord();
-		USIMobile.app.openURL(record.get('url'));
+		var person = this.getPeople().getSelection()[0];
+		USIMobile.app.openURL(person.get('url'));
 	},
 });

@@ -4,223 +4,114 @@ Ext.define("USIMobile.view.Service", {
 
 	config: {
 		cls: 'service',
-
-		// map records to the DataItem
-		dataMap: { },
-
-		name: {
-			cls: 'service_name',
-			docked: 'top',
-		},
-
-		description: {
-			cls: 'service_description',
-			docked: 'top',
-		},
-
-		building: {
-			cls: 'service_building',
-			docked: 'top',
-			hidden: true,
-		},
-
-		office: {
-			cls: 'service_office',
-			docked: 'top',
-			hidden: true,
-		},
-
-		email: {
-			cls: 'service_email',
-			docked: 'top',
-		},
-
-		phone: {
-			cls: 'service_phone',
-			docked: 'top',
-		},
-
-		callButton: {
-			cls: 'service_call-button',
-			text: 'Call',
-			action: 'callservice',
-			ui: 'confirm',
-			flex: 1,
-			hidden: true,
-			listeners: {
-				tap: function () {
-				}
+		
+		items:[
+			{
+				itemId: 'name',
+				xtype: 'component',
+				cls: 'service_name',
+			},	
+			{
+				itemId: 'description',
+				xtype: 'component',
+				cls: 'service_description',
 			},
-		},
-
-		mailButton: {
-			cls: 'service_mail-button',
-			text: 'Mail',
-			action: 'mailservice',
-			ui: 'confirm',
-			flex: 1,
-			hidden: true,
-			listeners: {
-				tap: function () {
-				}
+			{
+				itemId: 'email',
+				xtype: 'component',
+				cls: 'service_email',
 			},
-		},
-
-		homePageButton: {
-			cls: 'service_homepage-button',
-			text: 'Home Page',
-			action: 'openserviceurl',
-			ui: 'confirm',
-			flex: 1,
-			hidden: true,
-			listeners: {
-				tap: function () {
-				}
+			{
+				itemId: 'phone',
+				xtype: 'component',
+				cls: 'service_phone',
 			},
-		},
+			{
+				itemId: 'hiddenBlock',
+				xtype: 'container',
+				hidden: true,
+				items: [
+					{
+						itemId: 'office',
+						xtype: 'component',
+						cls: 'service_office',
+					},
+					{
+						itemId: 'building',
+						xtype: 'component',
+						cls: 'service_building',
+					},
 
-		layout: {
-            type: 'hbox',
-            align: 'center'
-        },
-
-		listener: { }
+					{
+						xtype: 'container',
+						itemId: 'buttons',
+						items: [
+							{
+								itemId: 'callperson',
+								xtype: 'button',
+								cls: 'service_call_button',
+								locales:{
+									text: 'button.call'
+								},
+								action: 'callservice',
+								ui: 'confirm',
+								flex: 1,
+							},
+							{
+								itemId: 'mailperson',
+								xtype: 'button',
+								cls: 'service_mail_button',
+								locales:{
+									text: 'button.mail'
+								},
+								action: 'mailservice',
+								ui: 'confirm',
+								flex: 1,
+							},
+							{
+								itemId: 'homepage',
+								xtype: 'button',
+								cls: 'service_homepage_button',
+								locales:{
+									text: 'button.homepage'
+								},
+								action: 'openserviceurl',
+								ui: 'confirm',
+								flex: 1,
+							},
+						],
+						layout: {
+							type: 'hbox',
+							align: 'center'
+						},
+					}
+				],
+			}
+		],
 	},
 
-	applyName: function(config) {
-		var name = Ux.locale.Manager.getLanguage() == "en" ? this.getRecord().get('name_en') : this.getRecord().get('name_it');
-		config.html = '<span class="service_name">' + name + '</span> ';
-        return Ext.factory(config, Ext.Component, this.getName());
-    },
+	updateRecord: function(record) {
+		if(record) {
+			var label_begin = '<span class="label">';
+			var label_end = '</span>: ';
 
-    updateName: function(newName, oldName) {
-        if (newName) {
-            this.add(newName);
-        }
+			var name = Ux.locale.Manager.getLanguage() == "en" ? record.get('name_en') : record.get('name_it');
+			this.down('#name').setHtml('<span class="service_name">' + name + '</span> ');
 
-        if (oldName) {
-            this.remove(oldName);
-        }
-    },
+			var description = Ux.locale.Manager.getLanguage() == "en" ? record.get('description_en') : record.get('description_it');
+			this.down('#description').setHtml('<span class="service_description">' + description + '</span> ');
 
-	applyDescription: function(config) {
-		var description = Ux.locale.Manager.getLanguage() == "en" ? this.getRecord().get('description_en') : this.getRecord().get('description_it');
-		config.html = '<span class="service_description">' + description + '</span> ';
-        return Ext.factory(config, Ext.Component, this.getDescription());
-    },
+			this.down('#email').setHtml(label_begin + Ux.locale.Manager.get('label.email') + label_end + record.get('email'));
+			this.down('#phone').setHtml(label_begin + Ux.locale.Manager.get('label.phone') + label_end + record.get('phone'));
 
-    updateDescription: function(newDescription, oldDescription) {
-        if (newDescription) {
-            this.add(newDescription);
-        }
+			this.down('#office').setHtml('<span class="label">' + Ux.locale.Manager.get('label.office') + ':</span> ' + record.get('office'));
+			var building = Ux.locale.Manager.getLanguage() == "en" ? record.get('building_en') : record.get('building_it');
+			this.down('#building').setHtml('<span class="label">' + Ux.locale.Manager.get('label.building') + ':</span> ' + building);
 
-        if (oldDescription) {
-            this.remove(oldDescription);
-        }
-    },
+			this.down('#hiddenBlock').setHidden('true');
+			this.removeCls('person_selected');
+		}
+	}
 
-	applyBuilding: function(config) {
-		var building = Ux.locale.Manager.getLanguage() == "en" ? this.getRecord().get('building_en') : this.getRecord().get('building_it');
-		config.html = '<span class="label">' + Ux.locale.Manager.get('label.building') + ':</span> ' + building;
-        return Ext.factory(config, Ext.Component, this.getBuilding());
-    },
-
-    updateBuilding: function(newBuilding, oldBuilding) {
-        if (newBuilding) {
-            this.add(newBuilding);
-        }
-
-        if (oldBuilding) {
-            this.remove(oldBuilding);
-        }
-    },
-
-	applyOffice: function(config) {
-		var office = Ux.locale.Manager.getLanguage() == "en" ? this.getRecord().get('office_en') : this.getRecord().get('office_it');
-		config.html = '<span class="label">' + Ux.locale.Manager.get('label.office') + ':</span> ' + office;
-        return Ext.factory(config, Ext.Component, this.getOffice());
-    },
-
-    updateOffice: function(newOffice, oldOffice) {
-        if (newOffice) {
-            this.add(newOffice);
-        }
-
-        if (oldOffice) {
-            this.remove(oldOffice);
-        }
-    },
-
-	applyEmail: function(config) {
-		config.html = '<span class="label">' + Ux.locale.Manager.get('label.email') + ':</span> ' + this.getRecord().get('email');
-		return Ext.factory(config, Ext.Component, this.getEmail());
-    },
-
-    updateEmail: function(newEmail, oldEmail) {
-        if (newEmail) {
-            this.add(newEmail);
-        }
-
-        if (oldEmail) {
-            this.remove(oldEmail);
-        }
-    },
-
-	applyPhone: function(config) {
-		config.html = '<span class="label">' + Ux.locale.Manager.get('label.phone') + ':</span> ' + this.getRecord().get('phone');
-        return Ext.factory(config, Ext.Component, this.getPhone());
-    },
-
-    updatePhone: function(newPhone, oldPhone) {
-        if (newPhone) {
-            this.add(newPhone);
-        }
-
-        if (oldPhone) {
-            this.remove(oldPhone);
-        }
-    },
-
-	applyCallButton: function(config) {
-        return Ext.factory(config, Ext.Button, this.getCallButton());
-    },
-
-    updateCallButton: function(newCallButton, oldCallButton) {
-        if (newCallButton) {
-            this.add(newCallButton);
-        }
-
-        if (oldCallButton) {
-            this.remove(oldCallButton);
-        }
-    },
-
-	applyMailButton: function(config) {
-        return Ext.factory(config, Ext.Button, this.getMailButton());
-    },
-
-    updateMailButton: function(newMailButton, oldMailButton) {
-        if (newMailButton) {
-            this.add(newMailButton);
-        }
-
-        if (oldMailButton) {
-            this.remove(oldMailButton);
-        }
-    },
-
-	applyHomePageButton: function(config) {
-        return Ext.factory(config, Ext.Button, this.getHomePageButton());
-    },
-
-    updateHomePageButton: function(newHomePageButton, oldHomePageButton) {
-        if (newHomePageButton) {
-            this.add(newHomePageButton);
-        }
-
-        if (oldHomePageButton) {
-            this.remove(oldHomePageButton);
-        }
-    },
 });
 

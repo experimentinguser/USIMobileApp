@@ -49,7 +49,7 @@ Ext.define("USIMobile.view.Person", {
 							{
 								itemId: 'callperson',
 								xtype: 'button',
-								cls: 'person_call-button',
+								cls: 'person_call_button',
 								locales:{
 									text: 'button.call'
 								},
@@ -61,7 +61,7 @@ Ext.define("USIMobile.view.Person", {
 							{
 								itemId: 'mailperson',
 								xtype: 'button',
-								cls: 'person_mail-button',
+								cls: 'person_mail_button',
 								locales:{
 									text: 'button.mail'
 								},
@@ -73,7 +73,7 @@ Ext.define("USIMobile.view.Person", {
 							{
 								itemId: 'homepage',
 								xtype: 'button',
-								cls: 'person_homepage-button',
+								cls: 'person_homepage_button',
 								locales:{
 									text: 'button.homepage'
 								},

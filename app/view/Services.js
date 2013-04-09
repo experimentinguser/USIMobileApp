@@ -4,7 +4,6 @@ Ext.define("USIMobile.view.Services", {
 
 	config: {
 		id: 'services',
-		emptyText: 'No services found.',
 		cls: 'standard_font',
 		useComponents: true,
 		defaultType: 'service',
@@ -13,28 +12,17 @@ Ext.define("USIMobile.view.Services", {
 					if(typeof dataview.selectedItem == 'undefined') {
 							dataview.selectedItem = target;
 							dataview.selectedItem.addCls('service_selected');
-					} else if (typeof dataview.selectedItem == 'object') {
+					} else if (dataview.selectedItem != null && typeof dataview.selectedItem == 'object') {
 							// unselect the previous item
-							dataview.selectedItem.getBuilding().setHidden(true);
-							dataview.selectedItem.getOffice().setHidden(true);
-							dataview.selectedItem.getEmail().setHidden(true);
-							dataview.selectedItem.getPhone().setHidden(true);
-							dataview.selectedItem.getCallButton().setHidden(true);
-							dataview.selectedItem.getMailButton().setHidden(true);
-							dataview.selectedItem.getHomePageButton().setHidden(true);
+							dataview.selectedItem.down('#hiddenBlock').setHidden(true);
 							dataview.selectedItem.removeCls('person-selected');
 							// set the new selected item
 							dataview.selectedItem = target;
 							dataview.selectedItem.addCls('service_selected');
 					}
-					target.getBuilding().setHidden(false);
-					target.getOffice().setHidden(false);
-					target.getEmail().setHidden(false);
-					target.getPhone().setHidden(false);
-					target.getCallButton().setHidden(false);
-					target.getMailButton().setHidden(false);
-					if(record.get('url') != null){
-						target.getHomePageButton().setHidden(false);
+					target.down('#hiddenBlock').setHidden(false);
+					if(record.get('url') == null){
+						target.down('#homepage').setHidden(true);
 					}
 			},
 		}

@@ -49,7 +49,7 @@ Ext.define('USIMobile.controller.Service', {
 	},
 
 	openHomePage: function(button){
-		var record = button.getParent().getRecord();
-		USIMobile.app.openURL(record.get('url'));
+		var service = this.getServices().getSelection()[0];
+		USIMobile.app.openURL(service.get('url'));
 	},
 });
