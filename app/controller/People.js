@@ -23,7 +23,7 @@ Ext.define('USIMobile.controller.People', {
 					// clear previous search filters
 					// wait 200ms to do that because 
 					// this operation requires resources
-					setTimeout(function() { USIMobile.Session.getPeopleStore().clearFilter(); }, 500); 
+					//setTimeout(function() { USIMobile.Session.getPeopleStore().clearFilter(); }, 500); 
 				}
 			},
 			searchPeopleButton: { tap: 'searchPeople' },
@@ -67,23 +67,23 @@ Ext.define('USIMobile.controller.People', {
 	},
 
 	listPeople: function() {
-		this.filterPeopleStore();
-
+		var result_store = this.searchPeopleStore();
 		if(typeof this.getPeople() == 'object') {
+			this.getPeople().setStore(result_store);
 			this.getHome().push(this.getPeople());
 		} else {
 			this.getHome().push({
 				xtype: 'people',
 				title: Ux.locale.Manager.get('title.people'),
-				store: USIMobile.Session.getPeopleStore()
+				store: result_store
 			});
 		}
 	},
 
-	filterPeopleStore: function(){
-		USIMobile.Session.getPeopleStore().setGroupField(this.filter.groupby);
+	searchPeopleStore: function(){
+		var list = new Array();
 		// filter teaching timetables
-		USIMobile.Session.getPeopleStore().filterBy(
+		USIMobile.Session.getPeopleStore().each(
 			function(record) {
 				// list all if firstname or lastname has not been listed
 				var result = true;
@@ -98,12 +98,21 @@ Ext.define('USIMobile.controller.People', {
 					if( this.filter.lastname != "" ) {
 						result = result && record.get('lastname').toLowerCase().indexOf(this.filter.lastname.toLowerCase()) == 0;
 					} 
-					return result;
+
+					if(result) {
+						list.push(record.getData());
+					}
 				}
 			},
 			this
 		);
 
+		var result_store = Ext.create('Ext.data.Store', {
+			model: 'USIMobile.model.People',
+			data: list
+		});
+		
+		return result_store;
 	},
 
 	showPeople: function(view, index, target, record) {
