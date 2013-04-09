@@ -67,6 +67,15 @@ Ext.define("USIMobile.view.Settings", {
 						valueField: 'url',
 						value: 'https://login2.usi.ch/idp/shibboleth',
 					},
+					{
+						xtype: 'button',
+						name: 'check',
+						ui: 'confirm',
+						locales: {
+							text: 'button.check'
+						},
+						action: 'checklogindata'
+					}
 				]
 			},
 			{

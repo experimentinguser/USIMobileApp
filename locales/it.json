@@ -88,6 +88,7 @@
         "call"   : "Chiama",
         "mail"   : "Mail",
         "homepage"   : "Homepage",
+        "check"   : "Controlla dati utente",
     },
 
     "list" : {
@@ -103,6 +104,11 @@
         "homeOrgLoad" : "Caricamento delle Home Organisations",
         "noUsageAgreement" : "Per usare questa applicazione è necessario accettare le condizioni d'uso. Terminare l'applicazione e disinistallarla se i termini di uso non sono accettabili.",
         "syncData" : "Scarico Aggiornamenti...",
+        "loginFailed" : "L'autenticazione è fallita. Controllare i dati di accesso per favore.",
+        "loginSuccessful" : "L'autenticazione riuscita. I dati di accesso sono corretti.",
+        "usernameMissing" : "Manca lo username. Completare per favore.",
+        "passwordMissing" : "Manca la password. Completare per favore.",
+        "homeOrganisationMissing" : "Manca la Home Organisation. Scegliere quella corretta per favore.",
 		"processing": "In elaborazione...",
 		"confirmExit": "Confermi di voler terminare l'applicazione?",
 		"noInfo": "Nessuna informazione disponibile.",
@@ -115,6 +121,7 @@
 		"noTimeTables": "Nessun Orario disponibile.",
 		"userDataMissing": "Mancano dati di accesso. Per favore inserire i dati di accesso nel pannello Impostazioni",
 		"serverConnectionFailed": "La connessione al server non è disponibile al momento. Provare più tardi per favore.",
+		"serverErrorMessage": "Messagio server: ",
 		"checkAccountData": "L'autenticazione è fallita. Controllare i dati di accesso per favore.",
 		"accessUsiSportFirst": "Per potersi iscrivere alle attività sportive da questa app effettuare prima la registrazione sul sito: http://www.sport.usi.ch e poi riprovare.",
 		"sportActivityNonExistent": "Questa attività non è più disponbile nella bancadati.",

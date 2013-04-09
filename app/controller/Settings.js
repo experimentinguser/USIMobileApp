@@ -8,7 +8,8 @@ Ext.define('USIMobile.controller.Settings', {
 
 		refs: {
 			form: '#settings',
-			language: 'selectfield[name=language]'
+			language: 'selectfield[name=language]',
+			checkLoginBtn: 'button[action=checklogindata]'
 		},
 
 		control: {
@@ -18,7 +19,8 @@ Ext.define('USIMobile.controller.Settings', {
 				hide: 'saveSettings',
 			},
 
-			language : { change: 'setLanguage' }
+			language : { change: 'setLanguage' },
+			checkLoginBtn: { tap: 'checkLogin' }
 		}
 	},
 
@@ -56,5 +58,82 @@ Ext.define('USIMobile.controller.Settings', {
 		USIMobile.Session.getSettingsStore().add(formdata);
 		USIMobile.Session.getSettingsStore().sync();
 	},
+
+	checkLogin: function(btn) {
+		var formdata = this.getForm().getValues();
+		var data = {};
+		if(formdata.username == '') {
+			this.displayError(1);
+			return;
+		} else {
+			data.username = formdata.username;
+		}
+
+		if(formdata.password == '') {
+			this.displayError(2);
+			return;
+		} else {
+			data.password = formdata.password;
+		}
+
+		if(formdata.homeorganisation == '') {
+			this.displayError(3);
+			return;
+		} else {
+			data.idp = formdata.homeorganisation;
+		}
+		data.target = USIMobile.Config.getCheckLoginDataUrl();
+		// ajax
+		var self = this;
+		Ext.Ajax.request({
+			url: USIMobile.Config.getAuthenticationUrl(),
+			method: 'GET',
+			format:'json',
+			useDefaultXhrHeader: false,
+			
+			params: data,
+				
+			callback: function(options, success, server_response) {
+				if (success) {
+					var result = Ext.JSON.decode(server_response.responseText);
+					if(result.error != null) {
+						self.displayError(result.error.code, result.error.message);
+					} else {
+						Ext.Msg.alert(
+							Ux.locale.Manager.get('title.note'),
+							Ux.locale.Manager.get('message.loginSuccessful')
+						);
+					}
+				} else{
+					self.displayError(7);
+				}
+			}
+		  });
+	},
  
+	displayError: function(code, message) {
+		switch(code) {
+			case 1:
+				Ext.Msg.alert(Ux.locale.Manager.get('title.error'), Ux.locale.Manager.get('message.usernameMissing'));
+			break;
+			case 2:
+				Ext.Msg.alert(Ux.locale.Manager.get('title.error'), Ux.locale.Manager.get('message.passwordMissing'));
+			break;
+			case 3:
+				Ext.Msg.alert(Ux.locale.Manager.get('title.error'), Ux.locale.Manager.get('message.homeOrganisationMissing'));
+			break;
+			case 5:
+				Ext.Msg.alert(Ux.locale.Manager.get('title.error'), Ux.locale.Manager.get('message.loginFailed'));
+			break;
+			case 7:
+				Ext.Msg.alert(Ux.locale.Manager.get('title.error'), Ux.locale.Manager.get('message.serverConnectionFailed'));
+			break;
+			default:
+				Ext.Msg.alert(
+					Ux.locale.Manager.get('title.errorCode') + code,
+					Ux.locale.Manager.get('message.serverErrorMessage') + message
+				);
+			break;
+		}
+	}
 });

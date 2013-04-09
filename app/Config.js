@@ -3,6 +3,7 @@ Ext.define('USIMobile.Config', {
 
 	constructor: function(config) {
 		// DRY config approach
+		this.config.authenticationUrl = this.config.kurogoRestUrl + this.config.authenticationUrl;
 		this.config.updatesUrl = this.config.kurogoRestUrl + this.config.updatesUrl;
 		this.config.coursesUrl = this.config.kurogoRestUrl + this.config.coursesUrl;
 		this.config.academicCalendarUrl = this.config.kurogoRestUrl + this.config.academicCalendarUrl;
@@ -30,7 +31,9 @@ Ext.define('USIMobile.Config', {
 
 	config : {
 		// url
-		kurogoRestUrl: 'http://your_kurogo_installation_with_USIMobile_kurogo_code',
+		kurogoRestUrl: 'https://your_kurogo_installation_with_USIMobile_kurogo_code',
+		checkLoginDataUrl: 'https://your_aai_protected_resource',
+		authenticationUrl: 'aai/authenticate',
 		updatesUrl: 'updates/check',
 		coursesUrl: 'courses/get',
 		academicCalendarUrl: 'academiccalendar/get',

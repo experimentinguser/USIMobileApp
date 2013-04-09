@@ -88,6 +88,7 @@
         "call"   : "Call",
         "mail"   : "Mail",
         "homepage"   : "Homepage",
+        "check"   : "Check login data",
     },
 
     "list" : {
@@ -103,6 +104,11 @@
         "homeOrgLoad" : "Loading Home Organisations",
         "noUsageAgreement" : "Only by accepting the usage agreement is possible to use this app. If you don't accept the usage agreement please terminate this app and uninstall it.",
         "syncData" : "Updating Data...",
+        "loginFailed" : "The authentication failed. Please check your login data.",
+        "loginSuccessful" : "The authentication was successful. The login data are correct.",
+        "usernameMissing" : "The username is missing. Please fill in.",
+        "passwordMissing" : "The password is missing. Please fill in.",
+        "homeOrganisationMissing" : "The Home Organisatoin is missing. Please choose yours.",
 		"processing": "Processing...",
 		"confirmExit": "Are you sure you want to close this app?",
 		"noInfo": "No info available",
@@ -116,6 +122,7 @@
 		"userDataMissing": "Account data are missing. Please provide a valid account data in the Settings panel",
 		"checkAccountData": "The authentication has failed. Please check your account data.",
 		"serverConnectionFailed": "Connecting to the server is not possibile at this time. Please try again later.",
+		"serverErrorMessage": "Server message: ",
 		"accessUsiSportFirst": "To subscribe to the various activities in this section please first register on http://www.sport.usi.ch then try again.",
 		"sportActivityNonExistent": "This activity is not available on the database anymore",
 		"alreadySubscribedToSportActivity": "Already subscribed to this activity.",
