@@ -9,39 +9,39 @@ Ext.define("USIMobile.view.Service", {
 		dataMap: { },
 
 		name: {
-			cls: 'x-service-name',
+			cls: 'service_name',
 			docked: 'top',
 		},
 
 		description: {
-			cls: 'x-service-description',
+			cls: 'service_description',
 			docked: 'top',
 		},
 
 		building: {
-			cls: 'x-service-building',
+			cls: 'service_building',
 			docked: 'top',
 			hidden: true,
 		},
 
 		office: {
-			cls: 'x-service-office',
+			cls: 'service_office',
 			docked: 'top',
 			hidden: true,
 		},
 
 		email: {
-			cls: 'x-service-email',
+			cls: 'service_email',
 			docked: 'top',
 		},
 
 		phone: {
-			cls: 'x-service-phone',
+			cls: 'service_phone',
 			docked: 'top',
 		},
 
 		callButton: {
-			cls: 'x-service-call-button',
+			cls: 'service_call-button',
 			text: 'Call',
 			action: 'callservice',
 			ui: 'confirm',
@@ -54,7 +54,7 @@ Ext.define("USIMobile.view.Service", {
 		},
 
 		mailButton: {
-			cls: 'x-service-mail-button',
+			cls: 'service_mail-button',
 			text: 'Mail',
 			action: 'mailservice',
 			ui: 'confirm',
@@ -67,7 +67,7 @@ Ext.define("USIMobile.view.Service", {
 		},
 
 		homePageButton: {
-			cls: 'x-service-homepage-button',
+			cls: 'service_homepage-button',
 			text: 'Home Page',
 			action: 'openserviceurl',
 			ui: 'confirm',

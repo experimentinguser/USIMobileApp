@@ -85,6 +85,9 @@
         "mailto"   : "Manda e-Mail",
         "subscribe"   : "Iscrizione",
         "unsubscribe"   : "Disiscrizione",
+        "call"   : "Chiama",
+        "mail"   : "Mail",
+        "homepage"   : "Homepage",
     },
 
     "list" : {

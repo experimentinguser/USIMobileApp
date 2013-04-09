@@ -19,13 +19,11 @@ Ext.define('USIMobile.controller.People', {
 		control: {
 			homePeopleButton: { tap: 'showSearchPeople' },
 			searchPeople: {
-				painted: function() {
+				show: function() {
 					// clear previous search filters
 					// wait 200ms to do that because 
 					// this operation requires resources
-					setTimeout(function() {
-						USIMobile.Session.getPeopleStore().clearFilter();
-					}, 200);
+					setTimeout(function() { USIMobile.Session.getPeopleStore().clearFilter(); }, 500); 
 				}
 			},
 			searchPeopleButton: { tap: 'searchPeople' },
@@ -72,7 +70,6 @@ Ext.define('USIMobile.controller.People', {
 		this.filterPeopleStore();
 
 		if(typeof this.getPeople() == 'object') {
-			this.getPeople().refresh();
 			this.getHome().push(this.getPeople());
 		} else {
 			this.getHome().push({
@@ -122,12 +119,12 @@ Ext.define('USIMobile.controller.People', {
 	},
 
 	callPerson: function(button){
-		var record = button.getParent().getRecord();
+		var record = button.getParent().getParent().getParent().getRecord();
 		USIMobile.app.openURL('tel:'+record.get('phone'));
 	},
 
 	mailPerson: function(button){
-		var record = button.getParent().getRecord();
+		var record = button.getParent().getParent().getParent().getRecord();
 		var to = record.get('email');
 		var subject = '';
 		var body = '';
@@ -135,7 +132,7 @@ Ext.define('USIMobile.controller.People', {
 	},
 
 	openHomePage: function(button){
-		var record = button.getParent().getRecord();
+		var record = button.getParent().getParent().getParent().getRecord();
 		USIMobile.app.openURL(record.get('url'));
 	},
 });

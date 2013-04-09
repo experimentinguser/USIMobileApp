@@ -11,27 +11,19 @@ Ext.define("USIMobile.view.People", {
 			itemsingletap: function (dataview, index, target, record, e) {
 					if(typeof dataview.selectedItem == 'undefined') {
 							dataview.selectedItem = target;
-							dataview.selectedItem.addCls('person-selected');
-					} else if (typeof dataview.selectedItem == 'object') {
+							dataview.selectedItem.addCls('person_selected');
+					} else if (dataview.selectedItem != null && typeof dataview.selectedItem == 'object') {
+							console.log(dataview.selectedItem);
 							// unselect the previous item
-							dataview.selectedItem.getBuilding().setHidden(true);
-							dataview.selectedItem.getFloor().setHidden(true);
-							dataview.selectedItem.getHeadquarter().setHidden(true);
-							dataview.selectedItem.getCallButton().setHidden(true);
-							dataview.selectedItem.getMailButton().setHidden(true);
-							dataview.selectedItem.getHomePageButton().setHidden(true);
-							dataview.selectedItem.removeCls('person-selected');
+							dataview.selectedItem.down('#hiddenBlock').setHidden(true);
+							dataview.selectedItem.removeCls('person_selected');
 							// set the new selected item
 							dataview.selectedItem = target;
-							dataview.selectedItem.addCls('person-selected');
+							dataview.selectedItem.addCls('person_selected');
 					}
-					target.getBuilding().setHidden(false);
-					target.getFloor().setHidden(false);
-					target.getHeadquarter().setHidden(false);
-					target.getCallButton().setHidden(false);
-					target.getMailButton().setHidden(false);
-					if(record.get('url') != null){
-						target.getHomePageButton().setHidden(false);
+					target.down('#hiddenBlock').setHidden(false);
+					if(record.get('url') == null){
+						target.down('#homepage').setHidden(true);
 					}
 			},
 		}

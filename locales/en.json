@@ -85,6 +85,9 @@
         "mailto"   : "Send e-Mail",
         "subscribe"   : "Subscribe",
         "unsubscribe"   : "Unsubscribe",
+        "call"   : "Call",
+        "mail"   : "Mail",
+        "homepage"   : "Homepage",
     },
 
     "list" : {

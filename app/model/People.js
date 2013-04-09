@@ -2,7 +2,7 @@ Ext.define('USIMobile.model.People', {
 	extend: 'Ext.data.Model',
 	
 	config: {
-		identifier: 'uuid',
+		//identifier: 'uuid',
 		fields: [ 
 			{name: 'id', type: 'int'},
 			{name: 'firstname', type: 'string'},

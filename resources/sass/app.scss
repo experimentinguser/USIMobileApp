@@ -150,6 +150,14 @@ $base-color: #F90;
 	}
 }
 
+.person_selected,
+.service_selected {
+	background-color: #cc7a00;
+	background-image: -webkit-linear-gradient(top, #ffa31a, #e68a00 3%, #b36b00);
+	color: white;
+	text-shadow: rgba(0, 0, 0, 0.5) 0 -0.08em 0;
+}
+
 .standard_font {
 	font-size: .8em;
 }
