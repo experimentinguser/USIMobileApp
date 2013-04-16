@@ -26,6 +26,10 @@
         "errorCode" : "Error Code: ",
         "note" : "Note",
         "exit" : "Exit",
+        "books" : "Books",
+        "journals" : "Journals",
+        "collection" : "Collection",
+        "topic" : "Topic",
     },
 
 	"label" : {
@@ -70,6 +74,13 @@
         "headquarter" : "Headquarter",
         "office" : "Office",
         "phone" : "Phone",
+        "title" : "Title",
+        "letter" : "letter",
+        "usilib" : "USI library only",
+        "author" : "Author",
+        "signature" : "Signature",
+        "publisher" : "Publisher",
+        "publishdate" : "Publish date",
     },
 
     "button" : {
@@ -89,6 +100,15 @@
         "mail"   : "Mail",
         "homepage"   : "Homepage",
         "check"   : "Check login data",
+        "next"   : "Next",
+        "previous"   : "Previous",
+    },
+
+	"radio" : {
+        "book" : "Search books",
+        "journal" : "Search journals",
+        "journalByLetter" : "Search journal by letter",
+        "journalByPattern" : "Search journal by title",
     },
 
     "list" : {

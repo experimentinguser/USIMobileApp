@@ -23,6 +23,8 @@ Ext.define('USIMobile.Config', {
 		this.config.sportSubscribeUrl = this.config.kurogoRestUrl + this.config.sportSubscribeUrl;
 		this.config.sportUnsubscribeUrl = this.config.kurogoRestUrl + this.config.sportUnsubscribeUrl;
 		this.config.servicesUrl = this.config.kurogoRestUrl + this.config.servicesUrl;
+		this.config.searchBooksUrl = this.config.kurogoRestUrl + this.config.searchBooksUrl;
+		this.config.searchJournalsUrl = this.config.kurogoRestUrl + this.config.searchJournalsUrl;
 		this.config.homeOrgsUrl = this.config.kurogoRestUrl + this.config.homeOrgsUrl;
 
   		this.initConfig(config);
@@ -53,6 +55,10 @@ Ext.define('USIMobile.Config', {
 		sportSubscribeUrl: 'sport/subscribe',
 		sportUnsubscribeUrl: 'sport/unsubscribe',
 		servicesUrl: 'services/get',
+		searchBooksUrl: 'library/search_books',
+		searchJournalsUrl: 'library/search_journals',
+		alephUrl: 'http://aleph.sbt.ti.ch/F?func=item-global',
+		swissBibUrl: 'http://www.swissbib.ch/m/index.php',
 		homeOrgsUrl: 'aai/get_idps',
 		// local paths
 		fileCacheDir: 'USIMobile',

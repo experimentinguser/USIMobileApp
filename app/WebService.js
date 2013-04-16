@@ -193,4 +193,33 @@ Ext.define('USIMobile.WebService', {
 		var services_store = this.request(url, params, 'USIMobile.model.Service');
 		return services_store;
 	},
+
+	searchBooks: function(data) {
+		var url = USIMobile.Config.getSearchBooksUrl();
+		// set parameters
+		var params = new Object();
+		if(data.usilib == true) {
+			params.library = 'LUBUL';
+			params.network = 'SBT';
+		}
+		params.query = data.pattern;
+		// request
+		var result = this.request(url, params, 'USIMobile.model.SearchBooksResult');
+		return result;
+	},
+
+	searchJournals: function(data) {
+		var url = USIMobile.Config.getSearchJournalsUrl();
+		// set parameters
+		var params = new Object();
+		if(data.usilib == true) {
+			params.library = 'LUBUL';
+			params.network = 'SBT';
+		}
+		params.query = data.pattern;
+		// request
+		var journals_store = this.request(url, params, 'USIMobile.model.Journal');
+		return journals_store;
+	},
+
 });

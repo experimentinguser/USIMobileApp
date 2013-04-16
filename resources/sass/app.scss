@@ -187,3 +187,21 @@ $base-color: #F90;
 .disabled {
 	opacity: 0.4;
 }
+
+#books,
+#journals {
+	.title{
+		font-weight: bold;
+		padding-bottom: 10px;
+	}
+	.label{
+		font-style: italic;
+	}
+	.status{
+		color: gray;
+		padding-top: 10px;
+		text-align: right;
+		font-size: small;
+	}
+}
+

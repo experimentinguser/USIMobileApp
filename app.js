@@ -37,6 +37,9 @@ Ext.application({
 		'USIMobile.model.Updates',
 		'USIMobile.model.ShortNews',
 		'USIMobile.model.DetailedNews',
+		'USIMobile.model.SearchBooksResult',
+		'USIMobile.model.Book',
+		'USIMobile.model.Journal',
 	],
 
 	views: [
@@ -60,6 +63,9 @@ Ext.application({
 		'USIMobile.view.SportActivity',
 		'USIMobile.view.Services',
 		'USIMobile.view.Service',
+		'USIMobile.view.Library',
+		'USIMobile.view.Books',
+		'USIMobile.view.Journals',
 		'USIMobile.view.Home',
 	],
 
@@ -75,6 +81,7 @@ Ext.application({
 		"USIMobile.controller.News", 
 		"USIMobile.controller.SportActivity",
 		"USIMobile.controller.Service",
+		"USIMobile.controller.Library",
 	],
 
     icon: {

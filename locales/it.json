@@ -26,6 +26,8 @@
         "errorCode" : "Errore Codice: ",
         "note" : "Nota",
         "exit" : "Chiudere",
+        "books" : "Libri",
+        "journals" : "Periodici",
     },
 
 	"label" : {
@@ -70,6 +72,15 @@
         "headquarter" : "Sede",
         "office" : "Ufficio",
         "phone" : "Tel",
+        "title" : "Titolo",
+        "letter" : "Lettera",
+        "usilib" : "Solo biblioteca USI",
+        "author" : "Autore",
+        "signature" : "Segnatura",
+        "publisher" : "Editore",
+        "publishdate" : "Data pubblicazione",
+        "collection" : "Collezione",
+        "topic" : "Argomento",
     },
 
     "button" : {
@@ -89,6 +100,15 @@
         "mail"   : "Mail",
         "homepage"   : "Homepage",
         "check"   : "Controlla dati utente",
+        "next"   : "Prossimo",
+        "previous"   : "Precedente",
+    },
+
+	"radio" : {
+        "book" : "Cerca libri",
+        "journal" : "Cerca periodici",
+        "journalByLetter" : "Cerca periodico per lettera",
+        "journalByPattern" : "Cerca periodico per titolo",
     },
 
     "list" : {

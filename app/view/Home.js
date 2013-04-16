@@ -58,7 +58,7 @@ Ext.define("USIMobile.view.Home", {
 								id: 'library_home_button',
 								baseCls: 'home_button',
 								width: '33.3%',
-								html: '<div class="library_icon icon disabled"><div class="label"></div></div>',
+								html: '<div class="library_icon icon"><div class="label"></div></div>',
 							},
 							{
 								xtype: 'button',
