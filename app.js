@@ -66,6 +66,7 @@ Ext.application({
 		'USIMobile.view.Library',
 		'USIMobile.view.Books',
 		'USIMobile.view.Journals',
+		'USIMobile.view.MessagePanel',
 		'USIMobile.view.Home',
 	],
 
@@ -75,7 +76,7 @@ Ext.application({
 		"USIMobile.controller.Settings", 
 		"USIMobile.controller.StoreFeed",
 		"USIMobile.controller.Home", 
-		"USIMobile.controller.Help",
+		"USIMobile.controller.MessagePanel",
 		"USIMobile.controller.Course",
 		"USIMobile.controller.Calendar",
 		"USIMobile.controller.People",

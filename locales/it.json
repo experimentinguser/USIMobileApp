@@ -104,6 +104,7 @@
         "check"   : "Controlla dati utente",
         "next"   : "Prossimo",
         "previous"   : "Precedente",
+        "close" : "Chiudi",
     },
 
 	"radio" : {
@@ -270,7 +271,21 @@
     ],
 
 	"help" : {
-		"swipe": "<div class='help_image'><img src='resources/icons/swipe.png' alt='Swipe' /></div><div class='help_content'>Trascina il dito sullo schermo da destra verso sinistra per caricare i prossimi risultati. Rispettivamente da sinistra verso destra per tornare ai risultati precedenti.</div>",
-	}
+		"swipe": {
+			"title": "Caricare Pagine",
+			"content": "<div class='illustration'><img src='resources/icons/swipe.png' alt='Swipe' /></div><div class='content'>Trascina il dito sullo schermo da destra verso sinistra per caricare i prossimi risultati. Rispettivamente da sinistra verso destra per tornare ai risultati precedenti.</div>",
+		}
+	},
 
+	"info" : {
+		"app": { 
+			"title": "Riguardo a questa app",
+			"content": "<div class='title'>USI Campus App</div><div class='content'>Benvenuti nella USI Campus app. Questa app contiene molte risorse e funzionalità utili agli studenti della Università di Lugano.</div>",
+		},
+
+		"library": { 
+			"title": "Orari di apertura",
+			"content": "<div class='title'>Biblioteca universitaria di Lugano</div><div class='content'><p>Via G. Buffi 13</p><p>CH-6900 Lugano</p> <p>email: biblioteca@usi.ch</p> <p>phone: +41 058 666 45 00</p> <p>Orari:<br> monday - friday: 09:00 - 22:00<br/> sunday: 09:00 - 12:15</p> </div>",
+		}
+	}
 }

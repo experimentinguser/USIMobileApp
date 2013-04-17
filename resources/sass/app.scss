@@ -218,3 +218,19 @@ $base-color: #F90;
 	}
 }
 
+#messagepanel {
+	.title {
+		padding: 10px;
+		font-weight: bold;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.illustration  {
+		padding-top: 20px;
+		text-align: center;
+	}
+	.content  {
+		padding: 10px;
+	}
+}
+
