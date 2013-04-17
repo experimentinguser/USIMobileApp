@@ -84,6 +84,8 @@
     },
 
     "button" : {
+        "info" : "Info",
+        "help" : "Aiuto",
         "yes" : "Sì",
         "no" : "No",
         "done" : "Fatto",
@@ -121,6 +123,7 @@
 
     "message" : {
         "loading" : "Caricamento...",
+        "searching" : "Ricerca...",
         "homeOrgLoad" : "Caricamento delle Home Organisations",
         "noUsageAgreement" : "Per usare questa applicazione è necessario accettare le condizioni d'uso. Terminare l'applicazione e disinistallarla se i termini di uso non sono accettabili.",
         "syncData" : "Scarico Aggiornamenti...",
@@ -163,6 +166,8 @@
 		"updatingCommunityNews": "Aggiornamento News Communità...",
 		"updatingMensa": "Aggiornamento Mensa...",
 		"updatingSportActivities": "Aggiornamento Attività Sportive...",
+		"noJournalsFound": "Nessun periodico è stato trovato con questi parametri di ricerca.",
+		"noBooksFound": "Nessun libro è stato trovato con questi parametri di ricerca.",
     },
 
 	"SelectFieldLanguage": {
@@ -262,6 +267,10 @@
         "Giovedì",
         "Venerdì",
         "Sabato",
-    ]
+    ],
+
+	"help" : {
+		"swipe": "<div class='help_image'><img src='resources/icons/swipe.png' alt='Swipe' /></div><div class='help_content'>Trascina il dito sullo schermo da destra verso sinistra per caricare i prossimi risultati. Rispettivamente da sinistra verso destra per tornare ai risultati precedenti.</div>",
+	}
 
 }

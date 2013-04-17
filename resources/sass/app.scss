@@ -22,6 +22,8 @@ $base-color: #F90;
 // Your custom code goes here...
 @include pictos-iconmask('usi_home');
 @include pictos-iconmask('usi_user');
+@include pictos-iconmask('info');
+@include pictos-iconmask('help');
 
 .license_title {
 	font-size: large;
@@ -202,6 +204,17 @@ $base-color: #F90;
 		padding-top: 10px;
 		text-align: right;
 		font-size: small;
+	}
+	.pagination {
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		padding-bottom: 5px;
+		padding-right: 5px;
+		text-align: center;
+		font-weight: bold;
+		font-size: 20px;
+		opacity: 0.3;
 	}
 }
 

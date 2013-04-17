@@ -203,8 +203,13 @@ Ext.define('USIMobile.WebService', {
 			params.network = 'SBT';
 		}
 		params.query = data.pattern;
+		// set the offset if needed
+		if(data.offset != undefined) {
+			params.offset = data.offset;
+		}
+
 		// request
-		var result = this.request(url, params, 'USIMobile.model.SearchBooksResult');
+		var result = this.request(url, params, 'USIMobile.model.SearchLibraryResult');
 		return result;
 	},
 
@@ -212,13 +217,13 @@ Ext.define('USIMobile.WebService', {
 		var url = USIMobile.Config.getSearchJournalsUrl();
 		// set parameters
 		var params = new Object();
-		if(data.usilib == true) {
-			params.library = 'LUBUL';
-			params.network = 'SBT';
-		}
 		params.query = data.pattern;
+
+		if(data.offset != undefined) {
+			params.offset = data.offset;
+		}
 		// request
-		var journals_store = this.request(url, params, 'USIMobile.model.Journal');
+		var journals_store = this.request(url, params, 'USIMobile.model.SearchLibraryResult');
 		return journals_store;
 	},
 

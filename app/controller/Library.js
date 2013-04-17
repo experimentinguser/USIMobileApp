@@ -19,16 +19,24 @@ Ext.define('USIMobile.controller.Library', {
 			searchButton: { tap: 'search' },
 			books: {
 				itemtap: 'checkBookInAleph',
-				swipe: 'navigateBooks'
+				itemswipe: 'navigateBooks'
 			},
 			journals: {
 				itemtap: 'checkJournal',
-				swipe: 'navigateJournal'
+				itemswipe: 'navigateJournals'
 			},
 		}
 	},
 	
 	init: function(){
+		this.books={};
+		this.books.numberOfResults;
+		this.books.nextOffset;
+		this.books.currentOffset;
+
+		this.journals={};
+		this.journals.numberOfResults;
+		this.journals.nextOffset;
 	},
 
 	showLibrary: function() {
@@ -43,6 +51,7 @@ Ext.define('USIMobile.controller.Library', {
 	},
 
 	search: function(btn) {
+		USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.searching'));
 		var data = this.getLibrary().getValues();
 		// check what to search
 		if(data.doc == 'journal') {
@@ -52,63 +61,45 @@ Ext.define('USIMobile.controller.Library', {
 		}
 	},
 
-	/*
-	searchJournals: function(data) {
-		// set parameters
-		if(data.mode == 'pattern') {
-			data.supporto='All';
-			data.tipo = 'contiene';
-			data.testo = data.pattern;
-		} else {
-			data.supporto='All';
-			data.lettera = data.letter;
-		}
-		var self = this;
-		Ext.Ajax.request({
-			url: USIMobile.Config.getSearchJournalsDirectUrl(),
-			method: 'GET',
-			useDefaultXhrHeader: false,
-			
-			params: data,
-				
-			callback: function(options, success, response) {
-				if (success) {
-					if(typeof self.getJournals() == 'object') {
-						self.getJournals().setHtml(response.responseText);
-						self.getHome().push(self.getJournals());
-					} else {
-						self.getHome().push({
-							xtype: 'journals',
-							title: Ux.locale.Manager.get('title.journals'),
-							html: response.responseText,
-							scrollable: true,
-						});
-					}
-				} else{
-					self.displayError(7);
-				}
-			}
-		  });
-	},
-	*/
-	
 	searchJournals: function(data) {
 		var journals_store = USIMobile.WebService.searchJournals(data);
 
 		journals_store.on('load', function(store){
-			this.listJournals(store);
+			USIMobile.app.hideLoadMask();
+			if(store.first().raw.error == undefined) {
+				if(store.first().get('numberofresults') == 0) {
+					Ext.Msg.alert(
+						Ux.locale.Manager.get('title.noResults'),
+						Ux.locale.Manager.get('message.noJournalsFound')
+					);
+				} else {
+					this.listJournals(store);
+				}
+			} else {
+				this.displayError(store.first().raw.error.code, store.first().raw.error.message);
+			}
 		}, this);
 	},
 
-	listJournals: function(journals_store) {
+	listJournals: function(search_library_outcome_store) {
+		this.journals.numberOfResults = search_library_outcome_store.first().get('numberofresults');
+		this.journals.nextOffset = search_library_outcome_store.first().get('nextoffset');
+		var pagination = '<div class="pagination"> (' + (this.journals.nextOffset - 1) + '/'+ this.journals.numberOfResults + ')</div>';
+
+		var journals_store = Ext.create('Ext.data.Store', {
+			model: 'USIMobile.model.Journal',
+			data: search_library_outcome_store.first().get('results')
+		});
 		if(typeof this.getJournals() == 'object') {
 			this.getJournals().setStore(journals_store);
+			this.getJournals().setHtml(pagination);
 			this.getHome().push(this.getJournals());
 		} else {
 			this.getHome().push({
 				xtype: 'journals',
 				title: Ux.locale.Manager.get('title.journals'),
-				store: journals_store
+				store: journals_store,
+				html: pagination,
 			});
 		}
 	},
@@ -117,30 +108,74 @@ Ext.define('USIMobile.controller.Library', {
 		var books_store = USIMobile.WebService.searchBooks(data);
 
 		books_store.on('load', function(store){
-			this.listBooks(store);
+			USIMobile.app.hideLoadMask();
+			if(store.first().get('noresults') == true) {
+				Ext.Msg.alert(
+					Ux.locale.Manager.get('title.noResults'),
+					Ux.locale.Manager.get('message.noBooksFound')
+				);
+			} else {
+				this.listBooks(store);
+			}
 		}, this);
 	},
 
-	listBooks: function(search_books_outcome_store) {
+	listBooks: function(search_library_outcome_store) {
+		this.books.numberOfResults = search_library_outcome_store.first().get('numberofresults');
+		this.books.nextOffset = search_library_outcome_store.first().get('nextoffset');
+		var pagination = '<div class="pagination"> (' + (this.books.nextOffset - 1) + '/'+ this.books.numberOfResults + ')</div>';
 		var books_store = Ext.create('Ext.data.Store', {
 			model: 'USIMobile.model.Book',
-			data: search_books_outcome_store.first().get('results')
+			data: search_library_outcome_store.first().get('results')
 		});
 		if(typeof this.getBooks() == 'object') {
 			this.getBooks().setStore(books_store);
+			this.getBooks().setHtml(pagination);
 			this.getHome().push(this.getBooks());
 		} else {
 			this.getHome().push({
 				xtype: 'books',
 				title: Ux.locale.Manager.get('title.books'),
-				store: books_store
+				store: books_store,
+				html: pagination,
 			});
 		}
 	},
 
-	navigateBooks: function(event, node, options, eOpts) {
-		console.log('SWIIIIPE');
-		console.log(event);
+	navigateBooks: function(view, index, target, record, event, options) {
+		USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.loading'));
+		var data = this.getLibrary().getValues();
+		if(event.direction == "left") { // next page
+			if(this.books.nextOffset > 0) {
+				this.books.currentOffset = this.books.nextOffset;
+				data.offset = this.books.currentOffset;
+				this.searchBooks(data);
+			}
+		} else { // previous page
+			if(this.books.currentOffset > 10) {
+				this.books.currentOffset -= 10;
+				data.offset = this.books.currentOffset;
+				this.searchBooks(data);
+			}
+		}
+	},
+
+	navigateJournals: function(view, index, target, record, event, options) {
+		USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.loading'));
+		var data = this.getLibrary().getValues();
+		if(event.direction == "left") { // next page
+			if(this.journals.nextOffset > 0) {
+				this.journals.currentOffset = this.journals.nextOffset;
+				data.offset = this.journals.currentOffset;
+				this.searchJournals(data);
+			}
+		} else { // previous page
+			if(this.journals.currentOffset > 10) {
+				this.journals.currentOffset -= 10;
+				data.offset = this.journals.currentOffset;
+				this.searchJournals(data);
+			}
+		}
 	},
 
 	displayError: function(code, message) {

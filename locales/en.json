@@ -30,6 +30,7 @@
         "journals" : "Journals",
         "collection" : "Collection",
         "topic" : "Topic",
+        "noResults" : "No Results",
     },
 
 	"label" : {
@@ -84,6 +85,8 @@
     },
 
     "button" : {
+        "info" : "Info",
+        "help" : "Help",
         "yes" : "Yes",
         "no" : "No",
         "done" : "Done",
@@ -121,6 +124,7 @@
 
     "message" : {
         "loading" : "Loading...",
+        "searching" : "Searching...",
         "homeOrgLoad" : "Loading Home Organisations",
         "noUsageAgreement" : "Only by accepting the usage agreement is possible to use this app. If you don't accept the usage agreement please terminate this app and uninstall it.",
         "syncData" : "Updating Data...",
@@ -163,6 +167,8 @@
 		"updatingCommunityNews": "Updating Community News...",
 		"updatingMensa": "Updating Mensa...",
 		"updatingSportActivities": "Updating Sport Activities...",
+		"noJournalsFound": "Sorry but no journals have been found with these search parameters.",
+		"noBooksFound": "Sorry but no books have been found with these search parameters.",
     },
 
 	"SelectFieldLanguage": {
@@ -262,5 +268,9 @@
         "Thursday",
         "Friday",
         "Saturday",
-    ]
+    ],
+
+	"help" : {
+		"swipe": "<div class='help_image'><img src='resources/icons/swipe.png' alt='Swipe' /></div><div class='help_content'>Swipe the screen with the finger from right to left to load next results and from left to right to load the previous ones.</div>",
+	}
 }

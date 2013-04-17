@@ -2,8 +2,7 @@ Ext.define("USIMobile.view.Home", {
 	extend: 'Ext.navigation.View',
 	xtype: 'home',
 
-	views:[
-	],
+	views:[ ],
 
 	config: {
 		id: 'home',
@@ -11,7 +10,26 @@ Ext.define("USIMobile.view.Home", {
 		autoDestroy: false,
 		enableLocale: true,
 		locales: {},
-		items: [	
+		navigationBar: {
+			items: [
+				{
+					xtype: 'button',
+					id: 'infobutton',
+					iconMask: true,
+					iconCls: 'info',
+					align: 'right',
+				},
+				{
+					xtype: 'button',
+					id: 'helpbutton',
+					iconMask: true,
+					iconCls: 'help',
+					align: 'right',
+					hidden: true,
+				}
+			]
+		},
+		items: [
 			{
 				xtype: 'container',
 				id: 'grid',
@@ -104,7 +122,6 @@ Ext.define("USIMobile.view.Home", {
 								width: '33.3%',
 								html: '<div class="career_icon icon disabled"><div class="label"></div></div>',
 							},
-	
 						]
 					},
 				]

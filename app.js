@@ -37,7 +37,7 @@ Ext.application({
 		'USIMobile.model.Updates',
 		'USIMobile.model.ShortNews',
 		'USIMobile.model.DetailedNews',
-		'USIMobile.model.SearchBooksResult',
+		'USIMobile.model.SearchLibraryResult',
 		'USIMobile.model.Book',
 		'USIMobile.model.Journal',
 	],
@@ -75,6 +75,7 @@ Ext.application({
 		"USIMobile.controller.Settings", 
 		"USIMobile.controller.StoreFeed",
 		"USIMobile.controller.Home", 
+		"USIMobile.controller.Help",
 		"USIMobile.controller.Course",
 		"USIMobile.controller.Calendar",
 		"USIMobile.controller.People",
@@ -171,6 +172,7 @@ Ext.application({
 	showLoadMask: function(msg) {
 		Ext.Viewport.getActiveItem().setMasked({
 			xtype: 'loadmask',
+			//hideOnMaskTap: true,
 			indicator: true,
 			message: msg,
 		});

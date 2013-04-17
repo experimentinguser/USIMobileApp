@@ -11,38 +11,5 @@ Ext.define("USIMobile.view.Books", {
 					+'<div><span class="label">{[Ux.locale.Manager.get("label.publishdate")]}</span>: {publishdate}</div>',
 
 		cls: 'books standard_font',
-		/*
-		items: [
-			{
-				xtype: 'toolbar',
-				docked: 'top',
-				id: 'navbooksbar',
-				locales: {
-					title: 'title.books',
-				},
-				items: [
-					{
-						xtype: 'button',
-						ui: 'back',
-						action: 'previousbooks',
-						locales: {
-							text: 'button.previous',
-						}
-					},
-					{
-						xtype: 'spacer',
-					},
-					{
-						xtype: 'button',
-						ui: 'forward',
-						action: 'nextbooks',
-						locales: {
-							text: 'button.next',
-						}
-					}
-				]
-			}
-		]
-		*/
-	}
+	},
 });

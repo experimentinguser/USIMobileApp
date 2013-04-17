@@ -1,4 +1,4 @@
-Ext.define('USIMobile.model.SearchBooksResult', {
+Ext.define('USIMobile.model.SearchLibraryResult', {
 	extend: 'Ext.data.Model',
 	
 	config: {
