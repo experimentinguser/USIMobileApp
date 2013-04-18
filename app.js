@@ -185,5 +185,17 @@ Ext.application({
 
 	hideLoadMask: function() {
 		Ext.Viewport.getActiveItem().setMasked(false);
+	},
+
+	isConnected: function() {
+		if(navigator.connection == undefined) {
+			return navigator.onLine;
+		} else {
+			if(navigator.connection.type == Connection.UNKNOWN || navigator.connection.type == Connection.NONE) {
+				return false;
+			} else {
+				return true;
+			}
+		}
 	}
 });

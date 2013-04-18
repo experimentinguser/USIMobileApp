@@ -8,12 +8,13 @@ Ext.define('USIMobile.controller.StoreFeed', {
         }
     },
     
-    init: function() {
+    launch: function() {
 		Ext.sf = this;
 		// start updates only if the usageagreemnt has been accepted and the aai account has been set
 		if( !USIMobile.Session.getSettingsStore().first().get('usageagreement')) {
 			USIMobile.app.showUsageAgreement();
 		} else if(USIMobile.Session.getSettingsStore().first().get('usageagreement') && USIMobile.Session.getSettingsStore().first().get('cache')) {
+		//} else if(USIMobile.Session.getSettingsStore().first().get('usageagreement') && USIMobile.app.isConnected()) {
 			// get hash updates
 			var updates = USIMobile.WebService.getUpdates();
 			updates.on('load', function(hash_store){ this.checkUpdates(hash_store); }, this, {single: true});
@@ -263,7 +264,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
-					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingCourses'));
+					//USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingCourses'));
 					this.store_update_status.courses = true;
 					// remove old entries
 					USIMobile.Session.getCoursesStore().removeAll();
@@ -294,7 +295,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
-					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingAcademicCalendar'));
+					//USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingAcademicCalendar'));
 					this.store_update_status.academic_calendar = true;
 					// remove old entries
 					USIMobile.Session.getAcademicCalendarStore().removeAll();
@@ -319,7 +320,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	updateTeachingTimetablesStore: function() {
 		USIMobile.WebService.getTeachingTimetables().on('load',
 			function(store, records, success) {
-				USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingTeachingTables'));
+				//USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingTeachingTables'));
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
@@ -349,7 +350,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 	updateExaminationTimetablesStore: function() {
 		USIMobile.WebService.getExaminationTimetables().on('load',
 			function(store, records, success) {
-				USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingExaminationTables'));
+				//USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingExaminationTables'));
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
@@ -382,7 +383,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
-					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingPeople'));
+					//USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingPeople'));
 					this.store_update_status.people = true;
 					// remove old entries
 					USIMobile.Session.getPeopleStore().removeAll();
@@ -412,7 +413,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
-					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingNews'));
+					//USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingNews'));
 					this.store_update_status.news = true;
 					// remove old entries
 					USIMobile.Session.getShortNewsStore().removeAll();
@@ -456,7 +457,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
-					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingEventNews'));
+					//USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingEventNews'));
 					this.store_update_status.event_news = true;
 					// remove old entries
 					USIMobile.Session.getShortEventNewsStore().removeAll();
@@ -500,7 +501,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
-					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingCommunityNews'));
+					//USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingCommunityNews'));
 					this.store_update_status.community_news = true;
 					// remove old entries
 					USIMobile.Session.getShortCommunityNewsStore().removeAll();
@@ -544,7 +545,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
-					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingMensa'));
+					//USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingMensa'));
 					this.store_update_status.menu_mensa = true;
 					// remove old entries
 					USIMobile.Session.getMenuMensaStore().removeAll();
@@ -571,7 +572,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
-					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingSportActivities'));
+					//USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingSportActivities'));
 					this.store_update_status.sport_activity = true;
 					// remove old entries
 					USIMobile.Session.getSportActivityStore().removeAll();
@@ -601,7 +602,7 @@ Ext.define('USIMobile.controller.StoreFeed', {
 				// check if there are any exceptions
 				// check for errors here
 				if(store.getProxy().getReader().rawData.error == null){
-					USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingServices'));
+					//USIMobile.app.updatePercentageIndicator(Ux.locale.Manager.get('message.updatingServices'));
 					this.store_update_status.services = true;
 					// remove old entries
 					USIMobile.Session.getServicesStore().removeAll();

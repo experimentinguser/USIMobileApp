@@ -107,7 +107,7 @@ Ext.define('USIMobile.controller.Init', {
 		// create the Services store
 		var services_store = Ext.create('USIMobile.store.Services');
 		USIMobile.Session.setServicesStore(services_store);
-
+		
 		/*********************************
 		 * DEBUG/LOG MESSAGES
 		 *********************************/
