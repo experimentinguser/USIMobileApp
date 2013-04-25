@@ -3,8 +3,7 @@ Ext.define('USIMobile.store.AcademicCalendar', {
 
 	requires: [
 		'USIMobile.model.AcademicCalendar',
-		'Ext.data.proxy.LocalStorage'
-		],
+	],
 
 	config: {
 		storeId: 'academiccalendar_store',

@@ -3,8 +3,7 @@ Ext.define('USIMobile.store.Settings', {
 
 	requires: [
 		'USIMobile.model.Settings',
-		'Ext.data.proxy.LocalStorage'
-		],
+	],
 
 	config: {
 		storeId: 'settings_store',

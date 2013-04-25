@@ -2,10 +2,9 @@ Ext.define('USIMobile.store.DetailedCommunityNews', {
 	extend: 'Ext.data.Store',
 
 	requires: [
-		'Ext.data.proxy.LocalStorage',
 		'USIMobile.model.DetailedNews',
 	],
-
+	
 	config: {
 		storeId: 'detailedcommunitynews_store',
 		model: 'USIMobile.model.DetailedNews',

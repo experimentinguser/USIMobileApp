@@ -5,6 +5,11 @@ Ext.define('USIMobile.controller.SportActivity', {
 	],
 
 	config: {
+		views: [
+			'SearchSportActivity',
+			'SportActivities',
+			'SportActivity',
+		],
 		refs: {
 			home: '#home',
 			homeSportActivityButton: 'button#sport_activity_home_button',

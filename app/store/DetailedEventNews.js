@@ -2,7 +2,6 @@ Ext.define('USIMobile.store.DetailedEventNews', {
 	extend: 'Ext.data.Store',
 
 	requires: [
-		'Ext.data.proxy.LocalStorage',
 		'USIMobile.model.DetailedNews',
 	],
 

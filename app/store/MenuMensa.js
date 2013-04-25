@@ -3,8 +3,7 @@ Ext.define('USIMobile.store.MenuMensa', {
 
 	requires: [
 		'USIMobile.model.MenuMensa',
-		'Ext.data.proxy.LocalStorage'
-		],
+	],
 
 	config: {
 		storeId: 'menumensa_store',

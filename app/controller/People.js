@@ -5,6 +5,12 @@ Ext.define('USIMobile.controller.People', {
 	],
 
 	config: {
+		views: [
+			'SearchPeople',
+			'People',
+			'Person',
+		],
+
 		refs: {
 			home: '#home',
 			homePeopleButton: 'button#people_home_button',

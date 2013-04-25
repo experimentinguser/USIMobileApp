@@ -4,6 +4,9 @@ Ext.define('USIMobile.controller.MessagePanel', {
 	requires: [ ],
 
 	config: {
+		views: [
+			'MessagePanel',
+		],
 		refs: {
 			home: '#home',
 			helpBtn: 'button#helpbutton',

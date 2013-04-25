@@ -1,10 +1,14 @@
 Ext.define('USIMobile.controller.Calendar', {
 	extend: 'Ext.app.Controller',
 
-	requires: [
-	],
-
 	config: {
+		views: [
+			'Calendar',
+			'Faculties',
+			'TeachingTimetables',
+			'ExaminationTimetables',
+		],
+
 		refs: {
 			home: '#home',
 			calendarButton: 'button#calendar_home_button',

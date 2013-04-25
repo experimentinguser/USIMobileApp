@@ -2,11 +2,8 @@ Ext.define('USIMobile.store.TeachingTimetables', {
 	extend: 'Ext.data.Store',
 
 	requires: [
-		'Ext.data.proxy.LocalStorage',
 		'USIMobile.model.TeachingTimetable',
 	],
-
-	models: [ ],
 
 	config: {
 		storeId: 'teachingtimetables_store',

@@ -2,11 +2,8 @@ Ext.define('USIMobile.store.People', {
 	extend: 'Ext.data.Store',
 
 	requires: [
-		'Ext.data.proxy.LocalStorage',
 		'USIMobile.model.People',
 	],
-
-	models: [ ],
 
 	config: {
 		storeId: 'people_store',

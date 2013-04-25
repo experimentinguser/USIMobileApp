@@ -1,14 +1,17 @@
 Ext.define('USIMobile.controller.News', {
 	extend: 'Ext.app.Controller',
 
-	requires: [
-			'USIMobile.view.News',
-			'USIMobile.view.ShortNews',
-			'USIMobile.view.ShortEventNews',
-			'USIMobile.view.ShortCommunityNews',
-	],
+
 
 	config: {
+		views: [
+			'News',
+			'ShortNews',
+			'DetailedNews',
+			'ShortEventNews',
+			'ShortCommunityNews',
+		],
+
 		refs: {
 			home: '#home',
 			news: '#news',

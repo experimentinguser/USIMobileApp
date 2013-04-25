@@ -5,6 +5,12 @@ Ext.define('USIMobile.controller.Course', {
 	],
 
 	config: {
+		views: [
+			'SearchCourses',
+			'Courses',
+			'Course',
+		],
+
 		refs: {
 			home: '#home',
 			homeCoursesButton: 'button#courses_home_button',

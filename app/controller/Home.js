@@ -6,6 +6,9 @@ Ext.define('USIMobile.controller.Home', {
 	],
 
 	config: {
+		views: [
+			'Home',
+		],
 		refs: {
 			home: '#home',
 			menuMensaButton: 'button#mensa_home_button',

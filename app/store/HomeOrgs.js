@@ -2,7 +2,7 @@ Ext.define('USIMobile.store.HomeOrgs', {
 	extend: 'Ext.data.Store',
 
 	requires: [
-		'USIMobile.model.HomeOrg'
+		'USIMobile.model.HomeOrg',
 	],
 
 	config: {

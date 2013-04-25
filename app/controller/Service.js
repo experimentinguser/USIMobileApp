@@ -4,6 +4,10 @@ Ext.define('USIMobile.controller.Service', {
 	requires: [ ],
 
 	config: {
+		views: [
+			'Services',
+			'Service',
+		],
 		refs: {
 			home: '#home',
 			homeServicesButton: 'button#services_home_button',

@@ -5,6 +5,11 @@ Ext.define('USIMobile.controller.Library', {
 	],
 
 	config: {
+		views: [
+			'Library',
+			'Books',
+			'Journals',
+		],
 		refs: {
 			home: '#home',
 			homeLibraryButton: 'button#library_home_button',

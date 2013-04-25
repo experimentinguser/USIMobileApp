@@ -2,8 +2,15 @@ Ext.define('USIMobile.controller.Settings', {
 	extend: 'Ext.app.Controller',
 
 	config: {
+		views: [
+			'Settings',
+		],
 		models: [
-			'USIMobile.model.Settings',
+			'Settings',
+		],
+
+		stores: [
+			'HomeOrgs',
 		],
 
 		refs: {

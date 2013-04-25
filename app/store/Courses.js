@@ -2,11 +2,8 @@ Ext.define('USIMobile.store.Courses', {
 	extend: 'Ext.data.Store',
 
 	requires: [
-		'Ext.data.proxy.LocalStorage',
 		'USIMobile.model.Course',
 	],
-
-	models: [ ],
 
 	config: {
 		storeId: 'courses_store',

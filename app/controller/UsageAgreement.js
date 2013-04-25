@@ -2,11 +2,16 @@ Ext.define('USIMobile.controller.UsageAgreement', {
 	extend: 'Ext.app.Controller',
 	
 	config: {
+		views: [
+			'UsageAgreement',
+		],
+
 		refs: {
 			UApanel: '#usageagreement',
 			agree: '#usageagreement button[action=agree]',
 			disagree: '#usageagreement button[action=disagree]'
 		},
+
 		control: {
 			UApanel:  {
 				activeitemchange: 'setLanguage'
