@@ -15,15 +15,13 @@ Ext.define("USIMobile.view.Home", {
 				{
 					xtype: 'button',
 					id: 'infobutton',
-					iconMask: true,
 					iconCls: 'info',
 					align: 'right',
 				},
 				{
 					xtype: 'button',
 					id: 'helpbutton',
-					iconMask: true,
-					iconCls: 'help',
+					iconCls: 'action',
 					align: 'right',
 					hidden: true,
 				}

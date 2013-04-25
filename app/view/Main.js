@@ -16,7 +16,7 @@ Ext.define("USIMobile.view.Main", {
 			{
 				xtype: 'home',
 				title: 'USI',
-				iconCls: 'usi_home',
+				iconCls: 'home',
 			},
 			{
 				xtype: 'settings',

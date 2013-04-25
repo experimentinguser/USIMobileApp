@@ -1,7 +1,7 @@
 {
   "sources": {
     "app.scss.tpl.merge": {
-      "185c5374133b44981799fe044947175520c8917e": "eJxtkTtywzAMRHudAp0rSwdw42ukhEhI5ATkakgwsW4fepJJI7ZvsfgsnjEdKEa3KtkFvhuaC4uXjZvawqq3xzQtC32gUeKTiiR8CXE+CRtZENqgiu+Yd0rwTaV2ykYn2tvnQRlGrQrFTCheChnIFWHrbaimPqMzVyttUWWenjE7bV7ob6ODs+jjgtdmhlyvQg0idsVHdJ9Srtx4HTQxQFcelf8K9w0lDXwxe3kNjRrrYCvlntOAOy7omQ3ufg++0lT3Fa//V/U8WzUkcug1O/pTghSZ5/kHAqywZg\u003d\u003d"
+      "3d3f6b023c31a4e49cd626dd27cff9474aff32d7": "eJx9kL1uAyEQhHs/xXRnS8nRx40lK0Xq8wusYc8QceyJH5/99gHsOh3MDLMfqxQuljGL97K5cEPeBN4FTnDLKjEjV9vwTMVnTBy0JVykaNuMhUf8zHhKAUXGtThvaslOKRACb6/MByIvcud+AwXTO8mY9jBCtoDzNEECsqyQudtXStzl/Wadtq3SJZCPTOYJF7Qvhk09vEpoXcffVCtm5/kw7k5v+iF15M/ckNX7H8Pxf1+R9zXTZp5LyrJAi2HcpG7FcuRx7N73g5bVV60il9SXV8GdrhSLe7jw1UKnN2rX90NJHIfD8Q/mSX+o"
     },
     "config.rb.tpl.merge": {
       "e254e92dd21bc9ecb27f3b8251d67dfbc79fa1af": "eJxlkMFOwzAMhu95Cqs7bEiQB0DaCTGEtAPiBSIrddtAG5c4ASrEu+N00kDjYtl/7O+PvYEHypAHgjYk8pnTohVWKQh4jl3oS8IcOEIXRgL6DJIFQjQ6AHs4qGg1jTjRzrnD4/HeuStjNnBkbFeyUPQD3mQufoAuaeMHp1fAknlSssdxXKwZa/tKe+EQd4q8hq2123P8Oo8+YR6+q5RIuCRPUgu1mjRbve94mlEuFhAjqrlZp/XjamD8b3nh3FjbaNSGZgU+01vRAwHGBbBtQ+XhqPyTzzyWPkSBgRJZEybsSdyfA/0Dn1qUzSXPJTvJix53D7eVqGsJtYbie0gcJ4q5vsyJ2+KrsfkBl52Ucw\u003d\u003d"
@@ -74,15 +74,15 @@
       "parameters": {
         "appName": "USIMobile",
         "frameworkPath": "touch",
-        "appModels": "AcademicCalendar,Course,DetailedNews,ExaminationTimetable,HomeOrg,MenuMensa,People,Service,Settings,ShortNews,SportActivity,TeachingTimetable,Updates",
-        "appControllers": "Calendar,Course,Home,Init,News,People,Service,Settings,SportActivity,StoreFeed,UsageAgreement",
+        "appModels": "AcademicCalendar,Book,Course,DetailedNews,ExaminationTimetable,HomeOrg,Journal,MenuMensa,People,SearchLibraryResult,Service,Settings,ShortNews,SportActivity,TeachingTimetable,Updates",
+        "appControllers": "Calendar,Course,Home,Init,Library,MessagePanel,News,People,Service,Settings,SportActivity,StoreFeed,UsageAgreement",
         "appStores": "AcademicCalendar,Courses,DetailedCommunityNews,DetailedEventNews,DetailedNews,ExaminationTimetables,HomeOrgs,MenuMensa,People,Services,Settings,ShortCommunityNews,ShortEventNews,ShortNews,SportActivity,TeachingTimetables,Updates",
-        "appViews": "Calendar,Course,Courses,DetailedNews,ExaminationTimetables,Faculties,Home,Main,News,People,Person,SearchCourses,SearchPeople,SearchSportActivity,Service,Services,Settings,ShortCommunityNews,ShortEventNews,ShortNews,SportActivities,SportActivity,TeachingTimetables,UsageAgreement"
+        "appViews": "Books,Calendar,Course,Courses,DetailedNews,ExaminationTimetables,Faculties,Home,Journals,Library,Main,MessagePanel,News,People,Person,SearchCourses,SearchPeople,SearchSportActivity,Service,Services,Settings,ShortCommunityNews,ShortEventNews,ShortNews,SportActivities,SportActivity,TeachingTimetables,UsageAgreement"
       }
     },
     "resources/sass/app.scss": {
       "source": "app.scss.tpl.merge",
-      "version": "185c5374133b44981799fe044947175520c8917e",
+      "version": "3d3f6b023c31a4e49cd626dd27cff9474aff32d7",
       "parameters": {
         "appName": "USIMobile",
         "senchadir": ".sencha",

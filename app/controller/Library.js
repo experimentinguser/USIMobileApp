@@ -10,6 +10,13 @@ Ext.define('USIMobile.controller.Library', {
 			'Books',
 			'Journals',
 		],
+
+		models: [
+			'SearchLibraryResult',
+			'Journal',
+			'Book',
+		],
+
 		refs: {
 			home: '#home',
 			homeLibraryButton: 'button#library_home_button',
