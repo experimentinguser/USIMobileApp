@@ -11,15 +11,15 @@ Ext.define('USIMobile.controller.SportActivity', {
 			'SportActivity',
 		],
 		refs: {
-			home: '#home',
+			home: 'home',
 			homeSportActivityButton: 'button#sport_activity_home_button',
-			searchSportActivityForm: '#searchsportactivityform',
-			searchSportActivityButton: '#searchsportactivityform button[action=search]',
-			sportActivities: '#sportactivities',
-			sportActivity: '#sportactivity',
-			sportActivityMailToButton: '#sportactivity button[action=mailto]',
-			sportActivitySubscribeButton: '#sportactivity button[action=subscribe]',
-			sportActivityUnsubscribeButton: '#sportactivity button[action=unsubscribe]',
+			searchSportActivityForm: 'searchsportactivity',
+			searchSportActivityButton: 'searchsportactivity button[action=search]',
+			sportActivities: 'sportactivities',
+			sportActivity: 'sportactivity',
+			sportActivityMailToButton: 'sportactivity button[action=mailto]',
+			sportActivitySubscribeButton: 'sportactivity button[action=subscribe]',
+			sportActivityUnsubscribeButton: 'sportactivity button[action=unsubscribe]',
 		},
 
 		control: {
@@ -48,7 +48,7 @@ Ext.define('USIMobile.controller.SportActivity', {
 			this.getHome().push(this.getSearchSportActivityForm());
 		} else {
 			this.getHome().push({
-				xtype: 'searchsportactivityform',
+				xtype: 'searchsportactivity',
 				title: Ux.locale.Manager.get('title.searchSportActivity'),
 			});
 		}

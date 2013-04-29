@@ -3,6 +3,18 @@ $base-color: #F90;
 @import 'sencha-touch/default/all';
 
 // Your custom code goes here...
+#notification {
+	background-color: black;
+	color: white;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 .license_title {
 	font-size: large;
 	font-weight: bold;

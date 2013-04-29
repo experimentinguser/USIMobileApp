@@ -6839,19 +6839,32 @@ body.x-desktop {
   color: black;
 }
 
-/* line 11, ../sass/app.scss */
+/* line 6, ../sass/app.scss */
+#notification {
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 18, ../sass/app.scss */
 .license_title {
   font-size: large;
   font-weight: bold;
   padding: 10px;
 }
 
-/* line 17, ../sass/app.scss */
+/* line 24, ../sass/app.scss */
 .license_body {
   padding: 10px;
 }
 
-/* line 22, ../sass/app.scss */
+/* line 29, ../sass/app.scss */
 .home_button .icon {
   position: absolute;
   left: 50%;
@@ -6863,7 +6876,7 @@ body.x-desktop {
   padding-top: 80px;
   margin-left: -50px;
 }
-/* line 32, ../sass/app.scss */
+/* line 39, ../sass/app.scss */
 .home_button .icon .label {
   position: relative;
   font-weight: normal;
@@ -6871,59 +6884,59 @@ body.x-desktop {
   color: black;
 }
 
-/* line 42, ../sass/app.scss */
+/* line 49, ../sass/app.scss */
 .courses_icon {
   background-image: url("../icons/courses.png");
 }
 
-/* line 46, ../sass/app.scss */
+/* line 53, ../sass/app.scss */
 .news_icon {
   background-image: url("../icons/news.png");
 }
 
-/* line 50, ../sass/app.scss */
+/* line 57, ../sass/app.scss */
 .calendar_icon {
   background-image: url("../icons/calendar.png");
 }
 
-/* line 54, ../sass/app.scss */
+/* line 61, ../sass/app.scss */
 .services_icon {
   background-image: url("../icons/services.png");
 }
 
-/* line 58, ../sass/app.scss */
+/* line 65, ../sass/app.scss */
 .library_icon {
   background-image: url("../icons/library.png");
 }
 
-/* line 62, ../sass/app.scss */
+/* line 69, ../sass/app.scss */
 .people_icon {
   background-image: url("../icons/people.png");
 }
 
-/* line 66, ../sass/app.scss */
+/* line 73, ../sass/app.scss */
 .mensa_icon {
   background-image: url("../icons/mensa.png");
 }
 
-/* line 70, ../sass/app.scss */
+/* line 77, ../sass/app.scss */
 .sport_icon {
   background-image: url("../icons/sport.png");
 }
 
-/* line 74, ../sass/app.scss */
+/* line 81, ../sass/app.scss */
 .career_icon {
   background-image: url("../icons/career.png");
 }
 
-/* line 78, ../sass/app.scss */
+/* line 85, ../sass/app.scss */
 .short_news_publish_date {
   color: gray;
   text-align: right;
   font-size: small;
 }
 
-/* line 87, ../sass/app.scss */
+/* line 94, ../sass/app.scss */
 .detailed_news_title,
 .detailed_news_body,
 .detailed_detailed_url,
@@ -6934,7 +6947,7 @@ body.x-desktop {
   padding: 10px;
 }
 
-/* line 118, ../sass/app.scss */
+/* line 125, ../sass/app.scss */
 .course_title,
 .course_description,
 .course_professors,
@@ -6963,7 +6976,7 @@ body.x-desktop {
   margin-top: 10px;
   background-color: white;
 }
-/* line 123, ../sass/app.scss */
+/* line 130, ../sass/app.scss */
 .course_title .label,
 .course_description .label,
 .course_professors .label,
@@ -6990,20 +7003,20 @@ body.x-desktop {
   font-style: italic;
 }
 
-/* line 129, ../sass/app.scss */
+/* line 136, ../sass/app.scss */
 .person,
 .service {
   padding: 5px;
   margin-bottom: 2px;
   background-color: white;
 }
-/* line 133, ../sass/app.scss */
+/* line 140, ../sass/app.scss */
 .person .label,
 .service .label {
   font-style: italic;
 }
 
-/* line 139, ../sass/app.scss */
+/* line 146, ../sass/app.scss */
 .person_selected,
 .service_selected {
   background-color: #cc7a00;
@@ -7012,22 +7025,22 @@ body.x-desktop {
   text-shadow: rgba(0, 0, 0, 0.5) 0 -0.08em 0;
 }
 
-/* line 146, ../sass/app.scss */
+/* line 153, ../sass/app.scss */
 .standard_font {
   font-size: .8em;
 }
 
-/* line 150, ../sass/app.scss */
+/* line 157, ../sass/app.scss */
 .course_title {
   font-weight: bold;
 }
 
-/* line 154, ../sass/app.scss */
+/* line 161, ../sass/app.scss */
 .examination_session {
   padding-bottom: 5px;
 }
 
-/* line 161, ../sass/app.scss */
+/* line 168, ../sass/app.scss */
 .registration_begin,
 .registration_end,
 .examination_begin,
@@ -7036,30 +7049,30 @@ body.x-desktop {
   color: gray;
 }
 
-/* line 167, ../sass/app.scss */
+/* line 174, ../sass/app.scss */
 .registration_end,
 .examination_end {
   padding-top: 5px;
   padding-bottom: 10px;
 }
 
-/* line 172, ../sass/app.scss */
+/* line 179, ../sass/app.scss */
 .disabled {
   opacity: 0.4;
 }
 
-/* line 178, ../sass/app.scss */
+/* line 185, ../sass/app.scss */
 #books .title,
 #journals .title {
   font-weight: bold;
   padding-bottom: 10px;
 }
-/* line 182, ../sass/app.scss */
+/* line 189, ../sass/app.scss */
 #books .label,
 #journals .label {
   font-style: italic;
 }
-/* line 185, ../sass/app.scss */
+/* line 192, ../sass/app.scss */
 #books .status,
 #journals .status {
   color: gray;
@@ -7067,7 +7080,7 @@ body.x-desktop {
   text-align: right;
   font-size: small;
 }
-/* line 191, ../sass/app.scss */
+/* line 198, ../sass/app.scss */
 #books .pagination,
 #journals .pagination {
   position: absolute;
@@ -7081,19 +7094,19 @@ body.x-desktop {
   opacity: 0.3;
 }
 
-/* line 205, ../sass/app.scss */
+/* line 212, ../sass/app.scss */
 #messagepanel .title {
   padding: 10px;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 211, ../sass/app.scss */
+/* line 218, ../sass/app.scss */
 #messagepanel .illustration {
   padding-top: 20px;
   text-align: center;
 }
-/* line 215, ../sass/app.scss */
+/* line 222, ../sass/app.scss */
 #messagepanel .content {
   padding: 10px;
 }

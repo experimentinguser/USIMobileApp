@@ -37,19 +37,19 @@ Ext.application({
 	views: [ 'USIMobile.view.Main' ],
 
 	controllers: [
-		"USIMobile.controller.Init", 
-		"USIMobile.controller.UsageAgreement", 
-		"USIMobile.controller.Settings", 
-		"USIMobile.controller.StoreFeed",
-		"USIMobile.controller.Home", 
-		"USIMobile.controller.MessagePanel",
-		"USIMobile.controller.Course",
-		"USIMobile.controller.Calendar",
-		"USIMobile.controller.People",
-		"USIMobile.controller.News", 
-		"USIMobile.controller.SportActivity",
-		"USIMobile.controller.Service",
-		"USIMobile.controller.Library",
+		"Init",
+		"UsageAgreement",
+		"Settings",
+		"Updater",
+		"Home",
+		"MessagePanel",
+		"Course",
+		"Calendar",
+		"People",
+		"News",
+		"SportActivity",
+		"Service",
+		"Library",
 	],
 
     icon: {
@@ -103,24 +103,14 @@ Ext.application({
         );
     },
 
-	updatePercentageIndicator: function(text) {
-		Ext.get('percentageIndicator').setHtml(text);
-	},
-
-	hideLoadingScreen: function() {
-		// Destroy the #appLoadingIndicator element
-		Ext.fly('appLoadingIndicator').destroy();
-		Ext.fly('percentageIndicator').destroy();
-	},
-
 	showUsageAgreement: function() {
-		this.hideLoadingScreen();
+		Ext.fly('appLoadingIndicator').destroy();
 		Ext.Viewport.add(Ext.create('USIMobile.view.UsageAgreement'));
 	},
 
 	showHome: function() {
-		this.hideLoadingScreen();
-		Ext.Viewport.add(Ext.create('USIMobile.view.Main'));
+		Ext.Viewport.insert(0, Ext.create('USIMobile.view.Main'));
+		Ext.Viewport.setActiveItem(0);
 	},
 
 	formatDate: function(date, date_format) {
@@ -139,7 +129,6 @@ Ext.application({
 	showLoadMask: function(msg) {
 		Ext.Viewport.getActiveItem().setMasked({
 			xtype: 'loadmask',
-			//hideOnMaskTap: true,
 			indicator: true,
 			message: msg,
 		});

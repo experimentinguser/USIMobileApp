@@ -12,11 +12,11 @@ Ext.define('USIMobile.controller.People', {
 		],
 
 		refs: {
-			home: '#home',
+			home: 'home',
 			homePeopleButton: 'button#people_home_button',
-			people: '#people',
-			searchPeople: '#searchpeople',
-			searchPeopleButton: '#searchpeople button[action=search]',
+			people: 'people',
+			searchPeople: 'searchpeople',
+			searchPeopleButton: 'searchpeople button[action=search]',
 			callPersonButton: 'button[action=callperson]',
 			mailPersonButton: 'button[action=mailperson]',
 			homePagePersonButton: 'button[action=openpersonurl]',
@@ -24,14 +24,6 @@ Ext.define('USIMobile.controller.People', {
 
 		control: {
 			homePeopleButton: { tap: 'showSearchPeople' },
-			searchPeople: {
-				show: function() {
-					// clear previous search filters
-					// wait 200ms to do that because 
-					// this operation requires resources
-					//setTimeout(function() { USIMobile.Session.getPeopleStore().clearFilter(); }, 500); 
-				}
-			},
 			searchPeopleButton: { tap: 'searchPeople' },
 			callPersonButton: { tap: 'callPerson' },
 			mailPersonButton: { tap: 'mailPerson' },
@@ -55,7 +47,7 @@ Ext.define('USIMobile.controller.People', {
 			this.getHome().push(this.getSearchPeople());
 		} else {
 			this.getHome().push({
-				xtype: 'searchpeopleform',
+				xtype: 'searchpeople',
 				title: Ux.locale.Manager.get('title.searchPeople'),
 			});
 		}

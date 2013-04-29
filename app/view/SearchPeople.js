@@ -1,6 +1,6 @@
 Ext.define("USIMobile.view.SearchPeople", {
 	extend: 'Ext.form.Panel',
-	xtype: 'searchpeopleform',
+	xtype: 'searchpeople',
 	fullscreen: true,
 	
 	requires: [

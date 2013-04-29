@@ -147,6 +147,7 @@ Ext.define("USIMobile.view.Home", {
 			setButtonLabel(this.child('#grid').child('#thirdrow').child('#mensa_home_button'), Ux.locale.Manager.get('title.mensa'));
 			setButtonLabel(this.child('#grid').child('#thirdrow').child('#sport_activity_home_button'), Ux.locale.Manager.get('title.sport'));
 			setButtonLabel(this.child('#grid').child('#thirdrow').child('#career_home_button'), Ux.locale.Manager.get('title.career'));
+
 		}
     }
 });

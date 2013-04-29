@@ -13,32 +13,33 @@ Ext.define("USIMobile.view.News", {
 		title: 'USI News',
 		styleHtmlContent: true,
 		scrollable: true,
+		locales: {},
 		tabBar: {
 			id: 'newstabbar',
 			layout: { pack: 'center' }
 		},
 		items: [
 			{
-				title: 'News',
 				xtype: 'shortnews',
+				title: 'News',
 			},
 			{
-				title: 'Events',
 				xtype: 'shorteventnews',
+				title: 'Events',
 			},
 			{
-				title: 'Community',
 				xtype: 'shortcommunitynews',
+				title: 'Community',
 			},
 		],
-			/*
-		listeners: {
-			delegate : 'tabbar#newstabbar > tab',
-			tap: function(tab){
-				console.log(tab);
-			}
-		}
-			*/
 	},
+
+	setLocale : function(locale) {
+		if(this.locale.get('title.settings') != undefined) {
+			this.getTabBar().getAt(0).setTitle(Ux.locale.Manager.get('title.news'));
+			this.getTabBar().getAt(1).setTitle(Ux.locale.Manager.get('title.events'));
+			this.getTabBar().getAt(2).setTitle(Ux.locale.Manager.get('title.community'));
+		}
+    },
 
 });

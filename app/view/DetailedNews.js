@@ -3,7 +3,7 @@ Ext.define("USIMobile.view.DetailedNews", {
 	xtype: 'detailednews',
 
 	config: {
-		id: 'detailednews',
+		autoDestroy: true,
 		scrollable: {
 			direction: 'vertical',
 			directionLock: true

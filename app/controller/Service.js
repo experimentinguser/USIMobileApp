@@ -9,9 +9,9 @@ Ext.define('USIMobile.controller.Service', {
 			'Service',
 		],
 		refs: {
-			home: '#home',
+			home: 'home',
 			homeServicesButton: 'button#services_home_button',
-			services: '#services',
+			services: 'services',
 			sendMailButton: 'button[action=mailservice]',
 			callButton: 'button[action=callservice]',
 			homePageButton: 'button[action=openserviceurl]',

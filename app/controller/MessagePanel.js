@@ -8,10 +8,10 @@ Ext.define('USIMobile.controller.MessagePanel', {
 			'MessagePanel',
 		],
 		refs: {
-			home: '#home',
+			home: 'home',
 			helpBtn: 'button#helpbutton',
 			infoBtn: 'button#infobutton',
-			messagePanel: '#messagepanel',
+			messagePanel: 'messagepanel',
 			messagePanelBar: '#messagepanelbar',
 			messagePanelCloseBtn: 'button#closemessagepanel',
 		},

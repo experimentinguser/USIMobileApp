@@ -14,7 +14,7 @@ Ext.define('USIMobile.controller.Settings', {
 		],
 
 		refs: {
-			form: '#settings',
+			form: 'settings',
 			language: 'selectfield[name=language]',
 			checkLoginBtn: 'button[action=checklogindata]'
 		},

@@ -18,12 +18,12 @@ Ext.define('USIMobile.controller.Library', {
 		],
 
 		refs: {
-			home: '#home',
+			home: 'home',
 			homeLibraryButton: 'button#library_home_button',
-			books: '#books',
-			journals: '#journals',
-			library: '#library',
-			searchButton: '#library button[action=search]',
+			books: 'books',
+			journals: 'journals',
+			library: 'library',
+			searchButton: 'library button[action=search]',
 		},
 
 		control: {

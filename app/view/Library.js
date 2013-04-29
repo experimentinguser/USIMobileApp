@@ -39,6 +39,7 @@ Ext.define("USIMobile.view.Library", {
 						checked: true,
 						listeners: {
 							check: function(self) {
+								self.getParent().child('textfield[name=pattern]').enable();
 								self.getParent().child('radiofield#mode_letter').disable();
 								self.getParent().child('radiofield#mode_pattern').disable();
 								self.getParent().child('checkboxfield[name=usilib]').enable();

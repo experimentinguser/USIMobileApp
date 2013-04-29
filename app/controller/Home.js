@@ -10,7 +10,7 @@ Ext.define('USIMobile.controller.Home', {
 			'Home',
 		],
 		refs: {
-			home: '#home',
+			home: 'home',
 			menuMensaButton: 'button#mensa_home_button',
 			usiSportButton: 'button#usisport_home_button',
 			offerteLavoroButton: 'button#offertelavoro_home_button',

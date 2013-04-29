@@ -12,13 +12,12 @@ Ext.define('USIMobile.controller.Course', {
 		],
 
 		refs: {
-			home: '#home',
+			home: 'home',
 			homeCoursesButton: 'button#courses_home_button',
-			courses: '#courses',
-			course: '#course',
-			searchCourses: '#searchcourses',
-			searchCoursesButton: '#searchcourses button[action=search]',
-			levels: '#levels',
+			courses: 'courses',
+			course: 'course',
+			searchCourses: 'searchcourses',
+			searchCoursesButton: 'searchcourses button[action=search]',
 		},
 
 		control: {

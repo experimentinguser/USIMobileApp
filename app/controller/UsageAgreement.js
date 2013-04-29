@@ -7,9 +7,9 @@ Ext.define('USIMobile.controller.UsageAgreement', {
 		],
 
 		refs: {
-			UApanel: '#usageagreement',
-			agree: '#usageagreement button[action=agree]',
-			disagree: '#usageagreement button[action=disagree]'
+			UApanel: 'usageagreement',
+			agree: 'usageagreement button[action=agree]',
+			disagree: 'usageagreement button[action=disagree]'
 		},
 
 		control: {
@@ -36,7 +36,7 @@ Ext.define('USIMobile.controller.UsageAgreement', {
 		USIMobile.Session.getSettingsStore().first().set('usageagreement', true);
 		USIMobile.Session.getSettingsStore().first().set('language', language);
 		USIMobile.Session.getSettingsStore().sync();
-		location.reload();
+		USIMobile.app.getController('Updater').getUpdates();
 	},
 
 	registerDisagreement: function() {

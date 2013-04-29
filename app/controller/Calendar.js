@@ -10,12 +10,12 @@ Ext.define('USIMobile.controller.Calendar', {
 		],
 
 		refs: {
-			home: '#home',
+			home: 'home',
 			calendarButton: 'button#calendar_home_button',
-			calendar: '#calendar',
-			faculties: '#faculties',
-			teachingTimetables: '#teachingtimetables',
-			examinationTimetables: '#examinationtimetables',
+			calendar: 'calendar',
+			faculties: 'faculties',
+			teachingTimetables: 'teachingtimetables',
+			examinationTimetables: 'examinationtimetables',
 		},
 
 		control: {
@@ -144,7 +144,7 @@ Ext.define('USIMobile.controller.Calendar', {
 			this.getHome().push({
 				xtype: 'examinationtimetables',
 				title: Ux.locale.Manager.get('title.examinationTimeTables'),
-				emptyText: Ux.locale.Manager.gel('message.noTimeTables'),
+				emptyText: Ux.locale.Manager.get('message.noTimeTables'),
 				store: this.getFilteredExaminationTimetablesStore()
 			});
 		}

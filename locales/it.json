@@ -28,6 +28,10 @@
         "exit" : "Chiudere",
         "books" : "Libri",
         "journals" : "Periodici",
+        "collection" : "Collezione",
+        "topic" : "Argomento",
+        "noResults" : "Nessun risultato",
+        "connection" : "Connessione",
     },
 
 	"label" : {
@@ -127,7 +131,8 @@
         "searching" : "Ricerca...",
         "homeOrgLoad" : "Caricamento delle Home Organisations",
         "noUsageAgreement" : "Per usare questa applicazione è necessario accettare le condizioni d'uso. Terminare l'applicazione e disinistallarla se i termini di uso non sono accettabili.",
-        "syncData" : "Scarico Aggiornamenti...",
+        "syncData" : "Aggiornamento dati...",
+        "noConnection" : "Nessuna connessione disponibile. Non posso scaricare aggiornamenti.",
         "loginFailed" : "L'autenticazione è fallita. Controllare i dati di accesso per favore.",
         "loginSuccessful" : "L'autenticazione riuscita. I dati di accesso sono corretti.",
         "usernameMissing" : "Manca lo username. Completare per favore.",

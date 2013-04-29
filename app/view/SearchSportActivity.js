@@ -1,6 +1,6 @@
 Ext.define("USIMobile.view.SearchSportActivity", {
 	extend: 'Ext.form.Panel',
-	xtype: 'searchsportactivityform',
+	xtype: 'searchsportactivity',
 	fullscreen: true,
 	
 	requires: [
