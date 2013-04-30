@@ -122,6 +122,36 @@ Ext.define("USIMobile.view.Home", {
 							},
 						]
 					},
+					{
+						xtype: 'container',
+						id: 'fourthrow',
+						layout: 'hbox',
+						flex: 1, 
+						items: [
+							{
+								xtype: 'button',
+								id: 'map_home_button',
+								baseCls: 'home_button',
+								width: '33.3%',
+								html: '<div class="map_icon icon"><div class="label"></div></div>',
+							},
+							{
+								xtype: 'button',
+								id: 'emergency_home_button',
+								baseCls: 'home_button',
+								width: '33.3%',
+								html: '<div class="emergency_icon icon"><div class="label"></div></div>',
+							},
+							{
+								xtype: 'button',
+								id: 'transport_home_button',
+								baseCls: 'home_button',
+								width: '33.3%',
+								html: '<div class="transport_icon icon"><div class="label"></div></div>',
+							},
+						]
+					},
+
 				]
 			},
 		]
@@ -147,6 +177,11 @@ Ext.define("USIMobile.view.Home", {
 			setButtonLabel(this.child('#grid').child('#thirdrow').child('#mensa_home_button'), Ux.locale.Manager.get('title.mensa'));
 			setButtonLabel(this.child('#grid').child('#thirdrow').child('#sport_activity_home_button'), Ux.locale.Manager.get('title.sport'));
 			setButtonLabel(this.child('#grid').child('#thirdrow').child('#career_home_button'), Ux.locale.Manager.get('title.career'));
+
+			//fourth row
+			setButtonLabel(this.child('#grid').child('#fourthrow').child('#map_home_button'), Ux.locale.Manager.get('title.map'));
+			setButtonLabel(this.child('#grid').child('#fourthrow').child('#emergency_home_button'), Ux.locale.Manager.get('title.emergency'));
+			setButtonLabel(this.child('#grid').child('#fourthrow').child('#transport_home_button'), Ux.locale.Manager.get('title.transport'));
 
 		}
     }

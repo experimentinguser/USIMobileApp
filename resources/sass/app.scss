@@ -82,6 +82,18 @@ $base-color: #F90;
 	background-image: url('../icons/career.png');
 }
 
+.map_icon {
+	background-image: url('../icons/map.png');
+}
+
+.emergency_icon {
+	background-image: url('../icons/emergency.png');
+}
+
+.transport_icon {
+	background-image: url('../icons/transport.png');
+}
+
 .short_news_publish_date{
 	color: gray;
 	text-align: right;
@@ -133,7 +145,8 @@ $base-color: #F90;
 }
 
 .person,
-.service {
+.service,
+.emergencynumber {
 	padding: 5px;
 	margin-bottom: 2px;
 	background-color: white;
@@ -143,11 +156,19 @@ $base-color: #F90;
 }
 
 .person_selected,
-.service_selected {
+.service_selected,
+.emergency_number_selected {
 	background-color: #cc7a00;
 	background-image: -webkit-linear-gradient(top, #ffa31a, #e68a00 3%, #b36b00);
 	color: white;
 	text-shadow: rgba(0, 0, 0, 0.5) 0 -0.08em 0;
+}
+
+
+.person_name,
+.service_name,
+.emergency_number_name {
+	font-weight: bold;
 }
 
 .standard_font {
@@ -223,3 +244,5 @@ $base-color: #F90;
 		padding: 10px;
 	}
 }
+
+

@@ -11,16 +11,18 @@ Ext.define('USIMobile.controller.Home', {
 		],
 		refs: {
 			home: 'home',
+			campusMap: 'campusmap',
 			menuMensaButton: 'button#mensa_home_button',
 			usiSportButton: 'button#usisport_home_button',
 			offerteLavoroButton: 'button#offertelavoro_home_button',
-			language: 'selectfield[name=language]'
+			mapButton: 'button#map_home_button',
+			language: 'selectfield[name=language]',
 		},
 
 		control: {
 			menuMensaButton: { tap: 'showMenuMensa' },
-			usiSportButton: { tap: 'showUsiSport' },
 			offerteLavoroButton: { tap: 'showOfferteLavoro' },
+			mapButton: { tap: 'showCampusMap' },
 			language : { change: 'setLanguage' }
 		}
 	},
@@ -35,12 +37,19 @@ Ext.define('USIMobile.controller.Home', {
 		USIMobile.app.getFile(data.url, data.filename, data.mime);	
 	},
 
-	showUsiSport: function(btn, e, eOpts){
-		console.log('show usi sport');
-	},
-
 	showOfferteLavoro: function(btn, e, eOpts){
 		console.log('show offerte lavoro');
+	},
+
+	showCampusMap: function(btn, e, eOpts){
+		if(typeof this.getCampusMap() == 'object') {
+			this.getHome().push(this.getCampusMap());
+		} else {
+			this.getHome().push({
+				xtype: 'campusmap',	
+				title: Ux.locale.Manager.get('title.map'),
+			});
+		}
 	},
 
 	setLanguage: function(view, lang){

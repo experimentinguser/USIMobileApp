@@ -16,6 +16,9 @@
         "mensa" : "Mensa",
         "sport" : "Sport",
         "career" : "Career",
+        "map" : "Map",
+        "emergency" : "Emergency",
+        "transport" : "Transports",
         "searchSportActivity" : "Search Sport Activity",
         "sportActivities" : "Sport Activities",
         "sportActivity" : "Sport Activity",
@@ -282,7 +285,7 @@
 	"info" : {
 		"app": { 
 			"title": "About this app",
-			"content": "<div class='title'>USI Campus App</div><div class='content'>Welcome to the USI Campus app. This app contains many useful resources and functionalities for mobile users that are students at University of Lugano.</div>",
+			"content": "<div class='title'>USI Campus App</div><div class='content'>Welcome to the USI Campus app. This app is for USI students and contains many useful resources and functionalities.</div>",
 		},
 
 		"library": { 

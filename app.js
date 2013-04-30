@@ -14,6 +14,7 @@ Ext.application({
 		'Ext.data.proxy.LocalStorage',
         'Ext.MessageBox',
 		'Ext.Img',
+		'Ext.Map',
 
 		'Ux.locale.Manager',
 		'Ux.locale.override.st.Component',
@@ -34,7 +35,10 @@ Ext.application({
 
 	models: [ ],
 
-	views: [ 'USIMobile.view.Main' ],
+	views: [
+		'USIMobile.view.Main',
+		'USIMobile.view.CampusMap',
+	],
 
 	controllers: [
 		"Init",
@@ -50,6 +54,8 @@ Ext.application({
 		"SportActivity",
 		"Service",
 		"Library",
+		"Emergency",
+		"Transport",
 	],
 
     icon: {
