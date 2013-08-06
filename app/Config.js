@@ -60,6 +60,11 @@ Ext.define('USIMobile.Config', {
 		alephUrl: 'http://aleph.sbt.ti.ch/F?func=item-global',
 		swissBibUrl: 'http://www.swissbib.ch/m/index.php',
 		homeOrgsUrl: 'aai/get_idps',
+		// social channels
+		facebookUrl: 'http://www.facebook.com/usiuniversity',
+		linkedinUrl: 'http://www.linkedin.com/company/usi-universita-della-svizzera-italiana',
+		twitterUrl: 'https://twitter.com/USInews',
+		youtubeUrl: 'https://www.youtube.com/user/USIUniversity',
 		// local paths
 		fileCacheDir: 'USIMobile',
 		verbose: false,

@@ -1,6 +1,15 @@
 $base-color: #F90;
 @import 'sencha-touch/default';
 @import 'sencha-touch/default/all';
+@include sencha-button-ui('black_button', black, null);
+@include icon-font('USI', inline-font-files('usi/usi.woff', woff, 'usi/usi.ttf', truetype,'usi/usi.svg', svg));
+@include icon('social', 's', 'USI');
+@include icon('facebook', 'f', 'USI');
+@include icon('linkedin', 'l', 'USI');
+@include icon('twitter', 't', 'USI');
+@include icon('youtube', 'y', 'USI');
+// default pictos font
+@include icon-font('Pictos', inline-font-files('pictos/pictos-web.woff', woff, 'pictos/pictos-web.ttf', truetype,'pictos/pictos-web.svg', svg));
 
 // Your custom code goes here...
 #notification {
@@ -13,6 +22,22 @@ $base-color: #F90;
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+.side_menu {
+	opacity: 0.9;
+	background-color: white;
+	-webkit-transition: left 0.5s;
+	-moz-transition: left 0.5s;
+	-o-transition: left 0.5s;
+	transition: left 0.5s;	
+	.social_network_button {
+		color: black;
+		border: 2px solid black;
+		background-color: black;
+		opacity: 1 !important;
+		font-size: 27px;
+	}
 }
 
 .license_title {

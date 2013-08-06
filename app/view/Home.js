@@ -14,6 +14,12 @@ Ext.define("USIMobile.view.Home", {
 			items: [
 				{
 					xtype: 'button',
+					id: 'social',
+					iconCls: 'social',
+					align: 'left',
+				},
+				{
+					xtype: 'button',
 					id: 'infobutton',
 					iconCls: 'info',
 					align: 'right',
@@ -28,6 +34,48 @@ Ext.define("USIMobile.view.Home", {
 			]
 		},
 		items: [
+			{
+				xtype: 'container',
+				id: 'sidemenu',
+				baseCls: 'side_menu',
+				docked: 'top',
+				left: '-300px',
+				height: '100%',
+				width: '150px',
+				zIndex: 2,
+				html: '&nbsp;',
+				defaults: {
+					margin: 10,
+					width: '80%',
+					height: '70px',
+					ui: 'black_buttons',
+					cls: 'social_network_button'
+
+				},
+				items: [
+					{
+						xtype: 'button',
+						id: 'facebook',
+						iconCls: 'facebook'
+					},
+					{
+						xtype: 'button',
+						id: 'linkedin',
+						iconCls: 'linkedin'
+					},
+					{
+						xtype: 'button',
+						id: 'twitter',
+						iconCls: 'twitter'
+					},
+					{
+						xtype: 'button',
+						id: 'youtube',
+						iconCls: 'youtube'
+					},
+
+				]
+			},
 			{
 				xtype: 'container',
 				id: 'grid',
@@ -153,7 +201,7 @@ Ext.define("USIMobile.view.Home", {
 					},
 
 				]
-			},
+			},	
 		]
 	},
 

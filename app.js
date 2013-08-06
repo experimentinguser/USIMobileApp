@@ -46,6 +46,7 @@ Ext.application({
 		"Settings",
 		"Updater",
 		"Home",
+		"Social",
 		"MessagePanel",
 		"Course",
 		"Calendar",
