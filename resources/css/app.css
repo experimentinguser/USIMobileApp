@@ -94,7 +94,8 @@
  * @var {measurement} $button-height Default height for buttons.
  */
 /**
- * @var {measurement} $button-radius Default border-radius for buttons.
+ * @var {measurement} $button-radius
+ * Default border-radius for buttons. Please note, you can only use `em` as a value here.
  */
 /**
  * @var {measurement} $button-stroke-weight Default border width for buttons.
@@ -2497,6 +2498,7 @@ audio {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "l";
 }
 
@@ -2509,6 +2511,7 @@ audio {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "`";
 }
 
@@ -2519,6 +2522,11 @@ audio {
 
 /* line 8, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/dataview/_DataView.scss */
 .x-dataview-nowrap .x-dataview-container {
+  white-space: nowrap !important;
+}
+
+/* line 14, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/dataview/_DataView.scss */
+.x-dataview-nowrap .x-container.x-dataview {
   white-space: nowrap !important;
 }
 
@@ -2776,9 +2784,9 @@ audio {
 /* line 40, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-label-align-left,
 .x-label-align-right {
-  -webkit-box-orient: horizontal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-box-orient: horizontal !important;
+  -ms-flex-direction: row !important;
+  flex-direction: row !important;
 }
 /* line 43, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-label-align-left .x-component-outer,
@@ -3574,31 +3582,36 @@ input[type="search"]::-webkit-search-cancel-button {
  * See background-gradient mixin.
  */
 /* line 1, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
+html, body {
+  font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;
+}
+
+/* line 5, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
 .x-ios.x-tablet .x-landscape * {
   -webkit-text-stroke: 1px transparent;
 }
 
-/* line 5, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
+/* line 9, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
 body {
   font-size: 104%;
 }
 
-/* line 9, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
+/* line 13, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
 body.x-android.x-phone {
   font-size: 116%;
 }
 
-/* line 13, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
+/* line 17, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
 body.x-ios.x-phone {
   font-size: 114%;
 }
 
-/* line 17, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
+/* line 21, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
 body.x-desktop {
   font-size: 114%;
 }
 
-/* line 21, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
+/* line 25, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
 .x-layout-card-item {
   background: #eeeeee;
 }
@@ -3736,31 +3749,36 @@ body.x-desktop {
 }
 
 /* line 1, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
+html, body {
+  font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;
+}
+
+/* line 5, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
 .x-ios.x-tablet .x-landscape * {
   -webkit-text-stroke: 1px transparent;
 }
 
-/* line 5, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
+/* line 9, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
 body {
   font-size: 104%;
 }
 
-/* line 9, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
+/* line 13, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
 body.x-android.x-phone {
   font-size: 116%;
 }
 
-/* line 13, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
+/* line 17, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
 body.x-ios.x-phone {
   font-size: 114%;
 }
 
-/* line 17, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
+/* line 21, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
 body.x-desktop {
   font-size: 114%;
 }
 
-/* line 21, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
+/* line 25, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss */
 .x-layout-card-item {
   background: #eeeeee;
 }
@@ -4106,6 +4124,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "\005C";
 }
 
@@ -4118,6 +4137,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "R";
 }
 
@@ -4130,6 +4150,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "&";
 }
 
@@ -4142,6 +4163,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "}";
 }
 
@@ -4154,6 +4176,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "[";
 }
 
@@ -4166,6 +4189,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "]";
 }
 
@@ -4178,6 +4202,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "{";
 }
 
@@ -4190,6 +4215,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "W";
 }
 
@@ -4202,6 +4228,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "*";
 }
 
@@ -4214,6 +4241,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "I";
 }
 
@@ -4226,6 +4254,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "1";
 }
 
@@ -4238,6 +4267,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "R";
 }
 
@@ -4250,6 +4280,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "s";
 }
 
@@ -4262,6 +4293,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "y";
 }
 
@@ -4274,6 +4306,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "S";
 }
 
@@ -4286,6 +4319,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "#";
 }
 
@@ -4298,6 +4332,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "@";
 }
 
@@ -4310,6 +4345,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "@";
 }
 
@@ -4322,6 +4358,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "H";
 }
 
@@ -4334,6 +4371,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "I";
 }
 
@@ -4346,6 +4384,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "~";
 }
 
@@ -4358,6 +4397,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "S";
 }
 
@@ -4370,6 +4410,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "i";
 }
 
@@ -4382,6 +4423,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: ".";
 }
 
@@ -4394,6 +4436,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "t";
 }
 
@@ -4406,6 +4449,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "U";
 }
 
@@ -4418,6 +4462,7 @@ body.x-desktop {
   bottom: 0;
   left: 0;
   text-align: center;
+  font-family: "Pictos";
   content: "g";
 }
 
@@ -5372,7 +5417,12 @@ body.x-desktop {
 .x-toolbar .x-form-field-container {
   padding: 0 0.3em;
 }
-/* line 162, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 164, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+.x-toolbar .x-slider-field .x-component-outer,
+.x-toolbar .x-toggle-field .x-component-outer {
+  padding: 0em 0.3em;
+}
+/* line 169, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field {
   width: 13em;
   margin: .5em;
@@ -5380,17 +5430,17 @@ body.x-desktop {
   border-bottom: 0;
   background: transparent;
 }
-/* line 169, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 176, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field .x-clear-icon {
   background-size: 50% 50%;
   right: -0.8em;
   margin-top: -1.06em;
 }
-/* line 176, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 183, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field-input {
   padding-right: 1.6em !important;
 }
-/* line 184, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 191, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field-textarea .x-component-outer,
 .x-toolbar .x-field-text .x-component-outer,
 .x-toolbar .x-field-number .x-component-outer,
@@ -5405,14 +5455,14 @@ body.x-desktop {
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0.1em 0 inset, rgba(0, 0, 0, 0.5) 0 -0.1em 0 inset, rgba(0, 0, 0, 0.5) 0.1em 0 0 inset, rgba(0, 0, 0, 0.5) -0.1em 0 0 inset, rgba(0, 0, 0, 0.5) 0 0.15em 0.4em inset;
   box-shadow: rgba(0, 0, 0, 0.5) 0 0.1em 0 inset, rgba(0, 0, 0, 0.5) 0 -0.1em 0 inset, rgba(0, 0, 0, 0.5) 0.1em 0 0 inset, rgba(0, 0, 0, 0.5) -0.1em 0 0 inset, rgba(0, 0, 0, 0.5) 0 0.15em 0.4em inset;
 }
-/* line 197, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 204, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-form-label {
   background: transparent;
   border: 0;
   padding: 0;
   line-height: 1.4em;
 }
-/* line 204, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 211, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-form-field {
   height: 1.6em;
   color: #6e6e6e;
@@ -5422,11 +5472,11 @@ body.x-desktop {
   padding: 0em 0.3em;
   margin: 0;
 }
-/* line 213, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 220, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-form-field:focus {
   color: black;
 }
-/* line 220, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 227, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field-select .x-component-outer,
 .x-toolbar .x-field-search .x-component-outer {
   -webkit-border-radius: 0.8em;
@@ -5435,31 +5485,31 @@ body.x-desktop {
   -o-border-radius: 0.8em;
   border-radius: 0.8em;
 }
-/* line 228, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 235, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field-search .x-field-input {
   background-position: 0.5em 50%;
 }
-/* line 233, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 240, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field-select {
   -webkit-box-shadow: none;
 }
-/* line 236, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 243, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field-select .x-form-field {
   height: 1.4em;
 }
-/* line 241, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 248, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field-select {
   background: transparent;
 }
-/* line 245, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 252, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field-select .x-component-outer:after {
   right: .4em;
 }
-/* line 251, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 258, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field-select.x-item-disabled .x-component-outer:after {
   opacity: .6;
 }
-/* line 257, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 264, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field-select .x-component-outer:before {
   width: 3em;
   border-left: none;
@@ -5474,12 +5524,12 @@ body.x-desktop {
   -webkit-mask-repeat: repeat-y;
   -webkit-mask-size: 3em 0.05em;
 }
-/* line 275, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 282, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-toolbar .x-field-select .x-input-text {
   color: #fff;
 }
 
-/* line 281, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
+/* line 288, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss */
 .x-android .x-field-search .x-field-input {
   padding-left: 0.2em !important;
   padding-right: 2.2em !important;
@@ -6197,34 +6247,34 @@ body.x-desktop {
   font-size: 0.8em;
   padding: 0.2em 1.02em;
 }
-/* line 97, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 79, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-normal .x-list-item.x-list-item-tpl,
 .x-list-normal .x-list-item .x-dock-horizontal {
   border-top: 1px solid #dedede;
 }
-/* line 103, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 85, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-normal .x-list-item.x-list-item-tpl.x-list-footer-wrap, .x-list-normal .x-list-item.x-list-footer-wrap .x-dock-horizontal {
   border-bottom: 1px solid #dedede;
 }
-/* line 112, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 93, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-normal .x-list-item.x-item-pressed.x-list-item-tpl, .x-list-normal .x-list-item.x-item-pressed .x-dock-horizontal {
   border-top-color: #ffebcc;
   background-color: #ffebcc;
 }
-/* line 119, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 100, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-normal .x-list-item.x-item-selected.x-list-item-tpl, .x-list-normal .x-list-item.x-item-selected .x-dock-horizontal {
   border-top-color: #cc7a00;
 }
 
-/* line 127, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 108, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round .x-scroll-view {
   background-color: #eee;
 }
-/* line 131, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 112, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round .x-list-header-swap {
   padding-right: 13px;
 }
-/* line 135, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 116, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round .x-list-inner .x-scroll-container {
   top: 13px;
   left: 13px;
@@ -6233,7 +6283,7 @@ body.x-desktop {
   width: auto !important;
   height: auto !important;
 }
-/* line 144, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 125, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round .x-list-header {
   color: #777;
   font-size: 1em;
@@ -6246,16 +6296,16 @@ body.x-desktop {
   background-image: -o-linear-gradient(top, #eeeeee, rgba(238, 238, 238, 0.9) 30%, rgba(238, 238, 238, 0.4));
   background-image: linear-gradient(top, #eeeeee, rgba(238, 238, 238, 0.9) 30%, rgba(238, 238, 238, 0.4));
 }
-/* line 153, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 134, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round .x-list-container {
   padding: 13px 13px 0 13px;
 }
-/* line 156, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 137, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round .x-list-container .x-list-header {
   padding-left: 13px;
   background-image: none;
 }
-/* line 165, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 146, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round.x-list-ungrouped .x-list-item-tpl,
 .x-list-round.x-list-ungrouped .x-list-item .x-dock-horizontal, .x-list-round.x-list-grouped .x-list-item-tpl,
 .x-list-round.x-list-grouped .x-list-item .x-dock-horizontal {
@@ -6263,8 +6313,8 @@ body.x-desktop {
   border-width: 1px 1px 0 1px;
   background: #f7f7f7;
 }
-/* line 174, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
-.x-list-round.x-list-ungrouped .x-list-item:first-child {
+/* line 154, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+.x-list-round.x-list-ungrouped .x-list-item-first {
   -moz-border-radius-topleft: 0.4em;
   -webkit-border-top-left-radius: 0.4em;
   border-top-left-radius: 0.4em;
@@ -6272,8 +6322,8 @@ body.x-desktop {
   -webkit-border-top-right-radius: 0.4em;
   border-top-right-radius: 0.4em;
 }
-/* line 180, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
-.x-list-round.x-list-ungrouped .x-list-item:last-child {
+/* line 160, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+.x-list-round.x-list-ungrouped .x-list-item-last {
   -moz-border-radius-bottomleft: 0.4em;
   -webkit-border-bottom-left-radius: 0.4em;
   border-bottom-left-radius: 0.4em;
@@ -6283,7 +6333,7 @@ body.x-desktop {
   border-width: 1px;
   margin-bottom: 13px;
 }
-/* line 192, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 171, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round.x-list-grouped .x-list-header-wrap .x-dock-horizontal {
   -moz-border-radius-topleft: 0.4em;
   -webkit-border-top-left-radius: 0.4em;
@@ -6292,7 +6342,7 @@ body.x-desktop {
   -webkit-border-top-right-radius: 0.4em;
   border-top-right-radius: 0.4em;
 }
-/* line 199, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 178, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round.x-list-grouped .x-list-header-wrap.x-list-header {
   border: 1px solid #dedede;
   border-width: 1px 1px 0 1px;
@@ -6303,11 +6353,11 @@ body.x-desktop {
   -webkit-border-top-right-radius: 0.4em;
   border-top-right-radius: 0.4em;
 }
-/* line 207, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 186, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round.x-list-grouped .x-list-footer-wrap {
   background: transparent;
 }
-/* line 211, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 190, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round.x-list-grouped .x-list-footer-wrap.x-list-item-tpl,
 .x-list-round.x-list-grouped .x-list-footer-wrap .x-dock-horizontal {
   border: none;
@@ -6315,7 +6365,7 @@ body.x-desktop {
   padding-bottom: 13px;
   margin-bottom: 13px;
 }
-/* line 218, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 197, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round.x-list-grouped .x-list-footer-wrap.x-list-item-tpl > .x-innerhtml,
 .x-list-round.x-list-grouped .x-list-footer-wrap.x-list-item-tpl > .x-dock-body,
 .x-list-round.x-list-grouped .x-list-footer-wrap .x-dock-horizontal > .x-innerhtml,
@@ -6329,9 +6379,39 @@ body.x-desktop {
   -webkit-border-bottom-right-radius: 0.4em;
   border-bottom-right-radius: 0.4em;
 }
-/* line 229, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+/* line 208, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+.x-list-round.x-list-grouped .x-list-footer-wrap.x-item-selected > .x-innerhtml,
+.x-list-round.x-list-grouped .x-list-footer-wrap.x-item-selected > .x-dock-body {
+  background-image: none;
+  background-color: #cc7a00;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffa31a), color-stop(3%, #e68a00), color-stop(100%, #b36b00));
+  background-image: -webkit-linear-gradient(top, #ffa31a, #e68a00 3%, #b36b00);
+  background-image: -moz-linear-gradient(top, #ffa31a, #e68a00 3%, #b36b00);
+  background-image: -o-linear-gradient(top, #ffa31a, #e68a00 3%, #b36b00);
+  background-image: linear-gradient(top, #ffa31a, #e68a00 3%, #b36b00);
+  color: white;
+}
+/* line 216, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
 .x-list-round .x-indexbar-vertical {
   margin-right: 20px;
+}
+
+/* line 222, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+.x-list-round .x-list-footer-wrap.x-list-item-last.x-list-item-odd.x-list-item.x-list-item-tpl {
+  background-color: transparent !important;
+}
+
+/* line 228, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+.x-list-round.x-list-grouped .x-list-item-odd.x-list-footer-wrap > .x-innerhtml,
+.x-list-round.x-list-grouped .x-list-item-odd.x-list-footer-wrap > .x-dock-body {
+  background-color: #eaeaea !important;
+}
+
+/* line 235, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss */
+.x-list .x-list-item-odd.x-list-item-tpl,
+.x-list .x-list-item-odd .x-dock-horizontal {
+  background-color: #eaeaea !important;
+  border-bottom: 1px solid #eaeaea;
 }
 
 /**
@@ -6693,11 +6773,11 @@ body.x-desktop {
 /* line 59, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/tab/_Panel.scss */
 .x-tabbar.x-docked-top .x-tab.x-tab-icon .x-button-label, .x-tabbar.x-docked-top .x-tab.x-tab-icon .x-badge {
   margin: 0;
-  margin-left: .3em;
+  margin-left: .8em;
   padding: 0.1em 0 0.2em 0;
   display: inline-block;
   position: relative;
-  top: -.4em;
+  top: -.2em;
 }
 
 /* line 73, ../../touch/resources/themes/stylesheets/sencha-touch/default/src/tab/_Panel.scss */
