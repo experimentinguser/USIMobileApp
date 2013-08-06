@@ -4,7 +4,7 @@
 	var is_iOS = navigator.userAgent.match(/(iPhone|iPod|iPad)/);
 	var droidScripts = [
 		"js/android/extensions.js",
-		"js/android/cordova-2.3.0.js",
+		"js/android/cordova.js",
 		"plugins/android/downloader.js",
 		"plugins/android/webintent.js",
 	];
