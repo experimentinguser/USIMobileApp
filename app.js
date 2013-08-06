@@ -159,5 +159,84 @@ Ext.application({
 				return true;
 			}
 		}
-	}
+	},
+
+	getFile: function(url, filename, mime) {
+		var target = "";
+		// progress function
+		var downloadProgressFunc = function(progressEvent){
+			if (progressEvent.lengthComputable) {
+				//MoodleMobApp.app.updateLoadMaskMessage(progressEvent.loaded+' bytes');
+				console.log('downloaded in percentage: ' + (progressEvent.loaded/progressEvent.total * 100) + '%');
+			} else {
+				//this.hideLoadMask('');
+				console.log('download complete');
+			}
+		};
+
+		var successFunc = function() {
+			USIMobile.app.openFile(target, mime);
+		};
+		
+		// get the fileSystem and start the download
+		window.requestFileSystem(
+			LocalFileSystem.PERSISTENT, 0,
+			function onFileSystemSuccess(fileSystem) {
+					// get the filesystem
+					fileSystem.root.getFile(
+						'dummy.html', 
+						{
+							create: true,
+							exclusive: false
+						},
+						// success callback: remove the previous file
+						function gotFileEntry(fileEntry) {
+							var sPath = fileEntry.fullPath.replace("dummy.html","");
+							fileEntry.remove();
+
+							var fileTransfer = new FileTransfer();
+
+							fileTransfer.onprogress = downloadProgressFunc;
+							target = sPath + USIMobile.Config.getFileCacheDir() + '/' + filename;
+							console.log('downloading from: ' + url);
+							console.log('to: ' + target);
+							fileTransfer.download(
+								url,
+								target,
+								function(theFile) {
+									successFunc();
+								},
+								function(error) {
+									Ext.Msg.alert(
+										'File download error',
+										'Failed to download the file: ' + filename
+									);
+									/*
+									console.log("download error source " + error.source);
+									console.log("download error target " + error.target);
+									console.log("download error code: " + error.code);
+									console.log("download http status: " + error.http_status);
+									*/
+								},
+								true // trust the site; https fix
+							);
+						},
+						// error callback: notify the error
+						function(){
+							Ext.Msg.alert(
+								'File system error',
+								'Directory does not exist yet: ' + USIMobile.Config.getFileCacheDir() 
+							);
+						}
+					);
+			},
+			// error callback: notify the error
+			function(){
+				Ext.Msg.alert(
+					'File system error',
+					'Cannot access the local filesystem.'
+				);
+			});
+	},
+
 });

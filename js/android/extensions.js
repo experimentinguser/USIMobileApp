@@ -42,6 +42,7 @@ function addExtensions() {
 	//
 	// file is an object such as:
 	// {"name": "filename", "mime":"mime/type"}
+	/*
 	USIMobile.app.getFile = function(url, filename, mime) {
 		var dir = USIMobile.Config.getFileCacheDir();
 		USIMobile.app.showLoadMask('...');
@@ -75,6 +76,7 @@ function addExtensions() {
 		// get the file
 		window.plugins.downloader.downloadFile(url, {'overwrite': true}, successFunc, failFunc, filename, dir);
 	};
+	*/
 
 	//////////////////////////////////////////////////////////////////////////
 	// This function opens a url in the default browser app
@@ -104,12 +106,12 @@ function addExtensions() {
 	//////////////////////////////////////////////////////////////////////////
 	USIMobile.app.openFile = function(path, mime) {
 		var protocol = 'file:///';
-		var store = 'sdcard'
+		//var store = 'sdcard'
 		window.plugins.webintent.startActivity(
 			{
 				action: WebIntent.ACTION_VIEW,
 				type: mime,
-				url: protocol+store+path,
+				url: path,
 			}, 
 			function () {}, 
 			function () {

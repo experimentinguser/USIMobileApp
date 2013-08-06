@@ -5,8 +5,7 @@
 	var droidScripts = [
 		"js/android/extensions.js",
 		"js/android/cordova.js",
-		"plugins/android/downloader.js",
-		"plugins/android/webintent.js",
+		"js/android/webintent.js",
 	];
 	var iosScripts = [
 	];

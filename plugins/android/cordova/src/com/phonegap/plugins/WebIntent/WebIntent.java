@@ -1,4 +1,4 @@
-package com.borismus.webintent;
+package com.phonegap.plugins.WebIntent;
 
 import java.util.HashMap;
 import java.util.Map;
