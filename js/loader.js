@@ -8,6 +8,8 @@
 		"js/android/webintent.js",
 	];
 	var iosScripts = [
+		"js/ios/extensions.js",
+		"js/ios/cordova.js",
 	];
 
 	var browserScripts = [
