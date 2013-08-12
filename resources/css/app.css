@@ -7194,6 +7194,11 @@ body.x-desktop {
 }
 
 /* line 27, ../sass/app.scss */
+#grid .x-scroll-scroller {
+  min-height: 150%;
+}
+
+/* line 31, ../sass/app.scss */
 .side_menu {
   opacity: 0.9;
   background-color: white;
@@ -7202,7 +7207,7 @@ body.x-desktop {
   -o-transition: left 0.5s;
   transition: left 0.5s;
 }
-/* line 34, ../sass/app.scss */
+/* line 38, ../sass/app.scss */
 .side_menu .social_network_button {
   color: black;
   border: 2px solid black;
@@ -7211,31 +7216,39 @@ body.x-desktop {
   font-size: 27px;
 }
 
-/* line 43, ../sass/app.scss */
+/* line 47, ../sass/app.scss */
 .license_title {
   font-size: large;
   font-weight: bold;
   padding: 10px;
 }
 
-/* line 49, ../sass/app.scss */
+/* line 53, ../sass/app.scss */
 .license_body {
   padding: 10px;
 }
 
-/* line 54, ../sass/app.scss */
-.home_button .icon {
-  position: absolute;
-  left: 50%;
-  top: 15%;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100px;
-  height: 100px;
-  padding-top: 80px;
-  margin-left: -50px;
+/* line 57, ../sass/app.scss */
+.row {
+  width: 100%;
+  margin-left: auto;
+}
+
+/* line 62, ../sass/app.scss */
+.home_button {
+  width: 33.3%;
 }
 /* line 64, ../sass/app.scss */
+.home_button .icon {
+  position: relative;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 100px;
+  height: 150px;
+  padding-top: 110px;
+}
+/* line 72, ../sass/app.scss */
 .home_button .icon .label {
   position: relative;
   font-weight: normal;
@@ -7243,74 +7256,74 @@ body.x-desktop {
   color: black;
 }
 
-/* line 74, ../sass/app.scss */
+/* line 82, ../sass/app.scss */
 .courses_icon {
   background-image: url("../icons/courses.png");
 }
 
-/* line 78, ../sass/app.scss */
+/* line 86, ../sass/app.scss */
 .news_icon {
   background-image: url("../icons/news.png");
 }
 
-/* line 82, ../sass/app.scss */
+/* line 90, ../sass/app.scss */
 .calendar_icon {
   background-image: url("../icons/calendar.png");
 }
 
-/* line 86, ../sass/app.scss */
+/* line 94, ../sass/app.scss */
 .services_icon {
   background-image: url("../icons/services.png");
 }
 
-/* line 90, ../sass/app.scss */
+/* line 98, ../sass/app.scss */
 .library_icon {
   background-image: url("../icons/library.png");
 }
 
-/* line 94, ../sass/app.scss */
+/* line 102, ../sass/app.scss */
 .people_icon {
   background-image: url("../icons/people.png");
 }
 
-/* line 98, ../sass/app.scss */
+/* line 106, ../sass/app.scss */
 .mensa_icon {
   background-image: url("../icons/mensa.png");
 }
 
-/* line 102, ../sass/app.scss */
+/* line 110, ../sass/app.scss */
 .sport_icon {
   background-image: url("../icons/sport.png");
 }
 
-/* line 106, ../sass/app.scss */
+/* line 114, ../sass/app.scss */
 .career_icon {
   background-image: url("../icons/career.png");
 }
 
-/* line 110, ../sass/app.scss */
+/* line 118, ../sass/app.scss */
 .map_icon {
   background-image: url("../icons/map.png");
 }
 
-/* line 114, ../sass/app.scss */
+/* line 122, ../sass/app.scss */
 .emergency_icon {
   background-image: url("../icons/emergency.png");
 }
 
-/* line 118, ../sass/app.scss */
+/* line 126, ../sass/app.scss */
 .transport_icon {
   background-image: url("../icons/transport.png");
 }
 
-/* line 122, ../sass/app.scss */
+/* line 130, ../sass/app.scss */
 .short_news_publish_date {
   color: gray;
   text-align: right;
   font-size: small;
 }
 
-/* line 131, ../sass/app.scss */
+/* line 139, ../sass/app.scss */
 .detailed_news_title,
 .detailed_news_body,
 .detailed_detailed_url,
@@ -7321,7 +7334,7 @@ body.x-desktop {
   padding: 10px;
 }
 
-/* line 162, ../sass/app.scss */
+/* line 170, ../sass/app.scss */
 .course_title,
 .course_description,
 .course_professors,
@@ -7350,7 +7363,7 @@ body.x-desktop {
   margin-top: 10px;
   background-color: white;
 }
-/* line 167, ../sass/app.scss */
+/* line 175, ../sass/app.scss */
 .course_title .label,
 .course_description .label,
 .course_professors .label,
@@ -7377,7 +7390,7 @@ body.x-desktop {
   font-style: italic;
 }
 
-/* line 174, ../sass/app.scss */
+/* line 182, ../sass/app.scss */
 .person,
 .service,
 .emergencynumber {
@@ -7385,14 +7398,14 @@ body.x-desktop {
   margin-bottom: 2px;
   background-color: white;
 }
-/* line 178, ../sass/app.scss */
+/* line 186, ../sass/app.scss */
 .person .label,
 .service .label,
 .emergencynumber .label {
   font-style: italic;
 }
 
-/* line 185, ../sass/app.scss */
+/* line 193, ../sass/app.scss */
 .person_selected,
 .service_selected,
 .emergency_number_selected {
@@ -7402,29 +7415,29 @@ body.x-desktop {
   text-shadow: rgba(0, 0, 0, 0.5) 0 -0.08em 0;
 }
 
-/* line 195, ../sass/app.scss */
+/* line 203, ../sass/app.scss */
 .person_name,
 .service_name,
 .emergency_number_name {
   font-weight: bold;
 }
 
-/* line 199, ../sass/app.scss */
+/* line 207, ../sass/app.scss */
 .standard_font {
   font-size: .8em;
 }
 
-/* line 203, ../sass/app.scss */
+/* line 211, ../sass/app.scss */
 .course_title {
   font-weight: bold;
 }
 
-/* line 207, ../sass/app.scss */
+/* line 215, ../sass/app.scss */
 .examination_session {
   padding-bottom: 5px;
 }
 
-/* line 214, ../sass/app.scss */
+/* line 222, ../sass/app.scss */
 .registration_begin,
 .registration_end,
 .examination_begin,
@@ -7433,30 +7446,30 @@ body.x-desktop {
   color: gray;
 }
 
-/* line 220, ../sass/app.scss */
+/* line 228, ../sass/app.scss */
 .registration_end,
 .examination_end {
   padding-top: 5px;
   padding-bottom: 10px;
 }
 
-/* line 225, ../sass/app.scss */
+/* line 233, ../sass/app.scss */
 .disabled {
   opacity: 0.4;
 }
 
-/* line 231, ../sass/app.scss */
+/* line 239, ../sass/app.scss */
 #books .title,
 #journals .title {
   font-weight: bold;
   padding-bottom: 10px;
 }
-/* line 235, ../sass/app.scss */
+/* line 243, ../sass/app.scss */
 #books .label,
 #journals .label {
   font-style: italic;
 }
-/* line 238, ../sass/app.scss */
+/* line 246, ../sass/app.scss */
 #books .status,
 #journals .status {
   color: gray;
@@ -7464,7 +7477,7 @@ body.x-desktop {
   text-align: right;
   font-size: small;
 }
-/* line 244, ../sass/app.scss */
+/* line 252, ../sass/app.scss */
 #books .pagination,
 #journals .pagination {
   position: absolute;
@@ -7478,19 +7491,19 @@ body.x-desktop {
   opacity: 0.3;
 }
 
-/* line 258, ../sass/app.scss */
+/* line 266, ../sass/app.scss */
 #messagepanel .title {
   padding: 10px;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 264, ../sass/app.scss */
+/* line 272, ../sass/app.scss */
 #messagepanel .illustration {
   padding-top: 20px;
   text-align: center;
 }
-/* line 268, ../sass/app.scss */
+/* line 276, ../sass/app.scss */
 #messagepanel .content {
   padding: 10px;
 }
