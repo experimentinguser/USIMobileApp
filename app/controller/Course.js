@@ -22,17 +22,6 @@ Ext.define('USIMobile.controller.Course', {
 
 		control: {
 			homeCoursesButton: { tap: 'showSearchCourses' },
-			searchCourses: {
-				show: function() {
-					// clear previous search filters
-					// wait 200ms to do that because 
-					// this operation requires resources
-					setTimeout(function() {
-						USIMobile.Session.getCoursesStore().clearFilter();
-					}, 200);
-				}
-			},
-
 			searchCoursesButton: { tap: 'searchCourses' },
 			courses: {
 				itemtap: 'showCourse',
@@ -71,24 +60,32 @@ Ext.define('USIMobile.controller.Course', {
 	},
 
 	listCourses: function() {
-		this.filterCoursesStore();
+		var resultStore = this.filterCoursesStore();
 		if(typeof this.getCourses() == 'object') {
-			this.getCourses().refresh();
+			this.getCourses().setStore(resultStore);
 			this.getHome().push(this.getCourses());
 		} else {
 			this.getHome().push({
 				xtype: 'courses',
 				title: Ux.locale.Manager.get('title.courses'),
 				emptyText: Ux.locale.Manager.get('message.noCourses'),
-				store: USIMobile.Session.getCoursesStore()
+				store: resultStore
 			});
 		}
 	},
 
 	filterCoursesStore: function(){
-		USIMobile.Session.getCoursesStore().setGroupField(this.filter.groupby);
+		var resultStore = new Ext.create(
+			'Ext.data.Store',
+			{
+				model: 'USIMobile.model.Course',
+				sorters: 'title',
+				groupField: this.filter.groupby,
+			}
+		);
+		//USIMobile.Session.getCoursesStore().setGroupField(this.filter.groupby);
 		// filter teaching timetables
-		USIMobile.Session.getCoursesStore().filterBy(
+		USIMobile.Session.getCoursesStore().each(
 			function(record) {
 				var result = true;
 				// check course title and description
@@ -97,14 +94,14 @@ Ext.define('USIMobile.controller.Course', {
 						!((record.get('title').toLowerCase().indexOf(this.filter.pattern.toLowerCase()) != -1) || 
 						(record.get('description') != null && record.get('description').toLowerCase().indexOf(this.filter.pattern.toLowerCase()) != -1))
 					){
-						return false;
+						result = false;
 					}
 				}
 				
 				// check professor
 				if(this.filter.professor != "") {
 					if (record.get('professor').toLowerCase().indexOf(this.filter.professor.toLowerCase()) == -1){
-						return false;
+						result = false;
 					}
 				}
 
@@ -123,11 +120,14 @@ Ext.define('USIMobile.controller.Course', {
 					result = result && record.get('semester') == this.filter.semester;
 				}
 				
-				return result;
+				if(result == true) {
+					resultStore.add(record);
+				}
 			},
 			this
 		);
-
+		
+		return resultStore;
 	},
 
 	showCourse: function(view, index, target, record) {
