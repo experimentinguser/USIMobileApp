@@ -152,9 +152,10 @@ Ext.define("USIMobile.view.Home", {
 								html: '<div class="sport_icon icon"><div class="label"></div></div>',
 							},
 							{
-								id: 'career_home_button',
-								html: '<div class="career_icon icon disabled"><div class="label"></div></div>',
+								id: 'map_home_button',
+								html: '<div class="map_icon icon"><div class="label"></div></div>',
 							},
+							
 						]
 					},
 					{
@@ -168,16 +169,17 @@ Ext.define("USIMobile.view.Home", {
 						},
 						items: [
 							{
-								id: 'map_home_button',
-								html: '<div class="map_icon icon"><div class="label"></div></div>',
+								id: 'transport_home_button',
+								html: '<div class="transport_icon icon"><div class="label"></div></div>',
 							},
 							{
 								id: 'emergency_home_button',
 								html: '<div class="emergency_icon icon"><div class="label"></div></div>',
 							},
 							{
-								id: 'transport_home_button',
-								html: '<div class="transport_icon icon"><div class="label"></div></div>',
+								id: 'career_home_button',
+								html: '<div class="career_icon icon disabled"><div class="label"></div></div>',
+								hidden: true,
 							},
 						]
 					},
@@ -205,12 +207,12 @@ Ext.define("USIMobile.view.Home", {
 			//third row
 			setButtonLabel(this.child('#grid').child('#thirdrow').child('#mensa_home_button'), Ux.locale.Manager.get('title.mensa'));
 			setButtonLabel(this.child('#grid').child('#thirdrow').child('#sport_activity_home_button'), Ux.locale.Manager.get('title.sport'));
-			setButtonLabel(this.child('#grid').child('#thirdrow').child('#career_home_button'), Ux.locale.Manager.get('title.career'));
+			setButtonLabel(this.child('#grid').child('#thirdrow').child('#map_home_button'), Ux.locale.Manager.get('title.map'));
 
 			//fourth row
-			setButtonLabel(this.child('#grid').child('#fourthrow').child('#map_home_button'), Ux.locale.Manager.get('title.map'));
-			setButtonLabel(this.child('#grid').child('#fourthrow').child('#emergency_home_button'), Ux.locale.Manager.get('title.emergency'));
 			setButtonLabel(this.child('#grid').child('#fourthrow').child('#transport_home_button'), Ux.locale.Manager.get('title.transport'));
+			setButtonLabel(this.child('#grid').child('#fourthrow').child('#emergency_home_button'), Ux.locale.Manager.get('title.emergency'));
+			setButtonLabel(this.child('#grid').child('#fourthrow').child('#career_home_button'), Ux.locale.Manager.get('title.career'));
 
 		}
     }
