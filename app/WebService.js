@@ -217,7 +217,11 @@ Ext.define('USIMobile.WebService', {
 		var url = USIMobile.Config.getSearchJournalsUrl();
 		// set parameters
 		var params = new Object();
-		params.query = data.pattern;
+		if(data.mode == 'pattern') {
+			params.query = data.pattern;
+		} else {
+			params.letter = data.letter;
+		}
 
 		if(data.offset != undefined) {
 			params.offset = data.offset;
