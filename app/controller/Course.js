@@ -23,7 +23,7 @@ Ext.define('USIMobile.controller.Course', {
 		control: {
 			homeCoursesButton: { tap: 'showSearchCourses' },
 			searchCourses: {
-				painted: function() {
+				show: function() {
 					// clear previous search filters
 					// wait 200ms to do that because 
 					// this operation requires resources
@@ -122,7 +122,7 @@ Ext.define('USIMobile.controller.Course', {
 				if(this.filter.semester != 'both') {
 					result = result && record.get('semester') == this.filter.semester;
 				}
-
+				
 				return result;
 			},
 			this

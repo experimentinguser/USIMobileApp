@@ -25,7 +25,7 @@ Ext.define("USIMobile.view.Library", {
 						xtype: 'textfield',	
 						name: 'pattern',
 						locales: {
-							label: 'label.title'
+							label: 'label.key'
 						}
 					},
 					{

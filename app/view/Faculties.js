@@ -4,7 +4,6 @@ Ext.define("USIMobile.view.Faculties", {
 
 	config: {
 		id: 'faculties',
-		title: 'Select Faculty', 
 		emptyText: 'No info available.',
 		itemTpl: '{title}',
 		data: [

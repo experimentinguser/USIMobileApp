@@ -4,7 +4,6 @@ Ext.define("USIMobile.view.TeachingTimetables", {
 
 	config: {
 		id: 'teachingtimetables',
-		title: 'Teaching Timetables', 
 		emptyText: 'No info available.',
 		grouped: true,
 		itemTpl: '<div class="timetable_title">{program}</div>',

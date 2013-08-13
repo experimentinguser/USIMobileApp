@@ -5,6 +5,7 @@
         "courses" : "Courses",
         "searchCourses" : "Search Courses",
         "calendar" : "Calendar",
+        "faculty" : "Faculty",
         "services" : "Services",
         "library" : "Library",
         "searchPeople" : "Search People",
@@ -24,6 +25,7 @@
         "sportActivity" : "Sport Activity",
         "login" : "Login AAI",
         "appSettings" : "App Settings",
+        "teachingTimetables" : "Teaching Timetables",
         "examinationTimetables" : "Examination Timetables",
         "error" : "Error",
         "errorCode" : "Error Code: ",
@@ -86,6 +88,7 @@
         "signature" : "Signature",
         "publisher" : "Publisher",
         "publishdate" : "Publish date",
+        "key" : "Keyword",
     },
 
     "button" : {

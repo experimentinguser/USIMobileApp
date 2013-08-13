@@ -5,6 +5,7 @@
         "courses" : "Corsi",
         "searchCourses" : "Cerca Corsi",
         "calendar" : "Calendario",
+        "faculty" : "Facoltà",
         "services" : "Servizi",
         "library" : "Biblioteca",
         "searchPeople" : "Cerca Persone",
@@ -24,6 +25,7 @@
         "sportActivity" : "Attività Sportiva",
         "login" : "Login AAI",
         "appSettings" : "Impostazioni App",
+        "teachingTimetables" : "Orario Corsi",
         "examinationTimetables" : "Orario Esami",
         "error" : "Errore",
         "errorCode" : "Errore Codice: ",
@@ -88,6 +90,7 @@
         "publishdate" : "Data pubblicazione",
         "collection" : "Collezione",
         "topic" : "Argomento",
+        "key" : "Parola Chiave",
     },
 
     "button" : {
@@ -187,7 +190,7 @@
 		"label": "Facoltà",
 		"options": [
 			{ "text": 'tutte', 			"value": "all" },
-			{ "text": 'Communicazione',	"value": "COM" },
+			{ "text": 'Comunicazione',	"value": "COM" },
 			{ "text": 'Economia', 		"value": "ECO" },
 			{ "text": 'Informatica', 	"value": "INFO" },
 		]
@@ -215,7 +218,7 @@
 	},
 
 	"SelectFieldGroupBy": {
-		"label": "Raggruppa per",
+		"label": "Ordina per",
 		"options": [
 			{ "text": "Facoltà",	"value": "faculty" },
 			{ "text": "Livello",		"value": "level" },

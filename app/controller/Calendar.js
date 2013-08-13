@@ -85,6 +85,7 @@ Ext.define('USIMobile.controller.Calendar', {
 		} else {
 			this.getHome().push({
 				xtype: 'faculties',	
+				title: Ux.locale.Manager.get('title.faculty'),
 			});
 		}
 	},
@@ -111,6 +112,7 @@ Ext.define('USIMobile.controller.Calendar', {
 		} else {
 			this.getHome().push({
 				xtype: 'teachingtimetables',
+				title: Ux.locale.Manager.get('title.teachingTimetables'),
 				store: this.getFilteredTeachingTimetablesStore()
 			});
 		}
@@ -143,7 +145,7 @@ Ext.define('USIMobile.controller.Calendar', {
 		} else {
 			this.getHome().push({
 				xtype: 'examinationtimetables',
-				title: Ux.locale.Manager.get('title.examinationTimeTables'),
+				title: Ux.locale.Manager.get('title.examinationTimetables'),
 				emptyText: Ux.locale.Manager.get('message.noTimeTables'),
 				store: this.getFilteredExaminationTimetablesStore()
 			});
