@@ -76,7 +76,7 @@
         "from" : "From",
         "to" : "To",
         "email" : "e-Mail",
-        "building" : "Building",
+        "address" : "Address",
         "floor" : "Floor",
         "headquarter" : "Headquarter",
         "office" : "Office",
@@ -127,7 +127,13 @@
 			"academicCalendar" : "Academic Calendar: ",
 			"teachingTimetables" : "Teaching Timetables",
 			"examinationTimetables" : "Examination Timetables",
-		} 
+		},
+		"transport" : {
+			"descriptionFFS": 'Search on ffs.ch',
+			"descriptionTPL": 'All the lines <br>(lines 5 & 6 are for USI)',
+			"descriptionTPLMAP": 'Map of the lines <br>(lines 5 & 6 are for USI)',
+			"descriptionARL": 'All the lines <br>(line 461 is direct to USI)',
+		}
     },
 
     "message" : {

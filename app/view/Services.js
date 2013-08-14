@@ -15,7 +15,7 @@ Ext.define("USIMobile.view.Services", {
 					} else if (dataview.selectedItem != null && typeof dataview.selectedItem == 'object') {
 							// unselect the previous item
 							dataview.selectedItem.down('#hiddenBlock').setHidden(true);
-							dataview.selectedItem.removeCls('service-selected');
+							dataview.selectedItem.removeCls('service_selected');
 							// set the new selected item
 							dataview.selectedItem = target;
 							dataview.selectedItem.addCls('service_selected');

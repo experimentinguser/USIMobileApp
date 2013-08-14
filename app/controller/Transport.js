@@ -13,15 +13,12 @@ Ext.define('USIMobile.controller.Transport', {
 		refs: {
 			home: 'home',
 			homeTransportButton: 'button#transport_home_button',
-			transports: 'transportNumbers',
-			callButton: 'button[action=calltransport]',
+			transports: 'transports',
 		},
 
 		control: {
 			homeTransportButton: { tap: 'showTransports' },
-			sendMailButton: { tap: 'sendMail' },
-			callButton: { tap: 'call' },
-			homePageButton: { tap: 'openHomePage' }
+			transports: { itemtap: 'openURL'}
 		}
 	},
 	
@@ -29,7 +26,33 @@ Ext.define('USIMobile.controller.Transport', {
 	},
 
 	showTransports: function() {
+		var localized_data = [
+			{ 
+				provider: 'FFS/SBB',
+				description: Ux.locale.Manager.get('list.transport.descriptionFFS'),
+				url: 'http://www.ffs.ch'
+			},
+			{
+				provider: ' TPL (Trasporti Pubblici Luganesi)',
+				description: Ux.locale.Manager.get('list.transport.descriptionTPL'),
+				url: 'http://www.tplsa.ch'
+			},
+			{
+				provider: ' TPL (Trasporti Pubblici Luganesi)',
+				description: Ux.locale.Manager.get('list.transport.descriptionTPLMAP'),
+				url: 'http://www.tplsa.ch/repository/pdf/CartinaTPL.pdf'
+			},
+			{
+				provider: ' ARL (Autolinee Regionali Luganesi)',
+				description: Ux.locale.Manager.get('list.transport.descriptionARL'),
+				url: 'http://www.arlsa.ch/orari-e-linee-arl.htm'
+			},
+		];
+
+		console.log(localized_data);
+		
 		if(typeof this.getTransports() == 'object') {
+			this.getTransports().getStore().setData(localized_data);
 			this.getHome().push(this.getTransports());
 		} else {
 			this.getHome().push({
@@ -38,15 +61,14 @@ Ext.define('USIMobile.controller.Transport', {
 				store: Ext.create('Ext.data.Store', {
 					model: 'USIMobile.model.Transport',
 					groupField: 'provider',
-					data: [
-						{ provider: 'FFS/SBB', description: 'Search', url: 'http://www.ffs.ch' },
-						{ provider: ' TPL (Trasporti Pubblici Luganesi)', description: 'All the lines <br>(lines 5 & 6 are for USI)', url: 'http://www.tplsa.ch' },
-						{ provider: ' TPL (Trasporti Pubblici Luganesi)', description: 'Map of the lines <br>(lines 5 & 6 are for USI)', url: 'http://www.tplsa.ch/repository/pdf/CartinaTPL.pdf' },
-						{ provider: ' ARL (Autolinee Regionali Luganesi)', description: 'All the lines <br>(line 461 is direct to USI)', url: 'http://www.arlsa.ch/orari-e-linee-arl.htm' },
-					]
+					data: localized_data
 				}),
 			});
 		}
 	},
+
+	openURL: function(view, index, target, record) {
+		USIMobile.app.openURL(record.get('url'));
+	}
 	
 });

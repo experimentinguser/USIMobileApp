@@ -76,7 +76,7 @@
         "from" : "Da",
         "to" : "Fino",
         "email" : "e-Mail",
-        "building" : "Edificio",
+        "address" : "Indirizzo",
         "floor" : "Piano",
         "headquarter" : "Sede",
         "office" : "Ufficio",
@@ -129,7 +129,13 @@
 			"academicCalendar" : "Calendario Academico: ",
 			"teachingTimetables" : "Orario Classi",
 			"examinationTimetables" : "Orario Esami",
-		} 
+		},
+		"transport" : {
+			"descriptionFFS": 'Ricerca su ffs.ch',
+			"descriptionTPL": 'Tutte le linee <br>(linee 5 & 6 sono per l\'USI)',
+			"descriptionTPLMAP": 'Mappa delle linee <br>(linee 5 & 6 sono per l\'USI)',
+			"descriptionARL": 'Tutte le linee <br>(linea 461 va direttamente all\'USI)',
+		}
     },
 
     "message" : {

@@ -197,6 +197,17 @@ $base-color: #F90;
 	text-shadow: rgba(0, 0, 0, 0.5) 0 -0.08em 0;
 }
 
+.service {
+	.service_name,
+	.service_description,
+	.service_address,
+	.service_office,
+	.service_phone,
+	.service_email {
+		padding-top: 10px;
+	}
+}
+
 
 .person_name,
 .service_name,

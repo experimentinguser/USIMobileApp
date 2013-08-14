@@ -37,14 +37,15 @@ Ext.define("USIMobile.view.Service", {
 						cls: 'service_office',
 					},
 					{
-						itemId: 'building',
+						itemId: 'address',
 						xtype: 'component',
-						cls: 'service_building',
+						cls: 'service_address',
 					},
 
 					{
 						xtype: 'container',
 						itemId: 'buttons',
+						padding: 15,
 						items: [
 							{
 								itemId: 'callperson',
@@ -99,14 +100,33 @@ Ext.define("USIMobile.view.Service", {
 			this.down('#name').setHtml('<span class="service_name">' + name + '</span> ');
 
 			var description = Ux.locale.Manager.getLanguage() == "en" ? record.get('description_en') : record.get('description_it');
-			this.down('#description').setHtml('<span class="service_description">' + description + '</span> ');
+			if(description != null) {
+				this.down('#description').setHtml('<span class="service_description">' + description + '</span> ');
+			}
+			
+			if(record.get('email') != null) {
+				this.down('#email').setHtml(label_begin + Ux.locale.Manager.get('label.email') + label_end + record.get('email'));
+			} else {
+				this.down('#email').hide();
+			}
 
-			this.down('#email').setHtml(label_begin + Ux.locale.Manager.get('label.email') + label_end + record.get('email'));
-			this.down('#phone').setHtml(label_begin + Ux.locale.Manager.get('label.phone') + label_end + record.get('phone'));
+			if(record.get('phone') != null) {
+				this.down('#phone').setHtml(label_begin + Ux.locale.Manager.get('label.phone') + label_end + record.get('phone'));
+			} else {
+				this.down('#phone').hide();
+			}
 
-			this.down('#office').setHtml('<span class="label">' + Ux.locale.Manager.get('label.office') + ':</span> ' + record.get('office'));
-			var building = Ux.locale.Manager.getLanguage() == "en" ? record.get('building_en') : record.get('building_it');
-			this.down('#building').setHtml('<span class="label">' + Ux.locale.Manager.get('label.building') + ':</span> ' + building);
+			if(record.get('office') != null) {
+				this.down('#office').setHtml('<span class="label">' + Ux.locale.Manager.get('label.office') + ':</span> ' + record.get('office'));
+			} else {
+				this.down('#office').hide();
+			}
+
+			if(record.get('address') != null) {
+				this.down('#address').setHtml('<span class="label">' + Ux.locale.Manager.get('label.address') + ':</span> ' + record.get('address'));
+			} else {
+				this.down('#address').hide();
+			}
 
 			this.down('#hiddenBlock').setHidden('true');
 			this.removeCls('person_selected');

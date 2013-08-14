@@ -7415,29 +7415,39 @@ body.x-desktop {
   text-shadow: rgba(0, 0, 0, 0.5) 0 -0.08em 0;
 }
 
-/* line 203, ../sass/app.scss */
+/* line 206, ../sass/app.scss */
+.service .service_name,
+.service .service_description,
+.service .service_address,
+.service .service_office,
+.service .service_phone,
+.service .service_email {
+  padding-top: 10px;
+}
+
+/* line 214, ../sass/app.scss */
 .person_name,
 .service_name,
 .emergency_number_name {
   font-weight: bold;
 }
 
-/* line 207, ../sass/app.scss */
+/* line 218, ../sass/app.scss */
 .standard_font {
   font-size: .8em;
 }
 
-/* line 211, ../sass/app.scss */
+/* line 222, ../sass/app.scss */
 .course_title {
   font-weight: bold;
 }
 
-/* line 215, ../sass/app.scss */
+/* line 226, ../sass/app.scss */
 .examination_session {
   padding-bottom: 5px;
 }
 
-/* line 222, ../sass/app.scss */
+/* line 233, ../sass/app.scss */
 .registration_begin,
 .registration_end,
 .examination_begin,
@@ -7446,30 +7456,30 @@ body.x-desktop {
   color: gray;
 }
 
-/* line 228, ../sass/app.scss */
+/* line 239, ../sass/app.scss */
 .registration_end,
 .examination_end {
   padding-top: 5px;
   padding-bottom: 10px;
 }
 
-/* line 233, ../sass/app.scss */
+/* line 244, ../sass/app.scss */
 .disabled {
   opacity: 0.4;
 }
 
-/* line 239, ../sass/app.scss */
+/* line 250, ../sass/app.scss */
 #books .title,
 #journals .title {
   font-weight: bold;
   padding-bottom: 10px;
 }
-/* line 243, ../sass/app.scss */
+/* line 254, ../sass/app.scss */
 #books .label,
 #journals .label {
   font-style: italic;
 }
-/* line 246, ../sass/app.scss */
+/* line 257, ../sass/app.scss */
 #books .status,
 #journals .status {
   color: gray;
@@ -7477,7 +7487,7 @@ body.x-desktop {
   text-align: right;
   font-size: small;
 }
-/* line 252, ../sass/app.scss */
+/* line 263, ../sass/app.scss */
 #books .pagination,
 #journals .pagination {
   position: absolute;
@@ -7491,19 +7501,19 @@ body.x-desktop {
   opacity: 0.3;
 }
 
-/* line 266, ../sass/app.scss */
+/* line 277, ../sass/app.scss */
 #messagepanel .title {
   padding: 10px;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 272, ../sass/app.scss */
+/* line 283, ../sass/app.scss */
 #messagepanel .illustration {
   padding-top: 20px;
   text-align: center;
 }
-/* line 276, ../sass/app.scss */
+/* line 287, ../sass/app.scss */
 #messagepanel .content {
   padding: 10px;
 }
