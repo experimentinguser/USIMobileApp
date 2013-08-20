@@ -11,8 +11,8 @@ Ext.define('USIMobile.controller.Emergency', {
 		refs: {
 			home: 'home',
 			homeEmergencyButton: 'button#emergency_home_button',
-			emergencyNumbers: 'emergencyNumbers',
-			callButton: 'button[action=callemergency]',
+			emergencyNumbers: 'emergencynumbers',
+			callButton: 'button[action=callemergencynumber]',
 		},
 
 		control: {

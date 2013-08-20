@@ -14,15 +14,15 @@ Ext.define("USIMobile.view.Services", {
 							dataview.selectedItem.addCls('service_selected');
 					} else if (dataview.selectedItem != null && typeof dataview.selectedItem == 'object') {
 							// unselect the previous item
-							dataview.selectedItem.down('#hiddenBlock').setHidden(true);
+							dataview.selectedItem.down('#hiddenBlock').hide();
 							dataview.selectedItem.removeCls('service_selected');
 							// set the new selected item
 							dataview.selectedItem = target;
 							dataview.selectedItem.addCls('service_selected');
 					}
-					target.down('#hiddenBlock').setHidden(false);
+					target.down('#hiddenBlock').show();
 					if(record.get('url') == null){
-						target.down('#homepage').setHidden(true);
+						target.down('#homepage').hide();
 					}
 			},
 		}

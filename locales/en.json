@@ -41,8 +41,8 @@
 
 	"label" : {
         "name" : "Name",
-        "firstname" : "Firstname",
-        "lastname" : "Lastname",
+        "firstname" : "Name",
+        "lastname" : "Surname",
         "username" : "Username",
         "password" : "Password",
         "homeorg" : "Home Organisation",
@@ -215,7 +215,7 @@
 		"label": "Semester",
 		"options": [
 			{ "text": 'both', 	"value": "both" },
-			{ "text": 'Autumn', "value": "autumn/autunno" },
+			{ "text": 'Fall', "value": "fall/autunno" },
 			{ "text": 'Spring', "value": "spring/primavera" },
 		]
 	},
@@ -226,7 +226,7 @@
 			{ "text": "Faculty",   "value": "faculty" },
 			{ "text": "Level", 	   "value": "level" },
 			{ "text": "Semester",  "value": "semester" },
-			{ "text": "Professor", "value": "professor" },
+			{ "text": "Teacher", "value": "professor" },
 		]
 	},
 

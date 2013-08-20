@@ -13,13 +13,14 @@ Ext.define("USIMobile.view.EmergencyNumbers", {
 							dataview.selectedItem = target;
 							dataview.selectedItem.addCls('emergency_number_selected');
 					} else if (dataview.selectedItem != null && typeof dataview.selectedItem == 'object') {
+							dataview.selectedItem.down('#call_emergency_number_button').hide();
 							dataview.selectedItem.removeCls('emergency_number_selected');
 							// set the new selected item
 							dataview.selectedItem = target;
 							dataview.selectedItem.addCls('emergency_number_selected');
 					}
 					// show call button
-					target.down('#call_emergency_number_button').setHidden(false);
+					target.down('#call_emergency_number_button').show();
 			},
 		},
 		data: [
