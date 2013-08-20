@@ -86,6 +86,7 @@
         "usilib" : "Solo biblioteca USI",
         "author" : "Autore",
         "signature" : "Segnatura",
+        "library" : "Biblioteca",
         "publisher" : "Editore",
         "publishdate" : "Data pubblicazione",
         "collection" : "Collezione",

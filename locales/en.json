@@ -86,6 +86,7 @@
         "usilib" : "USI library only",
         "author" : "Author",
         "signature" : "Signature",
+        "library" : "Library",
         "publisher" : "Publisher",
         "publishdate" : "Publish date",
         "key" : "Keyword",

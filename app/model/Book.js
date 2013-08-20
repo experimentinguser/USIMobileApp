@@ -11,6 +11,7 @@ Ext.define('USIMobile.model.Book', {
 			{name: 'publishdate', type: 'string'},
 			{name: 'nebisnumber', type: 'string'},
 			{name: 'sbtnumber', type: 'string'},
+			{name: 'library_names', type: 'auto'},
 		]
 	}
 });

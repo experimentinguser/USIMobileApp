@@ -96,7 +96,10 @@ Ext.define('USIMobile.controller.Library', {
 	listJournals: function(search_library_outcome_store) {
 		this.journals.numberOfResults = search_library_outcome_store.first().get('numberofresults');
 		this.journals.nextOffset = search_library_outcome_store.first().get('nextoffset');
-		var pagination = '<div class="pagination"> (' + (this.journals.nextOffset - 1) + '/'+ this.journals.numberOfResults + ')</div>';
+		var number_of_pages = Math.ceil(this.journals.numberOfResults / 10);
+		var current_page = Math.floor(this.journals.nextOffset / 10);
+		if(current_page == 0) { current_page = number_of_pages; }
+		var pagination = '<div class="pagination"> (' + current_page + '/'+ number_of_pages + ')</div>';
 
 		var journals_store = Ext.create('Ext.data.Store', {
 			model: 'USIMobile.model.Journal',
@@ -135,7 +138,10 @@ Ext.define('USIMobile.controller.Library', {
 	listBooks: function(search_library_outcome_store) {
 		this.books.numberOfResults = search_library_outcome_store.first().get('numberofresults');
 		this.books.nextOffset = search_library_outcome_store.first().get('nextoffset');
-		var pagination = '<div class="pagination"> (' + (this.books.nextOffset - 1) + '/'+ this.books.numberOfResults + ')</div>';
+		var number_of_pages = Math.ceil(this.books.numberOfResults / 10);
+		var current_page = Math.floor(this.books.nextOffset / 10);
+		if(current_page == 0) { current_page = number_of_pages; }
+		var pagination = '<div class="pagination"> (' + current_page + '/'+ number_of_pages + ')</div>';
 		var books_store = Ext.create('Ext.data.Store', {
 			model: 'USIMobile.model.Book',
 			data: search_library_outcome_store.first().get('results')
@@ -155,16 +161,17 @@ Ext.define('USIMobile.controller.Library', {
 	},
 
 	navigateBooks: function(view, index, target, record, event, options) {
-		USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.loading'));
 		var data = this.getLibrary().getValues();
 		if(event.direction == "left") { // next page
 			if(this.books.nextOffset > 0) {
+				USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.loading'));
 				this.books.currentOffset = this.books.nextOffset;
 				data.offset = this.books.currentOffset;
 				this.searchBooks(data);
 			}
 		} else { // previous page
 			if(this.books.currentOffset > 10) {
+				USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.loading'));
 				this.books.currentOffset -= 10;
 				data.offset = this.books.currentOffset;
 				this.searchBooks(data);
@@ -173,16 +180,17 @@ Ext.define('USIMobile.controller.Library', {
 	},
 
 	navigateJournals: function(view, index, target, record, event, options) {
-		USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.loading'));
 		var data = this.getLibrary().getValues();
 		if(event.direction == "left") { // next page
 			if(this.journals.nextOffset > 0) {
+				USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.loading'));
 				this.journals.currentOffset = this.journals.nextOffset;
 				data.offset = this.journals.currentOffset;
 				this.searchJournals(data);
 			}
 		} else { // previous page
 			if(this.journals.currentOffset > 10) {
+				USIMobile.app.showLoadMask(Ux.locale.Manager.get('message.loading'));
 				this.journals.currentOffset -= 10;
 				data.offset = this.journals.currentOffset;
 				this.searchJournals(data);
