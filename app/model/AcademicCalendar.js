@@ -5,9 +5,8 @@ Ext.define('USIMobile.model.AcademicCalendar', {
 		identifier: 'uuid',
 		fields: [ 
 			{name: 'year', type: 'string'},
-			{name: 'url', type: 'string'},
-			{name: 'filename', type: 'string'},
-			{name: 'mime', type: 'string'},
+			{name: 'url_it', type: 'string'},
+			{name: 'url_en', type: 'string'},
 			{name: 'timemodify', type: 'string'},
 		]
 	}

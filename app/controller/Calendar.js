@@ -51,6 +51,7 @@ Ext.define('USIMobile.controller.Calendar', {
 		// display caledar
 		if(typeof this.getCalendar() == 'object') {
 			this.getCalendar().setData(localized_data);
+			this.getCalendar().refresh();
 			this.getCalendar().setEmptyText(Ux.locale.Manager.get('message.noinfo'));
 			this.getHome().push(this.getCalendar());
 		} else {
@@ -73,10 +74,13 @@ Ext.define('USIMobile.controller.Calendar', {
 		}
 	},
 
-
 	showAcademicCalendar: function(){
 		var data = USIMobile.Session.getAcademicCalendarStore().first().getData();
-		USIMobile.app.getFile(data.url, data.filename, data.mime);	
+		if(Ux.locale.Manager.getLanguage() == 'it') {
+			USIMobile.app.openURL(data.url_it);
+		} else {
+			USIMobile.app.openURL(data.url_en);
+		}
 	},
 
 	showFaculties: function() {
