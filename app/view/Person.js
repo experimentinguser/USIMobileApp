@@ -26,72 +26,58 @@ Ext.define("USIMobile.view.Person", {
 				itemId: 'hiddenBlock',
 				xtype: 'container',
 				hidden: true,
+				padding: 10,
+				layout: {
+					type: 'hbox',
+					align: 'center'
+				},
 				items: [
 					{
-						itemId: 'floor',
-						xtype: 'component',
-						cls: 'person_floor',
-					},
-					{
-						itemId: 'building',
-						xtype: 'component',
-						cls: 'person_building',
-					},
-					{
-						itemId: 'headquarter',
-						xtype: 'component',
-						cls: 'person_headquarter',
-					},
-					{
-						xtype: 'container',
-						itemId: 'buttons',
-						items: [
-							{
-								itemId: 'callperson',
-								xtype: 'button',
-								cls: 'person_call_button',
-								locales:{
-									text: 'button.call'
-								},
-								//text: 'Call',
-								action: 'callperson',
-								ui: 'confirm',
-								flex: 1,
-							},
-							{
-								itemId: 'mailperson',
-								xtype: 'button',
-								cls: 'person_mail_button',
-								locales:{
-									text: 'button.mail'
-								},
-								//text: 'Mail',
-								action: 'mailperson',
-								ui: 'confirm',
-								flex: 1,
-							},
-							{
-								itemId: 'homepage',
-								xtype: 'button',
-								cls: 'person_homepage_button',
-								locales:{
-									text: 'button.homepage'
-								},
-								//text: 'Home Page',
-								action: 'openpersonurl',
-								ui: 'confirm',
-								flex: 1,
-							},
-						],
-						layout: {
-							type: 'hbox',
-							align: 'center'
+						itemId: 'callperson',
+						xtype: 'button',
+						cls: 'person_call_button',
+						locales:{
+							text: 'button.call'
 						},
+						action: 'callperson',
+						ui: 'confirm',
+						flex: 1,
+					},
+					{
+						itemId: 'mailperson',
+						xtype: 'button',
+						cls: 'person_mail_button',
+						locales:{
+							text: 'button.mail'
+						},
+						action: 'mailperson',
+						ui: 'confirm',
+						flex: 1,
+					},
+					{
+						itemId: 'profile',
+						xtype: 'button',
+						cls: 'profile_button',
+						locales:{
+							text: 'button.profile'
+						},
+						action: 'viewprofile',
+						ui: 'confirm',
+						flex: 1,
+					},
+				],
+				listeners: {
+					show: function() {
+						var record = this.getParent().getRecord();
+						if(record.get('phone') == null || record.get('phone').length == 0) {
+							this.down('#callperson').hide();
+						}
+						if(record.get('email') == null || record.get('email').length == 0) {
+							this.down('#mailperson').hide();
+						}
 					}
-				]
-
+				}
 			}
-			
 		],
 	},
 	
@@ -99,12 +85,13 @@ Ext.define("USIMobile.view.Person", {
 		if(record) {
 			var label_begin = '<span class="label">';
 			var label_end = '</span>: ';
-			this.down('#name').setHtml(label_begin + Ux.locale.Manager.get('label.name') + label_end + record.get('firstname') + ' ' + record.get('lastname'));
-			this.down('#email').setHtml(label_begin + Ux.locale.Manager.get('label.email') + label_end + record.get('email'));
-			this.down('#phone').setHtml(label_begin + Ux.locale.Manager.get('label.phone') + label_end + record.get('phone'));
-			this.down('#floor').setHtml(label_begin + Ux.locale.Manager.get('label.floor') + label_end + record.get('floor'));
-			this.down('#building').setHtml(label_begin + Ux.locale.Manager.get('label.building') + label_end + record.get('building'));
-			this.down('#headquarter').setHtml(label_begin + Ux.locale.Manager.get('label.headquarter') + label_end + record.get('headquarter'));
+			this.down('#name').setHtml(label_begin + Ux.locale.Manager.get('label.name') + label_end + record.get('first_name') + ' ' + record.get('last_name'));
+			if(record.get('email') != null && record.get('email').length > 0) {
+				this.down('#email').setHtml(label_begin + Ux.locale.Manager.get('label.email') + label_end + record.get('email')[0].email);
+			}
+			if(record.get('phone') != null && record.get('phone').length > 0) {
+				this.down('#phone').setHtml(label_begin + Ux.locale.Manager.get('label.phone') + label_end + record.get('phone')[0].official);
+			}
 			this.down('#hiddenBlock').setHidden('true');
 			this.removeCls('person_selected');
 		}

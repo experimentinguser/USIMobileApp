@@ -5,14 +5,11 @@ Ext.define('USIMobile.model.People', {
 		//identifier: 'uuid',
 		fields: [ 
 			{name: 'id', type: 'int'},
-			{name: 'firstname', type: 'string'},
-			{name: 'lastname', type: 'string'},
-			{name: 'email', type: 'string'},
-			{name: 'phone', type: 'string'},
+			{name: 'first_name', type: 'string'},
+			{name: 'last_name', type: 'string'},
+			{name: 'email', type: 'auto'},
+			{name: 'phone', type: 'auto'},
 			{name: 'url', type: 'string'},
-			{name: 'building', type: 'string'},
-			{name: 'floor', type: 'string'},
-			{name: 'headquarter', type: 'string'},
 		]
 	}
 

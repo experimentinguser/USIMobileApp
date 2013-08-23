@@ -9,17 +9,23 @@ Ext.define('USIMobile.controller.People', {
 			'SearchPeople',
 			'People',
 			'Person',
+			'Profile',
+		],
+		
+		models: [
+			'Profile'
 		],
 
 		refs: {
 			home: 'home',
 			homePeopleButton: 'button#people_home_button',
 			people: 'people',
+			profile: 'profile',
 			searchPeople: 'searchpeople',
 			searchPeopleButton: 'searchpeople button[action=search]',
 			callPersonButton: 'button[action=callperson]',
 			mailPersonButton: 'button[action=mailperson]',
-			homePagePersonButton: 'button[action=openpersonurl]',
+			profileButton: 'button[action=viewprofile]',
 		},
 
 		control: {
@@ -27,7 +33,7 @@ Ext.define('USIMobile.controller.People', {
 			searchPeopleButton: { tap: 'searchPeople' },
 			callPersonButton: { tap: 'callPerson' },
 			mailPersonButton: { tap: 'mailPerson' },
-			homePagePersonButton: { tap: 'openHomePage' },
+			profileButton: { tap: 'showProfile' },
 			people: {
 				show: function() {
 					USIMobile.app.hideLoadMask();
@@ -90,11 +96,11 @@ Ext.define('USIMobile.controller.People', {
 				} else {
 					// check firstname
 					if( this.filter.firstname != "" ) {
-						result = result && record.get('firstname').toLowerCase().indexOf(this.filter.firstname.toLowerCase()) == 0;
+						result = result && record.get('first_name').toLowerCase().indexOf(this.filter.firstname.toLowerCase()) == 0;
 					} 
 					// check lastname
 					if( this.filter.lastname != "" ) {
-						result = result && record.get('lastname').toLowerCase().indexOf(this.filter.lastname.toLowerCase()) == 0;
+						result = result && record.get('last_name').toLowerCase().indexOf(this.filter.lastname.toLowerCase()) == 0;
 					} 
 
 					if(result) {
@@ -141,5 +147,25 @@ Ext.define('USIMobile.controller.People', {
 	openHomePage: function(button){
 		var person = this.getPeople().getSelection()[0];
 		USIMobile.app.openURL(person.get('url'));
+	},
+
+
+	showProfile: function(button){
+		var person = this.getPeople().getSelection()[0];
+		console.log('showing profile for:');
+		console.log(person.getData());
+		// clear filters
+		if(typeof this.getProfile() == 'object') {
+			this.getProfile().destroy();
+		} 
+
+		var profile_store = USIMobile.WebService.getProfile(person.get('url'));
+		profile_store.on('load', function(store){
+			this.getHome().push({
+				xtype: 'profile',
+				title: person.get('first_name') + ' ' + person.get('last_name'),
+				record: store.first(),
+			});
+		}, this);
 	},
 });

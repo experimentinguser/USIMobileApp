@@ -11,7 +11,7 @@ Ext.define('USIMobile.WebService', {
 	//************************************  
 	// Generic webservice request function
 	//************************************  
-	request: function(url, params, rmodel) {
+	request: function(url, params, rmodel, responseRootProperty) {
 		// prepare the parameters
 		var url_encoded_params = '?';
 		Ext.iterate(params, function(key, value){
@@ -33,7 +33,7 @@ Ext.define('USIMobile.WebService', {
 						noCache: true,
 						reader: {
 								type: 'json',
-								rootProperty: 'response',
+								rootProperty: responseRootProperty == undefined ? 'response' : responseRootProperty,
 						}
 				}
 		});
@@ -108,6 +108,14 @@ Ext.define('USIMobile.WebService', {
 		// request
 		var people_store = this.request(url, params, 'USIMobile.model.People');
 		return people_store;
+	},
+
+	getProfile: function(url) {
+		// set parameters
+		var params = new Object();
+		// request
+		var profile_store = this.request(url+'.json', params, 'USIMobile.model.Profile', 'data');
+		return profile_store;
 	},
 
 	getShortNews: function() {

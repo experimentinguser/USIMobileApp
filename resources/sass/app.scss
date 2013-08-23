@@ -208,7 +208,6 @@ $base-color: #F90;
 	}
 }
 
-
 .person_name,
 .service_name,
 .emergency_number_name {
@@ -217,6 +216,75 @@ $base-color: #F90;
 
 .standard_font {
 	font-size: .8em;
+}
+
+.profile {
+
+	.label {
+		font-style: italic;
+	}
+
+	.name {
+		font-weight: bold;
+	}
+
+	.name,
+	.biography,
+	.email,
+	.phone,
+	.attachment {
+		font-size: .8em;
+		padding: 5px;
+		margin-top: 10px;
+		background-color: white;
+	}
+
+	.office,
+	.address,
+	.location {
+		font-size: .8em;
+		background-color: white;
+	}
+
+	.office {
+		margin-top: 10px;
+		padding-top: 5px;
+	}
+
+	.location {
+		padding-bottom: 5px;
+	}
+
+	.position,
+	.faculty {
+		font-size: .8em;
+		background-color: white;
+	}
+
+	.position {
+		margin-top: 10px;
+		padding-top: 5px;
+	}
+
+	.faculty {
+		padding-bottom: 5px;
+	}
+
+	.function,
+	.unit {
+		font-size: .8em;
+		background-color: white;
+	}
+
+	.function {
+		margin-top: 10px;
+		padding-top: 5px;
+	}
+
+	.unit {
+		padding-bottom: 5px;
+	}
+
 }
 
 .course_title {
