@@ -5,6 +5,10 @@ Ext.define("USIMobile.view.Profile", {
 	config: {
 		id: 'profile',
 		cls: 'standard_font profile',
+		scrollable: {
+			direction: 'vertical',
+			directionLock: true
+		},
 		items: [
 			{
 				xtype: 'image',
