@@ -133,12 +133,13 @@ Ext.define('USIMobile.controller.People', {
 
 	callPerson: function(button){
 		var person = this.getPeople().getSelection()[0];
-		USIMobile.app.openURL('tel:'+person.get('phone'));
+		var phone = person.get('phone')[0].official;
+		USIMobile.app.openURL('tel:'+phone);
 	},
 
 	mailPerson: function(button){
 		var person = this.getPeople().getSelection()[0];
-		var to = person.get('email');
+		var to = person.get('email')[0].email;
 		var subject = '';
 		var body = '';
 		USIMobile.app.sendEmail(to, subject, body);
@@ -152,8 +153,6 @@ Ext.define('USIMobile.controller.People', {
 
 	showProfile: function(button){
 		var person = this.getPeople().getSelection()[0];
-		console.log('showing profile for:');
-		console.log(person.getData());
 		// clear filters
 		if(typeof this.getProfile() == 'object') {
 			this.getProfile().destroy();
