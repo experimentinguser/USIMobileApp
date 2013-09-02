@@ -12,25 +12,25 @@ Ext.define("USIMobile.view.Service", {
 				cls: 'service_name',
 			},	
 			{
-				itemId: 'description',
-				xtype: 'component',
-				cls: 'service_description',
-			},
-			{
-				itemId: 'email',
-				xtype: 'component',
-				cls: 'service_email',
-			},
-			{
-				itemId: 'phone',
-				xtype: 'component',
-				cls: 'service_phone',
-			},
-			{
 				itemId: 'hiddenBlock',
 				xtype: 'container',
 				hidden: true,
 				items: [
+					{
+						itemId: 'description',
+						xtype: 'component',
+						cls: 'service_description',
+					},
+					{
+						itemId: 'email',
+						xtype: 'component',
+						cls: 'service_email',
+					},
+					{
+						itemId: 'phone',
+						xtype: 'component',
+						cls: 'service_phone',
+					},
 					{
 						itemId: 'office',
 						xtype: 'component',
