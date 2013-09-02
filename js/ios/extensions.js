@@ -30,7 +30,7 @@ function addExtensions() {
 			console.log('===> Opening URL: '+urladdr);
 		}
 		console.log('opening url '+urladdr);
-		window.open(urladdr, '_blank', 'location=yes');
+		window.open(urladdr, '_blank', 'enableViewportScale=yes');
 	};
 
 	//////////////////////////////////////////////////////////////////////////
@@ -40,6 +40,6 @@ function addExtensions() {
 	USIMobile.app.openFile = function(path, mime) {
 		console.log('opening file path '+path);
 		console.log('file mime '+mime);
-		window.open('file://'+path, '_blank', 'location=yes');
+		window.open('file://'+path, '_blank', 'enableViewportScale=yes');
 	};
 }
