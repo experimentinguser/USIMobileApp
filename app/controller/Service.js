@@ -49,7 +49,8 @@ Ext.define('USIMobile.controller.Service', {
 
 	call: function(btn, e, opts) {
 		var service = this.getServices().getSelection()[0];
-		USIMobile.app.openURL('tel:'+service.get('phone'));
+		//USIMobile.app.openURL('tel:'+service.get('phone'));
+		window.location.href = 'tel:'+service.get('phone');
 	},
 
 	openHomePage: function(button){

@@ -134,7 +134,8 @@ Ext.define('USIMobile.controller.People', {
 	callPerson: function(button){
 		var person = this.getPeople().getSelection()[0];
 		var phone = person.get('phone')[0].official;
-		USIMobile.app.openURL('tel:'+phone);
+		//USIMobile.app.openURL('tel:'+phone);
+		window.location.href = 'tel:'+phone;
 	},
 
 	mailPerson: function(button){

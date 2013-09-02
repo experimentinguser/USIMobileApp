@@ -48,7 +48,7 @@ Ext.define("USIMobile.view.Service", {
 						padding: 15,
 						items: [
 							{
-								itemId: 'callperson',
+								itemId: 'callservice',
 								xtype: 'button',
 								cls: 'service_call_button',
 								locales:{
@@ -59,7 +59,7 @@ Ext.define("USIMobile.view.Service", {
 								flex: 1,
 							},
 							{
-								itemId: 'mailperson',
+								itemId: 'mailservice',
 								xtype: 'button',
 								cls: 'service_mail_button',
 								locales:{
@@ -108,12 +108,14 @@ Ext.define("USIMobile.view.Service", {
 				this.down('#email').setHtml(label_begin + Ux.locale.Manager.get('label.email') + label_end + record.get('email'));
 			} else {
 				this.down('#email').hide();
+				this.down('#mailservice').hide();
 			}
 
-			if(record.get('phone') != null) {
+			if(record.get('phone') != null && record.get('phone') != '') {
 				this.down('#phone').setHtml(label_begin + Ux.locale.Manager.get('label.phone') + label_end + record.get('phone'));
 			} else {
 				this.down('#phone').hide();
+				this.down('#callservice').hide();
 			}
 
 			if(record.get('office') != null) {
