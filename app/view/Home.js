@@ -24,6 +24,7 @@ Ext.define("USIMobile.view.Home", {
 					iconCls: 'info',
 					align: 'right',
 				},
+				/*
 				{
 					xtype: 'button',
 					id: 'helpbutton',
@@ -31,6 +32,7 @@ Ext.define("USIMobile.view.Home", {
 					align: 'right',
 					hidden: true,
 				}
+				*/
 			]
 		},
 		items: [

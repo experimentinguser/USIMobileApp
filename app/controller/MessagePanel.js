@@ -9,7 +9,7 @@ Ext.define('USIMobile.controller.MessagePanel', {
 		],
 		refs: {
 			home: 'home',
-			helpBtn: 'button#helpbutton',
+			//helpBtn: 'button#helpbutton',
 			infoBtn: 'button#infobutton',
 			messagePanel: 'messagepanel',
 			messagePanelBar: '#messagepanelbar',
@@ -21,7 +21,7 @@ Ext.define('USIMobile.controller.MessagePanel', {
 				push: 'showTitleBarButtons',
 				pop: 'showTitleBarButtons',
 			},
-			helpBtn: { tap: 'displayHelp', },
+			//helpBtn: { tap: 'displayHelp', },
 			infoBtn: { tap: 'displayInfo', },
 			messagePanelCloseBtn: {
 				tap: function() {
@@ -37,23 +37,23 @@ Ext.define('USIMobile.controller.MessagePanel', {
 		switch(nav.getActiveItem().getId()) {
 			case 'grid':
 				this.showInfoButton();
-				this.hideHelpButton();
+				//this.hideHelpButton();
 			break;
 			case 'library':
 				this.showInfoButton();
-				this.hideHelpButton();
+				//this.hideHelpButton();
 			break;
 			case 'journals':
 				this.hideInfoButton();
-				this.showHelpButton();
+				//this.showHelpButton();
 			break;
 			case 'books':
 				this.hideInfoButton();
-				this.showHelpButton();
+				//this.showHelpButton();
 			break;
 			default:
 				this.hideInfoButton();
-				this.hideHelpButton();
+				//this.hideHelpButton();
 			break;
 		}
 	},
@@ -70,10 +70,11 @@ Ext.define('USIMobile.controller.MessagePanel', {
 		this.getHelpBtn().setHidden(false);
 	},
 
+	/*
 	hideHelpButton: function() {
 		this.getHelpBtn().setHidden(true);
 	},
-
+	
 	displayHelp: function() {
 		var html = '';
 		var title = '';
@@ -93,6 +94,7 @@ Ext.define('USIMobile.controller.MessagePanel', {
 
 		this.showMessagePanel(title, html);
 	},
+	*/
 
 	displayInfo: function() {
 		var html = '';

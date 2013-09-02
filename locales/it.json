@@ -121,6 +121,8 @@
         "check"   : "Controlla dati utente",
         "next"   : "Prossimo",
         "previous"   : "Precedente",
+        "nextPage"   : "Prossima pagina",
+        "previousPage"   : "Pagina precedente",
         "close" : "Chiudi",
     },
 

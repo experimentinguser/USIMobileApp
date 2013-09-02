@@ -7566,20 +7566,25 @@ body.x-desktop {
   font-size: 20px;
   opacity: 0.3;
 }
+/* line 343, ../sass/app.scss */
+#books .navigation_btn,
+#journals .navigation_btn {
+  padding: 10px;
+}
 
-/* line 345, ../sass/app.scss */
+/* line 349, ../sass/app.scss */
 #messagepanel .title {
   padding: 10px;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 351, ../sass/app.scss */
+/* line 355, ../sass/app.scss */
 #messagepanel .illustration {
   padding-top: 20px;
   text-align: center;
 }
-/* line 355, ../sass/app.scss */
+/* line 359, ../sass/app.scss */
 #messagepanel .content {
   padding: 10px;
 }

@@ -119,6 +119,8 @@
         "check"   : "Check login data",
         "next"   : "Next",
         "previous"   : "Previous",
+        "nextPage"   : "Next Page",
+        "previousPage"   : "Previous Page",
         "close" : "Close",
     },
 
