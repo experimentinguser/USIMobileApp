@@ -78,6 +78,11 @@ $base-color: #F90;
 	}
 }
 
+.home_button_pressed {
+	border: 5px solid black;
+	background: white;
+}
+
 
 .courses_icon {
 	background-image: url('../icons/courses.png');

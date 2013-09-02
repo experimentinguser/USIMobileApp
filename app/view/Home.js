@@ -94,6 +94,7 @@ Ext.define("USIMobile.view.Home", {
 							xtype: 'button',
 							height: window.innerHeight > 750 ? window.innerHeight / 5 : 150,
 							baseCls: 'home_button',
+							pressedCls: 'home_button_pressed',
 							docked: 'left',
 						},
 						items: [
@@ -119,6 +120,7 @@ Ext.define("USIMobile.view.Home", {
 							xtype: 'button',
 							height: window.innerHeight > 750 ? window.innerHeight / 5 : 150,
 							baseCls: 'home_button',
+							pressedCls: 'home_button_pressed',
 							docked: 'left',
 						},
 						items: [
@@ -145,6 +147,7 @@ Ext.define("USIMobile.view.Home", {
 							xtype: 'button',
 							height: window.innerHeight > 750 ? window.innerHeight / 5 : 150,
 							baseCls: 'home_button',
+							pressedCls: 'home_button_pressed',
 							docked: 'left',
 						},
 						items: [
@@ -171,6 +174,7 @@ Ext.define("USIMobile.view.Home", {
 							xtype: 'button',
 							height: window.innerHeight > 750 ? window.innerHeight / 5 : 150,
 							baseCls: 'home_button',
+							pressedCls: 'home_button_pressed',
 							docked: 'left',
 						},
 						items: [
