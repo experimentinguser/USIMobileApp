@@ -26,7 +26,7 @@
         "login" : "Login AAI",
         "appSettings" : "Impostazioni App",
         "teachingTimetables" : "Orario Corsi",
-        "examinationTimetables" : "Orario Esami",
+        "examinationTimetables" : "Sessione Esami",
         "error" : "Errore",
         "errorCode" : "Errore Codice: ",
         "note" : "Nota",

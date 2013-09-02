@@ -26,7 +26,7 @@
         "login" : "Login AAI",
         "appSettings" : "App Settings",
         "teachingTimetables" : "Teaching Timetables",
-        "examinationTimetables" : "Examination Timetables",
+        "examinationTimetables" : "Examination Sessions",
         "error" : "Error",
         "errorCode" : "Error Code: ",
         "note" : "Note",
